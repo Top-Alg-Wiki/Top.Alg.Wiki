@@ -1,0 +1,54 @@
+\documentclass{article}
+\title{Título provisório}
+\usepackage{import}
+\usepackage{amsmath} %propósitos gerais
+\usepackage{amsthm} % criar novos teoremas
+\usepackage{mdframed} %criar caixas em volta de ambientes
+%-----------------------------------------------------------------------------------------------!!!!Adicionar pacotes apenas acima dessa linha!!!!--------------------------------------------------------------------------------------------
+\usepackage{hyperref} %referencias internas e externas
+
+%novos estilos
+\mdfdefinestyle{MyFrame}{%
+	innertopmargin=\baselineskip,
+	innerbottommargin=\baselineskip,
+	innerrightmargin=20pt,
+	innerleftmargin=20pt
+}
+
+%novos ambientes e teoremas
+\theoremstyle{definition}
+\newtheorem{defi}{Definição}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Teorema}
+\newtheorem{prop}{Proposição}
+\newtheorem{lemma}{Lema}
+\newtheorem{af}{Afirmação}
+\newtheorem{corol}{Corolário}
+\newtheorem{ex}{Exemplo}
+
+\theoremstyle{remark}
+\newtheorem{nota}{Nota}
+
+\newenvironment{titlemize}[1]{%
+	\begin{mdframed}[style=MyFrame]
+	\textbf{{#1}}
+	\begin{itemize}}
+	{\end{itemize} \end{mdframed}}
+\newenvironment{dem}{
+	\begin{proof}[{\bf Demonstração:}]}
+	{\end{proof}}
+%novos comandos
+
+%comandos renovados
+
+
+
+\begin{document}
+\maketitle
+\import{conteudo/}{topologia-quociente}
+
+\end{document}
+
+
+%novos assuntos/secções devem ser adicionados através do comando \import{conteudo/}{assunto} para adicionar o arquivo conteudo/assunto.tex
