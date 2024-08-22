@@ -1,0 +1,25 @@
+\subsection{Topologia Quociente}
+\label{topologia-quociente-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[topologia-final]{Topologia Final}; 
+\end{titlemize}
+\begin{defi}[Topologia Quociente]
+	Seja \(X\) um espaço topológico e \(\sim\) uma relação de equivalência em \(X\).
+	Podemos conferir ao espaço \(X/\sim\) uma estrutura de espaço topologíco da seguinte maneira. Considere a função projeção
+	\begin{align*}
+		\pi:X&\to X/\sim;\\
+		x&\mapsto [x].
+	\end{align*}
+	Podemos fazer com que \(\pi\) seja uma função contínua dando, para \(X/\sim\) a topologia final com relação à \(\pi\). Isto é, os abertos de \(X/\sim\) são exatamente imagens de abertos em \(X\) por \(\pi\).  
+\end{defi}
+Varios exemplos importantes de espaços topológicos com os quais trabalharemos no estudo de topologia algébrica podem ser construídos como espaços quocientes. Em particular uma construção muito útil é a de quocientar um espaço por um subespaço, como explicado na seguinte definição.
+\begin{defi}[Quociente por um subespaço]
+	Seja \(X\) um espaço topológico e \(A \subseteq X\) um subespaço. Definimos a seguinte relação binária, \(\sim_{A}\):\\
+	\(a\sim b\) se e somente se \(a=b\) ou \(a,b\in A\). Essa relação é uma relação de equivalência, e assim define um espaço \(X/\sim_A\). Esse espaço será denotado por \(X/A\). 
+\end{defi}
+Um exemplo desse tipo de construção é a esfera \(S^1\) que pode ser construida como \(I/\{0,1\}\) onde \(I=[0,1]\). 
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[pinched-torus-ex]{Torus Pinçado};
+\end{titlemize}
+
+
