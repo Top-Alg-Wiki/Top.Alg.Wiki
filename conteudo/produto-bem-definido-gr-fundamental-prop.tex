@@ -1,1 +1,120 @@
+\subsection{O produto no grupo fundamental} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{produto-bem-definido-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[Produto-grupo-fundamental-def]{Dependência 1};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+% quantas dependências forem necessárias.
+\end{titlemize}
+O produto concatenação induz um produto $\cdot$ (operação binária) para o espaço quociente $\pi_1(X,x_0),$ além disso, $(\pi_1(X,x_0),\cdot)$ se forma um grupo.
 
+\begin{lemma}% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
+    O produto $\cdot:\pi_1(X,x_0)\times\pi_1(X,x_0)\rightarrow \pi_1(X,x_0)$ dado por $[\alpha]\cdot[\beta]=[\alpha*\beta]$ é bem definido.
+\end{lemma}
+
+\begin{dem}
+    É claro que o produto concatenação de laços em $\Omega(X,x_0)$ ainda é um laço em $\Omega(X,x_0).$ Basta provar que o produto $\cdot$ não depende da escolha de representantes. Sejam $\alpha\sim_H \alpha'$ e $\beta\sim_G\beta'$ laços em $\Omega(X,x_0)$. Então, a função $H*G:I\times I\rightarrow X$ dada por 
+    \begin{align*}
+        H*G(s,t)=\begin{cases}
+            H(2s,t)\;\;\;&\;\;\;\mbox{ se }0\le s\le \frac{1}{2}\\
+            G(2s-1,t)\;\;\;&\;\;\;\mbox{ se }\frac{1}{2}\le s\le1
+        \end{cases}
+    \end{align*}
+    é uma homotopia que satisfaz $H*G(s,0)=\alpha*\beta,$ $H*G(s,1)=\alpha'*\beta'$ e $H*G(0,t)=H*G(1,t)=x_0.$ Ou seja $H*G$ é uma homotopia relativa à $\partial I$ entre $(\alpha*\beta)$ e $(\alpha'*\beta').$ Logo, temos  
+    $$[\alpha]\cdot[\beta]=[\alpha*\beta]=[\alpha'*\beta]=[\alpha']\cdot [\beta']$$
+    conforme desejado.
+\end{dem}
+
+\begin{lemma}
+    O produto $\cdot$ é associativo, ou seja, para todos $\alpha,\beta,\gamma\in\Omega(X,x_0),$ vale
+    \[(\alpha*\beta)*\gamma\sim \alpha*(\beta*\gamma).\]
+\end{lemma}
+
+\begin{dem}
+    Basta exibir uma homotopia entre tais laços. Definimos a função $H:I\times I\rightarrow X$ na seguinte forma:
+    \begin{align*}
+        H(s,t)=\begin{cases}
+            \alpha(\frac{4s}{t+1})\;\;\;&\;\;\;\mbox{ se }0\le s \le \frac{t+1}{4}\\
+            \beta(4s-t-1)\;\;\;&\;\;\;\mbox{ se }\frac{t+1}{4}\le s\le\frac{t+2}{4}\\
+            \gamma(\frac{4s-t-2}{2-t})\;\;\;&\;\;\;\mbox{ se }\frac{t+2}{4}\le s\le 1.
+        \end{cases}
+    \end{align*}
+    É fácil ver que $H$ é uma homotopia que satisfaz
+    \begin{align*}
+        H(s,0)=\begin{cases}
+            \alpha(\frac{4s}{1})\;\;\;&\;\;\;\mbox{ se }0\le s \le \frac{1}{4}\\
+            \beta(4s-1)\;\;\;&\;\;\;\mbox{ se }\frac{1}{4}\le s\le\frac{2}{4}\\
+            \gamma(\frac{4s-2}{2})\;\;\;&\;\;\;\mbox{ se }\frac{2}{4}\le s\le 1.
+        \end{cases}\;\;\;=((\alpha*\beta)*\gamma)(s),
+    \end{align*}
+    \begin{align*}
+        H(s,1)=\begin{cases}
+            \alpha(\frac{4s}{2})\;\;\;&\;\;\;\mbox{ se }0\le s \le \frac{2}{4}\\
+            \beta(4s-2)\;\;\;&\;\;\;\mbox{ se }\frac{2}{4}\le s\le\frac{3}{4}\\
+            \gamma(4s-3)\;\;\;&\;\;\;\mbox{ se }\frac{3}{4}\le s\le 1.
+        \end{cases}\;\;\;=(\alpha*(\beta*\gamma))(s)
+    \end{align*}
+    e $H(0,t)=H(1,t)=x_0.$ Portanto, $$(\alpha*\beta)*\gamma\sim \alpha*(\beta*\gamma)$$ conforme desejado.
+\end{dem}
+
+\begin{lemma}
+    Seja $c_{x_0}:I\rightarrow X$ uma função constante cuja valor é igual a $x_0.$ Então, para todo laço $\alpha\in \Omega(X,x_0),$ vale
+    $$c_{x_0}*\alpha\sim\alpha\sim\alpha*c_{x_0}.$$
+    Ou seja $c_{x_0}$ é um elemento neutro de produto $\cdot.$
+\end{lemma}
+
+\begin{dem}
+    A homotopia $H$ dada por 
+    \begin{align*}
+        H(s,t)=\begin{cases}
+            x_0\;\;\;&\;\;\;\mbox{ se }0\le s \le \frac{1-t}{2}\\
+            \alpha(\frac{2s-1+t}{1+t}) \;\;\;&\;\;\;\mbox{ se }\frac{1-t}{2}\le s\le 1
+        \end{cases}
+    \end{align*}
+    é uma homotopia relativa à $\partial I$ entre $c_{x_0}*\alpha$ e $\alpha.$
+    
+    A homotopia $G$ dada por 
+    \begin{align*}
+        G(s,t)=\begin{cases}
+            \alpha(\frac{2s}{t+1})\;\;\;&\;\;\;\mbox{ se }0\le s \le \frac{t+1}{2}\\
+            x_0\;\;\;&\;\;\;\mbox{ se }\frac{t+1}{2}\le s \le 1
+        \end{cases}
+    \end{align*}
+    é uma homotopia relativa à $\partial I$ entre $\alpha*c_{x_0}$ e $\alpha.$ Portanto, $$c_{x_0}*\alpha\sim\alpha\sim\alpha*c_{x_0}$$ conforme desejado
+\end{dem}
+
+\begin{lemma}
+    Se $\alpha$ é um laço em $\Omega(X,x_0),$ então o laço $\overline{\alpha}$ dado por $\overline{\alpha}(s)=\alpha(1-s)$ satisfaz 
+    $$\overline{\alpha}*\alpha\sim c_{x_0}=\alpha*\overline{\alpha}.$$
+    Ou seja $\overline{\alpha}$ é um elemento inverso de $\alpha.$
+\end{lemma}
+
+\begin{dem}
+    A homotopia $H$ dada por 
+    \begin{align*}
+        H(s,t)=\begin{cases}
+            \overline{\alpha}(\frac{2s}{1-t})\;\;\;&\;\;\;\mbox{ se }0\le s \le \frac{1-t}{2} \;\;\;\mbox{ e }\;\;\;t<1\\
+            x_0 \;\;\;&\;\;\;\mbox{ se } \frac{1-t}{2}\le s\le \frac{1+t}{2}\\
+            \alpha(\frac{2s-1-t}{1-t}) \;\;\;&\;\;\;\mbox{ se }\frac{1+t}{2}\le s\le 1 \;\;\;\mbox{ e }\;\;\;t<1
+        \end{cases}
+    \end{align*}
+    é uma homotopia relativa à $\partial I$ entre $\overline{\alpha}*\alpha$ e $c_{x_0}.$
+    
+    A homotopia $G$ dada por 
+    \begin{align*}
+        G(s,t)=\begin{cases}
+            \alpha(\frac{2s}{1-t})\;\;\;&\;\;\;\mbox{ se }0\le s \le \frac{1-t}{2} \;\;\;\mbox{ e }\;\;\;t<1\\
+            x_0 \;\;\;&\;\;\;\mbox{ se } \frac{1-t}{2}\le s\le \frac{1+t}{2}\\
+            \overline{\alpha}(\frac{2s-1-t}{1-t}) \;\;\;&\;\;\;\mbox{ se }\frac{1+t}{2}\le s\le 1 \;\;\;\mbox{ e }\;\;\;t<1
+        \end{cases}
+    \end{align*}
+    é uma homotopia relativa à $\partial I$ entre $\alpha*\overline{\alpha}$ e $c_{x_0}.$ Portanto, $$\overline{\alpha}*\alpha\sim c_{x_0}=\alpha*\overline{\alpha}$$ conforme desejado.
+\end{dem}
+
+Juntamos todos lemas, temos que 
+
+\begin{thm}
+    O $(\pi_1(X,x_0),\cdot)$ é um grupo.
+\end{thm}
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[grupo-fundamental-def]{Consequência 1};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+\end{titlemize}
