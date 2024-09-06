@@ -5,18 +5,26 @@
 	\item \hyperref[cone-def]{Cone sobre um Espaço Topológico}.
 \end{titlemize}
 Provaremos que a construção de cone sobre um subespaço topológico de $\mathbb{R}^n$ (com a topologia usual) é homeomorfa à construção geométrica em $\mathbb{R}^{n+1}$, sendo assim uma generalização de conceitos que antes só faziam sentido no contexto de espaços euclidianos.
-\begin{thm}[A construção de cone generaliza a de subespaços euclidianos]
-	Seja $X \subset \mathbb{R}^n$. Então,\begin{align*}
-        \phi: C(X) &\rightarrow \{((1-t) x_1,...,(1-t) x_n,t): (x_1,...,x_n) \in X, t \in [0,1]\}\subset \mathbb{R}^{n+1}\\
-        [(x,t)] \mapsto ((1-t) x_1,...,(1-t) x_n,t), \forall x=(x_1,...,x_n)\in X, \forall t \in [0,1]
+
+Nesse momento, dados $(x_1,x_2,...,x_n) \in \mathbb{R}^n$ e $t \in \mathbb{R}$, denotemos por $(x,t)$ o vetor $(x_1,x_2,...,x_n,t) \in \mathbb{R}^{n+1}$. Tal identificação faz sentido, já que $\mathbb{R}^{n+1}$ e $\mathbb{R}^{n}\times\mathbb{R}$ são homeomorfos (iguais, a depender da abordagem em Teoria dos Conjuntos).
+
+\begin{prop}[A construção de cone generaliza a de subespaços euclidianos]
+	Seja $X \subset \mathbb{R}^n$, e considere\\
+    \centerline{$C_g(X) = \{((1-t)x,t):x\in X, t\in I\} \subset \mathbb{R}^{n+1}$.}\\
+    Então,\begin{align*}
+        \varphi: C(X) &\rightarrow C_g(X)\\
+        [(x,t)] &\mapsto ((1-t)x,t), \forall x\in X, \forall t \in I
     \end{align*}
     é um homeomorfismo.\\
-    Ou seja, para subespaços de $\mathbb{R}^n$, a construção de cone recupera a intuição geométrica e coincide enquanto espaço topológico com $\{((1-t)x,t):x\in X, t\in I\} \in \mathbb{R}^{n+1}$, onde $(x,t)$ denota concatenação de vetores.
-\end{thm}
+    Ou seja, para subespaços de $\mathbb{R}^n$, a construção de cone recupera a intuição geométrica e coincide enquanto espaço topológico com $C_g(X)$.
+
+    
+\end{prop}
 
 Tal proposição é análoga à sobre \hyperref[suspensao-euclidiano-prop]{suspensão sobre um espaço euclidiano}.
 
 \begin{titlemize}{Lista de consequências}
 	%\item \hyperref[consequencia1]{Consequência 1}.
 	%\item \hyperref[]{}
+    \item \hyperref[suspensao-euclidiano-prop]{Suspensão sobre subespaços de $\mathbb{R}^n$}
 \end{titlemize}
