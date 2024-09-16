@@ -1,0 +1,44 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Homotopia como relação de equivalência} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{homotopia-relaçao-de-equivalencia}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[homotopia-def]{Homotopia};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	%\item \hyperref[]{};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+
+Comentário sobre os objetos envolvidos na afirmação.
+
+
+\begin{af}[Homotopia é relação de equivalência]% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
+    Dadas $f,~f_0,~f_1,~f_2:X\rightarrow Y$ funções contínuas quaisquer, temos:
+	\begin{itemize}
+	    \item Sempre vale $f\sim f$
+        \item Se $f_0\sim f_1$, então $f_1\sim f_0$
+        \item Se $f_0\sim f_1$ e $f_1\sim f_2$, então $f_0\sim f_2$
+	\end{itemize}
+	Explicação da Afirmação.
+\end{af}
+\begin{dem}
+    No primeiro item, é possível provar que $f\sim f$ através da homotopia $H:X\times I \rightarrow Y$ definida por $$H(x,t)=f(x)\text{ para todo }t\in I\text{ e todo }x\in X.$$ A continuidade de $H$ segue diretamente do fato de $f$ ser contínua e, como $H(x,0)=f(x)$ e $H(x,1)=f(x)$, de fato $f \underset{H}{\sim} f$.\\
+
+    No segundo item, se $f_0\sim f_1$, então existe uma homotopia $H:X\times I\rightarrow Y$ entre as duas funções. Assim, a função $H':X\times I\rightarrow Y$ definida como $$H'(x,t)=H(x,1-t)\text{ para todo }t\in T\text{ e todo }x\in X$$ é contínua por ser composta das funções contínuas $H$ com $1-t$ e com a identidade. Além disso, $H'(x,0)=H(x,1)=f_1$ e $H'(x,1)=H(x,1)=f_0$. Portanto, $f_1 \underset{H'}{\sim} f_0$.\\
+
+    Por último, se $f_0\underset{H_1}{\sim} f_1$ e $f_1\underset{H_2}{\sim}f_2$, considere os mapas contínuos $H_1(x,2t)$ e $H_2(x,2t-1)$ que são compostas de mapas contínuos definidos para $(x,t)\in[0,\frac{1}{2}]$ e $(x,t)\in X\times[\frac{1}{2},1]$ respectivamente. Na intersecção $X\times[0,\frac{1}{2}]\cap X\times[\frac{1}{2},1]=X\times \{\frac{1}{2}\}$  temos que $H_1(x,2t)=f_1(x)=H_2(x,2t-1)$ para todo $(x,t)\in X\times \{\frac{1}{2}\}$ e assim, pelo Lema da Colagem, é possível definir a função contínua $H_1*H_2:X\times I\rightarrow Y$ por $$H_1*H_2(x,t)=
+    \begin{cases}
+        H_1(x,2t), &\text{ se }t\in[0,\frac{1}{2}]\\
+        H_2(x,2t-1), &\text{ se }t\in[\frac{1}{2},1]\\
+    \end{cases}\text{ para todo }x\in X.$$
+    De fato, $H_1*H_2$ é homotopia entre $f_0$ e $f_2$ porque $H_1*H_2(x,0)=H_1(x,0)=f_0(x)$ e $H_1*H_2(x,1)=H_2(x,1)=f_2(x)$ para todo $x\in X$
+    
+\end{dem}
+
+Denotamos por $[X,Y]$ o conjunto das classes de homotopia de funções de $X$ para $Y$. Isto é, $[X,Y]=C(X,Y)/\sim=\{[f]|f:X\rightarrow Y\text{ é contínua}\}$ 
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[consequencia1]{Consequência 1};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	\item \hyperref[]{}
+\end{titlemize}
+
+%[Bianca]: Um arquivo tex pode ter mais de uma afirmação (ou definição, ou exemplo), mas nesse caso cada afirmação deve ter seu próprio label. Dar preferência para agrupar afirmações que dependam entre sí de maneira próxima (um teorema e seu corolário, por exemplo)
