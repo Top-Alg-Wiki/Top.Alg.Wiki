@@ -1,0 +1,66 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Suspensão coincide com Cone Duplo}
+\label{suspensao-cone-duplo-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[cone-def]{Cone};\\
+	\item \hyperref[suspensao-def]{Suspensão}.
+\end{titlemize}
+Provaremos que a suspensão sobre um espaço topológico é homeomorfa a um cone duplo, confirmando as intuições sobre os objetos.
+\begin{prop}[A construção de suspensão coincide com a de cone duplo]
+	Dado $X$ um espaço topológico, considere os espaços
+    \[S(X) = X\times[-1,1]/\sim_S\hspace{6 pt} = \{[x,t]_S : x\in X, t\in [-1,1]\},\]
+    \[C(X) = X\times I/\sim_C\hspace{6 pt} = \{[x,t]_C : x\in X, t\in I\}.\]
+    \\
+    \noindent E sobre $C(X) \amalg C(X) = C(X)\times\{-1,1\}$, seja $\sim$ a relação de equivalência\\
+    \\ \centerline{
+    $([x,s]_C,i) \sim ([y,t]_C,j) \Leftrightarrow ([x,s]_C,i) = ([y,t]_C,j)$ ou $(x=y$ e $s=t=0)$}\\
+    \\para todos $x,y \in X$, $s,t \in I$ e $i,j \in \{-1,1\}$.    
+    
+    Defina a função \begin{align*}
+        \psi: S(X) &\rightarrow (C(X) \amalg C(X))/ \sim\\
+                [x,t]_S &\mapsto [[x,|t|]_C,\text{sgn}(t)]
+    \end{align*}
+    onde $\text{sgn}(t) = -1$ caso $t < 0$ e $\text{sgn}(t) = 1$ caso contrário. Então $\psi$ é homeomorfismo.
+
+	Ou seja, a construção de suspensão sobre um espaço topológico coincide com a colagem de dois cones sobre o mesmo espaço topológico, quando identificamos as suas respectivas bases.
+
+    \begin{dem}
+        Primeiramente, $\psi$ está bem definida. Dado $(x,t) \in X\times I$, vale que $[x,t]_S = \{(x,t)\}$, se $t \in \left]-1,1\right[$, ou então $[(x,t)] = X\times\{t\}$, se $t \in \{-1,1\}$. Mas para quaisquer $x,x'\in X$ e $t\in \{-1,1\}$,\[
+        [[x,|t|]_C,\text{sgn}(t)] =
+        [X\times\{|t|\},\text{sgn}(t)] =
+        [[x',|t|]_C,\text{sgn}(t)]
+        \]
+        e então está bem definido $\psi([x,t]_S)$.
+
+        Denotemos por $\pi_S$, $\pi_C$ e $\pi$ as aplicações quociente canônicas com respeito a $\sim_S$, $\sim_C$ e $\sim$, respectivamente. Por \textbf{(adicionar proposição aqui)}, $\psi$ é contínua se, e somente se,\begin{align*}
+            \psi \circ \pi_S: X\times[-1,1] &\rightarrow (C(X) \amalg C(X))/ \sim\\
+            (x,t) &\mapsto [[x,|t|]_C,\text{sgn}(t)]
+        \end{align*}
+        for contínua. Para todo subconjunto aberto $U \subset C(X)\amalg C(X)/\sim\hspace{3pt}$, existem abertos $V,W \subset C(X)$ tais que $\pi^{-1}(U) = V\amalg W = (V\times\{-1\}) \cup (W\times\{1\})$. Por sua vez, $\pi_C^{-1}(V)$ e $\pi_C^{-1}(W)$ são abertos de $X\times[0,1]$. Então,
+        \begin{align*}
+        (\psi \circ \pi_S)^{-1}(U)
+        &= (\psi \circ \pi_S)^{-1}(\pi(V\times\{-1\}) \cup \pi(W\times\{1\}))\\
+        &= (\psi \circ \pi_S)^{-1}(\pi(V\times\{-1\})) \cup (\psi \circ \pi_S)^{-1}(\pi(W\times\{1\})).   
+        \end{align*}
+        
+        Calculemos cada termo da união separadamente.
+        \begin{align*}
+            (\psi \circ \pi_S)^{-1}(\pi(V\times\{-1\}))
+            &= \{(x,t): [x,|t|]_C \in V, t \in [-1,0]\}\\
+            &= \{(x,-t): [x,t]_C \in V, t \in I\}\\
+            &= A(\pi_C^{-1}(V))   
+        \end{align*}
+        onde $A: (x,t) \mapsto (x,-t)$. E analogamente, $(\psi \circ \pi_S)^{-1}(\pi(W\times\{1\})) = \pi_C^{-1}(W)$. Concluímos assim que
+        \[(\psi \circ \pi_S)^{-1}(U) = A(\pi_C^{-1}(V)) \cup \pi_C^{-1}(W)\]
+        é aberto, e então $\psi$ é contínua.
+    \end{dem}
+\end{prop}
+
+
+\begin{titlemize}{Lista de consequências}
+	%\item \hyperref[consequencia1]{Consequência 1};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	%\item \hyperref[]{}
+    \item \hyperref[suspensao-euclidiano-prop]{Suspensão sobre subespaços de $\mathbb{R}^n$}
+    \item \hyperref[suspensao-esfera-prop]{Suspensão sobre esferas $S^n\subset\mathbb{R}^{n+1}$}
+\end{titlemize}
+

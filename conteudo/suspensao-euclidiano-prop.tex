@@ -1,0 +1,29 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Suspensão sobre subespaços de $\mathbb{R}^n$}
+\label{suspensao-euclidiano-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[suspensao-def]{Suspensão sobre um Espaço Topológico};
+    \item \hyperref[suspensao-cone-duplo-prop]{Suspensão e Cone Duplo}
+    \item \hyperref[cone-euclidiano-prop]{Cone sobre subespaços de $\mathbb{R}^n$}
+\end{titlemize}
+Provaremos que a construção de uma suspensão sobre um subespaço topológico de $\mathbb{R}^n$ (com a topologia usual) é homeomorfa à construção geométrica em $\mathbb{R}^{n+1}$, sendo assim uma generalização de conceitos que antes só faziam sentido no contexto de espaços euclidianos.
+
+Nesse momento, dados $(x_1,x_2,...,x_n) \in \mathbb{R}^n$ e $t \in \mathbb{R}$, denotemos por $(x,t)$ o vetor $(x_1,x_2,...,x_n,t) \in \mathbb{R}^{n+1}$.
+
+\begin{prop}[A construção de suspensão generaliza a de subespaços euclidianos]
+	Seja $X \subset \mathbb{R}^n$, e considere\\
+    \centerline{$S_g(X) = \{((1-|t|)x,t):x\in X, t\in [-1,1]\} \subset \mathbb{R}^{n+1}$.}\\
+    Então,\begin{align*}
+        \varphi: S(X) &\rightarrow S_g(X)\\
+        [(x,t)] &\mapsto ((1-t)x,t), \forall x\in X, \forall t \in [-1,1]
+    \end{align*}
+    é um homeomorfismo.\\
+    Ou seja, para subespaços de $\mathbb{R}^n$, a construção de suspensão recupera a intuição geométrica e coincide enquanto espaço topológico com $S_g(X)$.
+\end{prop}
+
+Tal proposição é análoga à sobre \hyperref[cone-euclidiano-prop]{cone sobre um espaço euclidiano}.
+
+%\begin{titlemize}{Lista de consequências}
+	%\item \hyperref[consequencia1]{Consequência 1};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	%\item \hyperref[]{}
+%\end{titlemize}
