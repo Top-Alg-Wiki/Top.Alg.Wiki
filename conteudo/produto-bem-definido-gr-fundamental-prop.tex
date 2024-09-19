@@ -91,19 +91,24 @@ O produto concatenação induz um produto $\cdot$ (operação binária) para o e
     A homotopia $H$ dada por 
     \begin{align*}
         H(s,t)=\begin{cases}
-            \overline{\alpha}(\frac{2s}{1-t})\;\;\;&\;\;\;\mbox{ se }0\le s \le \frac{1-t}{2} \;\;\;\mbox{ e }\;\;\;t<1\\
-            x_0 \;\;\;&\;\;\;\mbox{ se } \frac{1-t}{2}\le s\le \frac{1+t}{2}\\
-            \alpha(\frac{2s-1-t}{1-t}) \;\;\;&\;\;\;\mbox{ se }\frac{1+t}{2}\le s\le 1 \;\;\;\mbox{ e }\;\;\;t<1
+            \overline{\alpha}(2s(1-t))\;\;\;&\;\;\;\mbox{ se }0\le s \le \frac{1}{2}\\
+            \overline{\alpha}(2(1-s)(1-t)) \;\;\;&\;\;\;\mbox{ se }\frac{1}{2}\le s\le 1 
         \end{cases}
     \end{align*}
-    é uma homotopia relativa à $\partial I$ entre $\overline{\alpha}*\alpha$ e $c_{x_0}.$
-    
-    A homotopia $G$ dada por 
+    é uma homotopia relativa à $\partial I$ entre $\overline{\alpha}*\alpha$ e $c_{x_0},$ porque $H(s,1)=\overline{\alpha}(0)=x_0$ para todo $s\in I$ e 
     \begin{align*}
-        G(s,t)=\begin{cases}
-            \alpha(\frac{2s}{1-t})\;\;\;&\;\;\;\mbox{ se }0\le s \le \frac{1-t}{2} \;\;\;\mbox{ e }\;\;\;t<1\\
-            x_0 \;\;\;&\;\;\;\mbox{ se } \frac{1-t}{2}\le s\le \frac{1+t}{2}\\
-            \overline{\alpha}(\frac{2s-1-t}{1-t}) \;\;\;&\;\;\;\mbox{ se }\frac{1+t}{2}\le s\le 1 \;\;\;\mbox{ e }\;\;\;t<1
+        H(s,0)=\begin{cases}
+            \overline{\alpha}(2s)\;\;\;&\;\;\;\mbox{ se }0\le s \le \frac{1}{2}\\
+            \overline{\alpha}(2(1-s))=\alpha(2s-1) \;\;\;&\;\;\;\mbox{ se }\frac{1}{2}\le s\le 1
+        \end{cases}
+    \end{align*}
+    (Geometricamente, $H(s,t_0)$ é um laço que anda em $\alpha(s),$ para num certo ponto e faz o caminho de volta).
+    De forma análoga, a homotopia $G$ dada por 
+   
+\begin{align*}
+        H(s,t)=\begin{cases}
+            \alpha(2s(1-t))\;\;\;&\;\;\;\mbox{ se }0\le s \le \frac{1}{2} \\
+            \alpha(2(1-s)(1-t)) \;\;\;&\;\;\;\mbox{ se }\frac{1}{2}\le s\le 1 
         \end{cases}
     \end{align*}
     é uma homotopia relativa à $\partial I$ entre $\alpha*\overline{\alpha}$ e $c_{x_0}.$ Portanto, $$\overline{\alpha}*\alpha\sim c_{x_0}=\alpha*\overline{\alpha}$$ conforme desejado.
