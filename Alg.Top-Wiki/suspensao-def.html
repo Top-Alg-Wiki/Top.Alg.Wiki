@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Título provisório: Suspensão sobre um Espaço Topológico</title>
+<link rel="next" href="suspensao-cone-duplo-prop.html" title="Suspensão coincide com Cone Duplo" />
+<link rel="prev" href="cone-def.html" title="Cone sobre um Espaço Topológico" />
+<link rel="up" href="cone-suspensao.html" title="Cone e Suspensão sobre Espaços Topológicos" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Título provisório</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="topologia-quociente.html"><span class="toc_ref">1</span> <span class="toc_entry">Topologia quociente</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="topologia-quociente-def.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Topologia Quociente</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active">
+  <a href="cone-suspensao.html"><span class="toc_ref">2</span> <span class="toc_entry">Cone e Suspensão sobre Espaços Topológicos</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="cone-def.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Cone sobre um Espaço Topológico</span></a>
+ </li>
+<li class=" active current">
+  <a href="suspensao-def.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Suspensão sobre um Espaço Topológico</span></a>
+ </li>
+<li class="">
+  <a href="suspensao-cone-duplo-prop.html"><span class="toc_ref">2.3</span> <span class="toc_entry">Suspensão coincide com Cone Duplo</span></a>
+ </li>
+<li class="">
+  <a href="cone-euclidiano-prop.html"><span class="toc_ref">2.4</span> <span class="toc_entry">Cone sobre subespaços de \(\mathbb {R}^n\)</span></a>
+ </li>
+<li class="">
+  <a href="suspensao-euclidiano-prop.html"><span class="toc_ref">2.5</span> <span class="toc_entry">Suspensão sobre subespaços de \(\mathbb {R}^n\)</span></a>
+ </li>
+<li class="">
+  <a href="cone-esfera-prop.html"><span class="toc_ref">2.6</span> <span class="toc_entry">Cone sobre esferas \(S^n\subset \mathbb {R}^{n+1}\)</span></a>
+ </li>
+<li class="">
+  <a href="suspensao-esfera-prop.html"><span class="toc_ref">2.7</span> <span class="toc_entry">Suspensão sobre esferas \(S^n\subset \mathbb {R}^{n+1}\)</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="homotopia.html"><span class="toc_ref">3</span> <span class="toc_entry">Homotopia</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="homotopia-def.html"><span class="toc_ref">3.1</span> <span class="toc_entry">Homotopia</span></a>
+ </li>
+<li class="">
+  <a href="homotopia-relaçao-de-equivalencia.html"><span class="toc_ref">3.2</span> <span class="toc_entry">Homotopia como relação de equivalência</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="grupo-fundamental.html"><span class="toc_ref">4</span> <span class="toc_entry">Grupo Fundamental</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="Produto-grupo-fundamental-def.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Produto de concatenação</span></a>
+ </li>
+<li class="">
+  <a href="produto-bem-definido-prop.html"><span class="toc_ref">4.2</span> <span class="toc_entry">O produto no grupo fundamental</span></a>
+ </li>
+<li class="">
+  <a href="grupo-fundamental-def.html"><span class="toc_ref">4.3</span> <span class="toc_entry">Grupo fundamental</span></a>
+ </li>
+<li class="">
+  <a href="hom-grupo-fundamental.html"><span class="toc_ref">4.4</span> <span class="toc_entry">Homomorfismo de grupo fundamental</span></a>
+ </li>
+
+  </ul>
+ </li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h2 id="suspensao-def">2.2 Suspensão sobre um Espaço Topológico</h2>
+<p>  <b class="bfseries">Lista de dependências</b> <ul class="itemize">
+  <li><p><a href="#." >Topologia Quociente</a>. </p>
+</li>
+</ul> </p>
+<div class="defi_thmwrapper theorem-style-definition" id="a0000000006">
+  <div class="defi_thmheading">
+    <span class="defi_thmcaption">
+    Definição
+    </span>
+    <span class="defi_thmlabel">4</span>
+    <span class="defi_thmtitle">Suspensão</span>
+  </div>
+  <div class="defi_thmcontent">
+  <p> Dado um espaço topológico \(X\), definimos a <b class="bfseries">suspensão sobre X</b> como o espaço quociente \(X\times [-1,1]/\sim \), onde \([-1,1]\) é munido da topologia usual de subespaço de \(\mathbb {R}\), e \(\sim \) é a relação de equivalência tal que para todos \((x,s),(y,t) \in X\times [-1,1]\),<br /><div class="centered"> \((x,s)\sim (y,t) \Leftrightarrow (x,s)=(y,t)\) ou \(s=t=1\) ou \(s=t=-1\).</div> </p>
+
+  </div>
+</div>
+<p>Tal construção é semelhante a de <a href="#." >cone sobre um espaço topológico</a>. </p>
+<p><b class="bfseries">Lista de consequências</b> <ul class="itemize">
+  <li><p><a href="#." >A construção de suspensão coincide com a de cone duplo</a> </p>
+</li>
+</ul> Seguem alguns resultados relevantes sobre cones e suspensões: </p>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="cone-def.html" title="Cone sobre um Espaço Topológico"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="cone-suspensao.html" title="Cone e Suspensão sobre Espaços Topológicos"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="suspensao-cone-duplo-prop.html" title="Suspensão coincide com Cone Duplo"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>
