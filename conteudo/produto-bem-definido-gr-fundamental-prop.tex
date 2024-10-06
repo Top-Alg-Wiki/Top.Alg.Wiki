@@ -4,7 +4,7 @@
 	\item \hyperref[Produto-grupo-fundamental-def]{Produto concatenação};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
 % quantas dependências forem necessárias.
 \end{titlemize}
-O produto concatenação induz um produto $\cdot$ (operação binária) para o espaço quociente $\pi_1(X,x_0),$ além disso, $(\pi_1(X,x_0),\cdot)$ forma um grupo.
+O produto concatenação induz um produto $\cdot$ (operação binária) no espaço quociente $\pi_1(X,x_0)$. Além disso, $(\pi_1(X,x_0),\cdot)$ é um grupo.
 
 \begin{lemma}% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
     O produto $\cdot:\pi_1(X,x_0)\times\pi_1(X,x_0)\rightarrow \pi_1(X,x_0)$ dado por $[\alpha]\cdot[\beta]=[\alpha*\beta]$ é bem definido.
@@ -58,7 +58,7 @@ O produto concatenação induz um produto $\cdot$ (operação binária) para o e
 \begin{lemma}
     Seja $c_{x_0}:I\rightarrow X$ uma função constante cuja valor é igual a $x_0.$ Então, para todo laço $\alpha\in \Omega(X,x_0),$ vale
     $$c_{x_0}*\alpha\sim\alpha\sim\alpha*c_{x_0}.$$
-    Ou seja $c_{x_0}$ é um elemento neutro de produto $\cdot.$
+    Ou seja, $[c_{x_0}]$ é o elemento neutro em $(\pi_1(X,x_0),\cdot)$.
 \end{lemma}
 
 \begin{dem}
@@ -114,10 +114,10 @@ O produto concatenação induz um produto $\cdot$ (operação binária) para o e
     é uma homotopia relativa à $\partial I$ entre $\alpha*\overline{\alpha}$ e $c_{x_0}.$ Portanto, $$\overline{\alpha}*\alpha\sim c_{x_0}=\alpha*\overline{\alpha}$$ conforme desejado.
 \end{dem}
 
-Juntamos todos lemas, temos que 
+Juntamos todos os lemas, concluímos: 
 
 \begin{thm}
-    O $(\pi_1(X,x_0),\cdot)$ é um grupo.
+    Dados $X$ um espaço topológico e $x_0\in X$, vale que $(\pi_1(X,x_0),\cdot)$ é um grupo.
 \end{thm}
 
 \begin{titlemize}{Lista de consequências}
