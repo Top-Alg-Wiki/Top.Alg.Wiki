@@ -4,27 +4,27 @@
 	\item \hyperref[Produto-concatenacao-def]{Produto concatenação de caminhos};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
 % quantas dependências forem necessárias.
 \end{titlemize}
-O produto concatenação induz um produto $\cdot$ (operação binária) no espaço quociente $\pi_1(X,x_0)$. Além disso, $(\pi_1(X,x_0),\cdot)$ é um grupo.
+Sejam $X$ um espaço topológico e $x_0\in X$. Provemos que o produto concatenação induz um produto $\cdot$ (operação binária) no espaço quociente $\pi_1(X,x_0)$, e que, além disso, $(\pi_1(X,x_0),\cdot)$ é um grupo.
 
 \begin{lemma}% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
     O produto $\cdot:\pi_1(X,x_0)\times\pi_1(X,x_0)\rightarrow \pi_1(X,x_0)$ dado por $[\alpha]\cdot[\beta]=[\alpha*\beta]$ é bem definido.
 \end{lemma}
 
 \begin{dem}
-    É claro que o produto concatenação de laços em $\Omega(X,x_0)$ ainda é um laço em $\Omega(X,x_0).$ Basta provar que o produto $\cdot$ não depende da escolha de representantes. Sejam $\alpha\sim_H \alpha'$ e $\beta\sim_G\beta'$ laços em $\Omega(X,x_0)$. Então, a função $H*G:I\times I\rightarrow X$ dada por 
+    É claro que o produto concatenação de dois laços em $\Omega(X,x_0)$ ainda é um laço em $\Omega(X,x_0)$. Basta provar que o produto $\cdot$ não depende da escolha de representantes. Sejam $\alpha\sim_H \alpha'$ e $\beta\sim_G\beta'$ laços em $\Omega(X,x_0)$. Então, a função $H*G:I\times I\rightarrow X$ dada por 
     \begin{align*}
         H*G(s,t)=\begin{cases}
-            H(2s,t)\;\;\;&\;\;\;\mbox{ se }0\le s\le \frac{1}{2}\\
-            G(2s-1,t)\;\;\;&\;\;\;\mbox{ se }\frac{1}{2}\le s\le1
+            H(2s,t)\qquad&\mbox{ se }0\le s\le \frac{1}{2}\\
+            G(2s-1,t)\qquad&\mbox{ se }\frac{1}{2}\le s\le1
         \end{cases}
     \end{align*}
-    é uma homotopia que satisfaz $H*G(s,0)=\alpha*\beta,$ $H*G(s,1)=\alpha'*\beta'$ e $H*G(0,t)=H*G(1,t)=x_0.$ Ou seja $H*G$ é uma homotopia relativa à $\partial I$ entre $(\alpha*\beta)$ e $(\alpha'*\beta').$ Logo, temos  
+    é uma homotopia satisfazendo $H*G(s,0)=\alpha*\beta,$ $H*G(s,1)=\alpha'*\beta'$ e $H*G(0,t)=H*G(1,t)=x_0$. Ou seja, $H*G$ é uma homotopia relativa à $\partial I$ entre $(\alpha*\beta)$ e $(\alpha'*\beta').$ Logo, temos  
     $$[\alpha]\cdot[\beta]=[\alpha*\beta]=[\alpha'*\beta']=[\alpha']\cdot [\beta']$$
     conforme desejado.
 \end{dem}
 
 \begin{lemma}
-    O produto $\cdot$ é associativo, ou seja, para todos $\alpha,\beta,\gamma\in\Omega(X,x_0),$ vale
+    O produto $\cdot$ é associativo. Ou seja, para todos $\alpha,\beta,\gamma\in\Omega(X,x_0),$ vale
     \[(\alpha*\beta)*\gamma\sim \alpha*(\beta*\gamma).\]
 \end{lemma}
 
