@@ -1,0 +1,54 @@
+\subsection{Espaço de recobrimento}
+\label{espaco-de-recobrimento-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[topologia-quociente]{Espaço quciente};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+% quantas dependências forem necessárias.
+\end{titlemize}
+\begin{defi}[Espaço de recobrimento]
+Uma função contínua $p:E\rightarrow X$ é um \textbf{recobrimento} se para todo $x\in X,$ existe uma vizinhança aberta $U\subseteq X$ de $x$ e um conjunto de índice $\Lambda\ne \varnothing$ tal que 
+$$p^{-1}(U)=\amalg_{\lambda\in \Lambda} V_\lambda,$$
+onde $V_\lambda\subseteq E$ é um subconjunto aberto e $p|_{V_\lambda}:V_\lambda\rightarrow U$ é homeomorfismo.
+\end{defi}
+
+\begin{nota}
+Introduzimos algumas terminologias: 
+    \begin{itemize}
+        \item $E$ é um espaço (total) de recobrimento.
+        \item $U$ é um aberto uniformemente recoberto de $X.$
+        \item $V_\lambda$ é uma placa do recobrimento.
+        \item A cardinalidade de $\Lambda$ é o número de folhas do recobrimento (veremos que $\# \Lambda$ não depende de $x$). 
+    \end{itemize}
+\end{nota}
+
+\begin{ex}
+A função $p:\mathbb{R}\rightarrow \mathbb{S}^1$ dada por $p(x)=e^{2\pi ix}$ é um recobrimento: dado $y_0=e^{2\pi i x_0}\in\mathbb{S}^1,$ e $U=\mathbb{S}^1\setminus \{-y_0\}$ nós temos 
+$$p^{-1}(U)=\amalg_{k\in \mathbb{Z}} (x_0+\frac{2k-1}{2},x_0+\frac{2k+1}{2}),$$
+denotamos intervalo aberto $(x_0+\frac{2k-1}{2},x_0+\frac{2k+1}{2})$ por $V_k.$ Logo, a função $p|_{V_k}:V_k\rightarrow \mathbb{S}^1\setminus\{-y\}$ é um homeomorfismo.
+\end{ex}
+
+\begin{ex}
+    A função $p:\mathbb{S}^n\rightarrow \mathbb{RP}^n=\mathbb{S}^n/\mathbb{Z}_2$ dada por $p(x)=[x]$ é um recobrimento.
+\end{ex}
+
+\begin{ex}
+    Dado um conjunto $\Lambda\ne \varnothing$ qualquer munido com a topologia discreta, a função projeção $pr_2:E=\Lambda\times X\rightarrow X$ é um recobrimento. Esse recobrimento é dito \textbf{recobrimento trivial}
+\end{ex}
+
+\begin{prop}
+    Suponha que $X$ é um espaço topológico conexo e $p:E\rightarrow X$ um recobrimento, então toda fibra tem a mesma cardinalidade, i.e. $\# p^{-1}(x_0)=\# p^{-1}(x_1)$ para todo $x_0,\;x_1\in X.$ Isso mostra que $\Lambda$ não depende de $x$.
+\end{prop}
+
+\begin{dem}
+    Seja $x_0\in X$ e seja $A=\{x_1\in X: \#p^{-1}(x_1)=\# p^{-1}(x_0)\}.$ O conjunto $A$ não é vazio, pois $x_0\in A.$ Agora vamos provar que $A$ é aberto. Suponha que $x\in A$ e seja $U$ uma vizinhança aberta de $x$ tal que $p^{-1}(U)=\amalg_{\lambda\in \Lambda} V_\lambda$ com $p|_{V_\lambda}:V_\lambda\rightarrow U$ hemeomorfismo. Então, $U\subseteq A,$ pois se $x'\in U,$ então 
+    $$\# p^{-1}(x')=\# \Lambda=\# p^{-1}(x)=\# p^{-1}(x_0).$$
+    O conjunto $A$ é fechado, pois $X\setminus A$ é aberto pelo mesmo argumento acima. Como $X$ é conexo, $X=A$ como queríamos. 
+\end{dem}
+
+\begin{nota}
+    Localmente todo recobrimento $p:E\rightarrow U$ é isomorfo ao recobrimento trivial, i.e. para todo $x\in X,$ existem uma vizinhança aberta $U$ de $x$, um espaço topológico discreto $\Lambda,$ e um homeomorfismo $h: E|_U\rightarrow U\times \Lambda$ tal que $pr_1\circ h= p.$
+\end{nota}
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[levantamento-de-caminhos]{Levantamento de caminhos};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	\item \hyperref[levantamento-de-homotopia]{Levantamento de homotopia}
+\end{titlemize}
