@@ -1,0 +1,37 @@
+\subsection{Levantamento de caminhos} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{levantamento-de-caminhos-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[espaco-de-recobrimento-def]{Espaço de recobrimento};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	\item \hyperref[]{};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+\begin{thm}[Levantamento de caminhos]% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex
+Suponha que $p:E\rightarrow X$ é um recobrimento e $\alpha:I\rightarrow X$ é um caminho com $\alpha(0)=x_0.$ Dado $e_0\in E$ com $p(e_0)=x_0,$ existe um único levantamento $\Tilde{\alpha}_{e_0}:I\rightarrow E$ tal que $p\circ\Tilde{\alpha}_{e_0}=\alpha$ e $\Tilde{\alpha}(0)=e_0.$
+\end{thm}
+
+\begin{dem}
+    Note que $\alpha(I)$ é compacto, pois $I$ é compacto e $\alpha$ é contínua. Recubra $\alpha(I)\subseteq X$ por abertos uniformemente recobertos e tome uma sub-cobertura finita
+    \[\alpha(I)=\bigcup_{i=0}^k U_i. \]
+    Pelo lema de Lebesgue, podemos escolher $0=t_0< t_1<...<t_m=1$ tais que $\alpha([t_i,t_{i+1}])\subseteq U_j$ para algum $j.$ 
+    
+    Indutivamente defina: 
+    \begin{enumerate}
+        \item Passo inicial: Tome um aberto uniformemente recoberto $U_i$ que contém $\alpha([0,t_1]),$ e tome uma placa $V_i$ de $U_i$ que contém $e_0.$ Defina $\Tilde{\alpha}^1:[0,t_1]\rightarrow E$ com $\Tilde{\alpha}^1=p|_{V_i}^{-1}\circ \alpha|_{[0,t_1]}.$
+        \item Passo indução: Assuma que definimos $\Tilde{\alpha}^{j-1}:[0,t_{j-1}]\rightarrow E.$ Então $\Tilde{\alpha}^j:[0,t_j]\rightarrow E$ é definida com 
+        \begin{align*}
+            \begin{cases}
+                \Tilde{\alpha}^j|_{[0,t_{j-1}]}=\Tilde{\alpha}^{j-1}\\
+                \Tilde{\alpha}^j|_{[t_{j-1},t_j]}=p|_{V_{j-1}}^{-1}\circ \alpha|_{[t_{j-1},t_j]},
+            \end{cases}
+        \end{align*}
+        onde $V_{j-1}$ é uma placa de um aberto uniformemente recoberto que cobre $\alpha([t_{j-1},t_j]).$
+        \item Passo final: definimos $\Tilde{\alpha}_{e_0}:=\Tilde{\alpha}^m.$
+    \end{enumerate}
+
+    Essa curva é contínua, pois é localmente contínua e continuidade é uma propriedade local. E é única, pois se $\Tilde{\alpha}_{e_0}':I\rightarrow E$ também satisfaz $p\circ\Tilde{\alpha}_{e_0}'=\alpha$ e $\Tilde{\alpha}'(0)=e_0,$ então, pela definição de recobrimento, para cada $t\in I$ existe um aberto $J$ tal que $\Tilde{\alpha}_{e_0}(t)=\Tilde{\alpha}_{e_0}'(t)$ para todo $t\in J$. Como $I$ é conexo, as curvas $\Tilde{\alpha}_{e_0}$ e $\Tilde{\alpha}_{e_0}'$ coincidem em todos pontos.
+\end{dem}
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[levantamento-de-homotopia-prop]{Levantamento de Homotopia};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	\item \hyperref[]{}
+\end{titlemize}
