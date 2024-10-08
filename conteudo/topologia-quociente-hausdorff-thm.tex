@@ -1,0 +1,30 @@
+aç%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Espaços Quociente e a propriedade Hausdorff} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{topologia-quociente-hausdorff-thm}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[topologia-quociente-def]{Espaços Quociente};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+% quantas dependências forem necessárias.
+\end{titlemize}
+Comentário sobre os objetos envolvidos na afirmação.
+\begin{thm}[Espaços quocientes Hausdorff]% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
+Sejam $X$ um espaço Hausdorff e $\sim$ uma relação de equivalência em $X$ para a qual a projeção $\pi: X \rightarrow X/\sim$ é uma aplicação aberta. Defina o conjunto $R=\{(x,x')\in X\times X| x\sim x'\}$.
+
+Então $X/\sim$ é Hausdorff se, e somente se, $R\subset X\times X$ é fechado.
+
+\end{thm}
+\begin{dem}
+    $(\Longrightarrow)$ Se $X/\sim$ é de Hausdorff, gostaríamos de mostrar que $X\times X\backslash R$ é aberto. Para qualquer ponto $(x,x')\in (X\times X)\backslash R$, $x$ e $x'$ são tais que $\pi(x)\neq \pi(x')$. Como $X/\sim$ é de Hausdorff, existem abertos $U_x$ e $U_{x'}$ disjuntos em $X/\sim$ que são vizinhanças abertas de $\pi(x)$ e de $\pi(x')$, respectivamente.% e tais que $U_x\cap U_x' = \emptyset$.
+
+    Temos ainda que $\pi^{-1}(U_x)$ e $\pi^{-1}(U_{x'})$ são abertos, pois a topologia de $X/\sim$ é a topologia quociente, e o produto $U=\pi^{-1}(U_x)\times \pi^{-1}(U_{x'})$ é aberto de $X\times X$ na topologia produto. Além disso, $(x,x')\in U$. Afirmamos que $U\subset X\times X\backslash R$. De fato, se $U\cap R\neq \emptyset$, teríamos $(v_1,v_2)\in U\cap R$ tal que $\pi(v_1)=\pi(v_2)$, mas $v_1 \in \pi^{-1}(U_x)$ e $v_2\in \pi^{-1}(U_{x'})$, e desse modo $\pi(v_1) = \pi(v_2) \in U_x \cap U_{x'} = \varnothing$, absurdo. Portanto, para todo $(x,x')\in X\times X\backslash R$, é possível encontrar uma vizinhança aberta $U$ de $(x,x')$ contida em $X\times X\backslash R$; $R$ é fechado, como queríamos.\newline
+
+    $(\Longleftarrow)$ Dado que $R$ é fechado, gostaríamos de encontrar vizinhanças disjuntas de $a,~b\in X/\sim$ quaisquer para concluir que $X/\sim$ é Hausdorff. Sabemos que existem $x,~y\in X$ tais que $\pi(x)=a$ e $\pi(y)=b$ pois a projeção $\pi$ é uma aplicação sobrejetora. Como $X$ é de Hausdorff, existem abertos disjuntos $U_x$ e $U_y$, vizinhanças de $x$ e de $y$, respectivamente. Além disso, uma vez que $R$ é fechado, $X\times X\backslash R$ é aberto e, portanto, $(U_x\times U_y)\cap((X\times X)\backslash R)$ é aberto na topologia produto.
+
+    Sejam $p_1:X\times X\rightarrow X$ e $p_2:X\times X\rightarrow X$ definidos por $$p_1(x_1,x_2)=x_1,\qquad p_2(x_1,x_2)=x_2 \qquad\forall (x_1,x_2)\in X\times X.$$ Como a topologia produto em $X\times Y$ é gerada pela base dada pelos produtos de abertos $X$ e de $Y$, é possível concluir que $\p_1$ e $\p_2$ são aplicações abertas. Desse modo, $U_1=p_1((U_x\times U_y)\cap((X\times X)\backslash R))$ e $U_2=p_2((U_x\times U_y)\cap((X\times X)\backslash R))$ são abertos em $X$. Por fim, basta observar que os abertos $\pi(U_1)$ e $\pi(U_2)$ são tais que $\pi(U_1)\cap \pi(U_2)=\emptyset$ uma vez que se $v\in \pi(U_1)\cap\pi(U_2)$, teríamos $v=\pi(v_1)$ para algum $v_1\in U_1$ e $v=\pi(v_2)$ para algum $v_2\in U_2$, o que implicaria $v_1\sim v_2$, um absurdo pois, pela construção de $U_1$ e $U_2$, $(v_1,v_2)\not\in R$.  Também temos $a\in U_1$ e $b\in U_2$ pois, como $a\neq b$, $x\not\sim y$. Encontramos assim os dois abertos que separam $a$ e $b$, mostrando que $X/\sim$ é Hausdorff.
+\end{dem}
+
+Comentários sobre a afirmação.
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[consequencia1]{Consequência 1};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+\end{titlemize}
+
