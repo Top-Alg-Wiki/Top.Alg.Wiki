@@ -1,12 +1,12 @@
-\subsection{Homomorfismo de grupo fundamental}
+\subsection{Homomorfismo de grupos fundamentais}
 \label{hom-grupo-fundamental}
 \begin{titlemize}{Lista de dependências}
 	\item \hyperref[grupo-fundamental-def]{O Grupo Fundamental};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
 \end{titlemize}
-Sejam $X,Y$ espaços topológicos, $x_0\in X$ e $f:X\rightarrow Y$ uma função contínua. Então $f$ induz uma função entre grupos fundamentais de forma natural:
+Sejam $X,Y$ espaços topológicos, $x_0\in X$ e $f:X\rightarrow Y$ uma função contínua. Então $f$ induz uma função entre grupos fundamentais de forma natural,
 \begin{align*}
     f_*:\pi_1(X,x_0)&\longrightarrow\pi_1(Y,f(x_0))\\
-    [\alpha]\longmapsto [f\circ \alpha].
+    [\alpha]&\longmapsto [f\circ \alpha].
 \end{align*}
 É fácil observar que $f_*$ está bem definida, pois se $\alpha\sim \alpha'$ relativa à $\partial I,$ então $f\circ \alpha\sim f\circ \alpha'$ relativa à $\partial I$. Além disso, se $f\sim g$ relativa à $\partial I$, então $f_*=g_*$. Agora, provaremos que $f_*$ é um homomorfismo de grupos.
 \begin{prop}
@@ -33,7 +33,7 @@ Sejam $X,Y$ espaços topológicos, $x_0\in X$ e $f:X\rightarrow Y$ uma função 
     conforme desejado.
 \end{dem}
 
-Na linguagem da teoria de categorias, podemos concluir que $\pi_1$ é um funtor de $\textbf{Top}^*$ em \textbf{Gr}. 
+Na linguagem da teoria de categorias, podemos concluir que $\pi_1$ é um funtor de $\textbf{Top}_*$ em \textbf{Gr}. 
 
 Como consequência, temos que $\pi_1(X,x_0)$ é invariante topológico.
 
@@ -50,6 +50,6 @@ Como consequência, temos que $\pi_1(X,x_0)$ é invariante topológico.
 \end{dem}
 
 \begin{titlemize}{Lista de consequências}
-	\item \hyperref[consequencia1]{Consequência 1};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
-	\item \hyperref[]{}
+	\item \hyperref[equiv-homotopia-induz-iso]{Equivalência de Homotopia e Grupos Fundamentais};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	%\item \hyperref[]{}
 \end{titlemize}
