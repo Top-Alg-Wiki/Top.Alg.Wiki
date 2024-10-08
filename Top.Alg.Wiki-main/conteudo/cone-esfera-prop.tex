@@ -1,0 +1,30 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Cone sobre esferas $S^n\subset\mathbb{R}^{n+1}$}
+\label{cone-esfera-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[cone-def]{Cone sobre um Espaço Topológico}.
+    %Definição de esfera e disco
+\end{titlemize}
+
+Nesse momento, dados $(x_1,x_2,...,x_n) \in \mathbb{R}^n$ e $t \in \mathbb{R}$, denotemos por $(x,t)$ o vetor $(x_1,x_2,...,x_n,t) \in \mathbb{R}^{n+1}$.
+
+\begin{prop}[Cone sobre esferas]
+	$C(S^n) \cong D^{n+1}$, para todo $n\geq 1$.
+ 
+    \begin{dem}
+        Pela \hyperref[cone-euclidiano-prop]{Proposição acerca de cones sobre subconjuntos de $\mathbb{R}^n$}, basta provar que $D^{n+1}\cong C_g(S^n) = \{((1-t)x,t):x\in S^n, t\in I\}$.
+
+        Seja $\pi:\mathbb{R}^{n+1}\to\mathbb{R}^n$ a projeção dada por $\pi(x,t) = x$ para cada $(x,t) \in \mathbb{R}^{n+1}$.
+        
+        Defina $f:D^{n+1}\to C_g(S^n)$ como $f(p) = (p,1-\|p\|)$. $f$ está bem definida, pois $(p,1-\|p\|)=((1-t)x,t)$ para $t=1-\|p\|$, e $x=p/\|p\|$ caso $\|p\|\neq 0$ ou então $x\in S^n$ qualquer caso contrário. Tal raciocínio também mostra que $f$ é sobrejetora. $f$ é injetora, uma vez que $\pi \circ f(p) = p$.
+
+        É fácil ver que $f$ é contínua.  Pelo Teorema de Heine-Borel, $D^{n+1} \subset \mathbb{R}^{n+1}$ é compacto, assim $f(D^{n+1})=C_g(S^n)$ também é. E ambos são Hausdorff, portanto $f$ é homeomorfismo e concluímos. 
+    \end{dem}
+\end{prop}
+
+Tal proposição é análoga à sobre \hyperref[suspensao-esfera-prop]{suspensão sobre esferas}.
+
+%\begin{titlemize}{Lista de consequências}
+	%\item \hyperref[consequencia1]{Consequência 1}.
+	%\item \hyperref[]{}
+%\end{titlemize}

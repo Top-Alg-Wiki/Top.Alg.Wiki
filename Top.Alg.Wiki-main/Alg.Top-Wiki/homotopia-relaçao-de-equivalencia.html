@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Título provisório: Homotopia como relação de equivalência</title>
+<link rel="next" href="grupo-fundamental.html" title="Grupo Fundamental" />
+<link rel="prev" href="homotopia-def.html" title="Homotopia" />
+<link rel="up" href="homotopia.html" title="Homotopia" />
+<link rel="stylesheet" href="styles/theme-white.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">Título provisório</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="topologia-quociente.html"><span class="toc_ref">1</span> <span class="toc_entry">Topologia quociente</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="topologia-quociente-def.html"><span class="toc_ref">1.1</span> <span class="toc_entry">Topologia Quociente</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="cone-suspensao.html"><span class="toc_ref">2</span> <span class="toc_entry">Cone e Suspensão sobre Espaços Topológicos</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="cone-def.html"><span class="toc_ref">2.1</span> <span class="toc_entry">Cone sobre um Espaço Topológico</span></a>
+ </li>
+<li class="">
+  <a href="suspensao-def.html"><span class="toc_ref">2.2</span> <span class="toc_entry">Suspensão sobre um Espaço Topológico</span></a>
+ </li>
+<li class="">
+  <a href="suspensao-cone-duplo-prop.html"><span class="toc_ref">2.3</span> <span class="toc_entry">Suspensão coincide com Cone Duplo</span></a>
+ </li>
+<li class="">
+  <a href="cone-euclidiano-prop.html"><span class="toc_ref">2.4</span> <span class="toc_entry">Cone sobre subespaços de \(\mathbb {R}^n\)</span></a>
+ </li>
+<li class="">
+  <a href="suspensao-euclidiano-prop.html"><span class="toc_ref">2.5</span> <span class="toc_entry">Suspensão sobre subespaços de \(\mathbb {R}^n\)</span></a>
+ </li>
+<li class="">
+  <a href="cone-esfera-prop.html"><span class="toc_ref">2.6</span> <span class="toc_entry">Cone sobre esferas \(S^n\subset \mathbb {R}^{n+1}\)</span></a>
+ </li>
+<li class="">
+  <a href="suspensao-esfera-prop.html"><span class="toc_ref">2.7</span> <span class="toc_entry">Suspensão sobre esferas \(S^n\subset \mathbb {R}^{n+1}\)</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class=" active">
+  <a href="homotopia.html"><span class="toc_ref">3</span> <span class="toc_entry">Homotopia</span></a>
+  <span class="expand-toc">▼</span>
+  <ul class="sub-toc-1 active">
+     <li class="">
+  <a href="homotopia-def.html"><span class="toc_ref">3.1</span> <span class="toc_entry">Homotopia</span></a>
+ </li>
+<li class=" active current">
+  <a href="homotopia-relaçao-de-equivalencia.html"><span class="toc_ref">3.2</span> <span class="toc_entry">Homotopia como relação de equivalência</span></a>
+ </li>
+
+  </ul>
+ </li>
+<li class="">
+  <a href="grupo-fundamental.html"><span class="toc_ref">4</span> <span class="toc_entry">Grupo Fundamental</span></a>
+  <span class="expand-toc">▶</span>
+  <ul class="sub-toc-1">
+     <li class="">
+  <a href="Produto-grupo-fundamental-def.html"><span class="toc_ref">4.1</span> <span class="toc_entry">Produto de concatenação</span></a>
+ </li>
+<li class="">
+  <a href="produto-bem-definido-prop.html"><span class="toc_ref">4.2</span> <span class="toc_entry">O produto no grupo fundamental</span></a>
+ </li>
+<li class="">
+  <a href="grupo-fundamental-def.html"><span class="toc_ref">4.3</span> <span class="toc_entry">Grupo fundamental</span></a>
+ </li>
+<li class="">
+  <a href="hom-grupo-fundamental.html"><span class="toc_ref">4.4</span> <span class="toc_entry">Homomorfismo de grupo fundamental</span></a>
+ </li>
+
+  </ul>
+ </li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h2 id="homotopia-relaçao-de-equivalencia">3.2 Homotopia como relação de equivalência</h2>
+<p>  <b class="bfseries">Lista de dependências</b> <ul class="itemize">
+  <li><p><a href="#." >Homotopia</a>;<br /></p>
+</li>
+</ul> </p>
+<p>Comentário sobre os objetos envolvidos na afirmação. </p>
+<div class="af_thmwrapper theorem-style-plain" id="a0000000030">
+  <div class="af_thmheading">
+    <span class="af_thmcaption">
+    Afirmação
+    </span>
+    <span class="af_thmlabel">1</span>
+    <span class="af_thmtitle">Homotopia é relação de equivalência</span>
+  </div>
+  <div class="af_thmcontent">
+  <p>Dadas \(f,~ f_0,~ f_1,~ f_2:X\rightarrow Y\) funções contínuas quaisquer, temos: </p>
+<ul class="itemize">
+  <li><p>Sempre vale \(f\sim f\) </p>
+</li>
+  <li><p>Se \(f_0\sim f_1\), então \(f_1\sim f_0\) </p>
+</li>
+  <li><p>Se \(f_0\sim f_1\) e \(f_1\sim f_2\), então \(f_0\sim f_2\) </p>
+</li>
+</ul>
+<p> Explicação da Afirmação. </p>
+
+  </div>
+</div>
+<p>  <div class="proof_wrapper" id="a0000000031">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    <b class="bf">Demonstração:</b>
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> No primeiro item, é possível provar que \(f\sim f\) através da homotopia \(H:X\times I \rightarrow Y\) definida por </p>
+<div class="displaymath" id="a0000000032">
+  \[ H(x,t)=f(x)\text{ para todo }t\in I\text{ e todo }x\in X. \]
+</div>
+<p> A continuidade de \(H\) segue diretamente do fato de \(f\) ser contínua e, como \(H(x,0)=f(x)\) e \(H(x,1)=f(x)\), de fato \(f \underset {H}{\sim } f\).<br /></p>
+<p>No segundo item, se \(f_0\sim f_1\), então existe uma homotopia \(H:X\times I\rightarrow Y\) entre as duas funções. Assim, a função \(H':X\times I\rightarrow Y\) definida como </p>
+<div class="displaymath" id="a0000000033">
+  \[ H'(x,t)=H(x,1-t)\text{ para todo }t\in T\text{ e todo }x\in X \]
+</div>
+<p> é contínua por ser composta das funções contínuas \(H\) com \(1-t\) e com a identidade. Além disso, \(H'(x,0)=H(x,1)=f_1\) e \(H'(x,1)=H(x,1)=f_0\). Portanto, \(f_1 \underset {H’}{\sim } f_0\).<br /></p>
+<p>Por último, se \(f_0\underset {H_1}{\sim } f_1\) e \(f_1\underset {H_2}{\sim }f_2\), considere os mapas contínuos \(H_1(x,2t)\) e \(H_2(x,2t-1)\) que são compostas de mapas contínuos definidos para \((x,t)\in [0,\frac{1}{2}]\) e \((x,t)\in X\times [\frac{1}{2},1]\) respectivamente. Na intersecção \(X\times [0,\frac{1}{2}]\cap X\times [\frac{1}{2},1]=X\times \{ \frac{1}{2}\} \) temos que \(H_1(x,2t)=f_1(x)=H_2(x,2t-1)\) para todo \((x,t)\in X\times \{ \frac{1}{2}\} \) e assim, pelo Lema da Colagem, é possível definir a função contínua \(H_1*H_2:X\times I\rightarrow Y\) por </p>
+<div class="displaymath" id="a0000000034">
+  \[ H_1*H_2(x,t)= \begin{cases}  H_1(x,2t), & \text{ se }t\in [0,\frac{1}{2}]\\ H_2(x,2t-1), & \text{ se }t\in [\frac{1}{2},1]\\ \end{cases}\text{ para todo }x\in X. \]
+</div>
+<p> De fato, \(H_1*H_2\) é homotopia entre \(f_0\) e \(f_2\) porque \(H_1*H_2(x,0)=H_1(x,0)=f_0(x)\) e \(H_1*H_2(x,1)=H_2(x,1)=f_2(x)\) para todo \(x\in X\) </p>
+
+  </div>
+</div> </p>
+<p>Denotamos por \([X,Y]\) o conjunto das classes de homotopia de funções de \(X\) para \(Y\). Isto é, \([X,Y]=C(X,Y)/\sim =\{ [f]|f:X\rightarrow Y\text{ é contínua}\} \) </p>
+<p><b class="bfseries">Lista de consequências</b> <ul class="itemize">
+  <li><p><a href="#." >Consequência 1</a>;<br /></p>
+</li>
+  <li><p><a href="#." ></a> </p>
+</li>
+</ul> </p>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <a href="homotopia-def.html" title="Homotopia"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="homotopia.html" title="Homotopia"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+  <a href="grupo-fundamental.html" title="Grupo Fundamental"><svg  class="icon icon-arrow-right "><use xlink:href="symbol-defs.svg#icon-arrow-right"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+\documentclass{article}
+\title{Topologia Algébrica}
+%\usepackage{import}
+\usepackage{amsmath} %propósitos gerais
+\usepackage{amssymb} % comandos como \mathbb
+\usepackage{amsthm} % criar novos teoremas
+
+\newif\ifplastex
+\plastexfalse
+\ifplastex
+\else
+\usepackage{mdframed} %criar caixas em volta de ambientes
+\fi
+%-----------------------------------------------------------------------------------------------!!!!Adicionar pacotes apenas acima dessa linha!!!!--------------------------------------------------------------------------------------------
+\usepackage{hyperref} %referencias internas e externas
+
+
+%novos estilos
+\ifplastex
+
+\else
+\mdfdefinestyle{MyFrame}{%
+	innertopmargin=\baselineskip,
+	innerbottommargin=\baselineskip,
+	innerrightmargin=20pt,
+	innerleftmargin=20pt}
+\fi
+
+%novos ambientes e teoremas
+\theoremstyle{definition}
+\newtheorem{defi}{Definição}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Teorema}
+\newtheorem{prop}{Proposição}
+\newtheorem{lemma}{Lema}
+\newtheorem{af}{Afirmação}
+\newtheorem{corol}{Corolário}
+\newtheorem{ex}{Exemplo}
+
+\theoremstyle{remark}
+\newtheorem{nota}{Nota}
+\ifplastex
+
+
+\newenvironment{titlemize}[1]{%
+	\textbf{{#1}}
+	\begin{itemize}}
+	{\end{itemize}}
+
+\else
+
+\newenvironment{titlemize}[1]{%
+	\begin{mdframed}[style=MyFrame]
+	\textbf{{#1}}
+	\begin{itemize}}
+	{\end{itemize} \end{mdframed}}
+
+\fi
+\newenvironment{dem}{
+	\begin{proof}[{\bf Demonstração:}]}
+	{\end{proof}}
+%novos comandos
+
+%comandos renovados
+
+
+
+\begin{document}
+\maketitle
+\input{conteudo/topologia-quociente}
+\input{conteudo/homotopia}
+\input{conteudo/grupo-fundamental}
+\end{document}
+
+
+%novos assuntos/secções devem ser adicionados através do comando \import{conteudo/}{assunto} para adicionar o arquivo conteudo/assunto.tex
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:

@@ -1,0 +1,28 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Cone sobre subespaços de $\mathbb{R}^n$}
+\label{cone-euclidiano-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[cone-def]{Cone sobre um Espaço Topológico}.
+\end{titlemize}
+Provaremos que a construção de cone sobre um subespaço topológico de $\mathbb{R}^n$ (com a topologia usual) é homeomorfa à construção geométrica em $\mathbb{R}^{n+1}$, sendo assim uma generalização de conceitos que antes só faziam sentido no contexto de espaços euclidianos.
+
+Nesse momento, dados $(x_1,x_2,...,x_n) \in \mathbb{R}^n$ e $t \in \mathbb{R}$, denotemos por $(x,t)$ o vetor $(x_1,x_2,...,x_n,t) \in \mathbb{R}^{n+1}$. Tal identificação faz sentido, já que $\mathbb{R}^{n+1}$ e $\mathbb{R}^{n}\times\mathbb{R}$ são homeomorfos (iguais, a depender da abordagem em Teoria dos Conjuntos).
+
+\begin{prop}[A construção de cone generaliza a de subespaços euclidianos]
+	Seja $X \subset \mathbb{R}^n$, e considere\\
+    \centerline{$C_g(X) = \{((1-t)x,t):x\in X, t\in I\} \subset \mathbb{R}^{n+1}$.}\\
+    Então,\begin{align*}
+        \varphi: C(X) &\rightarrow C_g(X)\\
+        [(x,t)] &\mapsto ((1-t)x,t), \forall x\in X, \forall t \in I
+    \end{align*}
+    é um homeomorfismo.\\
+    Ou seja, para subespaços de $\mathbb{R}^n$, a construção de cone recupera a intuição geométrica e coincide enquanto espaço topológico com $C_g(X)$.
+\end{prop}
+
+Tal proposição é análoga à sobre \hyperref[suspensao-euclidiano-prop]{suspensão sobre um espaço euclidiano}.
+
+\begin{titlemize}{Lista de consequências}
+	%\item \hyperref[consequencia1]{Consequência 1}.
+	%\item \hyperref[]{}
+    \item \hyperref[suspensao-euclidiano-prop]{Suspensão sobre subespaços de $\mathbb{R}^n$}
+\end{titlemize}
