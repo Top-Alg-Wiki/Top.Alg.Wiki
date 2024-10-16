@@ -1,0 +1,49 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Categorias}
+\label{categorias-ex}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[categorias-def]{categorias-def};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	\item \hyperref[]{};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+\begin{ex}[Exemplos de Categorias]
+	Alguns dos seguintes exemplos não serão tratados com detalhes. No entanto, pode-se consultá-los em quaisquer livros de teoria das categorias.
+\begin{itemize}
+\item \textbf{Mon} é uma categorial em que os objetos são monóides e os morfismos são homomorfismos de monóides.
+\item \textbf{Grp} é a categoria dos grupos e homomorfismo de grupos (A categoria \textbf{Ab} é a categoria dos grupos abelianos.
+\item A categoria \textbf{TOP} tem como objetos os espaços topológicos e como morfismos as funções contínuas (há também a categoria $\mathbf{TOP_*}$ dos espaços topológicos com um ponto selecionado, onde os morfismos $f:(X,x) \longrightarrow (Y,y)$ são funções contínuas tais que $f(x) = y$).
+\item $\mathbf{Vec(\mathbb{K})}$ é a categoria dos espaços vetoriais sobre o corpo $\mathbb{K}$ e as transformações lineares dos espaços
+\item A categoria \textbf{SET} tem como objetos os conjuntos e os morfismos são as funções entre os conjuntos. Ainda, pode-se definir $\mathbf{SET}_\omega$, a categoria dos conjuntos finitos e as funções entre eles.
+\item A categoria \textbf{Ord} dos ordinais e das funções entre eles. Da mesma forma, $\mathbf{Ord}_\omega$ é a categoria dos ordinais finitos.
+
+\item Uma relação $\leq$ é dita relação de ordem parcial se satisfaz:
+\begin{itemize}
+    \item $a \leq a$ para todo $a$.
+    \item Se $a \leq b$ e $b \leq a$, então $a = b$ para todos $a$ e $b$.
+    \item Se $a \leq b$ e $b \leq c$, então $a \leq c$ para todos $a$, $b$ e $c$.
+\end{itemize}
+A categoria $\mathbf{PO}$ (partial-order) é definida com morfismos estabelecendo a ordem entre os objetos, isto é, $A \leq B$ se, e somente se, existe $f$ em $Mor(\mathbf{PO})$, tal que % https://q.uiver.app/#q=WzAsMixbMCwwLCJBIl0sWzEsMCwiQiJdLFswLDEsImYiXV0=
+\begin{tikzcd}[cramped]
+	A & B
+	\arrow["f", from=1-1, to=1-2]
+\end{tikzcd}
+\item Já a categoria \textbf{POS} tem como objetos os conjuntos parcialmente ordenados e os morfismos são funções que preservam a ordem, isto é, se $f:$ % https://q.uiver.app/#q=WzAsMixbMCwwLCJBIl0sWzEsMCwiQiJdLFswLDFdXQ==
+\begin{tikzcd}[cramped]
+	A & B
+	\arrow[from=1-1, to=1-2]
+\end{tikzcd}
+, e $m \leq n$ em $A$, então $f(m) \leq f(n)$ em $B$.
+
+
+
+
+\end{itemize}
+
+\end{ex}
+
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[homotopia]{homotopia};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	\item \hyperref[]{}
+\end{titlemize}
