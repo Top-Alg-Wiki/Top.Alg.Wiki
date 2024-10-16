@@ -29,7 +29,12 @@ $\eta$ é uma família de flechas $(\eta_A: F(A) \longrightarrow G(A))_{A \in Ob
     
 \end{defi}
 
-De fato, o conceito de transformação natural e de funtor é um dos principais motivadores para o surgimento da teoria das categorias. Com esses dois conceitos, podemos relacionar duas categorias distintas e apontar certas conexões que elas guardam implicitamente.
+A transformação natural identidade é a transformação $1_F:F \Longrightarrow F$, tal que $(1_F)_A: F(A) \longrightarrow F(A)$ é a identidade de $F(A)$. \\
+Ainda, dadas as trasformações naturais $\eta:F \Longrightarrow G$ e $\mu: G \Longrightarrow H$, onde $F, G$ e $H$ são funtores de uma categoria $\mathcal{C}$ para uma categoria $\mathcal{D}$, podemos definir a transformação $(\mu \circ \eta): F \Longrightarrow H$ como sendo a família de flechas $(\mu_A \circ \eta_A: F(A) \longrightarrow G(A))_{A \in Obj(\mathcal{C})}$.
+
+Dessa forma, podemos definir o que é a categoria de funtores: 
+
+$\mathbf{Fun(\mathcal{C}, \mathcal{D})}$ é a categoria em que os objetos são funtores de $\mathcal{C}$ para $\mathcal{D}$ e os morfismos são transformações naturais dos funtores de $Obj(\mathbf{Fun(\mathcal{C}, \mathcal{D})})$.
 
 \begin{titlemize}{Lista de consequências}
 	\item \hyperref[grupo-fundamental]{grupo-fundamental};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
