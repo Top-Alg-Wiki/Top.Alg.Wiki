@@ -1,0 +1,36 @@
+\subsection{Grupo fundamental de 1-esfera}
+\label{grupo-fundamental-de-S1-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[levantamento-de-homotopia-prop]{Levantamento de homotopia};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	\item \hyperref[espaco-de-recobrimento-def]{Espaço de recobrimento};\\
+    \item \hyperref[grupo-fundamental]{Grupo fundamental}
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+\begin{thm}
+    O grupo fundamental $\pi_1(\mathbb{S}^1,1)$ é isomorfo a $\mathbb{Z}.$ 
+\end{thm}
+
+\begin{dem}
+Vimos que $p:\mathbb{R}\rightarrow \mathbb{S}^1$ com $x\mapsto e^{2\pi i x}$ é um recobrimento. Seja $deg:\pi_1(\mathbb{S}^1,1)\rightarrow \mathbb{Z}=p^{-1}(1)\subseteq \mathbb{R}$ uma função dada por $deg([\alpha])=\Tilde{\alpha}_0(1),$ O corolário \ref{cor:bijedeggene} garante que $deg$ é uma bijeção. Vamos mostrar que $deg$ é um homomorfismo: Note que se $\alpha,\;\beta\in \Omega(X,x),$ então
+\begin{itemize}
+    \item $\Tilde{\alpha}_e*\Tilde{\beta}_{\Tilde{\alpha}_e (1)}(0)=\Tilde{\alpha}_e(0)=e,$
+    \item $p(\Tilde{\alpha}_e*\Tilde{\beta}_{\Tilde{\alpha}_e (1)})=\alpha *\beta,$
+\end{itemize}
+logo, pelo unicidade de levantamento, temos 
+\begin{align*}
+\widetilde{(\alpha*\beta)}_e=\begin{cases}
+    \Tilde{\alpha}_e (2s)\qquad& 0\le s\le \frac{1}{2}\\
+    \Tilde{\beta}_{\Tilde{\alpha}_e (1)}(2s-1)&\frac{1}{2}\le s\le 1
+    \end{cases}=\Tilde{\alpha}_e*\Tilde{\beta}_{\Tilde{\alpha}_e (1)}.
+\end{align*}
+Logo $deg([\alpha*\beta])=\widetilde{(\alpha*\beta)}_0 (1)=\Tilde{\alpha}_0*\Tilde{\beta}_{\Tilde{\alpha}_0 (1)}(1)=\Tilde{\beta}_{deg(\alpha)}(1).$
+
+Por unicidade de levantamento de novo, obtemos $\Tilde{\beta}_n=n+\Tilde{\beta}_0.$ Logo,
+\[deg([\alpha*\beta])=\Tilde{\beta}_{deg(\alpha)}(1)=deg(\alpha)+\Tilde{\beta}_0 (1)=deg(\alpha)+deg(\beta).\]
+Portanto $deg$ é um isomorfismo de grupo.
+\end{dem}
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[]{Teorema fundamental de álgebra};\\ % David vai acrescenda isso.
+\end{titlemize}
