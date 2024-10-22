@@ -1,0 +1,66 @@
+\subsection{Levantamento de Homotopia} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{levantamento-de-homotopia-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[espaco-de-recobrimento-def]{Espaço de recobrimento};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	\item \hyperref[homotopia]{Homotopia};\\
+    \item \hyperref[grupo-fundamental]{Grupo fundamental}\\
+    \item \hyperref[levantamento-de-caminhos-prop]{Levantamento de caminhos}
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+\begin{thm}[Levantamento de Homotopia]% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
+	Seja $p:E\rightarrow X$ um recobrimento, e seja $H:I\times I\rightarrow X$ uma homotopia tal que $H(s,0)=\gamma:I\rightarrow X.$ Suponha que $\Tilde{\gamma}:I\rightarrow E$ é um levantamento de $\gamma,$ então existe uma única homotopia $\Tilde{H}:I\times I\rightarrow E$ tal que $\Tilde{H}(s,0)=\Tilde{\gamma}$ e $p\circ \Tilde{H}=H.$
+\end{thm}
+
+\begin{dem}
+    Note que para cada $s\in I$ fixo, $\alpha^s(t):=H(s,t)$ é uma curva, logo existe um único levantamento $\tilde{\alpha}_{\tilde{\gamma}(s)}(t)$ que começa em ponto $\tilde{\gamma}(s).$ Definimos $\Tilde{H}(s,t):=\Tilde{\alpha}_{\tilde{\gamma}}(t),$ é claro que 
+\[p\circ\tilde{H}(s,t)=\alpha^s (t)=H(s,t)\]
+e 
+\[\tilde{H}(s,0)=\Tilde{\alpha}_{\tilde{\gamma}}(0)=\tilde{\gamma}(s).\]
+A unicidade segue que da unicidade do levantamento de caminhos. Pela definição de recobrimento, para cada $(s_0,t_0)\in I\times I$ existe um aberto uniformemente recoberto $U$ contendo $H(s_0,t_0)$ tal que $\tilde{H}|_M=p|_V^{-1}\circ H|_M,$ onde $V$ é uma placa de $U$ e $M=H^{-1}(U).$ Como $H$ e $p|_V^{-1}$ são contínuas e $M$ é aberto, $\tilde{H}$ é localmente contínua, e portanto contínua.
+\end{dem}
+
+\begin{corol}
+    Sejam $\alpha,\;\beta:I\rightarrow X$ duas curvas. Então, $\alpha$ e $\beta$ são homotópicas relativa a $\partial I$ se, e somente se, os levantamentos $\Tilde{\alpha}_{e_0}$ e $\Tilde{\beta}_{e_0}$ são homotópicos relativo a $\partial I.$ 
+\end{corol}
+
+\begin{dem}
+    Assuma que $\Tilde{H}$ é homotopia relativa a $\partial I$ dos levantamentos, então $p\circ\Tilde{H}$ é uma homotopia relativa a $\partial I.$ Vamos mostrar a recíproca. Seja $H:\alpha\Rightarrow \beta$ uma homotopia relativa a $\partial I$ e seja $\Tilde{H}:I\times I\rightarrow E$ levantamento de $H$. Temos que mostra:
+    \begin{enumerate}
+        \item $\tilde{H}(s,1)=\tilde{\beta}_{e_0}(s)$, i.e., $\tilde{H}:\tilde{\alpha}_{e_0}\Rightarrow\tilde{\beta}_{e_0}$ é uma homotopia.
+        \item $\tilde{H}(0,t)=e_0$ para todo $t\in I$ e $\tilde{H}(1,t)=\tilde{\alpha}_{e_0}(1)=\tilde{\beta}_{e_0}(1)$ para todo $t\in I,$ i.e., $\tilde{H}:\tilde{\alpha}_{e_0}\Rightarrow\tilde{\beta}_{e_0}$ é relativa a $\partial I.$
+    \end{enumerate}
+    Como $\tilde{H}(s,1)$ é um levantamento de $\beta$ que começa em $e_0,$ por unicidade de levantamento, $\tilde{H}(s,1)=\tilde{\beta}_{e_0}.$ Por mesmo argumento, como $\tilde{H}(0,t)$ é um levantamento da curva constante igual à $\alpha(0)$ começando em $e_0,$ $\tilde{H}(0,t)=e_0$ para todo $t\in I.$ De forma análoga, $\tilde{H}(1,t)=\tilde{\alpha}_{e_0}(1)=\tilde{\beta}_{e_0}(1)$ para todo $t\in I.$ A demonstração está completa agora. 
+\end{dem}
+
+\begin{corol}
+    Seja $p:E\rightarrow X$ um recobrimento, e sejam $\alpha,\;\beta:I\rightarrow X$ duas curvas. Se $E$ é 1-conexo, então duas curvas $\alpha,\;\beta$ são homotópica relativa a $\partial I$ se, e somente se, $\tilde{\alpha}_{e_0}(1)=\tilde{\beta}_{e_0}(1).$
+\end{corol}
+
+\begin{dem}
+    A demonstração segue da definição de 1-conexo.
+\end{dem}
+
+Mostraremos um corolário bem útil em calcular grupo fundamental de um espaço topológico.
+
+\begin{corol}\label{cor:bijedeggene}
+    Seja $p:E\rightarrow X$ um recobrimento. Se $E$ é 1-conexo, então para cada pontos fixos $x\in X$ e $e\in p^{-1}(x)$, a função dada por 
+    \begin{align*}
+        \phi:\pi_1(X,x)&\longrightarrow p^{-1}(x)\\
+        [\alpha]&\longmapsto \tilde{\alpha}_{e}(1)
+    \end{align*}
+    é uma bijeção.
+\end{corol}
+
+\begin{dem}
+    A função $\phi$ está bem definida, pois se $[\alpha]=[\beta],$ então $\tilde{\alpha}_{e}\sim \tilde{\beta}_{e}$ relativa a $\partial I,$ em particular, $\tilde{\alpha}_e(1)=\tilde{\beta}_e(1).$
+    
+    A função $\phi$ é injetor, pois $E$ é 1-conexo, logo se $\tilde{\alpha}_e(1)=\tilde{\beta}_e(1),$ então $\tilde{\alpha}_e \sim \tilde{\beta}_e$ relativa a $\partial I,$ isso é equivalente a $[\alpha]=[\beta]$ pelo corolário anterior.
+
+    A função $\phi$ é sobrejetora: Dado $e'\in p^{-1}(x).$ Pela definição de 1-conexo, existe uma curva $\gamma:I\rightarrow E$ com $\gamma(0)=e$ e $\gamma(1)=e'.$ Seja $\alpha=p\circ \gamma.$ Então, por unicidade de levantamento, $\tilde{\alpha}_e=\gamma.$ Logo, $\phi([\alpha])=\tilde{\alpha}_e(1)=\gamma(1)=e'.$ 
+\end{dem}
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[grupo-fundamental-de-espaco-projetivo-ex]{Grupo fundamental de espaço projetivo};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	\item \hyperref[grupo-fundamental-de-S1-prop]{Grupo fundamental de 1-esfera}
+\end{titlemize}
