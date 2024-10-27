@@ -1,0 +1,44 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Transformação Natural}
+\label{transformação-natural-categorias-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[funtor-categorias-def]{funtor-categorias-def};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	\item \hyperref[]{};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+\begin{defi}[Transformação Natural]
+	Dados dois funtores % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhjYWx7Q30iXSxbMSwwLCJcXG1hdGhjYWx7RH0iXSxbMCwxLCJGIiwwLHsib2Zmc2V0IjotMX1dLFswLDEsIkciLDIseyJvZmZzZXQiOjF9XV0=
+\begin{tikzcd}[cramped,sep=small]
+	{\mathcal{C}} & {\mathcal{D}}
+	\arrow["F", shift left, from=1-1, to=1-2]
+	\arrow["G"', shift right, from=1-1, to=1-2]
+\end{tikzcd}, definimos a transformação natural $\eta:F \Longrightarrow G$ da seguinte forma: \\
+$\eta$ é uma família de flechas $(\eta_A: F(A) \longrightarrow G(A))_{A \in Obj(\mathcal{C})}$, tal que $\eta_B \circ F(f) = G(f) \circ \eta_A$. Isso equivale a dizer que o seguinte diagrama comuta.
+% https://q.uiver.app/#q=WzAsNixbMiwwLCJGKEEpIl0sWzQsMCwiRyhBKSJdLFsyLDIsIkYoQikiXSxbNCwyLCJHKEIpIl0sWzAsMCwiQSJdLFswLDIsIkIiXSxbNCw1LCJmIiwyXSxbMCwyLCJGKGYpIiwyXSxbMSwzLCJHKGYpIiwyXSxbMCwxLCJcXGV0YV9BIiwxXSxbMiwzLCJcXGV0YV9CIiwxXV0=
+\[\begin{tikzcd}[sep=large]
+	A && {F(A)} && {G(A)} \\
+	\\
+	B && {F(B)} && {G(B)}
+	\arrow["f"', from=1-1, to=3-1]
+	\arrow["{\eta_A}"{description}, from=1-3, to=1-5]
+	\arrow["{F(f)}"', from=1-3, to=3-3]
+	\arrow["{G(f)}"', from=1-5, to=3-5]
+	\arrow["{\eta_B}"{description}, from=3-3, to=3-5]
+\end{tikzcd}\]
+
+    
+\end{defi}
+
+A transformação natural identidade é a transformação $1_F:F \Longrightarrow F$, tal que $(1_F)_A: F(A) \longrightarrow F(A)$ é a identidade de $F(A)$. \\
+Ainda, dadas as trasformações naturais $\eta:F \Longrightarrow G$ e $\mu: G \Longrightarrow H$, onde $F, G$ e $H$ são funtores de uma categoria $\mathcal{C}$ para uma categoria $\mathcal{D}$, podemos definir a transformação $(\mu \circ \eta): F \Longrightarrow H$ como sendo a família de flechas $(\mu_A \circ \eta_A: F(A) \longrightarrow G(A))_{A \in Obj(\mathcal{C})}$.
+
+Dessa forma, podemos definir o que é a categoria de funtores: 
+
+$\mathbf{Fun(\mathcal{C}, \mathcal{D})}$ é a categoria em que os objetos são funtores de $\mathcal{C}$ para $\mathcal{D}$ e os morfismos são transformações naturais dos funtores de $Obj(\mathbf{Fun(\mathcal{C}, \mathcal{D})})$.
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[grupo-fundamental]{grupo-fundamental};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	\item \hyperref[homotopia]{homotopia}
+\end{titlemize}
+
+%[Bianca]: é mais fácil criar a lista de dependências do que a de consequências.

@@ -1,0 +1,32 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Funtores-Exemplos}
+\label{funtor-categorias-ex}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[categorias-ex]{categorias-ex};\\
+	\item \hyperref[funtor-categorias-def]{funtor-categorias-def};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+\end{titlemize}
+
+\begin{ex}[Funtores Covariantes]
+	Os detalhes dos exemplos a seguir são deixados para os leitores.
+\begin{itemize}
+
+    \item O funtor identidade $\mathbf{1}_{\mathcal{C}}: \mathcal{C} \longrightarrow \mathcal{C}$ leva todo objeto nele mesmo e todo morfismo nele mesmo, isto é, $\mathbf{1}_{\mathcal{C}}(A) = A$ e $\mathbf{1}_{\mathcal{C}}(f) = f$
+    
+    \item O funtor potência (power-set functor) $\mathcal{P}:\mathbf{SET} \longrightarrow \mathbf{SET}$, que leva um conjunto $A$ no conjuntos das partes $\mathcal{P}(A)$ e uma função $f:A \longrightarrow B$ para a função $\mathcal{P}(f): \mathcal{P}(A) \longrightarrow \mathcal{P}(B)$, tal que $\mathcal{P}(f)(S) = f(S)$ para todo $S \subseteq A$.
+
+    \item Na topologia algébrica podemos obter de cada espaço topológico pontuado um grupo, chamado de n-ésimo grupo de homotopia. Além disso, para cada função contínua $f: A \longrightarrow B$, podemos obter um homomorfismo de grupos $\pi_n(f):\pi_n(A) \longrightarrow \pi_n(B)$, onde $\pi_n(A)$ e $\pi_n(B)$ são os n-ésimos grupos de homotopia. Dessa forma, construimos um funtor $\pi_n: \mathbf{TOP}_* \longrightarrow \mathbf{Grp}$. 
+
+\end{itemize}
+\end{ex}
+
+ 
+%\begin{figure}[]
+%	\centering
+%	\includegraphics[width=0.8\textwidth]{}
+%	\caption{}
+%	\label{fig:}
+%\end{figure}
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[grupo-fundamental]{grupo-fundamental};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+\end{titlemize}

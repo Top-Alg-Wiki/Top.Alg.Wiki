@@ -1,0 +1,22 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{lema-retração} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{lema-retração}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[homotopia]{homotopia};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	\item \hyperref[retração-def]{retração-def};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+O lema a seguir será importante na demonstração do Teorema do Ponto Fixo de Brower.
+\begin{lemma}[Lema da Retração]% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
+	Não existe uma retração $r:D^2 \longrightarrow \partial D^2 = S^1$.
+\end{lemma}
+
+\begin{dem}
+Suponha que $r:D^2 \longrightarrow S^1$ seja uma retração. Sendo $D^2$ um espaço contrátil, pois ele é convexo, temos que para todo laço $\alpha: I \Longrightarrow D^2$ existe uma homotopia que leva esse laço no ponto $\alpha(0) = \alpha(1) = x_0$ de $D^2$. Em particular, para um laço $\beta: I \longrightarrow S^1 = \partial D^2$ em $S^1$ existe uma homotopia relativa a $\partial I$, $H: I\times I \longrightarrow D^2$ tal que $H(t, 0) = \beta(t)$ e $H(t, 1) = \beta(0) = x \in S^1$. Se a retração $r$ existe, então $r\circ H: I\times I: \longrightarrow S^1$ é uma homotopia relativa a $\partial I$. De fato, $(r\circ H)(0, t) = r(\beta(t)) = \beta(t)$ e $(r\circ H)(s, 0) = r(x) = x$ e $(r\circ H)(1, t) = r(x) = x$. Dessa forma, teríamos que $S^1$ é contrátil, contrariando $\pi_1(S^1) = \mathbb{Z}$.
+\end{dem}
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[teo-ponto-fixo-brower]{teo-ponto-fixo-brower};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+\end{titlemize}
+
+%[Bianca]: Um arquivo tex pode ter mais de uma afirmação (ou definição, ou exemplo), mas nesse caso cada afirmação deve ter seu próprio label. Dar preferência para agrupar afirmações que dependam entre sí de maneira próxima (um teorema e seu corolário, por exemplo)
