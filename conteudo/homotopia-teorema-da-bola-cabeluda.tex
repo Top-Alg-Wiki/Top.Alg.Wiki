@@ -1,0 +1,30 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Teorema da Bola Cabeluda} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{teorema-bola-cabeluda-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[homotopia-def]{Homotopia};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	\item \hyperref[identidade-e-antipoda-homotopicas-prop]{Homotopia entre identidade e antípoda};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+
+\begin{thm}[Teorema da Bola Cabeluda]% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
+	A esfera $S^n$ possui um campo vetorial contínuo não nulo em todo ponto isto é, existe uma função contínua $v:S^n\rightarrow \mathbb{R}^{n+1}$ que leva todo $x\in S^n$ a $v(x)$ com $\langle x, v(x) \rangle =0$ e $v(x)\ne 0$, se e somente se $n$ é ímpar.\\
+\end{thm}
+\begin{dem}
+    Se $n$ é ímpar, $n=2k-1$ para algum natural $k$ e basta tomar o campo $$v(x_1,~...,~x_{2k})=(-x_2,~x_1,~-x_4,~x_3,~...,~-x_{2k},~x_{2k-1})\text{ para todo }(x_1,~...,~x_{2k})\in S^n.$$
+    De fato, a função é contínua, $\langle(-x_2,~x_1,~...,~-x_{2k},~x_{2k-1}), (x_1,~x_2,~...,~x_{2k-1},~x_{2k}) \rangle =-x_1x_2+x_1x_2-...-x_{2k-1}x_{2k}+x_{2k-1}x_{2k}=0$ e $v(x)\ne 0$ para todo $x=(x_1,...,x_{2k})\in S^n$ pois $v(x)=(x_1,~x_2,~...,~x_{2k-1},~x_{2k})=0$ somente se $x_i=0$ para todo $i\in {1,~...,~2k}$, isto é, $v(x)=0$ apenas em ponto fora da esfera.\\
+
+    Reciprocamente, se a esfera $S^n$ possui campo vetorial contínuo não nulo em cada ponto conforme condição do enunciado, segundo o lema \ref{identidade-e-antipoda-homotopicas-prop}, existe uma homotopia entre os mapas identidade e antípoda na esfera, o que não pode ocorrer de $n$ for par.
+
+    
+\end{dem}
+
+Vale ressaltar que é possível demostrar que de fato não há homotopia entre a identidade e a antípoda em esferas de grau par através da noção de grau de uma função, existente em homologia. Esse tópico não será abordado neste material.
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[consequencia1]{Consequência 1};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	%\item \hyperref[]{}
+\end{titlemize}
+
+%[Bianca]: Um arquivo tex pode ter mais de uma afirmação (ou definição, ou exemplo), mas nesse caso cada afirmação deve ter seu próprio label. Dar preferência para agrupar afirmações que dependam entre sí de maneira próxima (um teorema e seu corolário, por exemplo)
