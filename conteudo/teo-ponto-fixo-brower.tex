@@ -1,0 +1,20 @@
+\subsection{teo-ponto-fixo-brower} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{teo-ponto-fixo-brower}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[homotopia]{homotopia};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	\item \hyperref[retração-def]{retração-def};\\
+    \item \hyperref[lema-retração]{lema-retração};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+O teorema a seguir depende de um lema que será deixado na lista de dependências acima.
+\begin{thm}[Teorema do Ponto Fixo de Brower]% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
+	Toda função contínua na bola possui ponto fixo, i.e, se $f:D^2 \longrightarrow D^2$, então existe $x \in D^2$, tal que $f(x) = x$.
+\end{thm}
+
+\begin{dem}
+    Suponha por absurdo que exista uma função contínua $f:D^2 \longrightarrow D^2$ sem pontos fixos. Defino a função $\alpha: D^2 \longrightarrow S^1$ onde $\alpha(x)$ é o único ponto de intersecção da semirreta $\overrightarrow{f(x)x}$ com $S^1$. Essa função está bem definida, pois $t_x(\lambda) = \|f(x) + \lambda(x - f(x))\|$ é uma função real contínua tal que $t_x(0) \leq 1$ e $t_x \to \infty$ quando $x \to \infty$. Assim, pelo teorema do valor intermediário, existe $\lambda_x$ tal que $t_x(\lambda_x) = 1$. $\alpha$ é contínua, pois $\alpha(x) = f(x) + \lambda_x(x - f(x))$, onde $\lambda_x$ é expresso da seguinte forma:
+    $\|f(x) + \lambda_x(x - f(x))\| = \|(x - f(x))\|^2\lambda_x^2 + 2\langle f(x), (x - f(x)) \rangle\lambda_x + \|f(x)\|^2 = 1$. Isso nos dá uma equação quadrática com 2 soluções reais, sendo a maior delas $$\lambda_x = \frac{-2\langle f(x), x - f(x)\rangle + \sqrt{(2\langle f(x), x - f(x)\rangle)^2 - 4(\|x - f(x)\|^2)(\|f(x)\|^2 - 1)}}{2(\|x - f(x)\|)}.$$ Note que não há problema com o quociente desde que assumimos por hipótese que $f(x) \ne x$ para todo $x$. Ainda, o termo dentro da raiz quadrada é sempre maior ou igual a 0, pela desigualdade de Schwarz. Além disso, se $x \in S^1$, então $\alpha(x) = x$. Portanto, $\alpha$ é uma retração, contrariando o lema mencionado anteriormente.
+
+\end{dem}
+
+%[Bianca]: Um arquivo tex pode ter mais de uma afirmação (ou definição, ou exemplo), mas nesse caso cada afirmação deve ter seu próprio label. Dar preferência para agrupar afirmações que dependam entre sí de maneira próxima (um teorema e seu corolário, por exemplo)

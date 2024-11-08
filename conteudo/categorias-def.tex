@@ -1,0 +1,70 @@
+\subsection{Categorias}
+\label{categorias-def}
+\end{titlemize}
+\begin{defi}[Categorias]
+	    Uma categoria $\mathcal{C}$ é formada pelas seguintes coisas:
+
+
+\begin{itemize}
+    \item Uma coleção de objetos $Obj(\mathcal{C})$, que geralmente serão denotados por letras maiúsculas $A$, $B$, $C$...
+    \item Uma coleção de morfismos $Mor(\mathcal{C})$, que usualmente serão denotadas por letras minúsculas $f$, $g$, $h$...
+\end{itemize}
+
+Onde valem os seguintes axiomas:
+
+
+\begin{enumerate}
+    \item Cada morfismo $f$ de $Mor(\mathcal{C})$ é associado dois objetos $Dom(f)$, $Codom(f)$ de $Obj(\mathcal{C})$. \\
+    Escrevemos % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQBGclVqMWbAELdxMKAHN4RUADMAThAC2SMiBwQkokAzoAjGAwAK-PATYMYanCGr1mrRCDVyuQA
+\begin{tikzcd}
+A \arrow[r, "f"] & B
+\end{tikzcd}
+ para abreviar $f \in Mor(\mathcal{C})$, $Dom(f) = A$ e $Codom(f) = B$.
+ \item Para cada objeto $A$ de $\mathcal{C}$ está associado um morfismo $1_A$ de $Mor(\mathcal{C})$ com $Codom(1_A) = A$ e $Dom(A) = A$.
+ \item Para quaisquer dois morfismos $f$ e $g$, tais que $Dom(f)=Codom(g)$, há um morfismo associado $f \circ g$, onde $Dom(f \circ g) = Dom(g)$ e $Codom(f \circ g) = Codom(f)$.
+ \\ Isso pode ser representado dizendo que o seguinte diagrama comuta:
+% https://q.uiver.app/#q=WzAsMyxbMCwwLCJBIl0sWzEsMCwiQiJdLFsxLDEsIkMiXSxbMCwxLCJmIl0sWzEsMiwiZyJdLFswLDIsImYgXFxjaXJjIGciLDJdXQ==
+\[\begin{tikzcd}[column sep=large]
+	A & B \\
+	& C
+	\arrow["f", from=1-1, to=1-2]
+	\arrow["{f \circ g}"', from=1-1, to=2-2]
+	\arrow["g", from=1-2, to=2-2]
+\end{tikzcd}\]
+
+\item Para todo morfismo $f$ de $Mor(\mathcal{C})$ com $Dom(f) = A$ e $Codom(f) = B$ temos que $f \circ 1_A = f$ e $1_B \circ f = f$.
+\\ É o mesmo que dizer que o seguinte diagrama comuta:
+
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQSJdLFsxLDEsIkIiXSxbMiwxLCJCIl0sWzAsMSwiMV9BIl0sWzEsMiwiZiJdLFswLDIsImYiLDJdLFsxLDMsImYiXSxbMiwzLCIxX0IiLDJdXQ==
+\[\begin{tikzcd}[sep=large]
+	A & A \\
+	& B & B
+	\arrow["{1_A}", from=1-1, to=1-2]
+	\arrow["f"', from=1-1, to=2-2]
+	\arrow["f", from=1-2, to=2-2]
+	\arrow["f", from=1-2, to=2-3]
+	\arrow["{1_B}"', from=2-2, to=2-3]
+\end{tikzcd}\]
+\item Dados os morfismos $f$, $g$, $h$ de $Mor(\mathcal{C})$, temos que 
+$(f \circ g) \circ h = f \circ (g \circ h)$
+\\
+\\
+\\
+É equivalente a dizer que o seguinte diagrama comuta:
+
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQiJdLFsxLDEsIkMiXSxbMiwxLCJEIl0sWzAsMSwiZiJdLFsxLDIsImciXSxbMCwyLCJnIFxcY2lyYyBmIl0sWzIsMywiaCJdLFsxLDMsImggXFxjaXJjIGciXV0=
+\[\begin{tikzcd}[sep=large]
+	A & B \\
+	& C & D
+	\arrow["f", from=1-1, to=1-2]
+	\arrow["{g \circ f}", from=1-1, to=2-2]
+	\arrow["g", from=1-2, to=2-2]
+	\arrow["{h \circ g}", from=1-2, to=2-3]
+	\arrow["h", from=2-2, to=2-3]
+\end{tikzcd}\]
+\end{enumerate}
+\end{defi}
+
+
+
+%[Bianca]: é mais fácil criar a lista de dependências do que a de consequências.
