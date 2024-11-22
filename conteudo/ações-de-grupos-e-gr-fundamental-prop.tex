@@ -1,0 +1,48 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Ação propriamente descontínua e grupo fundamental} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{ações-de-grupos-e-gr-fundamental-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[ações-de-grupos-propriamente-descontínuas-def]{Ações de grupos propriamente descontínuas};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	\item \hyperref[grupo-fundamental-def]{Grupo fundamental};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+Nesse teorema vamos encontrar uma relação entre ações propriamente descontínuas e grupos fundamentais.
+
+\begin{thm}[Ação propriamente descontínua e grupo fundamental]% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
+	Suponha que $X$ é 1-conexo e que $B = \mkern-18mu\quad{^{\textstyle X}\big/_{\textstyle G}}$, tal que $G\circlearrowright X$ é uma ação propriamente descontínua, então:\\
+    \[\Pi_1(B,b_0)\cong G\]
+	\begin{dem}
+        Seja $b=[x]$ e defina:\\
+        \[\Phi_x:\Pi_1(B,b)\longrightarrow G\]\\
+        tal que:
+        \[\Phi_x([\alpha]) = g \iff \widetilde{\alpha}_x(1)=gx\]\\
+    Defina agora, $\varphi_x:\Pi_1(B,b)\longrightarrow p^{-1}(b)$ e $\Psi_x:G\longrightarrow p^{-1}([x])$ tais que:
+    \[\varphi_x([\alpha]) = \widetilde{\alpha}_x(1)\  \text{e}\  \Psi_x(g) = gx\]\\
+    Note que $\varphi_x$ e $\Psi_x$ são bijeções. Além disso, note que:\\
+    \[\Phi_x = \Psi_x^{-1}\circ \varphi_x\]\\
+    Portanto, $\Phi_x$ é uma bijação (pois é composta de bijeções).\\
+    Vamos mostrar que $\Phi_x$ é homeomorfismo:\\
+
+    Suponha que $\Phi_x[\alpha]=g$, $\Phi[\beta]=h$ vamos mostrar que\\
+    \begin{equation}
+    \Phi_x([\alpha][\beta]):=\Phi_x([\alpha\ast\beta]) = gh 
+    \end{equation}\\
+    Para mostrar (1) note que:\\
+    \[(\widetilde{\alpha\ast\beta})_x = \widetilde{\alpha}_x\ast\widetilde{\beta}_{\widetilde{\alpha}_x(1)} = \widetilde{\alpha}_x\ast\widetilde{\beta}_{gx}\]
+    Mas por uniciddade temos que:\\
+    \[\widetilde{\beta}_{gx} = g\cdot\widetilde{\beta}_x \text{ onde } (g\cdot\widetilde{\beta}_x)(t) = g\cdot\widetilde{\beta}_x(t)\]
+    Além disso temos que:
+        \begin{cases}
+            p(g\cdot\widetilde{\beta}_x) = p(\widetilde{\beta}_x) = \beta\\
+            g\cdot\widetilde{\beta}_x(0) = gx
+        \end{cases}\\
+    Então temos:\\
+    \[\widetilde{(\alpha\ast\beta)}_x(1) = (\widetilde{\alpha}_x\ast\widetilde{\beta}_{gx})(1) = \widetilde{\beta}_gx(1) = g\widetilde{\beta}_x(1) = ghx\]\\
+    $\Rightarrow \Phi_x[\alpha\ast\beta] = gh$ como queríamos. 
+    \end{dem}
+\end{thm}
+
+%\begin{titlemize}{Lista de consequências}
+	%\item \hyperref[consequencia1]{Consequência 1};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	%\item \hyperref[]{}
+%\end{titlemize}
