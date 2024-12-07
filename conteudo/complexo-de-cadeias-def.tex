@@ -1,0 +1,24 @@
+\subsection{Complexo de cadeias}
+\label{complexo-de-cadeias-def}
+\begin{titlemize}{Lista de dependências}
+	\item %\hyperref[homologia-simplicial-def]{Homologia Simplicial};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+% quantas dependências forem necessárias.
+\end{titlemize}
+\begin{defi}[Complexo de cadeias]
+	Um \textbf{Complexo de cadeias} é uma sequência $C_{-1}=0,C_0,C_1, C_2,...$ de grupos abelianos acompanhada de homomorfismos $d_n:C_n\rightarrow C_{n-1}$ para cada $n\ge 0$, tais que $d_{n}\circ d_{n+1}=0$. Denotamos esse complexo de cadeias por $C_{\bullet}$, e os homomorfismos $d_n$ são chamados de \textbf{diferenciais} de $C_\bullet$. A n-ésima \textbf{homologia} de $C_\bullet$ é definida por
+    \[H_n(C_\bullet):=\frac{\text{Ker}(d_n)}{\text{Im}(d_{n+1})}\]
+    Usualmente, $\text{Ker}(d_n)$ é chamado de grupo abeliano de $n$-ciclo em $C_\bullet$ e é denotado por $Z_n(C_\bullet)$. Por outro lado, $\text{Im}(d_{n+1})$ é chamada de grupo abeliano de $n$-bordos em $C_\bullet$ e é denotada por $B_n(C_\bullet)$.
+\end{defi}
+
+A homologia é a medida não numérica de quão diferentes $Z_n(C_\bullet)$ e $B_n(C_\bullet)$ são.
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[complexo-de-cadeias-def]{Complexo de cadeias};\\ 
+    \item \hyperref[aplicacao-de-cadeias-def]{Aplicação de cadeias};\\
+    \item \hyperref[homotopia-de-cadeias-def]{Homotopia de cadeia};\\
+    \item \hyperref[homomorfismo-induzido-de-cadeias-prop]{Homomorfismo induzido de cadeias};\\
+    \item \hyperref[equivalencia-de-homotopia-de-cadeias-def]{Equivalência de homotopia de cadeias};\\
+    \item \hyperlink{homologia-simplicial-def}{Homologia simplicial};\\
+    \item \hyperref[homologia-singular-def]{Homologia singular};\\
+    \item \hyperref[homomorfismo-de-homologias-singulares-induzido-prop]{Homomorfismo de homologias singulares induzido}.
+\end{titlemize}
