@@ -2,7 +2,7 @@
 \subsection{Ação propriamente descontínua e grupo fundamental} %afirmação aqui significa teorema/proposição/colorário/lema
 \label{ações-de-grupos-e-gr-fundamental-prop}
 \begin{titlemize}{Lista de dependências}
-	\item \hyperref[ações-de-grupos-propriamente-descontínuas-def]{Ações de grupos propriamente descontínuas};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	\item \hyperref[ações-de-grupo-propriamente-descontínuas-def]{Ações de grupos propriamente descontínuas}; %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
 	\item \hyperref[grupo-fundamental-def]{Grupo fundamental};\\
 % quantas dependências forem necessárias.
 \end{titlemize}
@@ -29,13 +29,15 @@ Nesse teorema vamos encontrar uma relação entre ações propriamente descontí
     \end{equation}\\
     Para mostrar (1) note que:\\
     \[(\widetilde{\alpha\ast\beta})_x = \widetilde{\alpha}_x\ast\widetilde{\beta}_{\widetilde{\alpha}_x(1)} = \widetilde{\alpha}_x\ast\widetilde{\beta}_{gx}\]
-    Mas por uniciddade temos que:\\
+    Mas por unicidade temos que:\\
     \[\widetilde{\beta}_{gx} = g\cdot\widetilde{\beta}_x \text{ onde } (g\cdot\widetilde{\beta}_x)(t) = g\cdot\widetilde{\beta}_x(t)\]
-    Além disso temos que:
+    Além disso temos que:\\
+    $$
         \begin{cases}
             p(g\cdot\widetilde{\beta}_x) = p(\widetilde{\beta}_x) = \beta\\
             g\cdot\widetilde{\beta}_x(0) = gx
         \end{cases}\\
+    $$
     Então temos:\\
     \[\widetilde{(\alpha\ast\beta)}_x(1) = (\widetilde{\alpha}_x\ast\widetilde{\beta}_{gx})(1) = \widetilde{\beta}_gx(1) = g\widetilde{\beta}_x(1) = ghx\]\\
     $\Rightarrow \Phi_x[\alpha\ast\beta] = gh$ como queríamos. 
