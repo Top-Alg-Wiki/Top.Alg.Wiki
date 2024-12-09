@@ -1,0 +1,61 @@
+\subsection{Sequência exata da colagem} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{sequencia-exata-da-colagem-prop}
+\begin{titlemize}{Lista de dependências}
+    \item \hyperref[sequencia-exata-def]{Sequência exata};\\
+    \item \hyperref[homomorfismo-conectante-def]{Homomorfismo conectante};\\
+    \item \hyperref[homologia-singular-def]{Homologia singular};\\
+    \item \hyperref[homomorfismo-de-homologias-singulares-induzido-prop]{Homomorfismo de homologias singulares induzido};\\
+    \item \hyperref[homologia-singular-de-um-ponto-prop]{Homologia singular de um ponto};\\
+    \item \hyperref[0-esimo-grupo-de-homologia-de-espaco-zero-conexo-prop]{0-ésimo grupo de homologia singular de um espaço 0-conexo};\\
+    \item \hyperref[0-conexo-e-homomorfismo-de-homologia-induzido-prop]{0-conexo e homomorfismo de homologia induzido};\\
+    \item \hyperref[homologia-singular-de-um-espaco-contratil-prop]{Homologia singular de um espaço contrátil};\\
+    \item \hyperref[sequencia-de-mayer-vietoris-prop]{Sequência de Mayer-Vietoris};\\
+    \item \hyperref[colagem-de-n-celula-def]{Colagem de n-célula}
+
+    
+    
+\end{titlemize}
+
+Seja $X$ um espaço Hausdorff. E Seja $f:\mathbb{S}^{n-1}\rightarrow X$ uma função contínua, onde $n\ge 2$. Nesse caso, o espaço $X_f$ também é Hausdorff. Sejam $i:X\hookrightarrow D^n\sqcup X$ e $j:D^n\hookrightarrow D^n$ as inclusões naturais e seja $\pi:D^n\sqcup X\rightarrow X_f$ a função quociente. Temos:
+\begin{itemize}
+    \item Como os pontos de $Y$ não se relacionam entre si, exceto consigo mesmos, a composição $l=\pi\circ i:X\rightarrow X_f$ induz um homeomorfismo entre $X$ e $l(X)\subset X_f$.
+    \item Como a esfera $\mathbb{S}^{n-1}$ é conexa por caminho , a imagem de $f$ está contida em uma componente por caminho de $X$. Isso garante que as componentes por caminhos de $X$ e de $X_f$ estão em correspondência bijetiva. Pelo Corolário final do \ref{0-esimo-grupo-de-homologia-de-espaco-zero-conexo-prop}, $l_*:H_0 (X)\rightarrow H_0(X_f)$ é um isomorfismo.
+    \item Como os pontos da bola aberta $B=int(D^n)$ não se relacionam entre si, exceto consigo mesmo, a composição $k=\pi\circ j|_B: B\rightarrow X_f$ induz um homeomorfismo entre $B$ e $k(B)\subseteq X_f$.
+    \item $k(B)$ é aberto e $l(X)$ é fechado em $X_f$, pois $l(X)$ é compacto e $X_f$ é Hausdorff. Além disso, ambos são disjuntos, a fronteira de $k(B)$ é $l(f(\mathbb{S}^{n-1}))$, e o espaço de colagem $X_f=k(B)\sqcup l(X)$.
+    \item Seja $\pi(0)\in X_f$ a imagem por $\pi$ do origem $0\in D^n$ e seja $\rho: D^n\setminus 0\rightarrow \mathbb{S}^{n-1}$ o retrato por deformação radial dado por $\rho(x)=x/||x||$. Então, está bem definida e é um retrato por deformação a função $\mathbf{r}:X_f\setminus \pi(0)\rightarrow l(X)$ dada por 
+    \begin{align*}
+        \textbf{r}(x)=\begin{cases}
+            x&\text{ se }x\in l(X);\\
+            \pi(\rho(k^{-1}(x))) &\text{ se }x\in k(B).
+        \end{cases}
+    \end{align*}
+\end{itemize}
+
+Agora, definimos $U=X_f\setminus \pi(0)$ e $V=X_f\setminus l(X)$. Como $\pi(0)$ e $l(Y)$ são fechados em $X_f$, $U$ e $V$ são abertos em $X_f$. Pelas definições, a união $U\sqcup V=X_f$. Além disso:
+\begin{itemize}
+    \item $U$ se deforma sobre $l(X)$ que é homeomorfo a $X$.
+    \item O aberto $V=k(B)$ se deforma sobre o ponto $\pi(0)$, ou seja, $V$ é contrátil.
+    \item $U\cap V$ é homeomorfo a $B\setminus \{0\}$ e, portanto, deforma sobre $k(S^{n-1}_{1/2})$, onde $S^{n-1}_{1/2}\subseteq B$ é a $(n-1)$-esfera de centro 0 e raio $1/2$.
+\end{itemize}
+Por Teorema \ref{sequencia-de-mayer-vietoris-prop}, a sequência de Mayer-Vietoris da decomposição $X_f=U\sqcup V$ 
+\[...H_{m+1}(X_f)\xrightarrow{\delta} H_m(U\cap V)\xrightarrow{\Phi}H_m(U)\oplus H_m(V)\xrightarrow{\Psi} H_m(X_f)\rightarrow ...\]
+é exata. Pelas observações acima, temos $H_m(U)\cong H_m(X)$ e $H_m (V)\cong H_m(\{0\})$ para todo $m\ge 0$. Por causa disso, para $m\ge 1$, o grupo $H_m(U)\oplus H_m(V)$ pode ser substituído por $H_m(X)$, e o homomorfismo $\Psi$ pode ser substituído por $l_*:H_m(X)\rightarrow H_m (X_f)$. Por outro lado, $H_0(U)\oplus H_0 (V)\cong H_0(X)\oplus \mathbb{Z}$ e $l_*:H_0(X)\rightarrow H_0 (X_f)$ é um isomorfismo. Logo, $\Psi: H_0(U)\oplus H_0 (V)\rightarrow H_0 (X_f)$ é sobrejetor e pode ser reescrito como $\Psi:H_0(X)\oplus \mathbb{Z}\rightarrow H_0(X_f)$.
+
+Para $\Phi$, o contradomínio dele é isomorfo a $H_m(X)\oplus H_m (\pi(0))$, enquanto que o domínio dele $H_m(U\cap V)$ é isomorfo a $H_m(S^{n-1}_{1/2})$. Visto que $S^{n-1}_{1/2}$ é uma $(n-1)$-esfera e $V$ é contrátil, para todo $m>0$, o homomorfismo $\Phi:H_m(U\cap V)\rightarrow H_m(U)\oplus H_m(V)$ pode ser substituído na sequência de Mayer-Vietoris, a menos de isomorfismo, por $\Phi:H_m(\mathbb{S}^{n-1})\rightarrow H_m(X)$. Uma vez que $\mathbb{S}^{n-1}$ é 0-conexo, temos $\Phi:H_0(\mathbb{S}^{n-1})\rightarrow H_0(X)\oplus\mathbb{Z}$ é injetor (\ref{0-conexo-e-homomorfismo-de-homologia-induzido-prop}).
+    
+Chegamos à conclusão de que: 
+\begin{prop}
+    A sequência 
+    \begin{align*}
+        ...H_{m+1}(X_f)&\xrightarrow{\delta} H_m(\mathbb{S}^{n-1})\xrightarrow{\Phi}H_m(X)\xrightarrow{l_*} H_m(X_f)\rightarrow ...\\
+        ...& \rightarrow H_0 (\mathbb{S}^{n-1})\xrightarrow{\Phi} H_0(X)\oplus \mathbb{Z}\xrightarrow{\Psi} H_0(X_f)\rightarrow 0
+    \end{align*}
+    é exata.
+\end{prop}
+
+Como $H_m(\mathbb{S}^{n-1})=0$ para todo $m\in\mathbb{N}-{0,n-1}$ (veremos daqui a pouco), temos que $\Phi:H_m(\mathbb{S}^{n-1})\rightarrow H_m(X)$ é nulo para todo $m$ positivo tal que $m\ne n-1$.
+
+\begin{titlemize}{Lista de consequências}
+    \item \hyperref[grupo-de-homologia-singular-de-n-esfera-prop]{Grupo de homologia singular de n-esfera}.\\
+	%\item \hyperref[]{}
+\end{titlemize}
