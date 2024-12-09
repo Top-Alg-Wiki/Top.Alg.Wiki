@@ -1,0 +1,19 @@
+\subsection{Homotopia de cadeias}
+\label{homotopia-de-cadeias-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[complexo-de-cadeias-def]{Complexo de cadeias};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+% quantas dependências forem necessárias.
+    \item \hyperref[aplicacao-de-cadeias-def]{Aplicação de cadeias}.
+\end{titlemize}
+
+\begin{defi}
+    Sejam $f_\bullet, g_\bullet:C_\bullet\rightarrow D_\bullet$ duas aplicações de cadeias. Uma \textbf{homotopia de cadeias} $h:f_\bullet\Rightarrow g_\bullet$ é uma sequência de homomorfismos $h_n:C_n\rightarrow D_{n+1}$, indexada por $n\ge -1$, tal que 
+    \[g_n-f_n=d_{n+1}^D\circ h_n+ h_{n-1}\circ d_n^C:C_n\rightarrow D_n.\]
+    Nessa caso, diremos que $f_\bullet$ e $g_\bullet$ são \textbf{homotópica de cadeias}, e denotaremos por $f_\bullet\simeq g_\bullet$.
+\end{defi}
+
+\begin{titlemize}{Lista de consequências}
+    \item \hyperref[homomorfismo-induzido-de-cadeias-prop]{Homomorfismo induzido de cadeias};\\
+    \item \hyperref[equivalencia-de-homotopia-de-cadeias-def]{Equivalência de homotopia de cadeias};\\
+    \item \hyperref[homomorfismo-de-homologias-singulares-induzido-prop]{Homomorfismo de homologias singulares induzido}.\\
+\end{titlemize}

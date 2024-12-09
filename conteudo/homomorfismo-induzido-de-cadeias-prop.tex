@@ -1,0 +1,52 @@
+\subsection{Homomorfismo induzido de cadeias} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{homomorfismo-induzido-de-cadeias-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[complexo-de-cadeias-def]{Complexo de cadeias};\\ 
+    \item \hyperref[aplicacao-de-cadeias-def]{Aplicação de cadeias};\\
+    \item \hyperref[homotopia-de-cadeias-def]{Homotopia de cadeia}.
+\end{titlemize}
+Assim como uma função contínua entre espaços topológicos induz um homomorfismo entre os grupos fundamentais associados, uma aplicação de cadeias induz um homomorfismo entre os grupos de homologias correspondentes.
+\begin{lemma}%af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
+	Uma aplicação de cadeias $f_\bullet: C_\bullet\rightarrow D_\bullet$ induz um homomorfismo 
+    \begin{align*}
+        f_*:H_n(C_\bullet)&\longrightarrow H_n(D_\bullet)\\
+        [x]&\longmapsto [f_n(x)].
+    \end{align*}
+    Para todo $n\ge 0$. Além disso, se $f_\bullet$ e $g_\bullet$ são homotópicas de cadeias, então $f_*=g_*$.
+\end{lemma}
+
+\begin{proof}
+    Vamos checar que $f_*$ é bem definido.
+    \begin{itemize}
+        \item Primeiramente, mostramos que $[f_n(x)]$ está dentro do codomínio. Seja $[x]\in H_n(C_\bullet)=\frac{Z_n(C_\bullet)}{B_n(C_\bullet)}$ representado por um $x\in Z_n(C_\bullet)$. Consideramos dois casos:\\
+        Caso 1: $n=0$. Nesse caso, temos $Z_0(C_\bullet)=C_0$ e $Z_0(D_\bullet)=D_0$. Como $f_0(Z_0(C_\bullet))\subseteq Z_0(D_\bullet)$, temos que $f_0(x)$ é um ciclo, ou seja, $f_0(x)$ representa uma classe de homologia em $H_0(D_\bullet)$.\\
+        Caso 2: $n\ge 1$. Como $x$ é um ciclo em $C_n$, temos:
+        \[d_n^D\circ f_n(x)=f_{n-1}\circ d_n^C(x)=f_{n-1}(0)=0,\]
+        ou seja, o elemento $f_n(x)\in D_n$ é um ciclo. Portanto $f_n(x)$ representa uma classe de homologia em $H_n(D_\bullet)$.
+        \item Agora, suponha que $[x]=[y]$, ou seja $x-y\in B_n(C_\bullet)$. Logo, existe um $z\in C_{n+1}$ tal que $x-y=d_{n+1}^D(z)$. Então, temos: 
+        \[f_n(x)-f_n(y)=f_n(d_{n+1}^C(z))=d_{n+1}^D (f_{n+1}(z))\]
+        é um bordo. Portanto $[f_n(x)]=[f_n(y)]\in H_n(D_\bullet).$
+    \end{itemize}
+    Como $f_n$ são homomorfismos, o mapa $f_*$ também é um homomorfismo. 
+
+    Agora, suponha que $h_\bullet: f_\bullet \Rightarrow g_\bullet$ é uma homotopia de cadeias. Seja $x\in Z_n(C_\bullet)$. Então, temos 
+    \[g_n(x)-f_n(x)=d_{n+1}^D(h_n(x))+h_{n-1}(d_n^C(x)).\]
+    Mas $x$ é um ciclo, logo $g_n(x)-f_n(x)=d_n(x)=0$. Isso mostra que $g_n(x)-f_n(x)$ é um bordo, portanto, $[g_n(x)]=[f_n(x)]$.
+\end{proof}
+
+De acordo com a construção do homomorfismo induzido, é fácil observar as seguintes propriedades.
+
+\begin{corol}
+    \begin{enumerate}
+        \item Se $f_\bullet: C_\bullet\rightarrow D_\bullet$ e $g_\bullet:D_\bullet\rightarrow E_\bullet$ são aplicações de cadeias, então 
+        \[(g_\bullet\circ f_\bullet)_*=g_*\circ f_*.\]
+        \item $(id_{C_\bullet})_*=id_{H_n(C_\bullet)}$.
+    \end{enumerate}
+
+\end{corol}
+
+\begin{titlemize}{Lista de consequências}
+    \item \hyperref[equivalencia-de-homotopia-de-cadeias-def]{Equivalência de homotopia de cadeias};\\
+    \item \hyperref[homomorfismo-de-homologias-singulares-induzido-prop]{Homomorfismo de homologias singulares induzido}.
+	%\item \hyperref[consequencia1]{Consequência 1};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+\end{titlemize}
