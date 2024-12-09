@@ -1,0 +1,38 @@
+\subsection{Simplexos singulares subordinados a uma cobertura} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{simplexos-singulares-subordinados-a-uma-cobertura-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[complexo-de-cadeias-def]{Complexo de cadeias};\\ 
+    \item \hyperref[homologia-singular-def]{Homologia singular};\\
+    \item \hyperref[homomorfismo-de-homologias-singulares-induzido-prop]{Homomorfismo de homologias singulares induzido};\\
+    \item \hyperref[simplexos-singulares-subordinados-a-uma-cobertura-def]{Simplexos singulares subordinados a uma cobertura};\\
+    
+\end{titlemize}
+
+\begin{defi}
+    Seja $X$ um espaço topológico e seja $\mathcal{U}$ uma cobertura de $X$, não necessariamente aberto. Denotamos por $S^{\mathcal{U}}_n (X)$ o subgrupo (abeliano livre) de $S_n (X)$ gerado pelos n-simplexos singulares $\sigma:\Delta^n\rightarrow X$ cuja imagem $\sigma(\Delta^n)$ está contido em algum elemento de $\mathcal{U}$, os quais chamamos \textbf{n-simplexos singulares subordinados} à $\mathcal{U}$.
+\end{defi}
+    Como para cada $0\le i\le n$, $\text{Im}(\partial_i \sigma )\subseteq \text{Im}(\sigma)$, para cada $\sigma\in S_n^{\mathcal{U}}(X)$, temos que $\partial\sigma\in S^{\mathcal{U}}_{n-1}(X)$. Desse modo, o operador bordo $\partial$ do complexo de cadeias singulares de $X$ induz, por restirção de domínio e contradomínio um operador bordo $\partial^{\mathcal{U}}$ tal que 
+    \[...\rightarrow S^{\mathcal{U}}_{n+1}(X)\xrightarrow{\partial^{\mathcal{U}}}S_n^{\mathcal{U}}(X)\xrightarrow{\partial^{\mathcal{U}}}S_{n-1}^{\mathcal{U}} (X)\rightarrow...\]
+    é um complexo de cadeias, denotado por $S^{\mathcal{U}}(X)_*$.
+
+\begin{defi}
+O n-ésimo grupo de homologia $H_n^{\mathcal{U}}(X)$ do complexo de cadeias $S^{\mathcal{U}}(X)_*$ é chamado o \textbf{n-ésimo grupo de homologia de} $X$ \textbf{subordinada} à $\mathcal{U}$.
+\end{defi}
+
+A função identidade $id:X\rightarrow X$ induz uma aplicação de cadeias $i_n:S_n^{\mathcal{U}}(X)\rightarrow S_n (X)$ e, por conseguinte, um homomorfismo em homologia.
+
+%Suponhamos que a coleção $int(\mathcal{U}):=\{int(U):U\in \mathcal{U}\}$ seja uma cobertura de $X$. Então, dado um n-simplexo singular $\sigma:\Delta^n\rightarrow X$, a coleção $\mathcal{V}=\{\sigma^{-1}(int(U)):U\in \mathcal{U}\}$ é uma cobertura aberta do compacto $\Delta^n$. Tomando um número de Lebesgue $\delta>0$ para tal cobertura para cada $K\subseteq \Delta^n$ com diâmetro menor que $\delta$, existe um $U\in\mathcal{U}$ tal que $\sigma(K)\subseteq int (U)$. Por meio de iterações do processo de subdivisões baricêntricas de $\Delta^n$, o n-simplexo $\sigma$ pode ser expressado como uma n-cadeia $\sigma=a_1\sigma_1+...+a_k\sigma_k$ em que $\sigma_i \in C^{\mathcal{U}}_n(X)$ para cada $i$
+
+\begin{prop}
+    Suponhamos que a coleção $int(\mathcal{U}):=\{int(U):U\in \mathcal{U}\}$ seja uma cobertura de $X$. Então, $i_*:H^{\mathcal{U}}_n (X)\rightarrow H_n (X)$ é um isomorfismo para todo $n\ge 0$
+\end{prop}
+
+\begin{dem}
+    A prova é feita por iterações do processo de subdivisões baricêntricas. Esta prova é bastante longa e trabalhosa, por isso omitimos a demonstração. O leitor consegue achar a demonstração em Proposição 2.21 em 
+    \textit{Hatcher, Allen. Algebraic Topology. Cambridge, Cambridge University Press, 2001.}
+\end{dem}
+
+\begin{titlemize}{Lista de consequências}
+    \item \hyperref[sequencia-de-mayer-vietoris-prop]{Sequência de Mayer-Vietoris}.\\
+	%\item \hyperref[]{}
+\end{titlemize}
