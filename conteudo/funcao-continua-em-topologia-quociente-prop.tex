@@ -1,0 +1,14 @@
+\subsection{Função contínua em topologia quociente}
+\label{funcao-continua-em-topologia-quociente-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[topologia-quociente-def]{Topologia quociente}; 
+\end{titlemize}
+
+\begin{prop}
+    Sejam \(X,Y\) espaços topológicos, e seja \(\sim\) uma relação de equivalência em \(X\). Uma função $f:(X/\sim) \longrightarrow Y$ é contínua se e somente se $f\circ \pi$ é contínua, onde $\pi$ é a função projeção associada ao quociente.
+\end{prop}
+\begin{dem}
+    Por um lado, suponhamos que $f$ seja contínua. Como a composição de funções contínuas é contínua, a função $f\circ \pi$ também seré contínua.
+
+    Por outro lado, suponhamos que $f\circ \pi$ seja contínua. Seja $V\subseteq Y$ um aberto, pela hipóteses, $\pi^{-1}(f^{-1}(V))$ é um aberto. Agora, pela definição de topologia quociente, $f^{-1}(V)$ é um aberto em $X/\sim$, o que implica que $f$ é contínua. 
+\end{dem}
