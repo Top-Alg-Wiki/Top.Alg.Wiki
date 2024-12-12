@@ -7,8 +7,13 @@
 
 \begin{defi}
     Sejam $X,Y,Z$ espaços topológicos. E Sejam $f:Z\rightarrow X$ e $g:Z\rightarrow Y$ funções contínuas. O \textbf{Pushout} de $f$ e $g$ é o espaço quociente $X\sqcup Y/\sim$, onde $\sim$ é a menor relação de equivalência que contém $\{(f(z),g(z))\in X\times Y:z\in Z\}$.
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJaIl0sWzAsMSwiWCJdLFsxLDAsIlkiXSxbMSwxLCJYXFxzcWN1cCBZL1xcc2ltIl0sWzAsMSwiZiIsMl0sWzAsMiwiZyJdLFsxLDNdLFsyLDNdXQ==
+\[\begin{tikzcd}
+	Z & Y \\
+	X & {X\sqcup Y/\sim}
+	\arrow["g", from=1-1, to=1-2]
+	\arrow["f"', from=1-1, to=2-1]
+	\arrow[from=1-2, to=2-2]
+	\arrow[from=2-1, to=2-2]
+\end{tikzcd}\]
 \end{defi}
-
-%\begin{titlemize}{Lista de consequências}
-	%\item %\hyperref[consequencia1]{Consequência 1};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
-%\end{titlemize}
