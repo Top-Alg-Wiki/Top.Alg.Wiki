@@ -1,0 +1,43 @@
+\subsection{Esfera}
+\label{esfera-def}
+
+\begin{defi}
+     Dado $n\geq 0$, a \textbf{$n$-esfera} (unitária com centro na origem), denotada por $\mathbb{S}^n$, é o subespaço topológico de $\mathbb{R}^{n+1}$ definido por 
+     \[\mathbb{S}^n=\{(x_0,...,x_n)\in \mathbb{R}^{n+1}:x_0^2+...+x_n^2=1\}.\]
+\end{defi}
+
+\begin{prop}
+    Seja $N=(0,...,0,1)\in \mathbb{R}^{n+1}$ um ponto. A projeção estereográfica definida por 
+    \begin{align*}
+        p_N:\mathbb{S}^n\setminus \{N\}&\longrightarrow \mathbb{R}^n\\
+        (x_0,...,x_n)&\longmapsto \frac{1}{1-x_n}(x_0,...,x_{n-1})
+    \end{align*}
+    é um homeomorfismo.
+\end{prop}
+\begin{dem}
+    Aqui, denotamos $x_0^2+...+x_n^2$ por $||(x_0,...,x_n)||_2^2$. Como $p_N$ é contínua em cada coordenada, então $p_N$ é contínua. Agora, definimos uma função da seguinte forma 
+    \begin{align*}
+        f:\mathbb{R}^n&\longrightarrow \mathbb{S}^n\\
+        X=(X_1,...,X_n)&\longmapsto \frac{1}{||X||_2^2+1}(2X_1,...,2X_{n},||X||_2^2-1).
+    \end{align*}
+    Essa função é bem definida, pois 
+    \[\frac{1}{(||X||_2^2+1)^2}(4X_1^2+...+4X_n^2+(||X||_2^2-1)^2)=\frac{4||X||_2^2+(||X||_2^2-1)^2}{(||X||_2^2+1)^2}=1.\]
+    Além disso, $f$ é contínua em cada coordenada, logo $f$ é contínua. Por um lado, temos 
+    \begin{align*}
+        f\circ p_N(x_0,...,x_n)&=\frac{1}{1-x_n}\cdot \frac{(2x_0,...,2x_{n-1},(1-x_n)\cdot(||p_N(x_0,...,x_{n}||_2^2-1))}{||p_N(x_0,...,x_n)||_2^2+1}\\
+        &=\frac{1}{1-x_n}\cdot\frac{(2x_0,...,2x_{n-1},(1-x_n)\cdot(||p_N(x_0,...,x_{n}||_2^2-1))}{(\frac{1}{(1-x_n)^2}\cdot ||(x_0,...,x_{n-1})||_2^2)+1}\\
+        &=\frac{1}{1-x_n}\cdot\frac{(2x_0,...,2x_{n-1},\frac{1-x_n^2}{(1-x_n)}-(1-x_n))}{\frac{(1-x_n^2)}{(1-x_n)^2}+1}\\
+        &=\frac{(1-x_n)}{(1-x_n^2+(1-x_n)^2)}\cdot(2x_0,...,2x_{n-1},\frac{1-x_n^2-(1-x_n)^2}{(1-x_n)})\\
+        &=\frac{1}{2}\cdot(2x_0,...,2x_{n-1},2x_n)\\
+        &=(x_0,...,x_n).
+    \end{align*}
+    E por outro lado, temos 
+    \begin{align*}
+        p_N\circ f(X)&=\frac{1}{1-\frac{||X||_2^2-1}{||X||_2^2+1}}\frac{2X}{||X||_2^2+1}\\
+        &=\frac{2X}{||X||_2^2+1-||X||_2^2+1}\\
+        &=\frac{2X}{2}\\
+        &=X.
+    \end{align*}
+    Isso mostra que $p_N$ é um homeomorfismo.
+\end{dem}
+
