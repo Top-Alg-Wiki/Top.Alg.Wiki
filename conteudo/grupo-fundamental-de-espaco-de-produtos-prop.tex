@@ -1,0 +1,26 @@
+\subsection{Grupo fundamental de espaço de produtos}
+\label{grupo-fundamental-de-espaco-de-produtos-prop}
+\begin{titlemize}{Lista de dependências}
+    \item \hyperref[homotopia-def]{Homotopia};\\
+    \item \hyperref[grupo-fundamental]{Grupo fundamental};\\
+    \item \hyperref[hom-grupo-fundamental]{Homomorfismo de grupos fundamentais}.
+\end{titlemize}
+
+\begin{prop}
+    Sejam $X,Y$ espaços topológicos, com $x_0\in X$ e $y_0\in Y$, e sejam $p:X\times Y\rightarrow X$ e $q:X\times Y\rightarrow Y$ projeções canônicas. Então, o homomorfismo
+    \begin{align*}
+        ((p_*,q_*):\pi_1(X\times Y,(x_0,y_0))&\longrightarrow \pi_1 (X,x_0)\times \pi_1(Y,y_0)\\
+        [\alpha]&\longmapsto ([p\circ \alpha],[q\circ \alpha]) 
+    \end{align*}
+    é um isomorfismo.
+\end{prop}
+
+\begin{dem}
+    Como $p_*$ e $q_*$ são homomorfismos de grupos, $(p_*,q_*)$ também é um homomorfismo de grupos. Vamos agora verificar que $(p_*,q_*)$ é bijetivo.\\
+    Injetividade: Note que $([c_{x_0}],[c_{y_0}])$ é a unidade de $\pi_1 (X,x_0)\times \pi_1(Y,y_0)$. Assim, se $[\alpha]\in \text{Ker}(p_*,q_*)$, então $[p\circ \alpha]=[c_{x_0}]$ e $[q\circ \alpha]=[c_{y_0}]$. Ou seja, existem homotopias relativa a $\partial I$, $H_1:p\circ\alpha \Rightarrow c_{x_0}$ e $H_2:q\circ \alpha \Rightarrow c_{y_0}$, o que implica que a função $H:(X\times Y)\times I\rightarrow X\times Y$ definida por
+    \begin{align*}
+        H((x,y),t):=(H_1(x,t),H_2(y,t))
+    \end{align*}
+    é uma homotopia relativa a $\partial I$ entre $(p\circ \alpha,q\circ\alpha)$ e $c_{(x_0,y_0)}$. Assim, concluímos que $[\alpha]=[c_{(x_0,y_0)}]$, o que implica que $(p_*,q_*)$ é injetivo.\\
+    Sobrejetividade: Sejam $(\alpha,\beta)\in \Omega(X,x_0)\times \Omega(Y,y_0)$. Basta mostrar que existe um $\gamma\in \Omega(X\times Y,(x_0,y_0))$ tal que $p\circ\gamma=\alpha$ e $q\circ \gamma=\beta$. Porém, o laço $(\alpha,\beta)$ satisfaz exatamente essa condição. Portanto, concluímos que $(p_*,q_*)$ é sobrejetivo.
+\end{dem}
