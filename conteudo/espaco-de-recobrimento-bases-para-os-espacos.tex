@@ -1,0 +1,72 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Base para as topologias em um recobrimento} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{base-para-topologias-em-recobrimento-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[espaco-de-recobrimento-def]{Espaço de recobrimento};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	%\item \hyperref[]{};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+
+
+
+
+
+\begin{prop}[Bases das topologias de domínio e contradomínio de recobrimento]% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
+	Se $X$ é localmente conexo por caminhos com $p:E\rightarrow X$ um recobrimento, temos que
+
+$$\mathcal{B}=\{U|~U\subset X\text{ é uniformemente recoberto e conexo por caminhos}\}$$
+
+é uma base para a topologia de $X$ e
+
+$$\tilde{{\mathcal{B}}}=\{\tilde{U}|~\tilde{U}\subset E\text{ é placa de }p:E\rightarrow X\text{ sobre }U\in \mathcal{B}\}$$
+é uma base para a topologia de $E$.
+\end{prop}
+\begin{dem}A demostração será dividida em dois itens.\newline
+
+    $\bullet$ Verificação de que $\mathcal{B}$ é base:\newline
+    
+    Por $p:E\rightarrow X$ ser um recobrimento, temos que para todo $x\in X$ existe $U$ vizinhança de $x$ tal que $p^{-1}(U)=\underset{\lambda\in \Lambda}{\bigsqcup } V_\lambda$, com cada $V_\lambda$ homeomorfo a $U$.
+    
+    Como $X$ é localmente conexo por caminhos, existe $U'\subset U$ vizinhança de $x$ conexa por caminhos tal que $U' $ também deve ser uniformemente recoberto por ser subconjunto de um outro aberto uniformemente recoberto.\newline
+    
+    Detalhadamente, este fato pode ser notado por $p(V_\lambda\cap p^{-1}(U'))$ ser $$p(V_\lambda)\cap U'=U\cap U'=U',$$ isto é, como $p|_{V_\lambda}: V_\lambda \rightarrow U$ é homeomorfismo, $p|_{V_\lambda\cap p^{-1}(U')}$ também precisa ser um homeomorfismo entre $V_\lambda\cap p^{-1}(U')$ e a imagem de $p|_{V_\lambda\cap p^{-1}(U')}$, que é $U'$. Portanto, de fato $$p^{-1}(U')=\underset{\lambda\in \Lambda}{\bigsqcup } (V_\lambda \cap p^{-1}(U')) $$ onde todo $V_\lambda \cap p^{-1}(U')$ é homeomorfo a $U'$ através de $p|_{V_\lambda \cap p^{-1}(U')}$.\newline
+    
+    Assim, verifica-se que os abertos de $\mathcal{B}$ cobrem todo o espaço $X$.\newline
+
+    Além disso, ao intersectar dois abertos  $U,~ V\in\mathcal{B}$, temos um novo aberto conexo por caminhos tal que $U\cap V$ é subespaço tanto de $U$ quanto de $V$, dois abertos uniformemente recobertos. Assim, como já foi mostrado anteriormente na verificação de que $U'$ era uniformemente recoberto, temos que a intersecção de elementos de $\mathcal{B}$ é uniformemente recoberta também. Portanto, $U\cap V \in \mathcal{B}$.\newline
+
+    Com as informações acima, de fato concluí-se que $\mathcal{B}$ é base.\newline
+    
+%%%%%%%%%%‰‰%%%%%‰%%%%%%%%%%%%%%
+    $\bullet$ Verificação de que $\tilde{\mathcal{B}}$ é base:\newline
+    
+    Temos que para todo $y\in E$, $p(y)\in X$ é tal que existe $U$ vizinhança conexa por caminhos de $p(y)$ que é aberto uniformemente recoberto. Este fato foi provado anteriormente, no processo de demonstração de que $\mathcal{B}$ é base para a topologia de $X$.
+    
+    Isso significa que $p^{-1}(U)=\underset{\lambda\in \Lambda}{\bigsqcup } V_\lambda$, com homeomorfismos $p|_{V_\lambda}: V_\lambda  \rightarrow U$ e assim, $y\in V_{\lambda_0}$ placa de $p:E\rightarrow X$ sobre $U\in \mathcal{B}$ para algum $ \lambda_0\in \Lambda.$
+    Com isso, mostramos que todo ponto de $E$ está em algum aberto de $\tilde{\mathcal{B}}.$\newline
+
+
+    Por fim, temos que se $V^1_{\lambda_0}$ e $V^2_{\lambda_1}$ são abertos de $\tilde{\mathcal{B}}$ que possuem intersecção não vazia, eles são tais que $$p^{-1}(U_1)=\underset{\lambda\in \Lambda}{\bigsqcup } V_\lambda^1\text{ e }p^{-1}(U_2)=\underset{\lambda\in \Lambda}{\bigsqcup } V_\lambda^2,$$ com $\lambda_0, \lambda_1 \in \Lambda$ para certos $U_1,U_2\in \mathcal{B}$. Como já visto anteriormente, a intersecção $U_1\cap U_2$ de espaços pertencentes a $\mathcal{B}$, também pertence a $\mathcal{B}$.
+
+    Como a união de placas que formam $p^{-1}(U_1)$ e $p^{-1}(U_2)$ é disjunta, $V^1_{\lambda_0}$ e $V^2_{\lambda_1}$ possuírem intersecção não vazia significa que $V^1_{\lambda_0}\cap V^2_{\lambda_1}$ é placa de $p:E\rightarrow X$ sobre $U_1\cap U_2$. De fato:
+
+    
+    $$p^{-1}(U_1\cap U_2)=\underset{\alpha\in \Lambda, \beta \in \Lambda, V^1_\alpha \cap V^2_\beta\ne \emptyset}{\bigsqcup } (V^1_\alpha \cap V^2_\beta)\text{ com }U_1\cap U_2\in \mathcal{B}$$ como verificado no processo anterior de $\mathcal{B}$ ser base para $X$. Portanto, $V^1_{\lambda_0}\cap V^2_{\lambda_1}\in \tilde{\mathcal{B}}$, o que conclui a verificação de que $\tilde{\mathcal{B}}$ é base de $E$.
+\end{dem}
+
+
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[descrição-da-base-do-recobrimento-prop]{Descrição de $\tilde{\mathcal{B}}$ em termos de $X$};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	\item \hyperref[pertence-a-base-se-e-somente-se-possui-i-trivial]{Proposição - nova descrição da base $\mathcal{B}$}
+\end{titlemize}
+
+%[Bianca]: Um arquivo tex pode ter mais de uma afirmação (ou definição, ou exemplo), mas nesse caso cada afirmação deve ter seu próprio label. Dar preferência para agrupar afirmações que dependam entre sí de maneira próxima (um teorema e seu corolário, por exemplo)
+
+
+
+
+
+
+

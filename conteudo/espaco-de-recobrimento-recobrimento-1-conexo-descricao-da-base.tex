@@ -1,0 +1,46 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Descrição de $\tilde{\mathcal{B}}$ em termos de $X$} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{descrição-da-base-do-recobrimento-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[espaco-de-recobrimento-def]{Espaço de recobrimento};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	\item \hyperref[espaço-1-conexo-def]{Espaço 1-conexo};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+
+%Comentário sobre os objetos envolvidos na afirmação.
+
+
+
+\begin{af}[Base para recobrimento 1-conexo]% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
+	Seja $p: E\rightarrow X$ um recobrimento com $X $ localmente conexo por caminhos e $E$ 1-conexo. A base $\tilde{\mathcal{B}}$ da topologia de $E$ definida em \ref{base-para-topologias-em-recobrimento-prop} pode ser descrita em termos de $X$ em dois casos:\newline
+
+    \textbf{Caso 1:} Seja $U\in \mathcal{B}$ um aberto uniformemente recoberto com $x_0\in U$.\newline
+
+    Em um espaço $\tilde{U}$ que seja placa de $U$ é possível levantar um caminho $\eta$ entre $x_0$ e $y_0$, em que $y_0\in U$ qualquer já que o espaço é conexo por caminhos, para um caminho $\tilde{\eta}$ entre $\tilde{x_0}$ e $\tilde{y_0}$ onde estes são pontos tais que $p(\tilde{x_0})=x_0$ e $p(\tilde{y_0})=y_0$.\newline
+
+    Defina $U_{\tilde{x_0}}=\{\tilde{\eta}_{\tilde{x_0}}(1)|~\eta:I\rightarrow U\text{ e }\eta(0)=x_0\}$. A partir desta definição, é possível dizer que todas as placas de $U$ podem ser escritas como $U_{\tilde{x_0}}$ para algum $\tilde{x_0}$, que é o único valor existente na placa tal que $p(\tilde{x_0})=x_0$. Isto é,
+
+    $$p^{-1}(U)=\underset{\tilde{x_0}\in p^{-1}(x_0)}{\sqcup} U_{\tilde{x_0}}$$
+    
+
+
+    \textbf{Caso 2:} Seja $U\subset X$ aberto conexo por caminhos e uniformemente recoberto, isto é, $U\in \mathcal{B}$. Tome $x\in U$ e seja $\tilde{x}\in E$ tal que $p(\tilde{x})=x$.\newline
+    
+    Fixe uma curva $\gamma: I\rightarrow X$ com $\gamma(0)=x_0$ e $\gamma(1)=x$, isto é, $[\gamma]\in q^{-1}(x)$. Note que $q$ é a função $q:P(X,x_0)\rightarrow X$ onde $P(X,x_0)=\{[\gamma]|~\gamma(0)=x_0\}$ definida por $q([\gamma])=\gamma(1)$.\newline
+    
+    Pode-se escrever $U$ como o espaço formado por $\gamma*\eta(1)$ para algum $\eta:I\rightarrow U$ tal que $\eta(0)=x$. Isto é, é possível descrever o aberto de $\tilde{\mathcal{B}}$ que é placa de $p$ sobre $U$ e vizinhança de $\tilde{x}$ como $$\tilde{U}_{\tilde{x}}=\{(\widetilde{\gamma*\eta})_{e_0}(1)|~\eta:I\rightarrow U,~\eta(0)=x\},$$ onde $e_0$ é tal que $\tilde{\gamma}_{e_0}(1)=\tilde{x}$.
+    
+    
+    
+	
+\end{af}
+
+
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[pertence-a-base-se-e-somente-se-possui-i-trivial]{Proposição - nova descrição da base $\mathcal{B}$};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+%	\item \hyperref[]{}
+\end{titlemize}
+
+%[Bianca]: Um arquivo tex pode ter mais de uma afirmação (ou definição, ou exemplo), mas nesse caso cada afirmação deve ter seu próprio label. Dar preferência para agrupar afirmações que dependam entre sí de maneira próxima (um teorema e seu corolário, por exemplo)
