@@ -1,0 +1,28 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Homomorfismo induzido por recobrimento é injetor} 
+\label{homomorfismo-induzido-por-recobrimento-prop} %afirmação aqui significa teorema/proposição/colorário/lema
+
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[espaco-de-recobrimento-def]{Espaço de recobrimento};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	\item \hyperref[levantamento-de-homotopia-prop]{Levantamento de homotopia};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+Comentário sobre os objetos envolvidos na afirmação.
+\begin{lemma}[Homomorfismo induzido por recobrimento é injetor]% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
+	O mapa $p_*:\pi_1(E, \tilde{x}_0)\rightarrow \pi_1(X, x_0)$ induzido por um espaço de recobrimento $p:(E, \tilde{x}_0)\rightarrow (X,x_0)$ é injetivo.
+\end{lemma}
+\begin{dem}
+    Como $p_*$ é um homomorfismo de grupo, basta verificar que o núcleo é trivial.
+
+    Um elemento no núcleo é a classe de homotopia relativa ao ponto base $\tilde{x}_0$ de algum caminho fechado $\gamma$ tal que existe homotopia entre $p(\gamma)$ e o caminho $c_{x_0}$ constante em $x_0$. Segundo Corolário presente em \ref{levantamento-de-homotopia-prop}, temos que dois caminhos em $X$ são homotópicos relativo a $\partial I$ se e somente se os levantamentos destes caminhos com início em algum $e_0\in p^{-1}(x_0) $são homotópicos. Isto é, se $p(\gamma)$ e $c_{x_0}$ são homotópicos, então $\gamma$ e $c_{\tilde{x}_0}$ são homotópicos por serem levantamentos com início em $\tilde{x}_0$ de $p(\gamma)$ e de $c_{x_0}$ respectivamente.
+    
+    Portanto, todo caminho $\gamma$ cuja classe está no núcleo de $p_*$ é homotópico relativo a $\partial I$ ao caminho constante $c_{x_0}$. Assim, o núcleo é trivial e concluímos que $p_*$ é mapa injetor.
+\end{dem}
+
+
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[recobrimento-1-conexo-prop]{Recobrimento 1-conexo quando X slsc};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+\end{titlemize}
+
+%[Bianca]: Um arquivo tex pode ter mais de uma afirmação (ou definição, ou exemplo), mas nesse caso cada afirmação deve ter seu próprio label. Dar preferência para agrupar afirmações que dependam entre sí de maneira próxima (um teorema e seu corolário, por exemplo)
