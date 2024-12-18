@@ -1,0 +1,74 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Teorema de Borsuk-Ulam} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{teo-borsuk-ulam-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[levantamento-de-funções-prop]{Levantamento de funções};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	\item \hyperref[grupo-fundamental-de-espaco-projetivo-ex]{Grupo Fundamental do Espaço Projetivo};\\
+    \item \hyperref[grupo-fundamental-de-S1-prop]{Grupo Fundamental da 1-esfera};
+% quantas dependências forem necessárias.
+\end{titlemize}
+Uma consequência importante dos resultados tratados até aqui é o próximo resultado.
+\begin{thm}[Teorema de Borsuk-Ulam]% ou               af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
+	
+    Seja $f: \mathbb{S}^{n} \rightarrow \mathbb{R}^2 \; (n \geqslant 2)$ uma função contínua ímpar. Então, existe $x_0 \in \mathbb{S}$ tal que $f(x_0) = 0$.\\
+	
+\end{thm}
+
+Vale notar que:
+\begin{enumerate}
+    \item Trocando $\mathbb{R}^2$ por $\mathbb{R}$, o resultado é apenas uma aplicação do \textbf{Teorema do Valor Intermediário}.
+    \item Existe uma função ímpar de $\mathbb{S}^n$ em $\mathbb{R}^{n+1}$ sem zeros. Por exemplo:\\
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BbOnACwBGA4AGUAvgD1CY0uky58hFGQCMVWoxZsAHiBlzseAkRXl19Zq0QduvQcPFS9skBkOKiAJjPULW65w8-ELAAEqSwGAA1CpizgYKxiimar6aViAAtLpi6jBQAObwRKAAZgBOEFxIZCA4EEie+iAVVY3U9UgAzGmWbFjxLZXViKZ1DYgALB10WAxsPGhwnbliQA
+    \[\begin{tikzcd}
+    \mathbb{S}^n \arrow[r] & \mathbb{S}^n \arrow[r, "i"] & \mathbb{R}^{n+1} \\
+    x \arrow[r, maps to]   & -x                          &                 
+    \end{tikzcd}\]
+\end{enumerate}
+
+\begin{dem}
+    Suponha que $f(x) \neq 0$, para todo $x \in \mathbb{S}^n$. Seja 
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAA8ACAHW6zB7cAtnRwALAEYTgAZQC+APUJzS6TLnyEUARnJVajFm14AzAE50AxsBMAKdgEo5wAD4u7jt3MH9BI8VKyisr6MFAA5vBEoOYQQkhkIDgQSLoGzKyIIABiINQ4dFgMbCJocMkgchRyQA
+    \[\begin{tikzcd}
+    x \in \mathbb{S}^n \arrow[r, "F", maps to] & \frac{f(x)}{||f(x)||} \in \mathbb{S}^1 \subseteq \mathbb{R}^2
+    \end{tikzcd}\]
+    Note que 
+    $$ F(-x) = \frac{f(-x)}{||f(-x)||} = \frac{-f(x)}{||-f(x)||} = -\frac{f(x)}{||f(x)||} = -F(x), $$
+    de modo que $F$ é ímpar, como $f$. Assim, $F$ induz
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQAdDgW3pwAsARoOABlAL4A9QuNLpMufIRTkK1Ok1bsAHgAIuWMPp58hIidJCz52PASKqAjOoYs2iTiYHCxUowHpjXm8RAC1xAH1iYwBjAgBzINMfACVxAAVLaxAMWyUiMmcaVy0PLmCzYDTMx10AXiSQ30lawPLksMjiKzkchTtlZABmUiKNN3Z2potarjAsXQAvSW7s3MV7FBGqYs13EEWemw3B1WIXPfZkbUojvrzNklJz3YmPZAAxAAptAEpb8TqGBQeLwIigABmACcINwkI4aDgIEhVONSiAPndobCUYjkYgRmj9gBHLEwuGIBEgJFIMggRj0QQwRjpfr5DxQrDxfg4ECvdFoMk4xB0mkEmgMpkstmbECc7m8-n7LgQWgwKGMQwwYAfcR8+la9hQehwfjAoUUgCseKQABZEfQsIx2Lw0HAadlsRTCWL7UTJhw4mB4hakAA2G2IADsDqdLvobo9lHEQA
+    \[\begin{tikzcd}
+    x \in \mathbb{S}^n \arrow[rr, "F"] \arrow[d, "p"']                                  &  &    \mathbb{S}^1 \arrow[d, "q"]                                    & z \arrow[d, maps to] \\
+    \mathbb{S}^n / \mathbb{Z}_2 \cong \mathbb{R}P^n \arrow[rr, "\overline{F}"', dashed] &  & \mathbb{R}P^1 = \mathbb{S}^1 / \mathbb{Z}_2 \arrow[r, "\cong"] & \mathbb{S}^1 \ni z^2 \\
+    {[x]} \arrow[rr, maps to]                                                           &  & {[F(x)]}                                                       &                     
+    \end{tikzcd}\]
+
+    Como  \hyperref[grupo-fundamental-de-espaco-projetivo-ex]{$\pi_1(\mathbb{R}P^n, [x]) = \mathbb{Z}_2$} e \hyperref[grupo-fundamental-de-S1-prop]{$\pi_1(\mathbb{R}P^1, [y]) = \pi_1(\mathbb{S}^1, [y]) = \mathbb{Z}$} e o único homomorfismo de $\mathbb{Z}_2$ em $\mathbb{Z}$ é o homomorfismo trivial, então 
+    
+    $$\overline{F}_{*}(\mathbb{R}P^n, [x]) = \{e\} \subseteq q_{*}(\mathbb{S}^1, [y]) $$.
+
+    Logo, pelo \hyperref[levantamento-de-funções-prop]{Teorema do Levantamento de Funções}, $\overline{F}$ admite levantamento $\Tilde{F}: \mathbb{R}P^n \rightarrow \mathbb{S}^1$.
+
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBoBGAXVJADcBDAGwFcYkQAdDgW3pwAsARoOABlAL4A9QuNLpMufIRTkK1Ok1bsuvAcOAAlcQAVpIWfOx4CRAExqaDFm0ScefISKOnyAAi4AxgQA5v7ueiISkuTmciAYVkp2pMTqTlquOh76UTHi6jBQwfBEoABmAE4Q3EhkIDgQSKogjPSCMIzGCtbKIBVYwfw4II6aLvGx5VU1iM0NSPYaztocELQwFYxYYDDAAGLiIy1tHV2JNq79g8MWIJXVSADMNPOIi+njAI6Td9O1L41EM8lhkQHsju0wFAnsRbvcZnNAcCtjt2FB6HB+IUjq12p1uklXIwYGVhqNlpkOAAVLCMWD7Q40SHQxCwyjiIA
+    \[\begin{tikzcd}
+                                                         &                                                                          & \mathbb{S}^1 \arrow[d, "q"]      \\
+    \mathbb{S}^n \arrow[r, "p"'] \arrow[rru, "F", bend left] & \mathbb{R}P^n \arrow[r, "\overline{F}"'] \arrow[ru, "\Tilde{F}", dashed] & \mathbb{R}P^1 \cong \mathbb{S}^1
+    \end{tikzcd}\]
+
+    Temos então dois levantamentos de $\overline{F} \circ p$ : $F$ e $\Tilde{F} \circ p$. Para garantir unicidade aos levantamentos, basta que eles concordem em um único ponto. Provemos então que isso, de fato, ocorre. \\
+    Note que 
+    $$
+    [\Tilde{F}(p(x))] = q(\Tilde{F}(p(x))) = (q \circ \Tilde{F})(p(x)) = \overline{F}(p(x)) = \overline{F}([x]) = [F(x)]
+    $$
+    Como o quociente é por $\mathbb{Z}_2$, então $\Tilde{F} \circ p = F$ ou $\Tilde{F} \circ p = -F$. Mas se $\Tilde{F} \circ p = -F$, teríamos
+    $$
+    \Tilde{F} \circ p(-x) = \Tilde{F}[-x] = \Tilde{F}[x] = \Tilde{F} \circ p(x) = -F(x) = F(-x) \implies \Tilde{F} \circ p(x) = F(x), \forall x \in \mathbb{S}^n
+    $$
+    Assim, em todo caso, $\Tilde{F} \circ p(x) = F(x), \forall x \in \mathbb{S}^n$. Entretanto, $\Tilde{F} \circ p$ é função par e $F$ é função ímpar não nula, então chegamos a uma contradição. Portanto, concluímos, por absurdo, que existe $x \in \mathbb{S}^n$ tal que $f(x) = 0$, como queríamos. 
+
+\end{dem}
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[teo-borsuk-ulam-corol-prop]{Versão mais popular de Borsuk-Ulam};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	%\item \hyperref[]{}
+\end{titlemize}
+
+%[Bianca]: Um arquivo tex pode ter mais de uma afirmação (ou definição, ou exemplo), mas nesse caso cada afirmação deve ter seu próprio label. Dar preferência para agrupar afirmações que dependam entre sí de maneira próxima (um teorema e seu corolário, por exemplo)
