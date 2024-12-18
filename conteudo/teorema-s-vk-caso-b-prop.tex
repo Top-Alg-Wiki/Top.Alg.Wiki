@@ -1,0 +1,30 @@
+\subsection{Caso B de Teorema de Seifert-Van Kampen} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{teorema-s-vk-caso-b-prop}
+\begin{titlemize}{Lista de dependências}
+    \item \hyperref[colagem-de-n-celula-def]{Colagem de n-célula};\\
+    \item \hyperref[grupo-fundamental]{Grupo fundamental};\\
+    \item \hyperref[variedade-def]{Variedade topológica};\\
+    \item \hyperref[grupo-fundamental-de-esferas-prop]{Grupo fundamental de esferas}
+% quantas dependências forem necessárias.
+\end{titlemize}
+\begin{prop}
+    Se $\pi_1(U\cap V,x)=\pi_1(V,x)=\{e\}$, então $j_{U_*}:\pi_1(U,x)\rightarrow \pi_1(X,x)$ é um isomorfismo.
+\end{prop}
+\begin{dem}
+    É fácil verificar que $(\pi_1(U,x),\{e\}\hookrightarrow \pi_1(U,x), id_{\pi_1(U,x)})$ é o \emph{pushout} de $(\pi_1(U\cap V,x),i_{U_*},i_{V_*})$. Pela unicidade do \emph{pushout}, $\pi_1(U,x)$ é único a menos de isomorfismo, o que implica que $j_{U_*}$ é um isomorfismo.
+\end{dem}
+
+\begin{corol}
+    Se $M$ uma variedade conexa de dimensão maior ou igual $3$ com $x\in M$, então $\pi_1(M-\{x\},p)\cong\pi_1(M,p)$ para todo $p\in M\setminus\{x\}$.
+\end{corol}
+\begin{dem}
+Pela definição de variedade topológico, existe uma vizinhança aberta de $x$ em $M$, tal que $U$ é homeomorfo a $\text{int} (D^n)$. Considere $V=M\setminus\{x\}$, assim $U\cap V$ é homeomorfo a $\text{int}(D^n)\setminus \{0\}$ que é homotopicamente equivalente a $\mathbb{S}^{n-1}$. Como $U$, $V$ e $U\cap V$ são abertos conexo por caminhos e $\pi_1(\mathbb{S}^{n-1},p)=\pi_1(\text{int}(D^n),0)=\{e\}$ (o grupo fundamental da esfera pode ser encontrado em \ref{grupo-fundamental-de-esferas-prop} e \ref{grupo-fundamental-de-S1-prop}) para todo $n\ge 3$, pela proposição anterior, temos $\pi_1(M-\{x\},p)\cong\pi_1(M,p)$.
+\end{dem}
+
+\begin{corol}
+    Seja $X$ um espaço Hausdorff conexo por caminhos. Seja $f:\mathbb{S}^{n-1}\rightarrow X$ uma função contínua e $i:\mathbb{S}^{n-1}\hookrightarrow D^n$ uma inclusão, onde $n\ge 3$. Denotamos o espaço obtido de $X$ pela colagem de uma $n$-célula por meio da função $f$ por $X_f$. Então, temos que $\pi_1(X,h^{-1}(p))\cong \pi_1(X_f, p)$ para todo ponto $p\in h(\text{int}(D^n))\cap X_f\setminus\{h(0)\}$, onde $\pi:X\rightarrow X_f$, $h:D^n\rightarrow X_f$ são as funções associadas ao \emph{pushout}.
+\end{corol}
+\begin{dem}
+     Consideramos $V=h(\text{int}(D^n))$ e $U=X_f\setminus \{h(0)\}$. Como discutido em \ref{sequencia-exata-da-colagem-prop}, temos que $V$ é homeomorfo a $\text{int}(D^n)$, $U$ é homotopicamente equivalente a $X$ e $U\cap V$ é homotopicamente equivalente a $\mathbb{S}^{n-1}$. Dessa forma, temos que $\pi_1(U,p)=\pi_1(U\cap V,p)=\{e\}$ para todo $n\ge 3$ e $p\in U\cap V$. Pela proposição anterior, temos $\pi_1(X,h^{-1}(p))\cong\pi_1(U,p)\cong \pi_1(X_f, p)$, para todo $p\in U\cap V$
+\end{dem}
+Aqui, o ponto base $h^{-1}(p)$ não é relevante, pois $X$ é um espaço conexo por caminhos. Usamos $h^{-1}(p)$, pois $h$ é um homeomorfismo entre $V$ e $\text{int}(D^n)$ o que garante que $h^{-1}(p)$ é um ponto em $X$.

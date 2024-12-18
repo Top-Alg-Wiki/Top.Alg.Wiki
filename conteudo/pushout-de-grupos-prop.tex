@@ -1,0 +1,109 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{\emph{Pushout} de grupos} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{pushout-de-grupos-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[fecho-normal-def]{Fecho normal};\\
+    \item \hyperref[geradores-relacoes-def]{Geradores e Relações}.%'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	%\item \hyperref[]{};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+\begin{lemma}
+    Sejam $G_1$ e $G_2$ grupos. Definimos $j_1:G_1\rightarrow G_1*G_2$ pela função $g_1\mapsto (g_1)$ e $j_2:G_2\rightarrow G_1*G_2$ pela função $g_2\mapsto (g_2)$. Então, $j_1$ e $j_2$ são homomorfismos de grupos.
+\end{lemma}
+
+\begin{dem}
+    Sejam $g,g'\in G$. Pela definição de produto livre de grupos, temos 
+    \[j_1(gg')=(gg')=(g)(g')=j_1(g)j_1(g').\]
+    Isso mostra que $j_1$ é um homomorfismo de grupos. De maneira análoga, pode-se provar que $j_2$ também é um homomorfismo de grupos.
+\end{dem}
+
+\begin{prop}
+    Sejam $G_1,G_2$ grupos. Então, o seguinte diagrama 
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXHtlXFx9Il0sWzEsMCwiR18xIl0sWzAsMSwiR18yIl0sWzEsMSwiR18xKkdfMiJdLFsxLDMsImpfMSJdLFsyLDMsImpfMiIsMl0sWzAsMSwiaV8xIl0sWzAsMiwiaV8yIiwyXV0=
+\[\begin{tikzcd}
+	{\{e\}} & {G_1} \\
+	{G_2} & {G_1*G_2}
+	\arrow["{i_1}", from=1-1, to=1-2]
+	\arrow["{i_2}"', from=1-1, to=2-1]
+	\arrow["{j_1}", from=1-2, to=2-2]
+	\arrow["{j_2}"', from=2-1, to=2-2]
+\end{tikzcd}\]
+é um diagrama de \emph{pushout}.
+\end{prop}
+
+\begin{dem}
+    Como um homomorfismo de grupos mapeia a identidade na identidade, temos que $j_1\circ i_1=j_2\circ i_2$. Isso implica que o diagrama do enunciado é comutativo.
+    
+    Sejam $\phi_1:G_1\rightarrow H$ e $\phi_2: G_2\rightarrow H$ dois homomorfismos de grupos tais que $\phi_1\circ i_1=\phi_2\circ i_2$ (essa propriedade é satisfeita por quaisquer dois homomorfismos). Definimos $\psi: G_1*G_2\rightarrow H$ pela função $\psi((g_1)...(g_k))=\phi_i(g_1)...\phi_i(g_k)$, onde $\phi_i(g_j)=\phi_1(g_j)$ se $g_j\in G_1$, e $\phi_i(g_j)=\phi_2(g_j)$ se $g_j\in G_2$. 
+    
+    A função $\psi$ é um homomorfismo de grupos, pois   
+    \begin{align*}
+    \psi((g_1)...(g_k)(g'_1)...(g'_l))&=\phi_i(g_1)...\phi_i(g'_l)=(\phi_i(g_1)...\phi_i(g_k))(\phi_i(g'_1)...\phi_i(g'_l))\\
+    &=\psi((g_1)...(g_k))\psi((g'_1)...(g'_l)).
+    \end{align*}
+    Além disso $\psi\circ j_1=\phi_1$ e $\psi\circ j_2=\phi_2$, pois essas composições são iguais ponto a ponto. 
+    
+    Falta mostrar a unicidade: Supõe que $\psi':G_1*G_2\rightarrow H$ é um outro homomorfismo de grupos tal que $\psi'\circ j_1=\phi_1$ e $\psi'\circ j_2=\phi_2$. Então, para qualquer $w=(g_1)...(g_k)\in G_1* G_2$, temos 
+    \[\psi'(w)=\psi'((g_1))...\psi'((g_k))=\phi_i(g_1)...\phi_i(g_k)=\psi(w),\]
+    o que mostra a unicidade.
+    
+    Portanto, o diagrama no enunciado é um diagrama de \emph{pushout}.
+\end{dem}
+
+Agora, abordaremos o caso geral de \emph{pushout} de grupos:
+
+\begin{thm}
+    Sejam $N,G_1,G_2$ grupos. Então, o seguinte diagrama 
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJOIl0sWzEsMCwiR18xIl0sWzAsMSwiR18yIl0sWzEsMSwiR18xKkdfMi9JIl0sWzEsMywiXFxvdmVybGluZXtqXzF9Il0sWzIsMywiXFxvdmVybGluZXtqXzJ9IiwyXSxbMCwxLCJpXzEiXSxbMCwyLCJpXzIiLDJdXQ==
+\[\begin{tikzcd}
+	N & {G_1} \\
+	{G_2} & {G_1*G_2/I}
+	\arrow["{i_1}", from=1-1, to=1-2]
+	\arrow["{i_2}"', from=1-1, to=2-1]
+	\arrow["{\overline{j_1}}", from=1-2, to=2-2]
+	\arrow["{\overline{j_2}}"', from=2-1, to=2-2]
+\end{tikzcd}\]
+é um diagrama de \emph{pushout}, onde $I=\overline{\{(i_1(n))(i_2(n))^{-1}:n\in N\}}$, e $\overline{j_1}=\pi\circ j_1$ e $\overline{j_2}=\pi\circ j_2$, sendo $\pi:G_1*G_2\rightarrow G_1* G_2/I$ é a projeção associada ao quociente.
+\end{thm}
+
+\begin{dem}
+    Pela definição de $G_1*G_2/I$, temos que $\overline{j_1}\circ i_1(n)=\overline{j_2}\circ i_2(n)$ para todo $n\in N$. Isso implica que o diagrama do enunciado é comutativo.
+    
+    Sejam $\phi_1:G_1\rightarrow H$ e $\phi_2: G_2\rightarrow H$ dois homomorfismos de grupos tais que $\phi_1\circ i_1=\phi_2\circ i_2$. Seja $\psi$ o homomorfismo definido na proposição anterior. Como $\text{Ker}(\psi)$ é normal e 
+    \begin{align*}
+        \psi((i_1(n))(i_2(n))^{-1})&=\phi_1(i_1(n))\phi_2((i_2(n))^{-1})=\phi_1(i_1(n))(\phi_2(i_2(n)))^{-1}\\
+        &=\phi_1(i_1(n))(\phi_1(i_1(n)))^{-1}=e,
+    \end{align*}
+    pela proposição \ref{fecho-normal-def}, temos que $I\subseteq\text{Ker}(\psi)$. Assim, pelo teorema do homomorfismo, existe um único homomorfismo $\overline{\psi}:G_1*G_2/I\rightarrow H$, tal que $\overline{\psi}\circ \pi=\psi$. Além disso, temos 
+    \[\overline{\psi}\circ \overline{j_1}=\overline{\psi}\circ \pi\circ j_1=\psi\circ j_1=\phi_1.\]
+    De maneira análoga, obtemos $\overline{\psi}\circ\overline{j_2}=\phi_2$
+
+    Resta mostrar a unicidade. Suponhamos que $\psi':G_1*G_2\rightarrow H$ seja outro homomorfismo de grupos tal que $\psi'\circ j_1=\phi_1$ e $\psi'\circ j_2=\phi_2$. Então, para qualquer $w=(g_1)...(g_k)\in G_1* G_2$, temos 
+    \begin{align*}
+        \psi'(\pi(w))&=\psi'(\pi((g_1)))...\psi'(\pi((g_k)))=\psi'\circ\overline{j}_i(g_1)...\psi'\circ\overline{j}_i(g_k)\\
+        &=\phi_i(g_1)...\phi_i(g_k)=\psi(w)=\overline{\psi}(\pi(w)),
+    \end{align*}
+    onde $\overline{j}_i(g_j)=\overline{j}_1(g_j)$ se $g_j\in G_1$, e $\overline{j}_i(g_l)=\phi_2(g_l)$ se $g_l\in G_2$. Como $\pi$ é sobrejetor, concluímos que $\overline{\psi}=\psi'$, o que mostra a unidade.
+
+    Portanto, o diagrama no enunciado é um diagrama de \emph{pushout}.
+\end{dem}
+
+\begin{corol}
+Sejam $N,G_1$ grupos. Então, o seguinte diagrama 
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJOIl0sWzEsMCwiR18xIl0sWzAsMSwiXFx7ZVxcfSJdLFsxLDEsIkdfMS9cXG92ZXJsaW5le1xcdGV4dHtJbX0oaV8xKX0iXSxbMSwzLCJcXG92ZXJsaW5le2pfMX0iXSxbMiwzLCJcXG92ZXJsaW5le2pfMn0iLDJdLFswLDEsImlfMSJdLFswLDIsImlfMiIsMl1d
+\[\begin{tikzcd}
+	N & {G_1} \\
+	{\{e\}} & {G_1/\overline{\text{Im}(i_1)}}
+	\arrow["{i_1}", from=1-1, to=1-2]
+	\arrow["{i_2}"', from=1-1, to=2-1]
+	\arrow["{\overline{j_1}}", from=1-2, to=2-2]
+	\arrow["{\overline{j_2}}"', from=2-1, to=2-2]
+\end{tikzcd}\]
+é um diagrama de \emph{pushout}.
+\end{corol}
+
+% \begin{titlemize}{Lista de consequências}
+% 	\item \hyperref[consequencia1]{Consequência 1};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+% 	\item \hyperref[]{}
+% \end{titlemize}

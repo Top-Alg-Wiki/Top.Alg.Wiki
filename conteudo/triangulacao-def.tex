@@ -1,0 +1,44 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Triangulação}
+\label{triangulacao-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[complexo-simplicial-def]{Complexos simpliciais};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	\item \hyperref[variedade-def]{Variedades Topológicas};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+\begin{defi}[Triangulação de uma Variedade]
+    Uma \textbf{triangulação} de uma superfície $M$ é um par ordenado $(K,\gamma)$, onde $K$ é um complexo simplicial e $\gamma:K\to 2^M$ é uma função, onde:
+    \begin{enumerate}
+        \item $\gamma(\sigma \cap \tau) = \gamma(\sigma) \cap \gamma(\tau)$, para todos $\sigma, \tau \in K$;
+        \item existe um homeomorfismo $\varphi_{\sigma}:|\sigma| \to \gamma(\sigma)$, para todo $\sigma \in K$;
+        \item se $\sigma \in K$ e $\tau \leq \sigma$, então $\varphi_{\sigma}|_{\tau}: |\tau| \to \gamma(\tau)$ é homeomorfismo;
+        \item $\{\gamma(\sigma): \sigma \in K\}$ é uma cobertura fechada localmente finita de $M$.
+    \end{enumerate}
+\end{defi}
+Neste caso, em especial, vale que $\text{dim}(K) = 2$.
+
+O conceito de triangulação está intimamente relacionado ao de complexos celulares.
+
+\begin{prop}
+    Se $(K,\gamma)$ é uma triangulação de $M$, então existe um homeomorfismo $\varphi: |K| \to M$.
+\end{prop}
+
+Além disso, se $M$ e $N$ são duas superfícies, $\phi:M\to N$ é um homeomorfismo e $(K,\gamma)$ é uma triangulação de $M$, então $(K,\phi_* \circ \gamma)$ é triangulação de $N$, onde $\phi_*: 2^M \to 2^N$ é a função imagem direta de $\phi$. Assim, é natural se perguntar em que casos $(K,|.|)$ é uma triangulação de $|K|$. A proposição a seguir fornece uma caracterização desta propriedade. Para a demonstração ou mais informações, consulte a Proposição 3.5 de \textit{Jean Gallier, Dianna Xu, A Guide to the Classification Theorem for Compact Surfaces, Springer Berlin, Heidelberg, 2013.} 
+
+\begin{prop}
+    Seja $K$ um $2$-complexo simplicial. Então $(K,|.|)$ é uma triangulação de $|K|$, onde $|.|$ mapeia $\sigma \in K$ em $|\sigma|$, se, e somente se, valem as condições:
+    \begin{enumerate}
+        \item Toda aresta pertence a exatamente 2 triângulos;
+        \item para todo vértice $v$, existe um inteiro $k\geq 0$ tal que $v$ pertence a exatamente $k$ triângulos e $k$ arestas; além disso, é possível ordenar as arestas e os triângulos contendo $v$ em sequências, $(a_1,\ldots,a_k)$ e $(A_1,\ldots,A_k)$, respectivamente, de como que $a_i$ e $a_{i+1}$ são arestas de $A_i$ para todo $1\leq i\leq k-1$, bem como $a_k$ e $a_1$ são arestas de $A_k$;
+        \item $|K|$ é conexo.
+    \end{enumerate}
+\end{prop}
+
+Para a demonstração ou mais informações, consulte a Proposição 3.6 de \textit{Jean Gallier, Dianna Xu, A Guide to the Classification Theorem for Compact Surfaces, Springer Berlin, Heidelberg, 2013.} 
+
+% \begin{titlemize}{Lista de consequências}
+% 	\item \hyperref[triangulacao-def]{Triangulação};
+% \end{titlemize}
+
+%[Bianca]: é mais fácil criar a lista de dependências do que a de consequências.

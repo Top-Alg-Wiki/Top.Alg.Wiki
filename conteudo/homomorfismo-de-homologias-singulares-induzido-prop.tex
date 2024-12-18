@@ -1,0 +1,97 @@
+\subsection{Homomorfismo de homologias singulares induzido} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{homomorfismo-de-homologias-singulares-induzido-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[complexo-de-cadeias-def]{Complexo de cadeias};\\ 
+    \item \hyperref[aplicacao-de-cadeias-def]{Aplicação de cadeias};\\
+    \item \hyperref[homotopia-de-cadeias-def]{Homotopia de cadeia};\\
+    \item \hyperref[homomorfismo-induzido-de-cadeias-prop]{Homomorfismo induzido de cadeias};\\
+    \item \hyperref[equivalencia-de-homotopia-de-cadeias-def]{Equivalência de homotopia de cadeias};\\
+    \item \hyperref[homologia-singular-def]{Homologia singular}.
+\end{titlemize}
+
+\begin{lemma}
+    Uma função contínua $f:X\rightarrow Y$ entre espaços topológicos induz um homomorfismo de cadeia 
+    \begin{align*}
+    f_n:S_n(X)&\longrightarrow S_n(Y)\\
+    \sum_{\phi}n_\phi\phi&\longmapsto \sum_\phi n_\phi (f\circ \phi).
+    \end{align*}
+\end{lemma}
+
+\begin{dem}
+    É fácil ver que $f_n$ é um homomorfismo de grupo, basta mostrar que $f_{n-1}\circ\partial=\partial\circ f_n$. Seja $\phi\in S_n(X)$. Como 
+    \begin{align*}
+        f_{n-1}\partial (\phi)=f_{n}(\sum_{i=0}^n (-1)^i \partial_i \phi)=\sum_{i=0}^n(-1)^i f\circ\partial_i\phi=\sum_{i=0}^n (-1)^i \partial_i(f\circ\phi)=\partial\circ f_n (\phi),
+    \end{align*}
+    podemos concluir que $f_\bullet:=(f_n)_{n\ge 0}$ é um homomorfismo de cadeias.
+\end{dem}
+
+Por lemma \ref{homomorfismo-induzido-de-cadeias-prop}, temos 
+
+\begin{corol}
+    Uma função contínua $f:X\rightarrow Y$ entre espaços topológicos induz um homomorfismo 
+    \begin{align*}
+        f_*: H_n(X)&\longrightarrow H_n(Y)\\
+        [\sum_\phi n_\phi \phi]&\longmapsto [\sum_\phi n_\phi (f\circ \phi)]
+    \end{align*} 
+    entre homologias singulares.
+
+    Além disso, temos 
+    \begin{enumerate}
+        \item $(f\circ g)_*=f_*\circ g_*$,
+        \item $(id_X)_*=id_{H_n(X)}$ para todo $n\ge 0$.
+    \end{enumerate}
+\end{corol}
+Isso mostra que a homologia singular é um invariante topológico.
+\begin{corol}
+    Se $f:X\rightarrow Y$ é um homeomorfismo, então $f_*:H_n(X)\rightarrow H_n(Y)$ é um isomorfismo para todo $n\ge 0$. 
+\end{corol}
+
+\begin{proof}
+    Seja $g:Y\rightarrow X$ a função inversa de $f$, pelo Corolário anterior, temos 
+    \[f_*\circ g_*=(f\circ g)_*=(id_Y)_*=id_{H_n(Y)},\]
+    e vice-versa.
+\end{proof}
+
+\begin{thm}
+    Sejam $f,g:X\rightarrow Y$ funções contínuas entre espaços topológicos. Se $F:X\times I\rightarrow Y$ é uma homotopia de $f$ em $g$. Então, $f$ e $g$ induzem um mesmo homomorfismo $f_*=g_*:H_n(X)\rightarrow H_n(Y).$
+\end{thm}
+
+\begin{dem}
+    A demonstração é baseada no Algebraic Topology do Allen Hatcher; o leitor pode encontrar uma interpretação geométrica dessa prova no livro.
+
+    O ponto crucial é um procedimento para subdividir $\Delta^n\times I$ em simplexos. Em $\Delta^n\times I$, seja $\Delta^n\times \{0\}=[v_0,...,v_n]$ e $\Delta^n\times\{1\}=[w_0,...,w_n]$, onde $v_i$ e $w_i$ possuem a mesma imagem sob a projeção $\Delta^n\times I\rightarrow \Delta^n$. Podemos passar de $[v_0,...,v_n]$ para $[w_0,...,w_n]$ interpolando uma sequência de $n$-simplexos, cada um obtido do anterior movendo um vértice $v_i$ até $w_i$, começando com $v_n$ e trabalhando para trás até $v_0$. Portanto, o primeiro passo é mover $[v_0,...,v_n]$ para cima até $[v_0,...,v_{n-1},w_n],$ então o segundo passo é mover isso para $[v_0,...,v_{n-2}, w_{n-1},w_n]$ e assim por diante. Na etapa típica $[v_0,...,v_{i},w_{i+1},...,w_n]$ move-se para cima até $[v_0,...,v_{i-1},w_i,...,w_n]$. A região entre esses dois simplexos é exatamente o (n+1)-simplexo $[v_0,...,v_i,w_i,...,w_n]$ que tem $[v_0,...,v_i,w_{i+1},...,w_n]$ como face inferior e $[v_0,...,v_{i-1},w_i,...,w_n]$ como face superior. Em conjunto, $\Delta^n\times I$ é a união de (n+1)-simplexos $[v_0,...,v_i,w_i,...,w_n]$, cada um intersectando o próximo em uma face.
+
+    Agora, definimos \textbf{operador prisma} $P:S_n(X)\rightarrow S_{n+1}(Y)$ pela seguinte fórmula 
+    \[P(\phi)=\sum_{i=0}^n (-1)^i F\circ (\phi\times id_I)|_{[v_0,...,v_i,w_i,...,w_n]},\]
+    onde $\phi$ é um $n$-simplexo singular. Vamos mostrar que esses operadores prisma satisfazem a seguinte relação 
+    \[\partial P=g_\bullet-f_\bullet-P\partial.\]
+    Geometricamente, o lado esquerdo da equação representa o bordo da prisma, e os três termos do lado direito representam a base superior $\Delta^n\times \{1\}$, a base inferior $\Delta^n\times\{0\}$, e os lados $\partial \Delta^n\times I$ da prisma. Para provar a relação, calculamos 
+    \begin{align*}
+        \partial P(\phi)=&\sum_{i=0}^{n} \Bigl(\sum_{j=0}^{i} (-1)^i(-1)^j F\circ (\phi\times id_I)|_{[v_0,...,\widehat{v_j},...,v_i, w_i,...,w_n]} \\
+        &+ \sum_{j=i}^{n} (-1)^i(-1)^{j+1} F\circ (\phi\times id_I)|_{[v_0,...,v_i,w_i,...,\widehat{w_j},...,w_n]}\Bigr)
+    \end{align*}
+    Ou seja, 
+    \begin{align*}
+        \partial P(\phi)=&\sum_{j\le i\le n} (-1)^i(-1)^j F\circ (\phi\times id_I)|_{[v_0,...,\widehat{v_j},...,v_i, w_i,...,w_n]} \\
+        &+ \sum_{i\le j\le n} (-1)^i(-1)^{j+1} F\circ (\phi\times id_I)|_{[v_0,...,v_i,w_i,...,\widehat{w_j},...,w_n]}
+    \end{align*}
+    Os termos com $i=j$ nas duas somas se cancelam exceto para $F\circ(\phi\times id_I)|_{[\widehat{v_0},w_0,...,w_n]}$, que é $g\circ\phi=g_\bullet (\phi)$, e $-F\circ (\phi\times id_I)|_{[v_0,...,v_n,\widehat{w_n}]},$ que é $-f\circ\phi=-f_\bullet(\phi)$. Os termos com $i\ne j$ são exatamente $-P\partial (\phi)$, pois 
+    \begin{align*}
+        P\partial(\phi)=&\sum_{j=0}^{n} \Bigl( \sum_{i=j+1}^{n} (-1)^{i-1}(-1)^j F\circ (\phi\times id_I)|_{[v_0,...,\widehat{v_j},...,v_i,w_i,...,w_n]}\\
+        &+\sum_{i=0}^{j-1} (-1)^i(-1)^j F\circ(\phi\times id_I)|_{[v_0,...,v_i,w_i,...,\widehat{w_j},...,w_n]}\Bigr)
+    \end{align*}
+    ou seja,
+    \begin{align*}
+        P\partial(\phi)=&\sum_{j<i\le n} (-1)^{i-1}(-1)^j F\circ (\phi\times id_I)|_{[v_0,...,\widehat{v_j},...,v_i,w_i,...,w_n]}\\
+        &+\sum_{i<j\le n} (-1)^i(-1)^j F\circ(\phi\times id_I)|_{[v_0,...,v_i,w_i,...,\widehat{w_j},...,w_n]}\Bigr).
+    \end{align*}
+    Portanto, $P$ é uma homotopia de cadeias de $f$ e $g$. Pelo Lema \ref{homomorfismo-induzido-de-cadeias-prop}, temos que $f_*=g_*$.
+\end{dem}
+
+\begin{corol}
+    Se dois espaços topológicos $X,Y$ são equivalentes homotópicos, então $H_n(X)\cong H_n (Y)$ para todo $n\ge 0$. 
+\end{corol}
+
+%\begin{titlemize}{Lista de consequências}
+	%\item \hyperref[consequencia1]{Consequência 1};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+%\end{titlemize}

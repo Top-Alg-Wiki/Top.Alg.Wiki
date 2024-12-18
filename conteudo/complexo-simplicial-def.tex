@@ -1,0 +1,34 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Complexos Simpliciais}
+\label{complexo-simplicial-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[simplexo-def]{Simplexos};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	%\item \hyperref[]{};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+\begin{defi}[Complexos Simpliciais]
+    Um \textbf{complexo simplicial} é um conjunto $K$ de simplexos em $\mathbb{R}^m$ tais que:
+    \begin{enumerate}
+        \item $\tau \leq \sigma, \sigma \in K \Rightarrow \tau \in K$;
+        \item $\tau,\sigma \in K, \tau \cap \sigma \neq \varnothing \Rightarrow \tau \cap \sigma \leq \sigma, \tau \cap \sigma \leq \tau$.
+    \end{enumerate}
+
+    A \textbf{dimensão} de $K$ é $\text{dim}(K) = \sup\{\text{dim}(\tau): \tau \in K\}$.
+
+    A \textbf{realização geométrica} de $K$ é
+    \[|K| = \bigcup_{\sigma \in K} \sigma.\]
+\end{defi}
+
+\begin{defi}
+    O \textbf{bordo} e o \textbf{interior} de um simplexo $\sigma$ são definidos, respectivamente, como:
+    \[\partial \sigma = \bigcup_{\tau < \sigma}\tau \qquad\text{e}\qquad \text{int}(\sigma) = \sigma \setminus \partial \sigma.\]
+    Note que $\partial \sigma$ é a realização geométrica do complexo simplicial $K = \{\tau : \tau < \sigma\}$.
+\end{defi}
+
+%\begin{titlemize}{Lista de consequências}
+	%\item \hyperref[complexo-simplicial-def]{Complexos Simpliciais};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	%\item \hyperref[]{}
+%\end{titlemize}
+
+%[Bianca]: é mais fácil criar a lista de dependências do que a de consequências.

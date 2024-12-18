@@ -1,0 +1,61 @@
+\subsection{Grupo de homologia singular de n-esfera} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{grupo-de-homologia-singular-de-n-esfera-prop}
+\begin{titlemize}{Lista de dependências}
+    \item \hyperref[sequencia-exata-def]{Sequência exata};\\
+    \item \hyperref[homomorfismo-conectante-def]{Homomorfismo conectante};\\
+    \item \hyperref[homologia-singular-def]{Homologia singular};\\
+    \item \hyperref[homomorfismo-de-homologias-singulares-induzido-prop]{Homomorfismo de homologias singulares induzido};\\
+    \item \hyperref[homologia-singular-de-um-ponto-prop]{Homologia singular de um ponto};\\
+    \item \hyperref[0-esimo-grupo-de-homologia-de-espaco-zero-conexo-prop]{0-ésimo grupo de homologia singular de um espaço 0-conexo};\\
+    \item \hyperref[0-conexo-e-homomorfismo-de-homologia-induzido-prop]{0-conexo e homomorfismo de homologia induzido};\\
+    \item \hyperref[homologia-singular-de-um-espaco-contratil-prop]{Homologia singular de um espaço contrátil};\\
+    \item \hyperref[homologia-singular-de-S1-prop]{Homologia singular da circunferência};\\
+    \item \hyperref[sequencia-de-mayer-vietoris-prop]{Sequência de Mayer-Vietoris};\\
+    \item \hyperref[colagem-de-n-celula-def]{Colagem de n-célula};\\
+    \item \hyperref[colagem-de-um-disco-com-um-ponto-ex]{Colagem de um disco com um ponto};\\
+    \item \hyperref[sequencia-exata-da-colagem-prop]{Sequência exata de colagem}
+\end{titlemize}
+
+\begin{prop}
+    Seja $n$ um inteiro estritamente maior que $0$. O m-ésimo grupo de homologia singular de $\mathbb{S}^n$ é igual a  
+    \begin{align*}
+        H_m(\mathbb{S}^n)\cong\begin{cases}
+            \mathbb{Z}&\text{ se }m=0\text{ ou }m=n\\
+            0&\text{ caso contrário.}
+        \end{cases}
+    \end{align*}
+\end{prop}
+
+\begin{dem}
+    Já vimos o caso $n=1$ em \ref{homologia-singular-de-S1-prop}. Para $n\ge 2$, consideramos a esfera $\mathbb{S}^n$ como o espaço de colagem $\mathbb{S}^n=D^n\cup_f\{x\}$, onde $f:\mathbb{S}^{n-1}\rightarrow \{x\}$ é a função constante (veja detalhe em \ref{colagem-de-um-disco-com-um-ponto-ex}). Como $\mathbb{S}^n$ é 0-conexo, $H_0(\mathbb{S}^n)\cong \mathbb{Z}$.
+    
+    Para $m\ge 2$, visto que $H_m(\{x\})$ e $H_{m-1}(\{x\})$ são ambos nulos, pela sequência exata da colagem, é exata a sequência 
+    \[0\rightarrow H_m(\mathbb{S}^n)\xrightarrow{\delta} H_{m-1}(\mathbb{S}^{n-1})\rightarrow 0.\]
+    Isso mostra que, para $m\ge 2$, $H_m(\mathbb{S}^n)\cong H_{m-1}(\mathbb{S}^{n-1}).$
+
+    Novamente, pela sequência exata de colagem, é exata a sequência 
+    \[0\rightarrow H_1(\mathbb{S}^n)\xrightarrow{\delta_1} H_0(\mathbb{S}^{n-1})\xrightarrow{\Phi} H_0(\{x\})\oplus \mathbb{Z}.\]
+    Como a esfera $\mathbb{S}^{n-1}$ é 0-conexo, temos que $\Phi$ é um monomorfismo (\ref{0-conexo-e-homomorfismo-de-homologia-induzido-prop}) e, consequentemente, $\delta_1$ é a função nula, mas $\delta_1$ é um injetor. Isso mostra que $H_1(\mathbb{S}^n)=0$ para todo $n\ge 2$.
+
+    Assim, como $H_1(\mathbb{S}^2)=0$ e $H_m(\mathbb{S}^2)=H_{m-1}(\mathbb{S}^1)$ para todo $m\ge 2$, obtemos 
+    \begin{align*}
+        H_m(\mathbb{S}^2)\cong\begin{cases}
+            \mathbb{Z}&\text{ se }m=0,2\\
+            0&\text{ caso contrário.}
+        \end{cases}
+    \end{align*}
+    Seguindo indutivamente, obtemos 
+    \begin{align*}
+        H_m(\mathbb{S}^n)\cong\begin{cases}
+            \mathbb{Z}&\text{ se }m=0,n\\
+            0&\text{ caso contrário.}
+        \end{cases}
+    \end{align*}
+\end{dem}
+
+\begin{titlemize}{Lista de consequências}
+    \item \hyperref[teorema-de-invariancia-de-dimensao-de-esfera-prop]{Teorema de invariância de dimensão de esfera};\\
+	\item \hyperref[teorema-de-ponto-fixo-de-brouwer-geral-prop]{Teorema de ponto fixo de Brouwer (versão geral)};\\
+    \item \hyperref[grau-de-funcoes-em-esferas-def]{Grau de funções}.
+    
+\end{titlemize}

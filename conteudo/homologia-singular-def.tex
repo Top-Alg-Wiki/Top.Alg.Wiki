@@ -1,0 +1,69 @@
+\subsection{Homologia singular} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{homologia-singular-def}
+\begin{titlemize}{Lista de dependências}
+    \item \hyperref[simplexo-def]{Simplexos}
+	\item \hyperref[complexo-de-cadeias-def]{Complexo de cadeias};\\ 
+    \item \hyperref[aplicacao-de-cadeias-def]{Aplicação de cadeias};\\
+    \item \hyperref[homotopia-de-cadeias-def]{Homotopia de cadeia}.\\
+\end{titlemize}
+
+\begin{defi}
+    Seja $X$ um espaço topológico. Um p-\textbf{simplexo singular} em $X$ é uma função contínua 
+    \[\phi:\Delta^p\longrightarrow X.\]
+\end{defi}
+
+\begin{defi}
+    Se $\phi$ é um $p$-simplexo singular em um espaço topológico $X$, e $i$ é um inteiro tal que $0\le i\le p$, definimos $\partial_i (\phi)$, um (p-1)-simplexo singular em $X$, por 
+    \[\partial_i \phi(t_0,...,t_{p-1})=\phi(t_0,...,t_{i-1},0,t_{i+1},...,t_{p-1}).\]
+    Ou seja, $\partial_i \phi=\phi|_{[v_0,...,\widehat{v_i},...,v_{p}]}$ é a $i$-ésima face de $\phi$, obtida pela substituição do parâmetro $t_i$ por zero, onde $[v_0,...,v_p]=\Delta^p$
+\end{defi}
+
+\begin{defi}
+    Seja $X$ um espaço topológico, definimos $S_n(X)$ como grupo abeliano livre cujo base é o conjunto de todos $n$-simplexos singulares de $X$. Um elemento de $S_n(X)$ é dito $n$-\textbf{cadeia singular} de $X$ e tem a forma 
+    \[\sum_\phi n_\phi \phi\]
+    onde $n_\phi$ é um inteiro igual a zero para todos, exceto um número finito de $\phi$.
+\end{defi}
+
+Podemos estender o operador de $i$-ésima face para um homomorfismo de $S_n(X)$ em $S_{n-1} (X)$. 
+
+\begin{defi}
+    Seja $X$ um espaço topológico, definimos o operador $\partial_i$ como
+    \begin{align*}
+        \partial_i: S_n(X)&\longrightarrow S_{n-1}(X)\\
+        \sum_\phi n_\phi \phi&\longmapsto \sum_\phi n_\phi \partial_i\phi.
+    \end{align*}
+    O \textbf{operador bordo} é então um homomorfismo definido por
+    \begin{align*}
+        \partial_{(n)}=\sum_{i=0}^n (-1)^i \partial_i:S_n(X)\longrightarrow S_{n-1}(X).
+    \end{align*}
+    Para simplificar a notação, omitiremos o índice do operador $\partial_{(n)}$.
+\end{defi}
+
+\begin{lemma}
+    O homomorfismo $\partial\circ \partial:S_n(X)\rightarrow S_{n-2}(X)$ é nulo.
+\end{lemma}
+
+\begin{dem}
+    Seja $\phi\in S_n(X)$, então 
+    \begin{align*}
+        \partial\circ \partial(\phi)&=\partial\Bigl(\sum_{i=0}^n (-1)^i \partial_i\phi \Bigr) \\
+        &=\sum_{i=0}^n (-1)^i  \Bigl( \sum_{k=0}^{i-1}(-1)^k \partial_k\circ\partial_i \phi)+\sum_{k=i}^{n-1} (-1)^k\partial_{k}\circ\partial_i \phi  \Bigr).
+    \end{align*}
+    Note que $\partial_k\circ\partial_i\phi=\partial_{i-1}\circ\partial_k \phi$ se $k<i$. Logo, o coeficiente de $\partial_a\circ\partial_b \phi$ é $(-1)^a(-1)^b$ de $k=a$ e $i=b$ mais $(-1)^a(-1)^{b-1}$ de $i=a$ e $k=b-1$. Assim, cada termo se cancela, o que implica que $\partial\circ\partial\phi=0$. Como $S_n(K)$ é gerado pelos n-simplexos singulares, concluímos que $\partial\circ\partial=0$.
+\end{dem}
+
+Como a consequência, esse lema garante que $\text{Im}(\partial_{(n+1)})\subseteq \text{Ker}(\partial_{(n)})$. Ou seja, a sequência 
+\[...\rightarrow S_{n+1}(X)\xrightarrow{\partial}S_n(X)\xrightarrow{\partial} S_{n-1}(X)\rightarrow...\rightarrow 0\]
+é um complexo de cadeias. Denotamos esse complexo por $S(X)_*$.
+
+Assim como no complexo de cadeias, denotamos $\text{Im}(\partial_{(n+1)})$ por $B_n(X)$ e $\text{Ker}(\partial_{(n)})$ por $Z_n(X)$.
+
+\begin{defi}
+    O n-ésima \textbf{grupo de homologia singular} de um espaço topológico $X$ é 
+    \[H_n(X):=\frac{Z_n(X)}{B_n(X)}.\]
+\end{defi}
+
+\begin{titlemize}{Lista de consequências}
+    \item \hyperref[homomorfismo-de-homologias-singulares-induzido-prop]{Homomorfismo de homologias singulares induzido}.\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	%\item \hyperref[]{}
+\end{titlemize}

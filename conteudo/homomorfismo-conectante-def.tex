@@ -1,0 +1,42 @@
+\subsection{Homomorfismo Conectante} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{homomorfismo-conectante-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[complexo-de-cadeias-def]{Complexo de cadeias};\\ 
+    \item \hyperref[aplicacao-de-cadeias-def]{Aplicação de cadeias};\\
+    \item \hyperref[sequencia-exata-def]{Sequência exata}.
+\end{titlemize}
+
+    Sejam $\mathcal{A},\mathcal{B},\mathcal{C}$ complexos de cadeias, e sejam $\phi= (\phi_n):\mathcal{A}\rightarrow \mathcal{B}$ e $\psi=(\psi_n):\mathcal{B}\rightarrow \mathcal{C}$ Aplicações de cadeias. Supõe que a sequência 
+    \[0\rightarrow \mathcal{A}\xrightarrow{\phi} \mathcal{B}\xrightarrow{\psi} \mathcal{C}\rightarrow 0\]
+    é exata. 
+
+    Construiremos uma função $\tilde{\delta}:Z_n(\mathcal{C})\rightarrow Z_{n-1}(\mathcal{A})$. Seja $z\in Z_n(\mathcal{C})$. Como $\psi_n$ é sobrejetora, existe $b\in B_n$ tal que $\psi_n(b)=z$. Como $\psi$ é uma aplicação de cadeias, temos
+    \[\psi_{n-1}(\partial b)=\partial\psi_n(b)=\partial z=0.\]
+    Como a sequência é exata, existe $a\in A_{n-2}$ tal que $\phi_{n-1}(a)=\partial b$. Como $\phi$ é uma aplicação de cadeias, temos
+    \[\phi_{n-2}(\partial a)=\partial \phi_{n-1}(a)=\partial\partial b=0.\]
+    Como $\phi_{n-2}$ é injetor, $\partial a=0$, e portanto $a\in Z_{n-1}(\mathcal{A})$. Dessa forma, podemos definir uma função 
+    \begin{align*}
+        \tilde{\delta_n}:Z_n(\mathcal{C})&\longrightarrow Z_{n-1}(\mathcal{A})\\
+        z&\longmapsto a.
+    \end{align*}
+
+    Agora, mostramos que $\tilde{\delta_n}$ induz um homomorfismo $\delta_n:H_n(\mathcal{C})\rightarrow H_{n-1}(\mathcal{A})$, ou seja, provamos que: se $z_1,z_2$ em $Z_n(\mathcal{C})$ são ciclos tais que $z_1-z_2=\partial c$ para algum $c\in C_{n+1}$, então $\tilde{\delta_n}(z_1-z_2)= \partial a$, para algum $a\in A_n$. 
+
+    Denotamos $a_1:=\tilde{\delta_n} (z_1)$ e $a_2:=\tilde{\delta_n}(z_2)$. Por construção $a_1$ e $a_2$ são tais que $\phi_{n-1}(a_1)=\partial b_1$ e $\phi_{n-1}(a_2)=\partial b_2$, onde $b_1$ e $b_2$ são elementos de $B_n$ que verificam $\psi(b_1)=z_1$ e $\psi(b_2)=z_2$. Como $\psi_{n+1}$ é sobrejetor, existe $b\in B_{n+1}$ tal que $\psi_{n+1}(b)=c$. Então, 
+    \[\psi_n(\partial b)=\partial \psi_{n+1}(b)=\partial c=z_1-z_2.\]
+    Logo, $b_1-b_2-\partial b\in \text{Ker}(\psi_n)=\text{Im}(\phi_n)$. Por conseguinte, existe $a\in A_n$ tal que $\phi_n(a)=b_1-b_2-\partial b$. Pela definição de aplicação de cadeias 
+    \begin{align*}
+        \phi_{n-1}(\partial a)&=\partial\phi_n(a)=\partial(b_1-b_2-\partial b)=\partial b_1-\partial b_2-\partial\partial b\\
+        &=\phi_{n-1}(a_1)-\phi_{n-1}(a_2)=\phi_{n-1}(a_1-a_2).
+    \end{align*}
+    Como $\phi_{n-1}$ é injetor, $a_1-a_2=\partial a$. como queríamos.
+
+    Portanto, a função $\tilde{\delta_n}:Z_n(\mathcal{C})\rightarrow Z_{n-1}(\mathcal{A})$ induz, por passagem ao quociente, um homomorfismos $\delta_n:H_n(\mathcal{C})\rightarrow H_{n-1}(\mathcal{A})$ para cada $n\ge 0$, dado por 
+    \[\delta_n (z+B_n(\mathcal{C}))=\tilde{\delta_n}(z)+B_{n-1}(\mathcal{A}).\]
+    \begin{defi}
+        O homomorfismo $\delta_n:H_n(\mathcal{C})\rightarrow H_{n-1}(\mathcal{A})$ é chamado \textbf{homomorfismo conectante}. O índice $n$ será omitido quando não houve risco de confusão.
+    \end{defi}
+\begin{titlemize}{Lista de consequências}
+    \item \hyperref[sequencia-exata-longa-induzida-prop]{Sequência exata longa induzida}.\\
+	%\item \hyperref[]{}
+\end{titlemize}
