@@ -1,26 +1,25 @@
 \subsection{Categorias}
-\end{titlemize}
+\label{categorias-def}
 \begin{defi}[Categorias]
 	    Uma categoria $\mathcal{C}$ é formada pelas seguintes coisas:
 
 
 \begin{itemize}
-    \item Uma coleção de objetos $Obj(\mathcal{C})$, que geralmente serão denotados por letras maiúsculas $A$, $B$, $C$...
-    \item Uma coleção de morfismos $Mor(\mathcal{C})$, que usualmente serão denotadas por letras minúsculas $f$, $g$, $h$...
+    \item Uma coleção de objetos $\text{Obj}(\mathcal{C})$, que geralmente serão denotados por letras maiúsculas $A$, $B$, $C$...
+    \item Uma coleção de morfismos $\text{Mor}(\mathcal{C})$, que usualmente serão denotadas por letras minúsculas $f$, $g$, $h$...
 \end{itemize}
 
 Onde valem os seguintes axiomas:
 
-
 \begin{enumerate}
-    \item Cada morfismo $f$ de $Mor(\mathcal{C})$ é associado dois objetos $Dom(f)$, $Codom(f)$ de $Obj(\mathcal{C})$. \\
+    \item A cada morfismo $f$ de $\text{Mor}(\mathcal{C})$ são associados dois objetos $\text{Dom}(f)$ e $\text{Codom}(f)$ de $\text{Obj}(\mathcal{C})$. \\
     Escrevemos % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAEEQBfU9TXfIRQBGclVqMWbAELdxMKAHN4RUADMAThAC2SMiBwQkokAzoAjGAwAK-PATYMYanCGr1mrRCDVyuQA
 \begin{tikzcd}
 A \arrow[r, "f"] & B
 \end{tikzcd}
- para abreviar $f \in Mor(\mathcal{C})$, $Dom(f) = A$ e $Codom(f) = B$.
- \item Para cada objeto $A$ de $\mathcal{C}$ está associado um morfismo $1_A$ de $Mor(\mathcal{C})$ com $Codom(1_A) = A$ e $Dom(A) = A$.
- \item Para quaisquer dois morfismos $f$ e $g$, tais que $Dom(f)=Codom(g)$, há um morfismo associado $f \circ g$, onde $Dom(f \circ g) = Dom(g)$ e $Codom(f \circ g) = Codom(f)$.
+ para abreviar $f \in \text{Mor}(\mathcal{C})$, $\text{Dom}(f) = A$ e $\text{Codom}(f) = B$.
+ \item A cada objeto $A$ de $\mathcal{C}$ está associado um morfismo $1_A \in \text{Mor}(\mathcal{C})$ tal que $\text{Codom}(1_A) = \text{Dom}(1_A) = A$.
+ \item Para quaisquer dois morfismos $f$ e $g$, tais que $\text{Dom}(f)=\text{Codom}(g)$, há um morfismo associado $f \circ g$, onde $\text{Dom}(f \circ g) = \text{Dom}(g)$ e $\text{Codom}(f \circ g) = \text{Codom}(f)$.
  \\ Isso pode ser representado dizendo que o seguinte diagrama comuta:
 % https://q.uiver.app/#q=WzAsMyxbMCwwLCJBIl0sWzEsMCwiQiJdLFsxLDEsIkMiXSxbMCwxLCJmIl0sWzEsMiwiZyJdLFswLDIsImYgXFxjaXJjIGciLDJdXQ==
 \[\begin{tikzcd}[column sep=large]
@@ -31,8 +30,7 @@ A \arrow[r, "f"] & B
 	\arrow["g", from=1-2, to=2-2]
 \end{tikzcd}\]
 
-\item Para todo morfismo $f$ de $Mor(\mathcal{C})$ com $Dom(f) = A$ e $Codom(f) = B$ temos que $f \circ 1_A = f$ e $1_B \circ f = f$.
-\\ É o mesmo que dizer que o seguinte diagrama comuta:
+\item Para todo morfismo $f$ de $\text{Mor}(\mathcal{C})$ com $\text{Dom}(f) = A$ e $\text{Codom}(f) = B$, vale que $f \circ 1_A = f$ e $1_B \circ f = f$. Ou seja, o seguinte diagrama comuta:
 
 % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQSJdLFsxLDEsIkIiXSxbMiwxLCJCIl0sWzAsMSwiMV9BIl0sWzEsMiwiZiJdLFswLDIsImYiLDJdLFsxLDMsImYiXSxbMiwzLCIxX0IiLDJdXQ==
 \[\begin{tikzcd}[sep=large]
@@ -44,13 +42,8 @@ A \arrow[r, "f"] & B
 	\arrow["f", from=1-2, to=2-3]
 	\arrow["{1_B}"', from=2-2, to=2-3]
 \end{tikzcd}\]
-\item Dados os morfismos $f$, $g$, $h$ de $Mor(\mathcal{C})$, temos que 
-$(f \circ g) \circ h = f \circ (g \circ h)$
-\\
-\\
-\\
-É equivalente a dizer que o seguinte diagrama comuta:
-
+\item Dados os morfismos $f$, $g$, $h$ de $\text{Mor}(\mathcal{C})$, vale que 
+$(f \circ g) \circ h = f \circ (g \circ h)$. Ou seja, o seguinte diagrama comuta:
 % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiQiJdLFsxLDEsIkMiXSxbMiwxLCJEIl0sWzAsMSwiZiJdLFsxLDIsImciXSxbMCwyLCJnIFxcY2lyYyBmIl0sWzIsMywiaCJdLFsxLDMsImggXFxjaXJjIGciXV0=
 \[\begin{tikzcd}[sep=large]
 	A & B \\

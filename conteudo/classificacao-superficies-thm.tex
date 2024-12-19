@@ -1,0 +1,23 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Teorema de Classificação de Superfícies}
+\label{classificacao-superficies-thm}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[variedade-def]{Variedades};\\
+    \item \hyperref[soma-conexa-def]{Soma Conexa de Variedades};\\
+	\item \hyperref[forma-normal-thm]{Teorema da Forma Normal}.
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+\begin{thm}
+    Toda superfície conexa e compacta é homeomorfa à uma esfera, à soma conexa de espaços $k$ projetivos ou à soma conexa de $k$ toros, para algum $k\geq 1$.
+
+    \begin{dem}
+        O Teorema da Forma Normal garante que toda superfície obtida pela colagem de arestas de regiões poligonais é homeomorfa à obtida por um dos seguintes esquemas: $aa^{-1}bb^{-1}$, $abab$, $(a_1 b_1 a_1^{-1} b_1^{-1})\ldots (a_k b_k a_k^{-1} b_k^{-1})$ ou $(a_1 a_1)\ldots (a_k a_k)$, para algum $k\geq 1$. E é um resultado clássico (a partir da Teoria de Morse, por exemplo) que toda superfície conexa compacta é obtida dessa forma.
+
+        Resta observar que $aa^{-1}bb^{-1}$ corresponde à uma esfera, $abab$ corresponde à um espaço projetivo, $(a_1 b_1 a_1^{-1} b_1^{-1})\ldots (a_k b_k a_k^{-1} b_k^{-1})$ corresponde à soma conexa de $k$ toros (cada um da forma $aba^{-1}b^{-1}$; decorre do Lema \ref{varias-etiquetagens-lemma}) e $(a_1 a_1)\ldots (a_k a_k)$ à soma conexa de $k$ espaços projetivos. Para ver esse último caso, podemos utilizar a construção de dobradura de arestas e escrever $(a_1 a_1)\ldots (a_k a_k) \sim (a_1 b_1 a_1 b_1)\ldots (a_k b_k a_k b_k)$. Assim, concluímos.
+    \end{dem}
+\end{thm}
+
+% \begin{titlemize}{Lista de consequências}
+% 	\item \hyperref[classificacao-superficies-thm]{Teorema de Classificação de Superfícies}
+% \end{titlemize}

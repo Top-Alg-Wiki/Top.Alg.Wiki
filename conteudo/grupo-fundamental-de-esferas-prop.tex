@@ -1,0 +1,14 @@
+\subsection{Grupo fundamental de esferas} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{grupo-fundamental-de-esferas-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[grupo-fundamental]{Grupo fundamental};\\
+    \item \hyperref[teorema-s-vk-caso-a-prop]{Caso A de Teorema de Seifert-Van Kampen}.
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+\begin{corol}
+    O grupo fundamental $\pi_1(\mathbb{S}^n,p)=\{e\}$ para todo $n\ge 2$.
+\end{corol}
+\begin{dem}
+    Considere $U=\mathbb{S}^n\setminus\{(0,...,0,1)\}$ e $V=\mathbb{S}^n\setminus\{(0,...,0,-1)\}$. Nesse caso, $U\cap V$ é um aberto conexo por caminhos para todo $n\ge 2$. Como $U$ e $V$ são homeomorfos a $\mathbb{R}^n$, que é contrátil por ser convexo, temos que $\pi_1(U)=\pi_1(V)=\{e\}$. Pela proposição \ref{teorema-s-vk-caso-a-prop}, obtemos $\pi_1(\mathbb{S}^2)=\{e\}$ para todo $n\ge 2$. Esse argumento não se aplica para $n=1$, pois $U\cap V$ não é conexo por caminhos. 
+\end{dem}

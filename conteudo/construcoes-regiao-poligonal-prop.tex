@@ -1,0 +1,78 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Construções com Regiões Poligonais}
+\label{construcoes-regiao-poligonal-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[regiao-poligonal-def]{Regiões Poligonais}%;\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	%\item \hyperref[variedade-def]{Variedades Topológicas};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+\begin{lemma}\label{varias-etiquetagens-lemma}
+    Sejam $P_1,\ldots, P_k$ regiões poligonais, e seja $w_1,\ldots, w_k$ um esquema de etiquetagem. Para cada $1\leq i\leq n$, considere o espaço quociente $X_i = P_i/\sim_i$ (com respeito ao esquema de etiquetagem $w_i$) e, depois, realize a colagem dos espaços resultantes da seguinte forma:
+    \[\bigsqcup_{i=1}^k X_i/\approx\]
+    onde
+    % \begin{align*}
+    %     [x]\approx [y] ~\Longleftrightarrow ~ &[x]=[y]\text{ ou }\exists a\in \Lambda, \exists i,j\leq k, \exists A \in \partial_1 P_i, \exists B \in \partial_1 P_j, \exists t\in [0,1]:\\
+    %     &L(A) = L(B) = a,\\
+    %     &x = (1-t) \mathcal{O}(A) + t \overline{\mathcal{O}}(A), 
+    %     y = (1-t) \mathcal{O}(B) + t \overline{\mathcal{O}}(B).
+    % \end{align*}
+    \[[x]_i \approx [y]_j ~\Longleftrightarrow x \sim y.\]
+    Então, o espaço resultante é homeomorfo ao espaço $X = \bigsqcup_{i=1}^k P_i/\sim$ obtido pelo esquema de etiquetagem $w_1,\ldots, w_k$.
+    \begin{dem}
+        Note que, se $\Tilde{x} \in [x]_i \in X_i$, então o único $t \in [0,1]$ tal que $x = (1-t) \mathcal{O}(A) + t \overline{\mathcal{O}}(A)$ também satisfaz $\Tilde{x} = (1-t) \mathcal{O}(\Tilde{A}) + t \overline{\mathcal{O}}(\Tilde{A})$ para alguma aresta $\Tilde{A}$ com mesma etiqueta que $A$. Aplicando o mesmo raciocínio para $y$, concluímos que $\sim$ está bem definido.
+        
+        Pelo $1^o$ Teorema do Homomorfismo, o espaço quociente é unicamente determinado por sua propriedade universal. Fixemos um espaço topológico $Y$ e uma função contínua $\phi: \bigsqcup_{i=1}^k X_i \to Y$ constante nas classes de equivalência de $\approx$. Então, $\phi$ é induzida por uma função $\phi_0: \bigsqcup_{i=1}^k P_i \to Y$ constante nas classes de equivalência de $\sim$, e, desse modo, induz uma função $\overline{\phi}: \bigsqcup_{i=1}^k P_i/\sim \to Y$. Sendo $\pi: \bigsqcup_{i=1}^k P_i \to \bigsqcup_{i=1}^k X_i/\approx$ a projeção canônica, vale que $\overline{\phi}\circ \pi = \phi$, e concluímos.
+    \end{dem}
+\end{lemma}
+
+Vamos definir algumas construções possíveis para alterar o esquema de etiquetagem de modo que o espaço quociente obtido seja homeomorfo (como pode ser facilmente verificado, de maneira análoga à demonstração do lema anterior). Vamos utilizar estas construções para classificar as superfícies a menos de homeomorfismo.
+
+\begin{prop}
+    Os seguintes procedimentos sobre os esquemas de etiquetagem resultam em espaços quociente homeomorfos:
+    \begin{enumerate}
+        \item \textbf{Recorte:} dados um esquema de etiquetagem $w = a_{i_1}^{\varepsilon_1} \ldots a_{i_n}^{\varepsilon_n}$, $1\leq j\leq n$ uma etiqueta $b$ não utilizada anteriormente e $\varepsilon = \pm 1$, substituímos $w$ por $w_1, w_2$, onde $w_1 = a_{i_1}^{\varepsilon_1} \ldots a_{i_j}^{\varepsilon_j} b^{\varepsilon}$ e $w_2 = b^{-\varepsilon} a_{i_{j+1}}^{\varepsilon_{j+1}} \ldots a_{i_n}^{\varepsilon_n}$.
+        
+        Geometricamente, estamos dividindo uma região poligonal em duas, adicionando uma aresta no interior da região poligonal original. Como utilizamos a mesma etiqueta nas arestas ``novas'' das regiões poligonais resultantes, o espaço quociente não se altera, pois tais arestas serão identificadas.
+    
+        \item \textbf{Colagem:} o processo contrário ao de recorte. Dado um esquema de etiquetagem $w_1, w_2$, onde $w_1 = a_{i_1}^{\varepsilon_1} \ldots a_{i_j}^{\varepsilon_j} b$ e $w_2 = b^{-1} a_{i_{j+1}}^{\varepsilon_{j+1}} \ldots a_{i_n}^{\varepsilon_n}$, suponha que a etiqueta $b$ só tenha uma ocorrência em $w_1$ e uma ocorrência em $w_2$. Então, podemos substituir $w_1, w_2$ por $w = a_{i_1}^{\varepsilon_1} \ldots a_{i_n}^{\varepsilon_n}$.
+    
+        \item \textbf{Endireitar de arestas:} dado um esquema de etiquetagem $w$, suponha que exista uma sequência $y = c_1^{\delta_1} \ldots c_k^{\delta_k}$ tal que $c_i \neq c_j$ para todos $i\neq j$, e tal que as únicas ocorrências das etiquetas $c_i$ são em uma sequência $y$ ``contida'' em $w$. Então, podemos substituir todas as ocorrências da sequência $y$ por $b^{\varepsilon}$, onde $b$ é uma etiqueta não utilizada anteriormente e $\varepsilon = \pm 1$. Uma sequência $y$ nessas condições é dita \textbf{removível}.
+    
+        Geometricamente, estamos substituindo uma sequência de lados da região poligonal (que sempre aparecem juntos no esquema de etiquetagem) por apenas um lado.
+    
+        \item \textbf{Dobradura de arestas:} o processo contrário ao de endireitar de arestas. Dado um esquema de etiquetagem $w$, uma etiqueta $b$ cujas ocorrências em $w$ sempre possuem mesma orientação $\varepsilon$ e uma sequência $y$ com etiquetas não utilizadas em $w$, substituímos todas as ocorrências de $b^{\varepsilon}$ por $y$.
+
+        \item \textbf{Troca de etiquetas:} podemos substituir todas as ocorrências de uma etiqueta $a$ por outra etiqueta $c$ não utilizada. Disso é imediato que podemos trocar as ocorrências de quaisquer duas etiquetas dadas $a$ e $b$ (substituindo $a$ por $c$, depois $b$ por $a$ e, por fim, $c$ por $b$).
+        
+        \item \textbf{Troca de orientação:} podemos inverter o sinal da orientação de todas as ocorrências de uma etiqueta $b$ fixada. Isso segue de que o espaço quociente é definido por meio de transformações lineares positivas entre estes lados (que não se alteram, caso a orientação de todos estes lados seja invertida).
+        
+        \item \textbf{Permutação cíclica:} um esquema de etiquetagem $w$ representa o mesmo espaço quociente, caso comecemos a ordenar os pontos a partir de pontos distintos. Desse modo, podemos substituir $w = a_{i_1}^{\varepsilon_1} \ldots a_{i_n}^{\varepsilon_n}$ por\break $w' = a_{i_n}^{\varepsilon_n} a_{i_1}^{\varepsilon_1} \ldots a_{i_{n-1}}^{\varepsilon_{n-1}}$ (bem como qualquer permutação cíclica da sequência).
+    
+        \item \textbf{Inversão formal:} dado um esquema de etiquetagem $w$, caso usássemos a ordenação dos pontos em sentido horário, o espaço resultante seria o mesmo, a menos de uma reflexão (em especial, seriam homeomorfos). Assim, podemos substituir $w = a_{i_1}^{\varepsilon_1} \ldots a_{i_n}^{\varepsilon_n}$ por $w = a_{i_n}^{-\varepsilon_n} \ldots a_{i_1}^{-\varepsilon_1}$.
+
+        \item \textbf{Cancelamento:} dado um esquema de etiquetagem $w$, suponha que existam duas sequências $y_0, y_1$ com comprimento maior ou igual a 2 e uma etiqueta $c$ sem ocorrências em $y_0$ e em $y_1$ tais que $w = [y_0] cc^{-1} [y_1]$. Então, podemos substituir $w$ por $w' = [y_0 y_1]$.
+
+        \item \textbf{Adjunção:} dado um esquema de etiquetagem $w$, suponha que existam duas sequências $y_0, y_1$ com comprimento maior ou igual a 2 tal que $w = [y_0 y_1]$, e seja $c$ uma etiqueta sem ocorrências em $y_0$ e em $y_1$. Então, podemos substituir $w$ por $w' = [y_0] cc^{-1} [y_1]$.
+    \end{enumerate}
+\end{prop}
+
+\begin{defi}
+    Um esquema de etiquetagem é \textbf{próprio} se cada etiqueta possui exatamente 2 ocorrências. Já este é dito \textbf{irredutível} se não há ocorrência de uma sequência da forma $c c^{-1}$ ou $c^{-1} c$ para alguma etiqueta $c$.
+    
+    Dizemos que dois esquemas de etiquetagem próprios $w_1,\ldots,w_k$ e $\Tilde{w}_1,\ldots,\Tilde{w}_l$ são \textbf{equivalentes} se é possível obter um a partir do outro por meio das construções da proposição anterior.
+\end{defi}
+
+Como tais construções são reversíveis, isto define uma relação de equivalência entre os esquemas de etiquetagem próprios. Além disso, por conta da proposição anterior, dois esquemas de etiquetagem equivalentes definem espaços topológicos homeomorfos.
+
+É interessante nos restringirmos a analisar esquemas de etiquetagem próprios pois, se realizamos a colagem de $k\geq 1$ arestas, o espaço quociente não é uma superfície para $k\neq 2$. Para ver isso, note que, nesse caso, qualquer ponto em tal aresta possui uma vizinhança homeomorfa à colagem de $k$ hemisférios de um disco $D^2$ (identificando o equador de todos os hemisférios), o que não é localmente euclidiano para $k\neq 2$ (no caso em que $k=1$, teríamos uma variedade com bordo).
+
+Também vamos nos restringirmos a analisar esquemas de etiquetagem de comprimento $4$ ou maior.
+
+\begin{defi}
+    Seja $w$ um esquema de etiquetagem próprio (de uma única região poligonal). Se cada etiqueta aparece uma vez com a orientação $+1$ e uma vez com a orientação $-1$, dizemos que $w$ é do \textbf{tipo toro}. Caso contrário, $w$ é dito do \textbf{tipo projetivo}.
+\end{defi}
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[forma-normal-thm]{Teorema de Forma Normal}
+\end{titlemize}

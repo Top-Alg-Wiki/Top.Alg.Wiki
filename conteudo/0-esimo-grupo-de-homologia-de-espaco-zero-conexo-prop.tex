@@ -1,0 +1,48 @@
+\subsection{0-ésimo grupo de homologia singular de um espaço 0-conexo} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{0-esimo-grupo-de-homologia-de-espaco-zero-conexo-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[complexo-de-cadeias-def]{Complexo de cadeias};\\ 
+    \item \hyperref[homologia-singular-def]{Homologia singular}.
+\end{titlemize}
+
+\begin{prop}
+    Se um espaço topológico não vazio $X$ é 0-conexo ou conexo por caminho, então $H_0(X)\cong \mathbb{Z}$.
+\end{prop}
+\begin{dem}
+    Note que $Z_0(X)=S_0(X)$. Logo, cada elemento de $Z_0(X)$ tem a forma $z=a_1x_1+...+a_kx_k$, onde $a_i\in \mathbb{Z}$ e $x_i\in X$.
+
+    Consideramos o homomorfismo $\alpha:Z_0(X)\rightarrow \mathbb{Z}$ definido por 
+    \[\alpha (a_1x_1+...+a_kx_k)=a_1+...+a_k.\]
+    Como $X$ não é vazio, $\alpha$ é sobrejetor. Vamos provar que $B_0(X)=\text{Ker}(\alpha)$.
+
+    Para cada 1-simplexo singular $\sigma\in S_1(X)$ temos 
+    \[\alpha(\partial \sigma)=\alpha(\sigma(0,1)-\sigma(1,0))=1-1=0,\]
+    o que implica que $B_0(X)\subseteq \text{Ker}(\alpha)$. 
+    
+    Por outro lado, seja dada uma 0-cadeia $c_0=a_1x_1+...+a_kx_k$ em $\text{Ker}(\alpha)$. Fixemos um ponto $x_0\in X$. Pela definição de 0-conexo, para cada índice $i$ existe um 1-simplexo singular (uma curva) $\sigma_i:\Delta^1\rightarrow X$ tal que $\sigma_i (1,0)=x_0$ e $\sigma_i(0,1)=x_i$. Assim, segue que a 1-cadeia singular $c_1=a_1\sigma_1+...+a_k\sigma_k$ tem bordo 
+    \begin{align*}
+        \partial(c_1)=&a_1\partial \sigma_1+...+a_k\partial\sigma_i=a_1 (x_1-x_0)+...+a_k (x_k-x_0)\\
+        &=a_1x_1+...+a_kx_k -(\sum_{i=0}^k a_i)x_0.
+    \end{align*}
+    Como $c_0\in \text{Ker}(\alpha)$, $\sum_{i=0}^k a_i=0$. Logo, segue que 
+    \[\partial c_1=c_0.\]
+    Isso mostra que $c_0\in B_0(X)$, ou seja, $\text{Ker}(\alpha)\subseteq B_0(X).$
+
+    Com isso provamos que $B_0(X)=\text{Ker}(\alpha)$. Finalmente, pelo Teorema do Isomorfismo, obtemos
+    \[H_0(X)=Z_0(X)/B_0(X)=Z_0(X)/\text{Ker}(\alpha)\cong \mathbb{Z}.\]
+\end{dem}
+
+Se $X$ não é 0-conexo, assumamos que seja $X=\bigsqcup_\lambda X_\lambda$ a separação de $X$ em componentes por caminho. Por continuidade, a imagem de cada n-simplexo singular $\sigma:\Delta^n\rightarrow X$ está contida em um e somente um componente por caminho $X_\lambda$. Isso resulta que $S_n(X)=\bigoplus_\lambda S_n(X_\lambda)$. Nesse contexto, o operador bordo opera componente a componente. Logo, 
+\[Z_n(X)=\bigoplus_\lambda Z_n(X_\lambda)\;\;\;\text{ e }\;\;\;B_n(X)=\bigoplus_\lambda B_n(X_\lambda).\] 
+Portanto, para cada $n\ge 0,$
+\[H_n(X)=\frac{\bigoplus_\lambda Z_n(X_\lambda)}{\bigoplus_\lambda B_n(X_\lambda)}\cong\bigoplus\frac{Z_n(X_\lambda)}{B_n(X_\lambda)}=\bigoplus_\lambda H_n(X_\lambda
+).\]
+Em particular, 
+\begin{corol}
+    O grupo $H_0(X)$ é abeliano livre com tantos geradores quanto as componentes por caminho do espaço $X$.
+\end{corol}
+
+\begin{titlemize}{Lista de consequências}
+    \item \hyperref[0-conexo-e-homomorfismo-de-homologia-induzido-prop]{0-conexo e homomorfismo de homologia induzido}.\\
+	%\item \hyperref[]{}
+\end{titlemize}

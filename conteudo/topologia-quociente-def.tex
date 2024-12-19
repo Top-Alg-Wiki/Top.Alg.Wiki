@@ -1,8 +1,8 @@
 \subsection{Topologia Quociente}
 \label{topologia-quociente-def}
-\begin{titlemize}{Lista de dependências}
-	\item \hyperref[topologia-final]{Topologia Final}; 
-\end{titlemize}
+% \begin{titlemize}{Lista de dependências}
+% 	\item \hyperref[topologia-final]{Topologia Final}; 
+% \end{titlemize}
 \begin{defi}[Topologia Quociente]
 	Seja \(X\) um espaço topológico e \(\sim\) uma relação de equivalência em \(X\).
 	Podemos conferir ao espaço \(X/\sim\) uma estrutura de espaço topológico da seguinte maneira. Considere a função projeção
@@ -10,7 +10,7 @@
 		\pi:X&\to X/\sim;\\
 		x&\mapsto [x].
 	\end{align*}
-	Podemos fazer com que \(\pi\) seja uma função contínua dando, para \(X/\sim\) a topologia final com relação à \(\pi\). Isto é, um subconjunto de \(X/\sim\) é aberto se, e somente se, sua pré-imagem por $\pi$ é aberto de \(X\).  
+	Podemos fazer com que \(\pi\) seja uma função contínua munindo \(X/\sim\) com a \emph{topologia final} com relação à \(\pi\). Isto é, um subconjunto de \(X/\sim\) é aberto se, e somente se, sua pré-imagem por $\pi$ é aberto de \(X\).
 \end{defi}
 
 Varios exemplos importantes de espaços topológicos com os quais trabalharemos no estudo de topologia algébrica podem ser construídos como espaços quocientes. Em particular, uma construção muito útil é a de tomar o quociente de um espaço por um subespaço, como explicado na seguinte definição.
@@ -19,9 +19,18 @@ Varios exemplos importantes de espaços topológicos com os quais trabalharemos 
     \centerline{
 	\(a\sim_A b\) se e somente se \(a=b\) ou \(a,b\in A\).}\\ Essa relação é de equivalência, e assim definimos \(X/A = X/\sim_A\). 
 \end{defi}
-Um exemplo desse tipo de construção é o círculo \(S^1\), que pode ser construído como \(I/\{0,1\}\) onde \(I=[0,1]\). 
+
+Vejamos alguns exemplos simples.
+
+\begin{ex}
+    \begin{itemize}
+        \item O círculo \(\mathbb{S}^1 = \mathbb{T}^1\) pode ser construído como \(I/\{0,1\}\), onde \(I=[0,1]\).
+        \item Mais geralmente, o $n$-toro $\mathbb{T}^n$ pode ser construído como $[0,1]^n/\sim$, onde $\sim$ é a relação de equivalência que identifica $x = (x_1,\ldots,x_n), y = (y_1,\ldots,y_n) \in [0,1]^n$ se existe $1\leq i\leq n$ tal que $x_j = y_j$ para todo $j \neq i$ e $\{x_i,x_j\} = \{0,1\}$, ou então se $x=y$.
+    \end{itemize}
+\end{ex}
+
 \begin{titlemize}{Lista de consequências}
-    \item
+    \item \hyperref[funcao-continua-em-topologia-quociente-prop]{Função contínua em topologia quociente}
 	\item \hyperref[topologia-quociente-hausdorff-thm]{Espaços quocientes Hausdorff}
 \end{titlemize}
 
