@@ -1,0 +1,55 @@
+\subsection{Pushout de espaços topológicos} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{pushout-de-espacos-topologicos-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[topologia-quociente-def]{Espaços Quociente};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+    \item \hyperref[funcao-continua-em-topologia-quociente-prop]{Função contínua em topologia quociente}.
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+\begin{defi}
+    Sejam $X,Y,Z$ espaços topológicos. E Sejam $f:Z\rightarrow X$ e $g:Z\rightarrow Y$ funções contínuas. O \textbf{Pushout} de $f$ e $g$ é o espaço quociente $X\sqcup_Z Y=X\sqcup Y/\sim$, onde $\sim$ é a menor relação de equivalência que contém $\{(f(z),g(z))\in X\times Y:z\in Z\}$. 
+\end{defi}
+
+\begin{prop}
+    Sejam $X,Y,Z$ espaços topológicos. Além disso, sejam $f:Z\rightarrow X$ e $g:Z\rightarrow Y$ funções contínuas. Seja também $\pi:X\sqcup Y\rightarrow X\sqcup_Z Y$ a função projeção associada ao quociente. Então, o espaço $X\sqcup_Z Y$, juntamente com as funções contínuas definidas por:
+    \begin{align*}
+        i_X:X &\longrightarrow X\sqcup Y/\sim & i_Y:Y&\longrightarrow X\sqcup Y/\sim\\
+        x&\longmapsto \pi(x) & y &\longmapsto \pi(y)
+    \end{align*}
+    forma um diagrama de pushout. Ou seja, dadas quaisquer duas funções contínuas $h_X:X\rightarrow W$ e $h_Y:Y\rightarrow W$ que satisfaçam $h_X\circ f=h_Y\circ g$, existe uma única função contínua 
+    $\phi:X\sqcup_Z Y\rightarrow W$ tal que 
+    $$h_X=\phi\circ i_X \;\;\;\text{ e }\;\;\; h_Y=\phi\circ i_Y.$$ 
+    Isso é ilustrado no diagrama comutativo seguinte:
+% https://q.uiver.app/#q=WzAsNSxbMCwwLCJaIl0sWzAsMiwiWCJdLFsyLDAsIlkiXSxbMiwyLCJYXFxzcWN1cF9aIFkiXSxbMywzLCJXIl0sWzAsMSwiZiIsMl0sWzAsMiwiZyJdLFsxLDMsImlfWCJdLFsyLDMsImlfWSIsMl0sWzEsNCwiaF9YIiwyXSxbMiw0LCJoX1kiXSxbMyw0LCJcXGV4aXN0cyEgXFxwaGkiLDEseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\[\begin{tikzcd}
+	Z && Y \\
+	\\
+	X && {X\sqcup_Z Y} \\
+	&&& W.
+	\arrow["g", from=1-1, to=1-3]
+	\arrow["f"', from=1-1, to=3-1]
+	\arrow["{i_Y}"', from=1-3, to=3-3]
+	\arrow["{h_Y}", from=1-3, to=4-4]
+	\arrow["{i_X}", from=3-1, to=3-3]
+	\arrow["{h_X}"', from=3-1, to=4-4]
+	\arrow["{\exists! \phi}"{description}, dashed, from=3-3, to=4-4]
+\end{tikzcd}\]
+\end{prop}
+
+\begin{dem}
+    De acordo com a construção da topologia quociente e da topologia de união disjunta, as funções $i_X,i_Y$ são contínuas. Além disso, a função dada por 
+    \begin{align*}
+        h_X\sqcup h_Y:X\sqcup Y&\longrightarrow W\\
+        a&\longmapsto h_X\sqcup h_Y(a)=\begin{cases}
+         h_X(a) & \text{ if }a\in X\\
+         h_Y(a) & \text{ if }a\in Y.
+        \end{cases}
+    \end{align*}
+    também é contínua. Como $h_X\circ f=h_Y\circ g$, pela definição de pushout de $f$ e $g$, a função $\phi:=(h_X\sqcup h_Y)\circ \pi^{-1}$ é bem-definida. Além disso, a função $\phi$ é contínua, pois a função $\phi\circ\pi=h_X\sqcup h_Y$ é contínua (pela proposição \ref{funcao-continua-em-topologia-quociente-prop}). Pela construção de $\phi$, temos $h_X=\phi\circ i_X$ e $h_Y=\phi\circ i_Y$, o que prova a existência de tal função.
+
+    Finalmente, provamos que esta função é única: suponha que $\phi'$ seja outra função contínua que satisfaça $h_X=\phi'\circ i_X$ e $h_Y=\phi'\circ i_Y$. Então, temos $\phi'|_{i_X(X)}=\phi|_{i_X(X)}$ e $\phi'|_{i_Y(Y)}=\phi|_{i_Y(Y)}$. Como $i_X(X)\cup i_Y(Y)=X\sqcup_ZY$, concluímos que $\phi=\phi'$.
+\end{dem}
+
+%\begin{titlemize}{Lista de consequências}
+	%\item %\hyperref[consequencia1]{Consequência 1};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+%\end{titlemize}

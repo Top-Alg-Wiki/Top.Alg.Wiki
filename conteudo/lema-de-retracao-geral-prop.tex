@@ -1,0 +1,25 @@
+\subsection{Lema de retração (versão geral)} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{lema-de-retracao-geral-prop}
+\begin{titlemize}{Lista de dependências}
+    \item \hyperref[homologia-singular-def]{Homologia singular};\\
+    \item \hyperref[homomorfismo-de-homologias-singulares-induzido-prop]{Homomorfismo de homologias singulares induzido};\\
+    \item \hyperref[homologia-singular-de-S1-prop]{Homologia singular da circunferência};\\
+    \item \hyperref[grupo-de-homologia-singular-de-n-esfera-prop]{Grupo de homologia singular de n-esfera}.
+\end{titlemize}
+
+Apresentamos aqui uma versão mais geral do lema de retração.
+
+\begin{lemma}
+	Para todo $n\ge 2$, não existe uma retração $r:D^n \longrightarrow \partial D^n = \mathbb{S}^{n-1}$.
+\end{lemma}
+
+\begin{dem}
+Suponha que $r:D^{n} \longrightarrow \mathbb{S}^{n-1}$ seja uma retração. Sendo $D^n$ um espaço contrátil, pois ele é convexo, temos que $H_{n-1}(D^n)=0$ e, por conseguinte, $r_*$ é uma função nula. Sejam $i:\mathbb{S}^{n-1}\hookrightarrow D^n$ a inclusão. Pela definição de retração, $r\circ i=id_{\mathbb{S}^{n-1}}$. Assim, obtemos 
+\[0=r_*\circ i_*=(r\circ i)_*=id_{H_{n-1}(\mathbb{S}^{n-1})}.\]
+Dessa forma, teríamos que $H_{n-1}(\mathbb{S}^{n-1})=0$, contrariando $H_{n-1}(\mathbb{S}^{n-1})\cong \mathbb{Z}$.
+\end{dem}
+
+\begin{titlemize}{Lista de consequências}
+    \item \hyperref[teorema-de-ponto-fixo-de-brouwer-geral-prop]{Teorema de ponto fixo de Brouwer (versão geral)}.
+	%\item \hyperref[]{}
+\end{titlemize}

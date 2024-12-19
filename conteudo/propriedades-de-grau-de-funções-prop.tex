@@ -1,0 +1,34 @@
+\subsection{Propriedades de grau de funções de esferas} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{propriedades-de-grau-de-funções-prop}
+\begin{titlemize}{Lista de dependências}
+    \item \hyperref[homologia-singular-def]{Homologia singular};\\
+    \item \hyperref[homomorfismo-de-homologias-singulares-induzido-prop]{Homomorfismo de homologias singulares induzido};\\
+    \item \hyperref[homologia-singular-de-um-espaco-contratil-prop]{Homologia singular de um espaço contrátil};\\
+    \item \hyperref[homologia-singular-de-S1-prop]{Homologia singular da circunferência};\\
+    \item \hyperref[grupo-de-homologia-singular-de-n-esfera-prop]{Grupo de homologia singular de n-esfera};\\
+    \item \hyperref[grau-de-funcoes-em-esferas-def]{Grau de funções em esferas}.
+\end{titlemize}
+
+\begin{prop}
+    O grau $deg(-)$ satisfaz as seguintes propriedades:
+    \begin{enumerate}
+        \item A função identidade $id:\mathbb{S}^n\rightarrow \mathbb{S}^n$ tem grau 1.
+        \item Se $f,g:\mathbb{S}^n\rightarrow\mathbb{S}^n$ são contínuas, então $deg(f\circ g)=deg(f)deg(g)$.
+        \item Se $f,g:\mathbb{S}^n\rightarrow\mathbb{S}^n$ são homotópicas, então $deg(f)=deg(g)$.
+        \item Se $f:\mathbb{S}^n\rightarrow\mathbb{S}^n$ é uma equivalência de homotopia, então $deg(f)=+1\;\text{ ou }-1$.
+        \item Se $f:\mathbb{S}^n\rightarrow\mathbb{S}^n$ é contínua e não sobrejetora, então $deg(f)=0$.
+    \end{enumerate}
+\end{prop}
+
+\begin{dem}
+    Os itens 1), 2) e 3) seguem dos resultados em \ref{homomorfismo-de-homologias-singulares-induzido-prop}. O item 4) segue dos itens 1), 2) e 3). 
+
+    Agora, provamos o item 5): Como $f$ não é sobrejetor, podemos escolher um ponto $x\in \mathbb{S}^n\setminus f(\mathbb{S}^n)$. Então, $f$ fatora-se como uma composição \[\mathbb{S}^n\xrightarrow{g} \mathbb{S}^n\setminus\{x\}\hookrightarrow \mathbb{S}^n,\]
+    onde denotamos a inclusão $\mathbb{S}^n\setminus\{x\}\hookrightarrow \mathbb{S}^n$ por $i$.
+    Como $\mathbb{S}^n\setminus\{x\}$ é contrátil, obtemos $H_n(\mathbb{S}^n\setminus \{x\})=0$. Isso implica que $f_*=i_*\circ g_*=0$.
+\end{dem}
+
+%\begin{titlemize}{Lista de consequências}
+    %\item %\hyperref[homomorfismo-de-homologias-singulares-induzido-prop]{Homomorfismo de homologias singulares induzido}.\\
+	%\item \hyperref[]{}
+%\end{titlemize}

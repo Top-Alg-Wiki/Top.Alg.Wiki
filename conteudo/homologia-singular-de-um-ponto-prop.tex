@@ -1,0 +1,41 @@
+\subsection{Homologia singular de um ponto} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{homologia-singular-de-um-ponto-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[complexo-de-cadeias-def]{Complexo de cadeias};\\ 
+    \item \hyperref[homologia-singular-def]{Homologia singular}.
+\end{titlemize}
+
+\begin{prop}
+    O n-ésimo grupo de homologia de um ponto é igual a
+    \begin{align*}
+        H_n(\{x\})\cong\begin{cases}
+            \mathbb{Z}&\text{se }n=0\\
+            0&\text{se }n>0.
+        \end{cases}
+    \end{align*}
+\end{prop}
+
+\begin{dem}
+    Note que só existe um único n-simplexo singular $\sigma_n:\Delta^n\rightarrow \{x\}$ que é uma função constante. Logo, $S_n(\{x\})$ é o grupo cíclico infinito gerado por $\sigma_n$. Além disso, para $n\ge 1$, $\partial_n \sigma_n=\sigma_{n-1}$. Dessa forma, obtemos 
+    \begin{align*}
+        \partial\sigma_n=\sum_{i=0}^n (-1)^i \partial_n\sigma_n=\begin{cases}
+            \sigma_{n-1}&\text{se n é par}\\
+            0&\text{se n é ímpar}.
+        \end{cases}
+    \end{align*}
+    Portanto, o complexo de cadeias $S(\{x\})_*$ é a sequência 
+    \[...\xrightarrow{0} S_{4}(\{x\})\xrightarrow{\partial} S_3(\{x\})\xrightarrow{0} S_2(\{x\})\xrightarrow{\partial}...\rightarrow 0,\]
+    em que $\partial_{(2k)}$ é o isomorfismo dado por $\sigma_{2k}\rightarrow \sigma_{2k-1}$ para todo $k\ge 1$. Logo $Z_n(\{x\})=B_n(\{x\})=\{0\}$ para todo $n\ge 1$, enquanto que $Z_0(\{x\})=S_0 (\{x\})\cong \mathbb{Z}$ e $B_0(\{x\})=0$.
+\end{dem}
+
+Como $\Delta^n$ é conexo, qualquer função contínua de $\Delta^n$ para um conjunto finito $\{x_1,...,x_m\}$, onde o conjunto é equipado com a topologia discreta, deve ser constante. Consequentemente, o mesmo argumento utilizado anteriormente implica que o n-ésimo grupo de homologia de $\{x_1,...,x_n\}$ é igual a
+\begin{align*}
+        H_n(\{x_1,...,x_m\})\cong\begin{cases}
+            \mathbb{Z}^m&\text{se }n=0\\
+            0&\text{se }n>0.
+        \end{cases}
+    \end{align*}
+\begin{titlemize}{Lista de consequências}
+    \item \hyperref[homologia-singular-de-um-espaco-contratil-prop]{Homologia singular de um espaço contrátil}.
+	%\item \hyperref[]{}
+\end{titlemize}

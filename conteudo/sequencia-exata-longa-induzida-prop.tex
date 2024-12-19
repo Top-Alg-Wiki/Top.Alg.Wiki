@@ -1,0 +1,55 @@
+\subsection{Sequência exata longa induzida} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{sequencia-exata-longa-induzida-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[complexo-de-cadeias-def]{Complexo de cadeias};\\ 
+    \item \hyperref[aplicacao-de-cadeias-def]{Aplicação de cadeias};\\
+    \item \hyperref[homomorfismo-induzido-de-cadeias-prop]{Homomorfismo induzido de cadeias};\\
+    \item \hyperref[sequencia-exata-def]{Sequência exata};\\
+    \item \hyperref[homomorfismo-conectante-def]{Homomorfismo conectante}.
+\end{titlemize}
+
+\begin{thm}
+    Seja 
+    \[0\rightarrow \mathcal{A}\xrightarrow{\phi} \mathcal{B}\xrightarrow{\psi} \mathcal{C}\rightarrow 0\]
+    uma sequência exata de complexos. Então, a sequência 
+    \[...\rightarrow H_n(\mathcal{A})\xrightarrow{\phi_*}H_n(\mathcal{B})\xrightarrow{\psi_*} H_n (\mathcal{C})\xrightarrow{\delta}(H_{n-1}(\mathcal{A}))\rightarrow...\]
+    é exata.
+\end{thm}
+
+\begin{dem}
+    Verificamos a exatidão em 3 passos:
+
+    Passo 1: $\text{Im}(\phi_*)=\text{Ker}(\psi_*)$
+
+    Por hipótese, $\psi\circ \phi=0$. Logo $\psi_*\circ \phi_*=0$, ou seja $\text{Im}(\phi_*)\subseteq \text{Ker}(\psi_*).$ Para provar a outra inclusão, seja $b+B_n(\mathcal{B})\in \text{Ker} (\psi_*)\subseteq H_n (\mathcal{B})$. Então, $\psi(b)\in B_n(\mathcal{C})$, ou seja, existe $c\in C_{n+1}$ tal que $\partial c=\psi(b)$. Como $\psi$ é sobrejetora, existe $b^+\in B_{n+1}$ tal que $\psi(b^+)=c$. Então, $b-\partial b^+\in B_n$ e temos: 
+    \[\psi(b-\partial b^+)=\psi(b)-\psi(\partial b^+)=\partial c-\partial \psi(b^+)=\partial(c-\psi(b^+))=0.\]
+    Isso mostra que $b-\partial b^+ \in \text{Ker}(\psi)=\text{Im}(\phi)$, ou seja, existe $a\in A_n$ tal que $\phi(a)=b-\partial b^+$, e temos: 
+    \[\phi(\partial a)=\partial\phi (a)=\partial (b-\partial b^+)=\partial b=0.\]
+    Como $\phi$ é injetora, $\partial a=0$, ou seja, $a\in Z_n(\mathcal{C})$. Além disso, 
+    \[\phi_*(a+B_n(\mathcal{A}))=\phi(a)+B_n(\mathcal{B})=b-\partial b^++B_n(\mathcal{B})=b+B_n(\mathcal{B}).\]
+    Isso prova a inclusão $\text{Ker}(\psi_*)\subseteq \text{Im}(\phi_*)$.
+
+    Passo 2: $\text{Im}(\psi_*)=\text{Ker}(\delta).$
+
+    Seja $\overline{z}=z+B_n(\mathcal{C})\in \text{Im}(\psi_*)$, onde $z=\psi(b)$ para $b\in Z_n(\mathcal{B})$. Pela construção do homomorfismo conectante, $\delta(\overline{z})=a+B_{n-1}(\mathcal{A})$, em que $a\in A_{n-1}$ é tal que $\phi(a)=\partial b$. Como $\partial b=0$ e $\phi$ é injetora, temos que $a=0$, portanto, $\overline{z}\in \text{Ker}(\delta)$. Isso prova que $\text{Im}(\psi_*)\subseteq \text{Ker}(\delta)$.
+    
+    Por outro lado, seja $\overline{z}=z+B_n(\mathcal{C})\in \text{Ker}(\delta)$. Pela construção de $\delta$, definimos $a:=\tilde{\delta_n}(z)\in A_{n-1}$ e seja $b\in B_n$ tal que $\psi(b)=z$ e, ainda, $\phi(a)=\partial b$. Como $\overline{z}\in \text{Ker}(\delta)$, temos $a\in B_{n-1}(\mathcal{A})$, ou seja, existe $a^+\in A_n$ tal que $a=\partial a^+$. Além disso, temos
+    \[\partial(b-\phi(a^+))=\partial b-\partial \phi(a^+)=\partial b- \phi(\partial a^+)=\partial b-\phi(a)=\partial b-\partial b=0.\]
+    Isso mostra que $b-\phi(a^+)\in Z_n(\mathcal{B})$ e, portanto, está bem definida a classe $(b-\phi(a^+))+B_n(\mathcal{B})\in H_n(\mathcal{B})$. Além disso, 
+    \[\psi(b-\phi(a^+))=\psi (b)-\psi\circ\phi(a^+)=\psi(b)=z.\]
+    Portanto, $\psi_*((b-\phi(a^+))+B_n(\mathcal{B}))=\overline{z}$. Isso prova que $\text{Ker}(\delta)\subseteq \text{Im}(\psi_*)$.
+
+    Passo 3: $\text{Im}(\delta)=\text{Ker}(\phi_*)$.
+
+    Por construção, se $a+B_{n-1}(\mathcal{A})\in \text{Im}(\delta)$, então $\phi(a)=\partial b$ para algum $b\in B_n$ e, assim, $\phi_*(a+B_{n-1}(\mathcal{A}))=B_n(\mathcal{B})$, ou seja $a+B_{n-1}(\mathcal{A})\in \text{Ker}(\phi_*)$. Isso prova que $\text{Im}(\delta)\subseteq \text{Ker}(\phi_*)$. 
+
+    Por outro lado, seja $a+B_{n-1}(\mathcal{A})\in \text{Ker}(\phi_*)$. Então, $\phi(a)\in B_{n-1}(\mathcal{B})$, ou seja, existe $b\in B_n$ tal que $\phi(a)=\partial b$. Para o elemento $\psi(b)\in C_n$, temos:
+    \[\partial \psi(b)=\psi(\partial b)=\psi\circ\phi(a)=0.\]
+    Logo, $\psi(b)\in Z_n(\mathcal{C})$ e, pela construção de $\delta$, temos $\delta
+    (\psi(b)+B_n(\mathcal{C}))=a+B_{n-1}(\mathcal{A}).$ isso mostra que $\text{Ker}(\phi_*)\subseteq \text{Im}(\delta)$.
+\end{dem}
+    
+\begin{titlemize}{Lista de consequências}
+    \item \hyperref[sequencia-de-mayer-vietoris-prop]{Sequência de Mayer-Vietoris}.
+	%\item \hyperref[]{}
+\end{titlemize}
