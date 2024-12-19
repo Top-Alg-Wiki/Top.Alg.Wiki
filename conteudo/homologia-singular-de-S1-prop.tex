@@ -1,0 +1,56 @@
+\subsection{Homologia singular da circunferência} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{homologia-singular-de-S1-prop}
+\begin{titlemize}{Lista de dependências}
+    \item \hyperref[sequencia-exata-def]{Sequência exata};\\
+    \item \hyperref[homomorfismo-conectante-def]{Homomorfismo conectante};\\
+    \item \hyperref[homologia-singular-def]{Homologia singular};\\
+    \item \hyperref[homomorfismo-de-homologias-singulares-induzido-prop]{Homomorfismo de homologias singulares induzido};\\
+    \item \hyperref[homologia-singular-de-um-ponto-prop]{Homologia singular de um ponto};\\
+    \item \hyperref[0-esimo-grupo-de-homologia-de-espaco-zero-conexo-prop]{0-ésimo grupo de homologia singular de um espaço 0-conexo};\\
+    \item \hyperref[homologia-singular-de-um-espaco-contratil-prop]{Homologia singular de um espaço contrátil};\\
+    \item \hyperref[sequencia-de-mayer-vietoris-prop]{Sequência de Mayer-Vietoris}.
+
+    
+    
+\end{titlemize}
+
+\begin{prop}
+    O n-ésimo grupo de homologia da circunferência é igual a 
+    \begin{align*}
+        H_n(\mathbb{S}^1)\cong\begin{cases}
+            \mathbb{Z}&\text{se }n=0,1\\
+            0&\text{se }n>1.
+        \end{cases}
+    \end{align*}
+\end{prop}
+
+\begin{proof}
+    Denotamos os polos norte e sul de $\mathbb{S}^1\subseteq \mathbb{R}^2$ por $pn=(0,1)$ e $ps=(0,-1)$ respectivamente. Tomamos os abertos $U=\mathbb{S}^1\setminus \{ps\}$ e $V=\mathbb{S}^1\setminus \{pn\}$, cuja união $U\cup V=\mathbb{S}^1$. Pelo Teorema \ref{sequencia-de-mayer-vietoris-prop}, a sequência de Mayer-Vietoris
+    \[...H_{n+1}(\mathbb{S}^1)\xrightarrow{\delta} H_n(U\cap V)\xrightarrow{\Phi}H_n(U)\oplus H_n(V)\xrightarrow{\Psi} H_n(\mathbb{S}^1)\rightarrow ...\]
+    é exata.
+
+    Os abertos $U$ e $V$ são ambos contráteis e, além disso, existe uma equivalência de homotopia sobrejetora $r:U\cap V\rightarrow\{q_1,q_2\}$, onde os pontos $q_1=(-1,0)$ e $q_2=(1,0)$. Dessa forma, os grupos de homologias $H_n(U),H_n(V)$ e $H_n(U\cup V)$ são todos triviais para $n\ge 1$, enquanto que $H_0(U)\cong \mathbb{Z}\cong H_0 (V)$ e $H_0 (U\cap V)\cong \mathbb{Z}\oplus \mathbb{Z}$.
+
+    Como $\mathbb{S}^1$ é 0-conexo, segue que $H_0(\mathbb{S}^1)\cong \mathbb{Z}$.
+
+    Para $n\ge 2$, pela sequência de Mayer-Vietoris, o trecho  
+    \[0\rightarrow H_n (\mathbb{S}^1)\rightarrow 0\]
+    é exata, consequentemente, $H_n(\mathbb{S}^1)=0.$
+
+    O grupo $H_1(\mathbb{S}^1)$ aparece no trecho 
+    \[0\rightarrow H_1(\mathbb{S}^1)\xrightarrow{\delta} H_0 (U\cap V)\xrightarrow{\Phi} H_0(U)\oplus H_0 (V),\]
+    onde $\Phi=i_*\oplus -j_*$, sendo $i:U\cap V\hookrightarrow U$ e $j:U\cap V\hookrightarrow V$ as inclusões. Os pontos $q_1$ e $q_2$ podem vistos como 0-ciclos, representam geradores do grupo $H_0(U\cap V)\cong \mathbb{Z}\oplus \mathbb{Z}$. Por outro lado, esses elementos também são geradores tanto de $H_0 (U)$ quanto de $H_0(V)$, pois, em ambos os grupos, eles representam a mesma classe. Isso ocorre porque $q_1-q_2$ é o bordo de um arco hemisféricos da circunferência de $q_2$ para $q_1$ passando por cima (ou orientados no sentido anti-horário) em $U$ e de um arco hemisféricos passando por baixo (orientados no sentido horário) em $V$. Logo, existe um $q\in U\cap V$ tal que $q_1,q_2\in [q]_U=q+B_0 (U)$ e $q_1,q_2\in [q]_V=q+B_0 (V)$. Portanto, $\Phi$ é dado por 
+    \begin{align*}
+        \Phi(q_1+B_0(U\cap V))=[q]_U\oplus-[q]_V;\\
+        \Phi(q_2+B_0(U\cap V))=[q]_U\oplus -[q]_V.
+    \end{align*}
+    Resulta que $\text{Ker}(\Phi)\cong \mathbb{Z}$, correspondendo ao subgrupo $\langle (1,-1) \rangle\subseteq \mathbb{Z}\oplus \mathbb{Z}\cong H_0(U\cap V)$. Por exatidão da última sequência, obtemos 
+    \[H_1(\mathbb{S}^1)\cong \text{Im}(\delta)=\text{Ker}(\Phi)\cong \mathbb{Z}.\]
+    Portanto, $H_n(\mathbb{S}^1)\cong \mathbb{Z}$ para $n=0$ ou $n=1$, e $H_n(\mathbb{S}^1)=0$ para todo $n\ge 2$.
+\end{proof}
+Para identificar um 1-ciclo $z_1\in Z_1(\mathbb{S}^1)$ cuja classe de homologia $\overline{z_1}=z_1+B_1 (\mathbb{S}^1)$ seja um gerador de $H_1(\mathbb{S}^1)$, podemos escolher $z_1$ como a soma de 1-cadeias, ou seja $z_1=c_1+c_2$, com $c_1\in S_1(U)$ e $c_2\in S_1(V)$. Como $\delta(\overline{z_1})=\partial c_1+B_0(U\cap V)$ (a observação no final de \ref{sequencia-de-mayer-vietoris-prop}), pelos isomorfismos $H_1(\mathbb{S}^1)\cong\text{Im}(\delta))\cong \text{Ker}(\Phi)$, temos que $\partial c_1=q_1-q_2=-\partial c_2$. Nessas condições, $c_1$ e $c_2$ são os 1-simplexos singulares correspondentes aos arcos hemisféricos da circunferência, orientados no sentido anti-horário.
+
+\begin{titlemize}{Lista de consequências}
+    \item \hyperref[grupo-de-homologia-singular-de-n-esfera-prop]{Grupo de homologia singular de n-esfera}.\\
+	%\item \hyperref[]{}
+\end{titlemize}

@@ -1,0 +1,39 @@
+\subsection{0-conexo e homomorfismo de homologias induzido} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{0-conexo-e-homomorfismo-de-homologia-induzido-prop}
+\begin{titlemize}{Lista de dependências}
+    \item \hyperref[homologia-singular-def]{Homologia singular};\\
+    \item \hyperref[homomorfismo-de-homologias-singulares-induzido-prop]{Homomorfismo de homologias singulares induzido};\\
+    \item \hyperref[0-esimo-grupo-de-homologia-de-espaco-zero-conexo-prop]{0-ésimo grupo de homologia singular de um espaço 0-conexo}.
+\end{titlemize}
+
+\begin{prop}
+    Sejam $X,Y$ espaços topológicos não vazios. Seja $f:X\rightarrow Y$ uma função contínua e considere o homomorfismo induzido $f_*:H_0(X)\rightarrow H_0(Y)$. Então:
+    \begin{enumerate}
+        \item Se $X$ é 0-conexo, então $f_*$ é um monomorfismo.
+        \item Se $Y$ é 0-conexo, então $f_*$ é um epimorfismo.
+        \item Se $X$ e $Y$ são 0-conexos, então $f_*$ é um isomorfismo.
+    \end{enumerate}
+\end{prop}
+
+\begin{dem}
+    Consideramos os epimorfismos $\overline{\alpha}:H_0(X)\rightarrow\mathbb{Z}$ e $\overline{\beta}:H_0(Y)\rightarrow\mathbb{Z}$ definidos por 
+    \[\overline{\alpha}(a_1x_1+...+a_kx_k+B_0(X))=a_1+...+a_k;\]
+    \[\overline{\beta}(b_1y_1+...+b_ly_l+B_0(Y))=b_1+...+b_l.\]
+    Temos que $\overline{\alpha}$ (resp. $\overline{\beta}$) é um isomorfismo se $X$ (resp. $Y$) é 0-conexo. Além disso, para uma classe de homologia $[z]:=a_1x_1+...+a_kx_k+B_0(X)$ em $H_0(X)$, temos: 
+    \begin{align*}
+        \overline{\beta}(f_*([z]))&=\overline{\beta}(f\circ (a_1x_1+...+a_kx_k)+B_0(Y))\\
+        &=\overline{\beta}(a_1(f\circ x_1)+...+a_k (f\circ x_k)+B_0(Y))\\
+        &=a_1+...+a_k=\overline{\alpha}([z])
+    \end{align*}
+    Portanto, $\overline{\beta}\circ f_*=\overline{\alpha}$. Assim:
+    \begin{enumerate}
+        \item Se $X$ é 0-conexo, então $\overline{\alpha}$ é um isomorfismo e, consequentemente, $f_*$ é um monomorfismo.
+        \item Se $Y$ é 0-conexo, então $\overline{\beta}$ é um isomorfismo e, consequentemente, $f_*$ é um epimorfismo.
+        \item Se $X$ e $Y$ são 0-conexos, então, com base nos dois itens anteriores, $f_*$ é um isomorfismo.
+    \end{enumerate}
+\end{dem}
+
+%\begin{titlemize}{Lista de consequências}
+    %\item %\hyperref[homomorfismo-de-homologias-singulares-induzido-prop]{Homomorfismo de homologias singulares induzido}.\\
+	%\item \hyperref[]{}
+%\end{titlemize}

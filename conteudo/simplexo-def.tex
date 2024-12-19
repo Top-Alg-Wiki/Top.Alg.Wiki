@@ -1,0 +1,25 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Simplexos}
+\label{simplexo-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[comb-afim-convexa-def]{Combinações afins e convexas};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	%\item \hyperref[]{};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+A seguir, introduzimos os conceitos de simplexos e de faces.
+
+\begin{defi}[Simplexos]
+    Se $\{x_0,\ldots,x_n\}$ são a.i. ($n \geq 0$), dizemos que $\sigma = \text{conv}\{x_0,\ldots,x_n\}$ é um $n$-\textbf{simplexo}, e o denotamos por $[x_0,\ldots, x_n]$. Dizemos que $n$ é a dimensão do simplexo $\sigma$, e escrevemos $n = \text{dim}(\sigma)$. O $n$-\textbf{simplexo padrão} é $\Delta^n = [0, e_1, \ldots, e_n]$ onde $\{e_1,\ldots, e_n\}$ é a base canônica de $\mathbb{R}^n$.
+
+    Um $k$-simplexo $\tau$ é dito uma $k$-\textbf{face} de $\sigma$ caso existam $0 \leq i_0 < \ldots < i_k \leq n$ tais que $\tau = [x_{i_0}, \ldots, x_{i_k}]$. $\tau$ é uma face \textbf{própria} se $\tau \neq \sigma$. Notação: $\tau \leq \sigma$ se $\tau$ é face de $\sigma$, e $\tau < \sigma$ se $\tau$ for face própria de $\sigma$.
+
+    As $0$-faces, $1$-faces e $2$-faces de $\sigma$ também são chamadas, respectivamente, de \textbf{vértices}, \textbf{arestas} e \textbf{triângulos} de $\sigma$.
+\end{defi}
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[complexo-simplicial-def]{Complexos Simpliciais};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	%\item \hyperref[]{}
+\end{titlemize}
+
+%[Bianca]: é mais fácil criar a lista de dependências do que a de consequências.

@@ -1,0 +1,28 @@
+\subsection{Caso geral de Teorema de Seifert-Van Kampen} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{teorema-s-vk-caso-geral-prop}
+\begin{titlemize}{Lista de dependências}
+    \item \hyperref[geradores-relacoes-def]{Geradores e Relações};\\
+	\item \hyperref[grupo-fundamental]{Grupo fundamental};\\
+    \item \hyperref[pushout-de-grupos-prop]{\emph{Pushout} de grupos}.\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+Como todo grupo pode ser apresentado em termos de geradores e relações, pelo teorema apresentado na subseção \ref{pushout-de-grupos-prop}, o teorema de Seifert-Van Kampen pode ser formulado como 
+\begin{thm}
+    Seja $X=U\cup V$, onde $U,V,U\cap V$ são conjuntos abertos e conexos por caminhos, com $x\in U\cap V$. Considere as inclusões 
+    \[i_U:U\cap V\hookrightarrow U,\;i_V:U\cap V\hookrightarrow V,\;j_U:U\hookrightarrow X,\;j_V:V\hookrightarrow X.\]
+    Sejam também
+    \begin{itemize}
+        \item $\pi_1(U,x)=F(S_1)/\langle R_1\rangle,$
+        \item $\pi_1(V,x)=F(S_2)/\langle R_2\rangle,$
+        \item $\pi_1(U\cap V,x)=F(S)/\langle R\rangle,$
+    \end{itemize}
+    onde $F(S_1)$ e $F(S_2)$ são os grupos livres gerados por $S_1$ e $S_2$, e $\langle R_1\rangle$, $\langle R_2\rangle$, $\langle R\rangle$ são os subgrupos normais correspondentes.
+
+    Para cada $s\in S$, tomamos $f_s\in F(S_1)$ e $g_s\in F(S_2)$, de modo que
+    \[i_{U_*}(s\langle R\rangle)=f_s\langle R_1\rangle\;\;\text{ e }\;\;i_{V_*}(s\langle R\rangle)=g_s\langle R_2\rangle.\]
+    Defina o conjunto
+    \[R'=\{f_sg^{-1}_s:s\in S\}\subset F(S_1)*F(S_2)=F(S_1\cup S_2).\]
+    Então, Então, o grupo fundamental de $X$ em $x$ é dado por
+    \[\pi_1(X,x)=\frac{F(S_1\cup S_2)}{\langle R_1\cup R_2\cup R' \rangle}.\]
+\end{thm}

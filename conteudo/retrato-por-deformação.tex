@@ -2,10 +2,18 @@
 \subsection{Retrato por Deformação}
 \label{retrato-por-deformação-def}
 \begin{titlemize}{Lista de dependências}
-	\item \hyperref[retração-def]{retração-def};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
-	\item \hyperref[homotopia]{homotopia};\\
+	\item \hyperref[retração-def]{Retração};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	\item \hyperref[homotopia]{Homotopia};\\
 % quantas dependências forem necessárias.
 \end{titlemize}
 \begin{defi}[Retrato por deformação]
-	Uma retração $r:X \rightarrow Y$ é um retrato por deformação se $(i\circ r) \sim id_X \textit{(Rel Y)}$, onde $i:Y \rightarrow X$ é a inclusão de $Y$ em $X$.
+	Uma retração $r:X \rightarrow Y$ é um retrato por deformação se $(i\circ r) \sim id_X$, onde $i:Y \rightarrow X$ é a inclusão de $Y$ em $X$.
 \end{defi}
+    \begin{ex}
+    Denotamos a esfera de raio $1/2$ por $\mathbb{S}^n_{1/2}$, e a função inclusão de $\mathbb{S}^n_{1/2}$ em $\text{int}(D^n)\setminus\{0\}$ por $i$. A função $r:\text{int}(D^n)\setminus\{0\}\longrightarrow \mathbb{S}^{n-1}_{1/2} $ dada por $x\longmapsto \frac{x}{2||x||}$ é um retrato por deformação, para todo $n\ge 2$, pois a função
+    \begin{align*}
+        H:\text{int}(D^n)\setminus\{0\} \times I &\longrightarrow \text{int}(D^n)\setminus\{0\}\\
+        (x,t)&\longmapsto (1-t)x+t\frac{x}{2||x||}
+    \end{align*}
+    é uma homotopia entre $id_{\text{int}(D^n)\setminus\{0\}}$ e $i\circ r$.
+\end{ex}

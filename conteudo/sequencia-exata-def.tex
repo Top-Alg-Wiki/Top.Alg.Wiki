@@ -1,0 +1,37 @@
+\subsection{Sequência Exata} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{sequencia-exata-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[complexo-de-cadeias-def]{Complexo de cadeias};\\ 
+    \item \hyperref[aplicacao-de-cadeias-def]{Aplicação de cadeias}.
+\end{titlemize}
+
+\begin{defi}
+    Seja 
+    \[...\rightarrow A_0\xrightarrow{f_0}A_1\xrightarrow{f_1} A_2\rightarrow ...\]
+    uma sequência de homomorfismos de grupos. Diremos que essa sequência é \textbf{exata} se para cada $i$, $\text{Im}(f_i)=\text{Ker}(f_{i+1})$
+\end{defi}
+
+\begin{ex}
+    A sequência de homomorfismos de grupos da forma 
+    \[0\rightarrow A\xrightarrow{f}B\xrightarrow{g}C\rightarrow0\]
+    é exata se, e somente se, as seguintes condições são satisfeitas
+    \begin{enumerate}
+        \item $f$ é um injetor (isto é, $\text{Ker}(f)=\{0\}$),
+        \item $g$ é um sobrejetor (isto é, $\text{Im}(g)=\text{Ker}(C\rightarrow 0)$=$C$),
+        \item $\text{Ker}(g)=\text{Im}(f)$. 
+    \end{enumerate}
+    Essa sequência é chamada de \textbf{sequência exata curta}.
+\end{ex}
+
+\begin{defi}
+    Sejam $\mathcal{A},\mathcal{B},\mathcal{C}$ complexos de cadeias, e sejam $f= (f_n):\mathcal{A}\rightarrow \mathcal{B}$ e $g=(g_n):\mathcal{B}\rightarrow \mathcal{C}$ Aplicações de cadeias. A sequência 
+    \[0\rightarrow \mathcal{A}\xrightarrow{f} \mathcal{B}\xrightarrow{g} \mathcal{C}\rightarrow 0\]
+    é \textbf{exata} se, e somente se, para cada $n$, a sequência
+    \[0\rightarrow A_n\xrightarrow{f_n} B_n\xrightarrow{g_n}C_n\rightarrow 0\]
+    é exata.
+\end{defi}
+
+%\begin{titlemize}{Lista de consequências}
+    %\item %\hyperref[homomorfismo-de-homologias-singulares-induzido-prop]{Homomorfismo de homologias singulares induzido}.\\
+	%\item \hyperref[]{}
+%\end{titlemize}

@@ -1,0 +1,36 @@
+\subsection{Espaço contrátil}
+\label{espaco-contratil-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[homotopia-def]{Homotopia};\\
+        \item \hyperref[equiv-homotopia]{Equivalência de Homotopia}.
+\end{titlemize}
+
+\begin{defi}
+	Seja $X$ um espaço topológico. Diremos que o espaço $X$ é \textbf{contrátil} se $X$ é homotopicamente equivalente a um ponto.
+\end{defi}
+
+Ou seja, um espaço topológico $X$ é contrátil se existem $f:\{*\} \to X$ e $g: X\to \{*\}$ tais que $g\circ f \sim \text{id}_X$ e $f\circ g \sim \text{id}_{\{*\}}$. Mas como $f\circ g = \text{id}_{\{*\}}$, e substituindo $f:\{*\} \to X$ pela inclusão $\{f(*)\} \hookrightarrow X$, concluímos que $X$ é contrátil se, e somente se, existem $x_0\in X$ e $H: X\times I\to X$ tais que $H(x,0)=x$ e $H(x,1) = x_0$ para todo $x \in X$.
+
+\begin{ex}
+    \begin{itemize}
+        \item $D^n$ é contrátil, para todo $n\geq 0$, %. Sejam $f: D^n\to\{0\}$ e $g:\{0\}\hookrightarrow D^n$. Então $f\circ g$ é a identidade em $\{0\}$ e $g\circ f$ é homotópico à identidade em $D^n$,
+        via
+        \begin{align*}
+            H: D^n \times I &\to D^n\\
+            (x,t) &\mapsto (1-t)x.
+        \end{align*}
+        \item Mais geralmente, se $S \subset \mathbb{R}^n$ é um subconjunto estrelado, então é contrátil. Seja $s_0\in S$ tal que $ts + (1-t)s_0 \in S$ para todos $t\in I$ e $s\in S$. Como $S-s_0 = \{s-s_0~|~s\in S\} \cong S$, podemos supor que $s_0 = 0$. %Além disso, note que, como $\mathbb{R}^n$ e $\text{int}(D^n)$ são homeomorfos, podemos supor que $S \subset D^n$. %<-- acho que não precisa
+        Assim, definimos
+        \begin{align*}
+            H: S \times I &\to S\\
+            (x,t) &\mapsto (1-t)x.
+        \end{align*}
+        %e concluímos como no caso anterior.
+        \item Dado um espaço topológico $X$, o cone $C(X)$ é contrátil. Para ver isso, seja $v$ o vértice do cone e defina%, $f: C(X)\to\{v\}$ e $g: \{v\}\to C(X)$. Então $f\circ g$ é a identidade em $\{v\}$ e $g\circ f$ é homotópico à identidade em $C(X)$, pois
+        \begin{align*}
+            \text{id}_X\times m: X\times I \times I &\to X\times I\\
+            (x,s,t) &\mapsto (x,st).
+        \end{align*}
+        Então $\text{id}_X\times m$ induz $H_0: C(X)\times I\to X\times I$ dada por $([x,s],t) \mapsto (x,st)$. Assim, definimos $H = \pi \circ H_0$, onde $\pi: X\times I \to C(X)$ é a aplicação quociente.
+    \end{itemize}
+\end{ex}

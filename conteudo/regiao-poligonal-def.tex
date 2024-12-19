@@ -1,0 +1,70 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Regiões Poligonais}
+\label{regiao-poligonal-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[simplexo-def]{Simplexos}%;\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	%\item \hyperref[variedade-def]{Variedades Topológicas};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+%%%%%%%%%%%% Versão antiga %%%%%%%%%%%%%%%%%%
+% Antes de definirmos complexos celulares, introduzimos alguns conceitos auxiliares.
+% \begin{defi}[Orientação formal]
+%     Dado um conjunto $X$, definimos sua \textbf{orientação formal} como $\{-1,1\} \times X$, em que denotamos $(1,x)$ simplesmente como $x$ e $(-1,x)$ como $x^{-1}$, para todo $x\in X$. Também escrevemos $(x^{-1})^{-1} = x$. Dessa forma, a orientação formal de $X$ é denotada como $X \cup X^{-1}$. Definimos também o operador inversão, que mapeia $x \in X\cup X^{-1}$ em $x^{-1}$.
+%      Seja $Y$ um conjunto. Denotamos por $Y^\#$ o quociente do conjunto de sequências finitas sobre $Y$, pela relação de equivalência dada por permutações cíclicas dos elementos da sequência. Denotamos a classe de equivalência de $(y_1,\ldots,y_n)$ por $y_1 \ldots y_n$. Desse modo, $y_1 ~y_2 \ldots y_{n-1}~y_n = y_n~y_1 \ldots y_{n-2}~y_{n-1}$.
+% \end{defi}
+% \begin{defi}[Complexo Celular]
+%     Um \textbf{complexo celular} é uma tripla $K = (F,E,\mathcal{B})$, onde os elementos de $F$ são chamados de \textbf{faces} de $K$, os elementos de $E$ são chamados \textbf{arestas (``edges'')} de $K$, e $\mathcal{B}: F\cup F^{-1} \to (E \cup E^{-1})^\#$ é chamada de função bordo, satisfazendo:
+%     \begin{enumerate}
+%         \item Se $\mathcal{B}(A)= a_1 \ldots a_n$ com $a_1,\ldots, a_n \in E\cup E^{-1}$, então $\mathcal{B}(A^{-1})= a_n^{-1} \ldots a_1^{-1}$, para todo $A \in F$;
+%         \item todo $a \in E\cup E^{-1}$ é elemento do bordo de no máximo duas faces.
+%     \end{enumerate}
+% As vezes também nos referimos aos elementos de $E^{-1}$ de arestas, e aos elementos de $F^{-1}$ de faces, respectivamente.
+% Dizemos que um complexo celular $K$ é \textbf{conexo} se para todo par de arestas $a, b \in E$, existem arestas $a = a_1,a_2,\ldots,a_{k-1}, a_k=b\in E$ e faces $A_1,\ldots, A_{k-1} \in F$ de modo que $a$ é elemento do bordo de $A_1$ ou $A_1^{-1}$, $a_i$ é elemento do bordo de $A_{i-1}$ ou $A_{i-1}^{-1}$ bem como de $A_{i}$ ou $A_i^{-1}$, e $b$ é elemento do bordo de $A_{k-1}$ ou $A_{k-1}^{-1}$.
+% \end{defi}
+% O conceito de complexos celulares está intimamente relacionado ao de \hyperref[triangulacao-def]{triangulação} e também \hyperref[complexo-simplicial-def]{complexos simpliciais}.
+% Diversos complexos celulares representam a mesma intuição geométrica. Isso motiva considerarmos a seguinte definição.
+% \begin{defi}
+%     Dado um complexo celular $K=(F,E,\mathcal{B})$, considere as seguintes construções:
+%     \begin{enumerate}
+%         \item fixe uma aresta $a \in E$, tome $b,c \notin E$ e defina $K'=(F,E\cup\{b,c\}\setminus\{a\},\mathcal{B}')$; a função $\mathcal{B}'$ é definida substituindo cada ocorrência de $a$ em um bordo por $b~c$, cada ocorrência de $a^{-1}$ por $c^{-1}~b^{-1}$ e mantendo o restante inalterado;
+%         \item  fixe uma face $A\in F$ cujo bordo contenha ao menos 4 arestas, ou seja, $\mathcal{B}(A) = a_1\ldots a_k$ para $a_1,\ldots,a_k \in E\cap E^{-1}$ e $k\geq 4$; tome $x\notin E$, $X,Y \notin F$ e defina $K''=(F\cup\{X,Y\}\setminus\{A\},E\cup\{x\},\mathcal{B}'')$, em que $\mathcal{B}''(X) = a_1~x^{-1}~a_4$, $\mathcal{B}''(Y)= a_2~a_3~x$ e $\mathcal{B}''$ coincide com $\mathcal{B}$ nas demais faces.
+%     \end{enumerate}
+% Assim, definimos uma relação de equivalência de complexos celulares gerada pelas relações $K\sim K'$ e $K\sim K''$ para $K$ um complexo celular qualquer e $K'$ e $K''$ obtidos como nas construções acima.
+% \end{defi}
+% Todo complexo celular conexa $K=(F,E,\mathcal{B})$ define uma 2-variedade com bordo da seguinte forma: escreva $F= \bigcup_{n \geq 2} F_n$, onde os elementos de $F_n$ são faces com $n$ arestas no bordo. Considere a união disjunta de $|E|$ intervalos $[0,1]$ e $|F_n|$ polígonos de $n$ lados, para todo $n\geq 3$ (polígonos regulares em $\mathbb{R}^2$ com centro na origem e apótema 1, por exemplo). Então é simples ver que $\mathcal{B}$ descreve uma relação de equivalência $R$ que relaciona cada aresta de um polígono com arestas de $K$. Tomemos o espaço quociente $X=Y/R$. A condição de que cada aresta de $K$ pertença ao bordo de no máximo 2 faces garante que $X$ seja de Hausdorff e localmente homeomorfo a um aberto do semiplano $\mathbb{H}^2$. Se cada aresta pertencer a exatamente 2 faces, garantimos ainda que $X$ seja localmente homeomorfo a um aberto do plano.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Região poligonal, orientação e etiquetagem]
+    Uma \textbf{região poligonal} com $n$ lados é um simplexo $P = [v_1,\ldots,v_n]$, onde $v_1,\ldots, v_n \in \mathbb{S}^2$. Por convenção, ordenamos os pontos $v_1,\ldots, v_n$ em ordem anti-horária.
+
+    Sejam $P_1,\ldots, P_k$ regiões poligonais dadas. Denotemos por $\partial_j P_i$ o conjunto de $j$-faces de $P_i$, $1\leq i\leq k$. Então, uma \textbf{orientação} nas arestas da união de regiões poligonais $\bigsqcup_{i=1}^k P_i$ é uma função $\mathcal{O}_i: \bigsqcup_{i=1}^k\partial_1 P_i\to \bigsqcup_{i=1}^k\partial_0 P_i$ tal que $\mathcal{O}(a) \in \partial a$ para toda aresta $a$ de $P_i$, $1\leq i\leq k$. Ou seja, é a escolha de um ``ponto inicial'' para cada aresta de cada região poligonal $P_i$.
+
+    Já uma \textbf{etiquetagem} na união de regiões poligonais $\bigsqcup_{i=1}^k P_i$ é uma função $L: \bigsqcup_{i=1}^k\partial_1 P_i\to \Lambda$, onde $\Lambda \neq \varnothing$ é dito o conjunto de \textbf{etiquetas}.
+\end{defi}
+
+\begin{defi}[Transformação linear positiva e espaço obtido por colagem de arestas]
+    Dadas duas arestas $A = [v_i, v_{i+1}]$ e $B = [v_j, v_{j+1}]$ com orientação $\mathcal{O}$ fixada, seja $\overline{\mathcal{O}}$ a orientação inversa. Isto é, $\mathcal{O}(A) \neq \overline{\mathcal{O}}(A)$ e $\mathcal{O}(B) \neq \overline{\mathcal{O}}(B)$. Definimos a \textbf{transformação linear positiva} de $A$ sobre $B$ como a função $h: A\to B$ que mapeia $(1-t) \mathcal{O}(A) + t \overline{\mathcal{O}}(A)$ em $(1-t) \mathcal{O}(B) + t \overline{\mathcal{O}}(B)$ para todo $t \in [0,1]$.
+    
+    Considere regiões poligonais $P_1,\ldots, P_k$, uma orientação $\mathcal{O}$ e uma etiquetagem $L$ de $\bigsqcup_{i=1}^k P_i$. Defina o espaço
+    \[X = \bigsqcup_{i=1}^k P_i/\sim\]
+    em que $x \sim y$ se, e somente se, $x = y$ ou então $x \in A$, $y \in B$ e $h(x) = y$, onde $A$ e $B$ são arestas com a mesma etiqueta e $h$ é a transformação linear positiva de $A$ sobre $B$. Isto é,
+    \begin{align*}
+        x \sim y \;\Longleftrightarrow \;
+        &x=y\text{ ou }\exists a \in \Lambda, \exists A,B \in L^{-1}(a), \exists t\in [0,1]:\\ 
+        &x = (1-t) \mathcal{O}(A) + t \overline{\mathcal{O}}(A), 
+        y = (1-t) \mathcal{O}(B) + t \overline{\mathcal{O}}(B)
+    \end{align*}
+    
+    Então, dizemos que o espaço quociente $X$ (bem como qualquer espaço topológico homeomorfo) é \textbf{obtido das regiões poligonais $P_1,\ldots, P_k$ por colagem de arestas} de acordo com a orientação $\mathcal{O}$ e a etiquetagem $L$.
+\end{defi}
+
+Note que quaisquer duas regiões poligonais com $n$ lados são homeomorfas. Mais do que isso, o espaço quociente $X$ obtido da região poligonal $P = [v_1,\ldots,v_n]$ por colagem de arestas é totalmente determinado, a menos de homeomorfismo, pelo símbolo
+\[w = a_{i_1}^{\varepsilon_1} \ldots a_{i_n}^{\varepsilon_n},\]
+onde $a_{i_1}$ é a etiqueta de $[v_1, v_2]$, $a_{i_2}$ é a etiqueta de $[v_2, v_3]$, e assim por diante ($a_{i_n}$ é a etiqueta de $[v_n, v_1]$), e $\varepsilon_i = \pm 1$, a depender se a orientação fixada em $P$ coincide com a orientação na ordenação dos vértices. Por exemplo, se o ponto inicial em $[v_1, v_2]$ é $v_1$, então $\varepsilon_1 = +1$. O símbolo $w$ é dito o \textbf{esquema de etiquetagem} para $P$ (com respeito à orientação e etiquetagem fixadas).
+
+Para um espaço $X$ obtido pela colagem de arestas das regiões poligonais $P_1,\ldots, P_k$, o esquema de etiquetagem é dado por $w_1,\ldots, w_k$, onde $w_i$ é o esquema de etiquetagem de $P_i$ para cada $1\leq i \leq k$.
+
+\begin{titlemize}{Lista de consequências}
+    \item \hyperref[construcoes-regiao-poligonal-prop]{Construções com Regiões Poligonais}%;\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+    %\item \hyperref[]{}
+\end{titlemize}
