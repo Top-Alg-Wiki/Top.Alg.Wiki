@@ -1,0 +1,26 @@
+\subsection{Pushout de Categorias}
+\label{pushout-de-categorias-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[categorias-def]{categorias-def};\\ 
+\end{titlemize}
+\begin{defi}[Pushout de Categorias]
+	Considere os morfismos $f:C \rightarrow A$ e $g:C \rightarrow B$. Definimos o Pushout de $f$ e $g$, caso exista, como sendo a tripla $\langle A +_C B, p, q\rangle$, onde $p: A \to A+_C B$ e $q: B \to A +_C B$ com $p \circ f = q \circ g$, e se $p': A \to P$ e $q':B \to P$ é tal que $p' \circ f = g
+    q' \circ g$, então existe um único morfismo $k:A +_C B \to P$ que faz o seguinte diagrama comutar.
+
+    % https://q.uiver.app/#q=WzAsNSxbMywzLCJDIl0sWzMsMSwiQSJdLFsxLDMsIkIiXSxbMSwxLCJBICtfQyBCIl0sWzAsMCwiUCJdLFswLDEsImYiLDJdLFswLDIsImciXSxbMSwzLCJwIiwyXSxbMiwzLCJxIl0sWzMsNCwiayIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFsxLDQsInAnIiwyLHsiY3VydmUiOjN9XSxbMiw0LCJxJyIsMCx7ImN1cnZlIjotMn1dXQ==
+\[\begin{tikzcd}
+	P \\
+	& {A +_C B} && A \\
+	\\
+	& B && C
+	\arrow["k", dashed, from=2-2, to=1-1]
+	\arrow["{p'}"', curve={height=18pt}, from=2-4, to=1-1]
+	\arrow["p"', from=2-4, to=2-2]
+	\arrow["{q'}", curve={height=-12pt}, from=4-2, to=1-1]
+	\arrow["q", from=4-2, to=2-2]
+	\arrow["f"', from=4-4, to=2-4]
+	\arrow["g", from=4-4, to=4-2]
+\end{tikzcd}\]
+\end{defi}
+
+Na categoria dos conjuntos, o Pushout é obtido tomando a união disjunta de dois conjuntos $A \coprod B$ e quocientando pela menor relação de equivalência que contém o conjunto $\{(f(x), g(x)) \in A \times B; \ x \in C\}$.
