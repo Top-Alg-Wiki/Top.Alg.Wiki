@@ -1,0 +1,50 @@
+\subsection{extensão-de-função-na-esfera} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{extensão-de-função-na-esfera}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[homotopia]{homotopia};
+\end{titlemize}
+.
+\begin{lemma}
+    Seja $f:\mathbb{S}^1 \rightarrow Y$ uma função contínua. Temos que as seguintes afirmações são equivalentes.
+
+    \begin{enumerate}
+        \item $f$ é homotópica a uma constante
+        \item $f$ pode ser estendida à $D^2 = \{z \in \mathbb{C}; \ |z| \leq 1\}$, i.e. existe $g:D^2 \rightarrow Y$ contínua, tal que $g|_{\mathbb{S}^1} = f$.
+        \item $f_*: \pi_1(\mathbb{S}^1, 1) \rightarrow \pi_1(Y, f(1))$ é trivial, i.e. $f_*[\alpha] = [k]$, onde $k$ é a curva constante $k(t) = f(\alpha(0))$ de $Y$.
+    \end{enumerate}
+\end{lemma}
+
+\begin{dem}
+(1$ \implies $2)
+    Assuma que $f \sim_F c$, onde $c(z) = y_0$, $\forall z \in \mathbb{S}^1$. Seja $G:D^2 \rightarrow Y$ definida por
+   $$g(z) =\begin{cases}
+        y_0\textit{, se } 0 \leq |z| \leq \frac{1}{2} &\\
+        \\
+        F(\frac{z}{|z|}, 2 - 2|z|)\textit{, se } \frac{1}{2} < |z| \leq 1
+
+        
+    \end{cases}$$
+
+Note que $g$ é contínua pelo lema da colagem e está bem definida, pois se $z \neq 0$, então $\frac{z}{|z|} \in \mathbb{S}^1$. Ainda, temos que se $\frac{1}{2} \leq |z| \leq 1$, então $2 - 2|z| \in I$. Perceba também que $|z| = \frac{1}{2} \implies g(z) = F(\frac{z}{|z|}, 1) = c(\frac{z}{|z|}) = y_0$ e $|z| = 1 \implies g(z) = F(z, 0) = f(z)$. \\
+\\
+(2$\implies$3) Suponha que $g:D^2 \rightarrow Y$ estenda $f$. Defina $F:\mathbb{S}^1\times I \rightarrow Y$ por $F(z, t) = g((1 - t)z + tz_0))$, onde $z_0 \in \mathbb{S}^1$. $F$ é claramente contínua. Note que $F$ está bem definida, pois $D^2$ é convexo. Então, $F(z, 0) = g(z) = f(z), \ \forall z \in \mathbb{S}^1$. Ainda, $F(z, 1) = g(z_0), \forall z \in \mathbb{S}^1$. Por fim, $F(z_0) = g((1 - t)z_0 + tz_0) = g(z_0), \ \forall t \in I$. Isso também mostra que $f \sim_F k$, onde $k(z) = g(z_0)$. Dessa forma, se $[\alpha] \in \pi_1(\mathbb{S}^1, 1)$, então $f_*[\alpha] = [f\circ\alpha] = [k_1\circ\alpha] = [f(1)]$, onde $k_1$ é a função constante $k(z) = g(1) = f(1)$. Note que o último passo consiste em trocar $z_0$ por $1$.\\
+\\
+(3$\implies$1) Basicamente a condição 3 está dizendo que $f \sim_F k \textit{ (rel $\{z_0\}$)}$. Portanto, 1 é satisfeita trivialmente.
+    
+\end{dem}
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[teo-fundamental-da-algebra]{teo-fundamental-da-algebra};
+\end{titlemize}
+
+
+
+
+
+
+
+
+
+
+
+
