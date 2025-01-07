@@ -1,0 +1,25 @@
+\subsection{teo-fundamental-da-algebra} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{teo-fundamental-da-algebra}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[lema-teo-fundamental-da-algebra]{lema-teo-fundamental-da-algebra};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	\item \hyperref[extensão-de-função-na-esfera]{extensão-de-função-na-esfera};\\
+  \item \hyperref[grupo-fundamental-de-S1-prop]{grupo-fundamental-de-S1-prop}
+\end{titlemize}
+\begin{thm}[Teorema Fundamental da Álgebra]
+
+	Todo polinômio não constante com coeficientes complexos possui raíz em $\mathbb{C}$. \\
+ 
+ Em outras palavras, esse teorema garante que o corpo dos complexos é um fecho algébrico dos corpos de característica 0.
+ 
+\end{thm}
+
+\begin{dem}
+
+Pelo lema referenciado na lista de dependências, basta mostrar que as funções $f_r^n: r\mathbb{S}^1 \rightarrow \mathbb{C}\backslash\{0\}$, definidas por $f_r^n(z) = z^n$, não são homotópicas a uma constante.
+De fato, caso $f_r^n$ fosse homotópica a uma constante, então $h: \mathbb{S}^1 \rightarrow r\mathbb{S}^1 \rightarrow \mathbb{C}\backslash\{0\} \rightarrow \mathbb{S}^1$ dada por $h(z) = \frac{f_r^n(rz)}{|f_r^n(rz)|}$ também seria homotópica a uma constante, já que se $H:r\mathbb{S}^1 \times I \rightarrow \mathbb{C}\backslash\{0\}$ é a homotopia entre $f_r^n$ e uma constante $c_0$, então $\frac{1}{r^n}H(rz, t)$ é homotopia entre $h$ e $\frac{c_0}{r^n}$.\\
+No entanto, por uma das equivalências de \hyperref[extensão-da-função-na-esfera]{extensão-da-função-na-esfera}, se $h$ é homotópica a uma constante, então $h_*$ é trivial, implicando que $h_*([e^{2\pi i}])$ é elemento neutro em $\mathcal{S}^1$, ou seja $[e^{2\pi in}] = [1]$ e, portanto, com a linguagem do levantamento de homotopia na seção do grupo fundamental de $\mathbb{S}^1$, temos que $deg([e^{2\pi in]}) = deg([1]) = 0$, contrariando o fato de que, na verdade, $deg([e^{2\pi in}]) = n$. Portanto, $f_r^n$ não pode ser homotópico a uma constante e, dessa forma, vale o Teorema Fundamental da Álgebra.
+
+    
+\end{dem}
+
+Note que a interpretação geométrica de $h$ é de alongar os pontos em $\mathbb{S}^1$, aumentando o seu raio, e depois rotacioná-los e contraí-los de volta a $\mathbb{S}^1$. A homotopia de $h$ à constante deforma continuamente a circunferência de raio $1$ no ponto $c_0$, trazendo-o mais próximo da origem.
