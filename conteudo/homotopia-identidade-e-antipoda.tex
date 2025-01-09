@@ -1,0 +1,31 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Identidade e antípoda são homotópicas se há campo não nulo} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{identidade-e-antipoda-homotopicas-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[homotopia-def]{Homotopia};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	%\item \hyperref[]{};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+
+
+
+\begin{lemma}[Funções identidade e antípoda na esfera]% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
+	Se existe uma função contínua $v:S^n\rightarrow \mathbb{R}^{n+1}$ que leva todo $x\in S^n$ em $v(x)$ com $\langle x, v(x) \rangle =0$, isto é, um campo vetorial contínuo não nulo tangente à esfera, então as funções identidade $Id_{S^n}:S^n\rightarrow S^n$ e antípoda $A_{S^n}:S^n\rightarrow S^n$ dada por $A_{S^n}(x)=-x$ para todo $x\in S^n$ são homotópicas.
+\end{lemma}
+\begin{dem}
+    Seja $v:S^n\rightarrow \mathbb{R}^{n+1}$ o campo vetorial contínuo tangente à esfera que é não nulo em todos os pontos e considere a função contínua $H:S^n\times I\rightarrow S^n$ definida por $$H(x,t)=cos(\pi t)x+sen(\pi t)\frac{v(x)}{||v(x)||}.$$
+    De fato, $H$ está bem definida pois, utilizando o fato de que $\langle x, v(x) \rangle =0$, temos 
+
+    $$|cos(\pi t)x+sen(\pi t)\frac{v(x)}{||v(x)||}|^2=$$$$=\langle cos(\pi t)x+sen(\pi t)\frac{v(x)}{||v(x)||} , cos(\pi t)x+sen(\pi t)\frac{v(x)}{||v(x)||}\rangle=$$$$=cos^2(\pi t)\langle x,x \rangle +sen^2(\pi t)\langle \frac{v(x)}{||v(x)||},\frac{v(x)}{||v(x)||}\rangle=$$$$=cos^2(\pi t)+sen^2(\pi t)=1.$$
+    
+    Isto é, $H(x,t)$ pertence à esfera para todo $(x,t)\in X\times I$. Além disso, $H$ é homotopia entre a identidade e a antípoda pois $$H(x,0)=cos(0)x+sen(0)\frac{v(x)}{||v(x)||}=x=Id(x)\text{ para todo } x\in S^n$$ $$\text{e } H(x,1)=cos(\pi)x+sen(\pi)\frac{v(x)}{||v(x)||}=-x=A(x)\text{ para todo }x\in S^n.$$
+\end{dem}
+
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[teorema-bola-cabeluda-prop]{Teorema da Bola Cabeluda};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	%\item \hyperref[]{}
+\end{titlemize}
+
+%[Bianca]: Um arquivo tex pode ter mais de uma afirmação (ou definição, ou exemplo), mas nesse caso cada afirmação deve ter seu próprio label. Dar preferência para agrupar afirmações que dependam entre sí de maneira próxima (um teorema e seu corolário, por exemplo)
