@@ -63,7 +63,7 @@ Agora, passemos para o Teorema que garante uma condição necessária e suficien
 
 
     \begin{enumerate}
-        \item $\Tilde{f}(x_0) = \widetilde{(f \circ \gamma^{x})}_{e_0}(1) = e_0$;
+        \item $\Tilde{f}(x_0) = \widetilde{(f \circ \gamma^{x_0})}_{e_0}(1) = e_0$;
         \item $(p \circ \Tilde{f})(x) = (f \circ \gamma^{x})(1) = f(\gamma^{x}(1)) = f(x)$.
     \end{enumerate}
 
@@ -71,7 +71,7 @@ Agora, passemos para o Teorema que garante uma condição necessária e suficien
     \begin{align*}
         &\implies \exists \beta \in \Omega(E, e_0) \text{ tal que } p \circ \beta \sim f \circ (\gamma^{x} \ast \overline{\alpha}) \text{ rel } \partial I \\
         &\implies \widetilde{(p \circ \beta)}_{e_0} \sim \widetilde{(f \circ (\gamma^{x} \ast \overline{\alpha}))}_{e_0} \text{ rel } \partial I \\
-        &\implies \beta \sim f \circ (\gamma^{x} \ast \overline{\alpha}) \text{ rel } \partial I \\
+        &\implies \beta \sim \widetilde{(f \circ (\gamma^{x} \ast \overline{\alpha}))} \text{ rel } \partial I \\
         &\implies \beta(1) = e_0 = \widetilde{(f\circ\gamma^{x}) \ast (f \circ \overline{\alpha})}_{e_0}(1) = \widetilde{(f\circ\gamma^{x})}_{e_0} \ast \widetilde{(f \circ \overline{\alpha})}_{\Tilde{f}(x)} (1) = \widetilde{(f \circ \overline{\alpha})}_{\Tilde{f}(x)} (1) \\
         &\implies \widetilde{(f \circ \overline{\alpha})}_{e_0}(1) = \Tilde{f}(x) = \widetilde{(f \circ \gamma^{x})}_{e_0} (1) \text{ , por unicidade do levantamento.}
     \end{align*}
