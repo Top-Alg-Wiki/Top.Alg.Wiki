@@ -1,0 +1,29 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Versão mais popular de Borsuk-Ulam} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{teo-borsuk-ulam-corol-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[teo-borsuk-ulam-prop]{Teorema de Borsuk-Ulam};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	%\item \hyperref[]{};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+Aqui está um enunciado mais conhecido desse importante Teorema.
+\begin{corol}[Teorema de Borsuk-Ulam]% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
+    Se $g: \mathbb{S}^n \rightarrow \mathbb{R}^2$ é contínua, então existe $x_0 \in \mathbb{S}^n$ tal que $g(x_0) = g(-x_0)$.
+\end{corol}
+
+\begin{dem}
+    Tome $f: \mathbb{S}^n \rightarrow \mathbb{R}^2$ tal que $f(x) = g(x) - g(-x)$. Note que 
+    $$
+    f(-x) = g(-x) - g(x) = -(g(x) - g(-x)) = - f(x) \implies f \text{ é função ímpar}
+    $$
+    Pelo \hyperref[teo-borsuk-ulam-prop]{Teorema de Borsuk-Ulam}, segue que existe $x_0 \in \mathbb{S}^n$ tal que $f(x_0) = 0 \implies g(x_0) = g(-x_0)$
+\end{dem}
+
+Esse Teorema garante, por exemplo, que, na superfície da Terra (homeomorfa a $\mathbb{S}^2$, e não ao plano!!!), a cada instante há um par de pontos antipodais/diametralmente opostos que marcam a mesma temperatura e pressão. Há provas bem mais simples para esse caso, mas o Teorema tem versões mais gerais, sempre com a dimensão da esfera do domínio maior que a dimensão da esfera do contradomínio da função.
+
+%\begin{titlemize}{Lista de consequências}
+%	\item \hyperref[consequencia1]{Consequência 1};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+%	\item \hyperref[]{}
+%\end{titlemize}
+
+%[Bianca]: Um arquivo tex pode ter mais de uma afirmação (ou definição, ou exemplo), mas nesse caso cada afirmação deve ter seu próprio label. Dar preferência para agrupar afirmações que dependam entre sí de maneira próxima (um teorema e seu corolário, por exemplo)
