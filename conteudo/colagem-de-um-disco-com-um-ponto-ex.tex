@@ -8,37 +8,9 @@
 \end{titlemize}
 
 \begin{ex}
-    Dado $n\ge 2$, sejam $N = (0,\ldots,0,1) \in \mathbb{S}^n$ e $S = -N$. A colagem $\{x\}_f=D^n\cup_f \{x\}$, em que $f:\mathbb{S}^{n-1}\rightarrow \{x\}$ é a função constante, é homeomorfa à esfera $\mathbb{S}^n$. 
+    Para $n\ge 2$, a colagem $\{x\}_f=D^n\cup_f \{x\}$, em que $f:\mathbb{S}^{n-1}\rightarrow \{x\}$ é a função constante, é a esfera $\mathbb{S}^n$. Visto que $int(D^n)$ é homeomorfo a $\mathbb{R}^n$, e $\mathbb{R}^n$ é homeomorfo a $\mathbb{S}^n\setminus\{\text{polo norte}\}$, e que a colagem garante que $\{x\}_f\setminus\{\text{origem do disco }D^n \}$ é homeomorfo a $\mathbb{S}^n\setminus\{\text{polo sul}\}$, conclui-se que $\{x\}_f$ é homeomorfo à esfera $\mathbb{S}^n$.
 \end{ex}
 
-\begin{dem}
-    Note que $\text{int}(D^n)\cong \mathbb{R}^n\cong \mathbb{S}^n\setminus\{N\}$. Seja $g_0:\text{int}(D^n)\rightarrow \mathbb{R}^n$ um homeomorfismo. Podemos estender $g_0$ na seguinte forma 
-    \begin{align*}
-        g:\{x\}_f&\longrightarrow \mathbb{S}^n\\
-        p&\longmapsto g(p)=\begin{cases}
-            g_0(p) &\text{ se }p\ne [x]\\
-            N &\text{ se }p=[x].
-        \end{cases}
-    \end{align*}
-    Essa função é bem-definida e bijetora. Agora, para mostrar que $g$ é um homeomorfismo, basta mostrar que $g$ é contínua e aberta.\\
-    A função $g$ é contínua: A função $g$ é contínua se, e somente se, $g\circ \pi$ é contínua, onde $\pi:D^n\bigsqcup \{x\}\rightarrow \{x\}_f$ é a projeção associada ao quociente. A função $g\circ \pi$ é contínua, pois dado um aberto $U$ de $\mathbb{S}^n$, temos:
-    \begin{itemize}
-        \item se $N\notin U$, então $(g\circ\pi)^{-1}(U)=g_0^{-1}(U)$, que é aberto;
-        \item se $N\in U$, então $(g\circ \pi)^{-1}(U)=g_0^{-1}(U\setminus\{N\})\cup \{x\}$, que é um aberto, pois $x$ é um ponto isolado.
-    \end{itemize}
-    Portanto, $g$ é contínua.\\
-    A função $g$ é aberta: Seja $U$ um aberto de $\{x\}_f$. Teremos dois casos: 
-    \begin{itemize}
-        \item Se $x\notin U$, então $g(U)=g_0(U)$, que é um aberto em  $\mathbb{S}^n\setminus\{N\}$. Assim, ou $g_0(U)$ é aberto em $\mathbb{S}^n$, ou $g_0(U)\cup\{N\}$ é aberto em $\mathbb{S}^n$. Se $g_0(U)$ for aberto, então $g(U)$ será um aberto em $\mathbb{S}^n$. Se $g_0(U)\cup \{N\}$ for aberto, então $g_0(U)=(g_0(U)\cup\{N\})\setminus\{N\}$ é um aberto em $\mathbb{S}^n$. Em ambos os casos, $g(U)$ será um aberto em $\mathbb{S}^n$;
-        \item Se $x\in U$, então $\pi^{-1} (U)$ é um aberto em $D^n\sqcup \{x\}$. Pela construção do quociente, temos $\partial D^n\subseteq\pi^{-1}(U)$, logo, para todo ponto $y\in \partial D^n$, existe um $r_y>0$ tal que 
-        $$B_y:=\{z\in D^n: ||z-y||<r_y\}\subseteq \pi_1^{-1}(U).$$
-        A coleção $\{B_y\}_{y\in \partial D^n}$ é uma cobertura aberta de $\partial D^n$. Como o bordo $\partial D^n$ é compacto, existem $y_1,...,y_k$ tal que 
-        \[\partial D^n\subseteq B_{y_1}\cup...\cup B_{y_k}.\]
-        Considere $r=\text{inf}\{r_{y_1},...,r_{y_k}\}$. Assim, o conjunto 
-        \[B=\pi(\{y\in D^n: ||y||>(1-r)\}\cup\{x\})\subseteq U\]
-        é um aberto em $\{x\}_f$, e $g(B)\subseteq g(U)$ corresponde a uma bola centrada em $N$ em $\mathbb{S}^n$. Note que $U\setminus \{x\}$ é um aberto, pois $x$ é um ponto fechado. Pelo item anterior, temos que o aberto
-        \[g(U)=g(B)\cup g(U\setminus\{x\})\]
-        é uma união de abertos, o que implica que $g(U)$ é um aberto em $\mathbb{S}^n$
-    \end{itemize} 
-    Portanto, $g$ é aberta.
-\end{dem}
+%\begin{titlemize}{Lista de consequências}
+	%\item %\hyperref[consequencia1]{Consequência 1};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+%\end{titlemize}
