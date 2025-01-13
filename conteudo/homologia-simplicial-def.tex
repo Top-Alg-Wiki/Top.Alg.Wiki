@@ -1,0 +1,58 @@
+\subsection{Homologia Simplicial}
+\label{homologia-simplicial-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[complexo-de-cadeias-def]{Complexo de cadeias};\\ 
+    \item \hyperref[aplicacao-de-cadeias-def]{Aplicação de cadeias};\\
+    \item \hyperref[homotopia-de-cadeias-def]{Homotopia de cadeia}.
+% quantas dependências forem necessárias.
+\end{titlemize}
+\begin{defi}
+	Seja $K$ um complexo simplicial, e seja $O_n (K)$ um grupo abeliano livre com base dada por símbolos 
+    \[\{[v_0,...,v_n]:v_0,v_1,...,v_n \text{ geram um simplexo em }K\}.\]
+    Aqui, $v_i$ são considerado ordenado, e eles podem gerar um simplexo de dimensão menor que $n$ (i.e. a lista pode repetir).
+
+    Seja $T_n(K)\le O_n(K)$ um subgrupo gerado por seguintes elementos 
+    \begin{itemize}
+        \item a sequência $[v_0,...,v_n]$ tem vertices repetidos,
+        \item $[v_0,v_1,...,v_n]-sign(\sigma)\cdot[v_{\sigma(0)},v_{\sigma(1)},...,v_{\sigma(n)}]$, onde $\sigma$ é uma permutação em $\{0,1,...,n\}$. 
+    \end{itemize}
+    Definoms $C_n(K):=O_n(K)/T_n(K)$ como grupo quociente.
+\end{defi}
+
+\begin{defi}
+    O \textbf{operador bordo} é um homomorfismo de grupo dado por 
+    \begin{align*}
+        d_n:C_n(K)&\longrightarrow C_{n-1}(K)\\
+        [v_0,v_1,...,v_n]&\longmapsto \sum_{i=0}^n (-1)^i \cdot[v_0,v_1,...,\widehat{v_i},...,v_n],
+    \end{align*}
+    onde $[v_0,v_1,...,\widehat{v_i},...,v_n]$ denota a sequência obtida pela remoção de $v_i$.
+\end{defi}
+
+\begin{lemma}
+    O homomorfismo $d_{n-1}\circ d_n:C_n(K)\rightarrow C_{n-2}(K)$ é nulo.
+\end{lemma}
+
+\begin{dem}
+    Seja $[v_0,...,v_n]\in C_n(K)$, então 
+    \begin{align*}
+        d_{n-1}\circ d_n ( [v_0,...,v_n])&=d_{n-1}\Bigl(\sum_{i=0}^n (-1)^i \cdot[v_0,v_1,...,\widehat{v_i},...,v_n] \Bigr) \\
+        &=\sum_{i=0}^n (-1)^i  \Bigl( \sum_{k=0}^{i-1}(-1)^k[v_0,...,\widehat{v_k},...,\widehat{v_i},...,v_n])\\
+        &+\sum_{k=i}^{n-1} (-1)^k[v_0,...,\widehat{v_i},...,\widehat{v_{k+1}},...,v_n]  \Bigr).
+    \end{align*}
+    O coeficiente de $[v_0,...,\widehat{v_a},...,\widehat{v_b},...,v_n]$ é $(-1)^a(-1)^b$ de $k=a$ e $i=b$ mais $(-1)^a(-1)^{b-1}$ de $i=a$ e $k+1=b$. Assim, cada termo se cancela, o que implica que $d_{n-1}\circ d_n([v_0,...,v_n])=0$. Como $C_n(K)$ é gerado pelos simplexos $[v_0,...,v_n]$, concluímos que $d_{n-1}\circ d_n=0$.
+\end{dem}
+
+Como a consequência, esse lema garante que $\text{Im}(d_n)\subseteq \text{Ker}(d_{n-1})$. Ou seja, a sequência 
+\[...\rightarrow C_{n+1}(K)\xrightarrow{d_{n+1}}C_n(K)\xrightarrow{d_n} C_{n-1}(K)\rightarrow...\rightarrow 0\]
+é um complexo de cadeias.
+
+\begin{defi}
+    O n-ésima \textbf{grupo de homologia simplicial} de um complexo simplicial $K$ é 
+    \[H_n(K):=\frac{\text{Ker}(d_n)}{\text{Im}(d_{n+1})}.\]
+\end{defi}
+
+
+\begin{titlemize}{Lista de consequências}
+	\item %\hyperref[consequencia1]{Consequência 1};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	%\item \hyperref[]{}
+\end{titlemize}

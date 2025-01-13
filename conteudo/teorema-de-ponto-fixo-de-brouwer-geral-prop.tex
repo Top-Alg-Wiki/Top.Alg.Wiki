@@ -1,0 +1,23 @@
+\subsection{Teorema de ponto fixo de Brouwer (versão geral)} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{teorema-de-ponto-fixo-de-brouwer-geral-prop}
+\begin{titlemize}{Lista de dependências}
+    \item \hyperref[teo-ponto-fixo-brower]{Teorema de ponto fixo de Brouwer};\\
+    \item \hyperref[lema-de-retracao-geral-prop]{Lema de retração (versão geral)}.
+\end{titlemize}
+
+Apresentamos aqui uma versão mais geral do Teorema de ponto fixo de Brouwer. A prova 
+
+\begin{thm}[Teorema do Ponto Fixo de Brower]% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
+	Se $f:D^n \longrightarrow D^n$ é contínua, então existe $x \in D^n$, tal que $f(x) = x$, ou seja, existe um ponto fixo.
+\end{thm}
+
+\begin{dem}
+    Suponhamos que exista uma função contínua $f:D^n\longrightarrow D^n$ sem ponto fixo. Usando a mesma construção apresentada no Teorema \ref{teo-ponto-fixo-brower}, podemos obter uma retração $r: D^n\rightarrow\mathbb
+    {S}^{n-1}$, o que entra em contradição com o Lema \ref{lema-de-retracao-geral-prop}.
+
+\end{dem}
+
+%\begin{titlemize}{Lista de consequências}
+    %\item %\hyperref[homomorfismo-de-homologias-singulares-induzido-prop]{Homomorfismo de homologias singulares induzido}.\\
+	%\item \hyperref[]{}
+%\end{titlemize}

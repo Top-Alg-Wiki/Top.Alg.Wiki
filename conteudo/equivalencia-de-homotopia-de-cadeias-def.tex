@@ -1,0 +1,29 @@
+\subsection{Equivalência de homotopia de cadeias} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{equivalencia-de-homotopia-de-cadeias-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[complexo-de-cadeias-def]{Complexo de cadeias};\\ 
+    \item \hyperref[aplicacao-de-cadeias-def]{Aplicação de cadeias};\\
+    \item \hyperref[homotopia-de-cadeias-def]{Homotopia de cadeia};\\
+    \item \hyperref[homomorfismo-induzido-de-cadeias-prop]{Homomorfismo induzido de cadeias}.
+\end{titlemize}
+
+\begin{defi}
+    Uma aplicação de cadeias $f_\bullet:C\bullet\rightarrow D_\bullet$ é uma \textbf{equivalência de homotopia de cadeias} se existem uma aplicação de cadeias $g_\bullet:D_\bullet\rightarrow C_\bullet$ e homotopias de cadeias $f_\bullet\circ g_\bullet\simeq id_{D_\bullet}$ e $g_\bullet\circ f_\bullet \simeq id_{C_\bullet}$.
+\end{defi}
+
+Uma consequência imediata de \ref{homomorfismo-induzido-de-cadeias-prop} é: 
+
+\begin{lemma}
+    Se $f_\bullet:C_\bullet\rightarrow D_\bullet$ é uma equivalência de homotopia de cadeia, então $f_*:H_n(C_\bullet)\rightarrow H_n(D_\bullet)$ é um isomorfismo para todo $n\ge 0$.
+\end{lemma}
+
+\begin{proof}
+    Pelo Lema \ref{homomorfismo-induzido-de-cadeias-prop}, temos
+    \[f_*\circ g_*=(f_\bullet\circ g_\bullet)_*=(id_{D_\bullet})_*=id_{H_n(D_\bullet)},\]
+    e vice-versa. 
+\end{proof}
+
+\begin{titlemize}{Lista de consequências}
+    \item \hyperref[homomorfismo-de-homologias-singulares-induzido-prop]{Homomorfismo de homologias singulares induzido}.\\
+	%\item \hyperref[]{}
+\end{titlemize}
