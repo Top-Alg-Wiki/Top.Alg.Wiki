@@ -1,0 +1,35 @@
+\subsection{Morfismo de recobrimento}
+\label{morfismo-de-recobrimento-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[espaco-de-recobrimento-def]{Espaço de recobrimento};\\
+	\item \hyperref[levantamento-de-funcoes]{Levantamento de funções};
+\end{titlemize}
+\begin{defi}[Morfismo de recobrimento]
+	Um morfismo de recobrimento entre dois recobrimentos $p_1:E_1\longrightarrow X$ e $p_2:E_2\longrightarrow X$ é uma aplicação contínua $\phi:E_1\longrightarrow E_2$ tal que $p_2\circ\phi = p_1$.
+\end{defi}
+
+\[\begin{tikzcd}
+	{E_1} && {E_2} \\
+	\\
+	& X
+	\arrow["\phi"', from=1-1, to=1-3]
+	\arrow["{p_1}", from=1-1, to=3-2]
+	\arrow["{p_2}"', from=1-3, to=3-2]
+\end{tikzcd}\]
+
+Note que $\phi$ é um levantamento de $p_1$ para o recobrimento $p_2:E_2\longrightarrow X$.
+
+\[\begin{tikzcd}
+	&& {E_2} \\
+	\\
+	{E_1} && X
+	\arrow["{p_2}"', from=1-3, to=3-3]
+	\arrow["\phi"', from=3-1, to=1-3]
+	\arrow["{p_1}", from=3-1, to=3-3]
+\end{tikzcd}\]
+
+Logo, assumindo que $E_1$ é conexo por caminhos, temos que se $\phi_1$ e $\phi_2$ são morfismos de recobrimento, então $\phi_1 = \phi_2 \Longleftrightarrow \phi(e_o) = \phi(e_0)$. Além disso, $p_{1*}(\pi_1(E_1,e_o))$ é um subgrupo de $p_{2*}(\pi_1(E_2,e_o))$.
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[recobrimento-universal]{Recobrimento universal};
+\end{titlemize}
