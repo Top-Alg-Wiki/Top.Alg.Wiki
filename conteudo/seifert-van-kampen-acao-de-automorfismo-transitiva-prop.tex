@@ -1,0 +1,84 @@
+\subsection{Quando a ação do grupo de automorfismos é transitiva sobre as fibras?}
+\label{acao-de-automorfismo-transitiva-prop}
+\begin{titlemize}{Lista de dependências}
+    \item \hyperref[levantamento-de-caminhos-prop]{Levantamento de caminhos};\\
+	\item \hyperref[automorfismo-de-recobrimento-def]{Automorfismo de um recobrimento};\\
+    \item \hyperref[acao-de-automorfismos-e-livre-prop]{A ação do grupo de automorfismos é livre};
+\end{titlemize}
+Seja $q:(E, e_0) \longrightarrow (X, x_0)$ um recobrimento 0-conexo pontuado e $D=Aut(E, q, X)$ o grupo de automorfismos desse recobrimento, queremos achar alguma condição necessária e suficiente para que a ação de $D$ seja transitiva sobre as fibras, ou seja, $\forall x \in X$ a ação $D \circlearrowright q^{-1}(x)$ é tal que $\forall e, e' \in q^{-1}(x)$ $\exists \phi \in D$ tal que $\phi(e) = e'$.
+
+Primeiramente, suponha que a ação $D \circlearrowright q^{-1}(x_0)$ é transitiva. Considere a função $\varphi_{e_0}:\pi_1(X, x_0) \longrightarrow D$, onde $\varphi_{e_0}([\alpha]) = d \Longleftrightarrow d \cdot e_0 = \tilde \alpha_{e_0}(1)$.
+
+\begin{af}
+    A função $\varphi_{e_0}$ acima está bem definida e é um homomorfismo sobrejetor.
+\end{af}
+
+\begin{dem}
+    Tome $[\alpha] \in \pi_1(X, x_0)$, como $\alpha(1) = x_0$, segue que $\tilde\alpha_{e_0}(1) \in q^{-1}(x_0)$, temos ainda que $e_0 \in q^{-1}(x_0)$, logo, como a ação $D \circlearrowright q^{-1}(x_0)$ é transitiva por hipótese, seque que $\exists d \in D$ tal que $d \cdot e_0 = \tilde\alpha_{e_0}(1)$.
+    
+    Vimos ainda que a ação $D \circlearrowright q^{-1}(x_0)$ é livre, donde segue que $d$ é único. Por fim, se $\alpha \sim \alpha'$ $rel$ $\partial I$, segue que $\tilde\alpha_{e_0}(1) = \tilde\alpha_{e_0}'(1)$, logo $\varphi_{e_0}$ não depende da escolha de representantes e está bem definida.
+
+    Tome $d \in D$, como $E$ é $0$-conexo, $\exists \gamma:I \longrightarrow E$ tal que $\gamma(0) = e_0$ e $\gamma(1) = d \cdot e_0$. Seja $\alpha := q \circ \gamma$, então por unicidade de levantamentos segue que $\tilde\alpha_{e_0} = \gamma$, donde $\varphi_{e_0}([\alpha]) = d$ e $\varphi_{e_0}$ é sobrejetora.
+
+    Por fim, tome $[\alpha], [\beta] \in \pi_1(X, x_0)$, então: $$\varphi_{e_0}([\alpha] \cdot [\beta]) = \varphi([\alpha*\beta])$$ e temos que: $$\widetilde{(\alpha * \beta)}_{e_0}(1) = (\tilde\alpha_{e_0}*\tilde\beta_{\tilde\alpha_{e_0}(1)})(1) = \tilde\beta_{\tilde\alpha_{e_0}(1)}(1).$$
+
+    Por outro lado, sejam $$d'e_0 = \tilde\alpha_{e_0}(1)$$ $$d''e_0 = \tilde\beta_{e_0}(1),$$ então veja que: $$\varphi_{e_0}([\alpha]) \cdot \varphi_{e_0}([\beta]) = d'd''$$ e que $$\tilde\beta_{\tilde\alpha_{e_0}(1)} = \tilde\beta_{d'e_0}$$
+
+    Note que: $$q \circ (d'\tilde\beta_{e_0}) = q \circ d' \circ \tilde\beta_{e_0} = q \circ \tilde\beta_{e_0} = \beta,$$ pois $d'$ é um automorfismo de recobrimento. Além disso: $$d'\tilde\beta_{e_0}(0) = d'e_0$$ de modo que, pela unicidade de levantamentos: $$\tilde\beta_{d'e_0} = d'\tilde\beta_{e_0}$$
+
+    Disso segue que: $$\widetilde{(\alpha * \beta)}_{e_0}(1) = \tilde\beta_{d'e_0}(1) = d'\tilde\beta_{e_0}(1) = d'd''e_0$$ e portanto: $$\varphi([\alpha]\cdot[\beta]) = d'd'' = \varphi_{e_0}([\alpha]) \cdot \varphi_{e_0}([\beta]).$$
+\end{dem}
+
+\begin{prop}
+    O kernel de $\varphi_{e_0}$ é $q_*(\pi_1(E, e_0))$.
+\end{prop}
+
+\begin{dem}
+Tome $[\alpha] \in Ker(\varphi_{e_0})$, então:\\
+    $$\begin{tabular}{l l}
+        $[\alpha] \in Ker(\varphi_{e_0})$ & $\Longleftrightarrow                                                     \tilde\alpha_{e_0}(1) = e_0$ \\
+                                        & $\Longleftrightarrow \tilde\alpha_{e_0} \in \Omega(E, e_0)$\\
+                                        & $\Longleftrightarrow [\tilde\alpha_{e_0}] \in \pi_1(E, e_0)$\\
+                                        & $\Longleftrightarrow [\alpha] \in Im(q_*)$
+    \end{tabular}$$\\
+    de modo que $Ker(\varphi_{e_0}) = q_*(\pi_1(E, e_0))$.
+\end{dem}
+
+Note que isso implica que $q_*(\pi_1(E, e_0)) \triangleleft \pi_1(X, x_0)$ e, ainda: $$D \cong \frac{\pi_1(X, x_0)}{q_*(\pi_1(E, e_0))}$$ pelo teorema de isomorfismos.
+
+Reciprocamente, supondo que $q_*(\pi_1(E, e_0)) \triangleleft \pi_1(X, x_0)$, veremos que $D \cong \frac{\pi_1(X, x_0)}{q_*(\pi_1(E, e_0))}$ e age transitivamente em $q^{-1}(x_0)$.
+
+\begin{af}
+    Nas condições acima, se $D$ age transitivamente em $q^{-1}(x_0)$, então age transitivamente em todas as fibras.
+\end{af}
+
+\begin{dem}
+    Como $X$ é conexo por caminhos, segue que $\pi_1(X, x_0) \cong \pi_1(X, x_1)$ $\forall x_1 \in X$, analogamente $\pi_1(E, e_0) \cong \pi_1(E, e_1)$ $\forall e_1 \in E$. Logo, dados $x_1 \in X$ e $e_1 \in E$ temos $\frac{\pi_1(X, x_0)}{q_*(\pi_1(E, e_0))} \cong D \cong \frac{\pi_1(X, x_1)}{q_*(\pi_1(E, e_1))}$ e, como $\frac{\pi_1(X, x_1)}{q_*(\pi_1(E, e_1))}$ age transitivamente em $q^{-1}(x_1)$, da arbitrariedade de $x_1$ segue que $D$ age transitivamente em todas as fibras.
+\end{dem}
+
+\begin{lemma}
+    Seja $G$ um grupo e suponha que a ação $G \circlearrowright E$ é propriamente descontínua, então $D \cong G$.
+\end{lemma}
+
+\begin{dem}
+    Seja $\psi:G \longrightarrow D$ a função dada por $\psi(g) = \psi_g$, onde $\psi_g$ é o homeomorfismo determinado pela ação do elemento g em X, $\psi$ é um homomorfismo por se tratar de uma ação.
+
+    Primeiro note que $\psi$ é injetor, afinal, se $\psi_g = Id$, então $g \cdot e = e$, de modo que $g = 1_G$, pois toda ação propriamente descontínua é livre. Além disso, $\psi$ é sobrejetor, afinal dado $\phi \in D$, sabemos que $$q(e_0) = (q \circ \phi)(e_0)$$ pois $\phi$ é automorfismo de recobrimentos. Portanto, $\exists g \in G$ tal que $\phi(e_0) = ge_0$. Logo, como ambos $\psi_g$ e $\phi$ sào levantamentos de $q$, segue da unicidade de levantamentos que $\psi_g = \phi$.
+\end{dem}
+
+\begin{af}
+    Vale que $(E, e_0) \cong (\frac{\tilde X}{q_*(\pi_1(E, e_0))}, \overline{[c_{x_0}]})$
+\end{af}
+
+\begin{af}
+    Seja $G = \frac{\pi_1(X, x_0)}{q_*(\pi_1(E, e_0))}$, então a ação $G \circlearrowright E$ dada por $$\overline{[\alpha]} \cdot \overline{[\gamma]} = \overline{[\alpha * \gamma]}$$ é propriamente descontínua com quociente $X$.
+\end{af}
+
+\begin{thm}[Condição necessária e suficiente para a ação do grupo de automorfismos ser transitiva sobre as fibras]
+	Se $q:E \longrightarrow X$ é um recobrimento $0$-conexo, então a ação $D \circlearrowright q^{-1}(x)$ é transitiva para todo $x \in X$ se, e somente se, $q_*(\pi_1(E, e_0)) \triangleleft \pi_1(X, x_0)$. Nesse caso: $$D \cong \frac{\pi_1(X, x_0)}{q_*(\pi_1(E, e_0))}$$
+\end{thm}
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[consequencia1]{Consequência 1};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	\item \hyperref[]{}
+\end{titlemize}
