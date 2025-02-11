@@ -1,0 +1,47 @@
+\subsection{G-recobrimentos 0-conexos e epimorfismos do grupo fundamental em G}
+\label{g-recobrimentos-e-epimorfismos-prop}
+\begin{titlemize}{Lista de dependências}
+    \item \hyperref[recobrimento-1-conexo-em-bijecao-com-P(X,x)]{Recobrimento 1-conexo em bijeção com $P(X, x_0)$};\\
+	\item \hyperref[g-recobrimento-regular-def]{G-recobrimento regular};\\
+    \item \hyperref[acao-de-automorfismos-e-livre-prop]{A ação do grupo de automorfismos é livre sobre as fibras};\\
+    \item \hyperref[acao-de-automorfismo-transitiva-prop]{Quando a ação do grupo de automorfismos é transitiva sobre as fibras?};
+\end{titlemize}
+
+Antes de enunciar o teorema, lembramos que um modelo conjuntista para o recobrimento universal $\tilde X$ é o conjunto $\{[\gamma] \; | \; \gamma:I \longrightarrow X \; e \; \gamma (0) = x_0\}$, e que $p: \tilde X \longrightarrow X$ é dada por $p([\gamma]) = \gamma(1)$.
+
+\begin{thm}[G-recobrimentos 0-conexos e epimorfismos do grupo fundamental em G]
+    Sejam $Epi(\pi_1(X, x_0), G)$ o conjunto dos epimorfismos do grupo fundamental de $X$ sobre um grupo $G$ e seja $Cov_G^0(X, x_0)$ o conjunto dos G-recobrimentos regulares pontuados 0-conexos de X, então existe uma correspondência biunívoca entre esses conjuntos a menos de um único homeomorfismo entre os recobrimentos.
+\end{thm}
+
+\begin{dem}
+    Primeiramente tome $\phi \in Epi(\pi_1(X, x_0), G)$, defina $E_{\phi} = \frac{(\tilde X, [c_{x_0}])}{Ker(\phi)}$ e $e_0 = \overline{[c_{x_0}]}$. Defina ainda $q:(E_{\phi}, e_0) \longrightarrow (X, x_0)$ por: $$q(\overline{[\gamma]}) = p([\gamma]) = \gamma(1).$$
+
+    Note que $q$ está bem definida, pois dados $\overline{[\gamma]} = \overline{[\gamma']}$, então existe $[\alpha] \in Ker(\phi)$ tal que: $$[\gamma'] = [\alpha] \cdot [\gamma] = [\gamma * \alpha]$$ de modo que: $$q([\gamma']) = \gamma'(1) = (\gamma * \alpha)(1) = \gamma(1) = q([\gamma])$$
+
+    Como $p: (\tilde X, \tilde x_0) \longrightarrow (X, x_0)$ é um recobrimento e $q(\overline{[\gamma]}) = p([\gamma])$,  então $q:(E_{\phi}, e_0) \longrightarrow (X, x_0)$ é recobrimento. Além disso, como $\tilde X$ é $1$-conexo, então dados $[\gamma], [\gamma'] \in \tilde X$, temos que existe $\Gamma: I \longrightarrow \tilde X$ tal que $\Gamma(0) = [\gamma]$ e $\Gamma(1) = [\gamma']$. Defina $\overline{\Gamma}: I \longrightarrow E_{\phi}$ por $\overline{\Gamma}(t) = \overline{\Gamma(t)}$, então $\overline{\Gamma}(0) = \overline{[\gamma]}$ e $\overline{\Gamma}(1) = \overline{[\gamma']}$ e segue que $E_{\phi}$ é $0$-conexo.
+
+    Pelo teorema dos isomorfismos, sabemos que $ker(\phi) \triangleleft \pi_1(X, x_0)$ e $G \cong \frac{\pi_1(X, x_0)}{Ker(\phi)}$. Notando que $Ker(\phi) = q_*(\pi_1(E_{\phi}, e_0))$, segue que $G \cong Aut(E_{\phi}, q, e_0)$ e o recobrimento é G-regular, concluindo a primeira parte da demonstração.
+
+    Em sequência, tome um G-recobrimento $0$-conexo regular pontuado $q:(E, e_0) \longrightarrow (X, x_0)$ e defina $\phi_{(E, e_0)}: \pi_1(X, x_0) \longrightarrow G$ onde $\phi_{(E, e_0)}([\alpha]) = g$ quando $\tilde \alpha_{e_0}(1) = g \cdot e_0$, já vimos que esta função está bem definida e é um epimorfismo em \hyperref[acao-de-automorfismo-transitiva-prop]{"Quando a ação do grupo de automorfismos é transitiva sobre as fibras?"}, concluindo a segunda parte da demonstração.
+
+    Por fim, sejam $\phi_{(E, e_0)} = \phi_{(E', e_0')}$ e $K = Ker(\phi_{(E, e_0)}) = Ker(\phi_{(E', e_0')})$, já sabemos que $(E, e_0) \cong (\frac{\tilde X}{K}, \overline{[c_{x_0}]}) \cong (E', e_0')$, de modo que vale o seguinte diagrama:
+
+    % https://q.uiver.app/#q=WzAsNCxbMiwwLCIoXFxmcmFje1xcdGlsZGUgWH17S30sIFxcb3ZlcmxpbmV7W2Nfe3hfMH1dfSkiXSxbNCwwLCIoRScsIGVfMCcpIl0sWzAsMCwiKEUsZV8wKSJdLFsyLDMsIlgiXSxbMCwyLCJcXGNvbmciLDJdLFswLDEsIlxcY29uZyJdLFsxLDMsInEnIl0sWzAsMywiXFx0aWxkZSBxIl0sWzIsMywicSIsMl1d
+    \[\begin{tikzcd}
+    	{(E,e_0)} && {(\frac{\tilde X}{K}, \overline{[c_{x_0}]})} && {(E', e_0')} \\
+    	\\
+    	\\
+    	&& X
+    	\arrow["q"', from=1-1, to=4-3]
+    	\arrow["\cong"', from=1-3, to=1-1]
+    	\arrow["\cong", from=1-3, to=1-5]
+    	\arrow["{\tilde q}", from=1-3, to=4-3]
+    	\arrow["{q'}", from=1-5, to=4-3]
+    \end{tikzcd}\]
+
+    Logo, ambos os homeomorfismos são levantamentos de $\tilde q$, de forma que o contexto de espaços pontuados nos garante suas unicidades. Portanto  , existe um único homeomorfismo entre $(E, e_0)$ e $(E', e_0')$.
+\end{dem}
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[homomorfismos-e-g-recobrimentos-prop]{G-recobrimentos e homomorfismos do grupo fundamental em G};
+\end{titlemize}

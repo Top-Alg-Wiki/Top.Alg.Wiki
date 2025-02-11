@@ -1,0 +1,29 @@
+\subsection{A n-esfera é 1-conexa para $n \geq 2$}
+\label{n-esfera-1-conexa-ex}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[seifert-van-kampen-prop]{Teorena de Seifert-Van Kampen};
+\end{titlemize}
+
+Suponha que temos o seguinte diagrama:
+% https://q.uiver.app/#q=WzAsNSxbMCwxLCJOIl0sWzEsMCwiXFx7ZVxcfSJdLFsxLDIsIlxce2VcXH0iXSxbMiwxLCJHIl0sWzQsMSwiSCJdLFsxLDMsImpfMSIsMl0sWzIsMywial8yIl0sWzAsMSwiaV8xIiwyXSxbMCwyLCJpXzIiXSxbMyw0LCJoIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNCwiaF8xIl0sWzIsNCwiaF8yIl1d
+\[\begin{tikzcd}
+	& {\{e\}} \\
+	N && G && H \\
+	& {\{e\}}
+	\arrow["{j_1}"', from=1-2, to=2-3]
+	\arrow["{h_1}", from=1-2, to=2-5]
+	\arrow["{i_1}"', from=2-1, to=1-2]
+	\arrow["{i_2}", from=2-1, to=3-2]
+	\arrow["h", dashed, from=2-3, to=2-5]
+	\arrow["{j_2}", from=3-2, to=2-3]
+	\arrow["{h_2}"', from=3-2, to=2-5]
+\end{tikzcd}\]
+onde $(G, j_1, j_2)$ satisfazem a propriedade universal do teorema de Seifert-Van Kampen. Note que para qualquer grupo $G$, os homomorfismos $j_1$ e $j_2$ estão fixos e são dados por $j_1(e) = e_G = j_2(e)$. Note ainda que $$(h \circ j_1)(e) = h(j_1(e)) = h(e_G) = e_H = h_1(e)$$ e da mesma forma $$(h \circ j_2)(e) = h_2(e)$$ para qualquer homomorfismo $h:G\longrightarrow H$, logo, para termos a unicidade de $h$ precisamos que $G$ seja um grupo que tenha apenas um homomorfismo para qualquer outro grupo $H$. Portanto, segue que $G = \{e\}$.
+
+\begin{ex}[O grupo fundamental de $S^n$ para $N \geq 2$]
+	Sejam: $$S^n = \{(x_1, \cdots, x_n, t) \in \mathbb{R}^{n+1} \; | \; x_1^2+\cdots+x_n^2+t^2 = 1\}$$ $$U = \{(x_1, \cdots, x_n, t) \in S^n \; | \; t > -1/2\}$$ $$V = \{(x_1, \cdots, x_n, t) \in S^n \; | \; t < 1/2\}$$ $$U \cap V = \{(x_1, \cdots, x_n, t) \in S^n \; | \; -1/2 < t < 1/2\}$$
+
+    Então veja que $U \cong \mathring D^n \cong V$, de modo que $\pi_1(U, x_0) = \pi_1(V, x_0) = \{e\}$ e $U \cap V \cong (-\frac{1}{2}, \frac{1}{2}) \times S^{n-1}$, que é $0$-conexo. Logo, pelo discutido acima, segue que $\pi_1(S^n, x_0) = \{e\}$.
+\end{ex}
+
+Disso, vemos que a n-esfera, para $n \geq 2$, é $1$-conexa.
