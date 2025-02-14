@@ -1,0 +1,47 @@
+\subsection{Recobrimento universal}
+\label{recobrimento-universal}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[morfismo-de-recobrimento-def]{Morfismo de recobrimento};\\
+    \item \hyperref[recobrimento-1-conexo-prop]{Recobrimento 1-conexo quando X slsc};
+\end{titlemize}
+Nesta subseção iremos assumir que o espaço base $X$ é razoável, isto é, $X$ é conexo, localmente conexo por caminhos e localmente semi-simplesmente conexo.
+\begin{af}[Morfismos de recobrimento são recobrimentos]
+	Sejam $p_1:E_1 \longrightarrow X$ e $p_2:E_2 \longrightarrow X$ dois recobrimentos 0-conexos. Dado um morfismo de recobrimentos $\phi:E_1 \longrightarrow E_2$, então $\phi$ é um recobrimento.
+\end{af}
+
+\begin{thm}[O recobrimento 1-conexo é universal]
+    Sejam $q_X:(\tilde X, \tilde x_0) \longrightarrow (X,x_0)$ um recobrimento 1-conexo e $p:(E,e_0) \longrightarrow (X,x_0)$ um recobrimento 0-conexo, existe um único recobrimento $q_E:(\tilde X, \tilde x_0) \longrightarrow (E,e_0)$ tal que:
+\end{thm}
+\[\begin{tikzcd}
+	{(\tilde X, \tilde x_0)} \\
+	\\
+	&& {(E,e_0)} \\
+	\\
+	{(X,x_0)}
+	\arrow["{q_E}"', from=1-1, to=3-3]
+	\arrow["{q_X}", from=1-1, to=5-1]
+	\arrow["p"', from=3-3, to=5-1]
+\end{tikzcd}\]
+
+\begin{dem}
+    Note que $q_E$ é levantamento de $q_X$ para o recobrimento $p:(E,e_0) \longrightarrow (X,x_0)$, tal levantamento existe pelo critério de existência de levantamentos de funções, pois $$q_{X*}(\pi_1(\tilde X, \tilde x_0)) = \{1\} < p_*(\pi_1(E, e_0)).$$
+    
+    Como estamos trabalhando no contexto de recobrimentos pontuados, segue que para qualquer $\tilde q_E:(\tilde X, \tilde x_0) \longrightarrow (E, e_0)$ vale: $$q_E(\tilde x_0) = e_0 = \tilde q_E(\tilde x_0)$$
+    donde segue a unicidade.
+\end{dem}
+
+Note que este teorema nos mostra que o recobrimento 1-conexo de $X$ também é um recobrimento 1-conexo para todos os recobrimentos 0-conexos de X.
+
+\begin{corol}[Unicidade do recobrimento 1-conexo]
+    Se $(\tilde X, \tilde x_0) \longrightarrow (X, x_0)$ e $(\overline{X}, \overline{x}_0) \longrightarrow (X, x_0)$ são recobrimentos 1-conexos, então existe um único isomorfismo entre $(\tilde X, \tilde x_0)$ e $(\overline{X}, \overline{x}_0)$.
+\end{corol}
+
+O resultado anterior motiva a seguinte definição.
+
+\begin{defi}[Recobrimento universal]
+    Seja X um espaço razoável, então o seu recobrimento 1-conexo é chamado de recobrimento universal de X.
+\end{defi}
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[teorema-de-seifert-van-kampen]{Teorema de Seifert-Van Kampen};
+\end{titlemize}
