@@ -1,0 +1,24 @@
+\subsection{Automorfismo de um recobrimento}
+\label{automorfismo-de-recobrimento-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[ações-de-grupo-def]{Ações de grupo};
+\end{titlemize}
+\begin{defi}[Automorfismo de um recobrimento]
+    Um automorfismo de um recobrimento $q:E \longrightarrow X$ é um homeomorfismo $\phi:E \longrightarrow E$ tal que:
+    \[\begin{tikzcd}
+	E && E \\
+	\\
+	& X
+	\arrow["\phi", from=1-1, to=1-3]
+	\arrow["q"', from=1-1, to=3-2]
+	\arrow["q", from=1-3, to=3-2]
+    \end{tikzcd}\]
+\end{defi}
+
+Denotamos o grupo formado por todos os automorfismos de um recobrimento, também chamado de grupo de transformações de Deck, por $Aut(E, q, X)$. Por definição, para todo $x \in X$, a ação $D \circlearrowright q^{-1}(x)$ é dada por $$\phi \cdot e = \phi(e)$$
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[acao-de-automorfismos-e-livre-prop]{A ação do grupo de automorfismos é livre sobre as fibras};\\
+    \item \hyperref[acao-de-automorfismo-transitiva-prop]{Quando a ação do grupo de automorfismos é transitiva sobre as fibras?};\\
+    \item \hyperref[g-recobrimento-regular-def]{G-recobrimento regular};
+\end{titlemize}
