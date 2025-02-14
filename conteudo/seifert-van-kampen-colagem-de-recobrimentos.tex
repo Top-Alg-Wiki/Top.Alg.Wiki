@@ -1,0 +1,23 @@
+\subsection{Colagem de recobrimentos}
+\label{colagem-de-recobrimentos-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[espaco-de-recobrimento]{Espaço de recobrimento};
+\end{titlemize}
+Suponha que $X$ é uma união the dois conjuntos abertos $U$ e $V$. Um recobrimento de $X$ se restringe a $U$ e $V$ gerando dois recobrimentos isomorfos em $U \cap V$. Queremos realizar o processo inverso.
+\begin{thm}[Colagem de recobrimentos] 
+	Sejam $q_1: E_1 \longrightarrow U$ e $q_2: E_2 \longrightarrow V$ recobrimentos e seja $\varphi: q_1^{-1}(U \cap V) \longrightarrow q_2^{-1}(U \cap V)$ um isomorfismo de recobrimentos sobre $U \cap V$. Então é possível "colar" os recobrimentos de forma a obter um recobrimento $q:E \longrightarrow X$ junto de dois isomorfismos de recobrimentos $\varphi_1:E_1 \longrightarrow q^{-1}(U)$  e $\varphi_2:E_2 \longrightarrow q^{-1}(V)$ tais que, em $U \cap V$, $\varphi = \varphi_2^{-1} \circ \varphi_1$.
+\end{thm}
+
+\begin{dem}
+    Podemos construir o conjunto $E$ como o espaço quociente da união disjunta $E_1 \sqcup E_2$ pela relação de equivalência que identifica um ponto $e_1 \in q_1^{-1}(U \cap V)$ com o ponto $\varphi(e_1) \in q_2^{-1}(U \cap v)$. Como $\varphi$ é compatível com mapas para $X$, obtemos um mapa $q:E \longrightarrow X$.
+
+    Como o mapa de $E_1$ para $E$ é um homeomorfismo sobre sua imagem $q^{-1}(U)$, que é aberta em $E$, segue que a restrição de $q$ à imagem inversa de $U$ é isomorfa à $E_1 \longrightarrow U$, similarmente, similarmente, a restrição sobre a imagem inversa de $V$ é isomorfa à $Y_2 \longrightarrow V$. Disso, segue que $q:E \longrightarrow X$ é um recobrimento.
+\end{dem}
+
+\begin{corol}
+    Se $q_1:E_1 \longrightarrow U$ e $q_2:E_2 \longrightarrow V$ forem $G$-recobrimentos regulares, então $q:E \longrightarrow X$ tem uma única estrutura de $G$-recobrimento regular tal que os mapas de $E_1$ e $E_2$ comutam com a ação de $G$.
+\end{corol}
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[seifert-van-kampen-prop]{Teorema de Seifert-Van Kampen};
+\end{titlemize}
