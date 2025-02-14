@@ -1,0 +1,54 @@
+\subsection{G-recobrimentos e homomorfismos do grupo fundamental em G}
+\label{homomorfismos-e-g-recobrimentos-prop}
+\begin{titlemize}{Lista de dependências}
+    \item \hyperref[acao-de-automorfismos-e-livre-prop]{A ação do grupo de automorfismos é livre sobre as fibras};\\
+    \item \hyperref[acao-de-automorfismo-transitiva-prop]{Quando a ação do grupo de automorfismos é transitiva sobre as fibras?};\\
+    \item \hyperref[g-recobrimento-regular-def]{G-recobrimento regular};\\
+	\item \hyperref[g-recobrimentos-e-epimorfismos-prop]{G-recobrimentos 0-conexos e epimorfismos do grupo fundamental em G};
+\end{titlemize}
+
+Em \hyperref[g-recobrimentos-e-epimorfismos-prop]{"G-recobrimentos 0-conexos e epimorfismos do grupo fundamental em G"} vimos que para todo $G$-recobrimento regular $0$-conexo $q:(E, e_0) \longrightarrow (X, x_0)$ existe um epimorfismo do grupo fundamental $\pi_1(X, x_0)$ em $G$. Ainda, se $K$ é o kernel desse epimorfismo, então $G \cong \frac{\pi_1(X, x_0)}{K}$ e $E$ é o quociente de $\tilde X$ pela ação de $K$, com $e_0$ sendo a imagem de $\tilde x_0$. Queremos estender essa correspondência para $G$-recobrimentos não necessariamente $0$-conexos, nesse caso obteremos homomorfismos de $\pi_1(X, x_0)$ em $G$ não necessariamente sobrejetores.
+
+Suponha que $\phi: \pi_1(X, x_0) \longrightarrow G$ é um homomorfismo para algum grupo $G$. De a $G$ a topologia discreta, então o produto cartesiano $\tilde X \times G$ é um produto de cópias de $\tilde X$, uma para cade elemento de $G$. O grupo $\pi_1(X, x_0)$ age em $\tilde X \times G$ segundo a regra: $$[\alpha] \cdot (\tilde x, g) = ([\alpha] \cdot \tilde x, g \cdot \phi([\alpha]^{-1})),$$ onde $[\alpha] \in \pi_1(X, x_0)$, $\tilde x \in \tilde X$ e $g \in G$. Aqui, $[\alpha] \cdot \tilde x$ representa a ação de $\pi_1(X, x_0)$ sobre $\tilde X$ e $g \cdot \phi([\alpha]^{-1})$ é o produto em $G$.
+
+Defina $E_{\phi}$ como o quociente de $\tilde X \times G$ por essa ação: $$E_{\phi} = \frac{\tilde X \times G}{\pi_1(X, x_0)}$$ e seja $e_0$ e imagem de $(\tilde x_0, e)$. Denote por $\langle \tilde x, g \rangle$ a imagem em $E_{\phi}$ de $(\tilde x, g)$. Note que, dada ação de $\pi_1(X, x_0)$ em $\tilde X \times G$, para $\tilde x \in \tilde X$, $g \in G$ e $[\alpha] \in \pi_1(X, x_0)$, temos: $$\langle [\alpha] \cdot (\tilde x, g) \rangle = \langle \tilde x, g \cdot \phi([\alpha]) \rangle.$$ Defina $q_{\phi}: E_{\phi} \longrightarrow X$ por $q_{\phi}(\langle \tilde x, g \rangle) = p(\tilde x)$. Note que por $p: \tilde X \longrightarrow X$ ser um recobrimento, essa definição nos garante que $q_{\phi}:E_{\phi} \longrightarrow X$ também é um recobrimento.
+
+O grupo $G$ age em $E_{\phi}$ pela fórmula $h \cdot \langle \tilde x, g \rangle = \langle \tilde x, h \cdot g \rangle$, para $g, h \in G$ e $\tilde x \in \tilde X$. Note que usamos o lado direito de $G$ para a ação de $\pi_1(X, x_0)$, de modo que o lado esquerdo de $G$ ficou livre para a ação de $G$. Veremos a seguir que essa é uma ação propriamente descontínua de modo que, pelos resultados apresentados em \hyperref[acao-de-automorfismos-e-livre-prop]{"A ação do grupo de automorfismos é livre sobre as fibras"} e \hyperref[acao-de-automorfismo-transitiva-prop]{"Quando a ação do grupo de automorfismos é transitiva sobre as fibras?"}, o recobrimento se trata de um G-recobrimento.
+
+Seja $N$ qualquer subconjunto de $X$ sobre o qual o recobrimento universal é trivial, então existe um isomorfismo de $p^{-1}(N)$ com o recobrimento produto $N \times \pi_1(X, x_0)$, onde $\pi_1(X, x_0)$ age a esquerda no segundo fator. Isso nos dá homeomorfismos: $$q_{\phi}^{-1}(N) \cong (N \times \pi_1(X, x_0)) \times \frac{G}{\pi_1(X, x_0)} \cong N \times G,$$ onde o último homeomorfismo é dado por $\langle (n, [\alpha]), g \rangle \mapsto (n, g \cdot \phi([\alpha]))$, com o mapa inverso sendo $(n, g) \mapsto \langle (n, e), g \rangle$. Esse homeomorfismos são compatíveis com as projeções para $N$, donde segue que, sobre $N$, a ação de $G$ é propriamente descontínua. Como $X$ é coberto por conjuntos abertos como $N$, o mesmo é verdade para o mapa $q_{\phi}:E_{\phi} \longrightarrow X$.
+
+Por outro lado, suponha que $q: (E, e_0) \longrightarrow (X, x_0)$ é um $G$-recobrimento regular pontuado, construiremos um homomorfismo $\phi:\pi_1(X, x_0) \longrightarrow G$. Para cada $[\alpha] \in \pi_1(X, x_0)$, o elemento $\phi([\alpha]) \in G$ será determinado por: $$\phi([\alpha]) = g \Longleftrightarrow g \cdot e_0 = \tilde \alpha_{e_0}(1).$$ Em \hyperref[acao-de-automorfismo-transitiva-prop]{"Quando a ação do grupo de automorfismos é transitiva sobre as fibras?"}, sob a hipótese adicional de $E$ ser $0$-conexo, vimos que esse mapa está bem definido e é um epimorfismo. Notando que a hipótese adicional foi utilizada apenas para mostrar que $\phi$ é sobrejetor, segue que $\phi$ está bem definido e é um homomorfismo.
+
+\begin{thm}[Correspondência entre G-recobrimentos e homomorfismos do grupo fundamental em G]
+	As construções acima determinam uma correspondência biunívoca entre o conjunto dos homomorfismos de $\pi_1(X, x_0)$ em $G$ e o conjunto de $G$-recobrimentos regulares pontuados, a menos de isomorfismo.
+\end{thm}
+
+\begin{dem}
+    Dado um G-recobrimento regular $q:(E, e_0) \longrightarrow (X, x_0)$ e o homomorfismo $\phi: \pi_1(X, x_0) \longrightarrow G$ construído a partir dele, precisamos checar que este recobrimento é isomorfo ao recobrimento $q_{\phi}:E_{\phi} \longrightarrow X$ construído a partir de $\phi$. Para mapear $E_{\phi}$ em $E$, precisamos mapear $\tilde X \times G$ em $E$ e mostrar que as órbitas de $\pi_1(X, x_0)$ tem as mesmas imagens. Para tanto, identificamos o recobrimento universal $\tilde X$ com o espaço de classes de homotopia de caminhos em $X$ começando em $x_0$, $\tilde X \cong \{[\gamma] \; | \; \gamma:I \longrightarrow X, \; \gamma(0) = x_0\}$. Defina o aplicação contínua $\tilde X \times G \longrightarrow E$ por: $$([\gamma], g) \longmapsto g \cdot \tilde \gamma_{e_0}(1) = \tilde \gamma_{g \cdot e_0}(1).$$
+
+    Precisamos checar que que o ponto equivalente $(([\alpha]\cdot[\gamma]),(g\cdot\phi([\alpha])^{-1}))$ é levado à mesma imagem. Note que:\\
+        $$\begin{tabular}{l l}
+            $(g\cdot\phi([\alpha])^{-1}) \cdot \widetilde{(\gamma * \alpha)}_{e_0}(1)$ & $= (g\cdot\phi([\alpha])^{-1}) \cdot \tilde\gamma_{\tilde\alpha_{e_0}(1)}(1)$\\
+                 & $= \tilde\gamma_{(g\cdot\phi([\alpha])^{-1}) \cdot \tilde\alpha_{e_0}(1)}(1)$\\
+                 & $= \tilde\gamma_{g \cdot \alpha^{-1}_{\alpha_{e_0}}(1)}(1)$\\
+                 & $= \tilde\gamma_{g\cdot(\alpha*\alpha^{-1})_{e_0}(1)}(1)$\\
+                 & $= \tilde\gamma_{g \cdot e_0}(1).$
+        \end{tabular}$$\\
+
+    Como a aplicação leva pontos equivalentes às mesmas imagens, ela da origem a um mapa do quociente $E_{\phi}$ a $E$, que é um mapa entre espaços de recobrimento de $X$. É fácil checar que se trata de um mapa entre $G$-recobrimentos regulares, donde segue que se trata de um isomorfismo.
+
+    Por outro lado, partindo de um homomorfismo $\phi$ e do $G$-recobrimento regular $q_{\phi}: E_{\phi} \longrightarrow X$ construído a partir dele, obtemos um novo homomorfismo $\overline{\phi}$, precisamos verificar que $\phi = \overline{\phi}$. Para $[\alpha] \in \pi_1(X, x_0)$:\\
+        $$\begin{tabular}{l l}
+            $\overline{\phi}([\alpha]) \cdot \langle \tilde x_0, e \rangle$ 
+                            & $= \tilde\alpha_{\langle \tilde x_0, e \rangle}(1)$\\
+                            & $= \langle \tilde\alpha_{\tilde x_0}(1), e \rangle$\\
+                            & $= \langle [\alpha] \cdot \tilde x_0, e \rangle$\\
+                            & $= \langle \tilde x_0, e \cdot \phi([\alpha]) \rangle$\\
+                            & $= \phi([\alpha]) \cdot \langle \tilde x_0, e \rangle$
+        \end{tabular}$$\\
+    donde temos que $\phi([\alpha]) = \overline{\phi}([\alpha])$.
+\end{dem}
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[seifert-van-kampen-prop]{Teorema de Seifert-Van Kampen};
+\end{titlemize}

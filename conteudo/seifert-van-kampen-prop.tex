@@ -1,0 +1,50 @@
+\subsection{Teorema de Seifert-Van Kampen}
+\label{seifert-van-kampen-prop}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[homomorfismos-e-g-recobrimentos-prop]{G-recobrimentos e homomorfismos do grupo fundamental em G};\\
+	\item \hyperref[colagem-de-recobrimentos-prop]{Colagem de recobrimentos};
+\end{titlemize}
+
+O teorema de Seifert-Van Kampen descreve o grupo fundamental da união de dois espaços em termos do grupo fundamental de cada um desses espaços e de sua intersecção. Seja $X$ um espaço que é a união de dois subespaços abertos $U$ e $V$. Seja $x_0$ um ponto da intersecção $U \cap V$. Temos o seguinte diagrama comutativo de homomorfismos dos grupos fundamentais:
+
+% https://q.uiver.app/#q=WzAsNCxbMCwxLCJcXHBpXzEoVSBcXGNhcCBWLCB4XzApIl0sWzEsMCwiXFxwaV8xKFUsIHhfMCkiXSxbMiwxLCJcXHBpXzEoWCwgeF8wKSJdLFsxLDIsIlxccGlfMShWLCB4XzApIl0sWzMsMiwial97ViwgKn0iXSxbMSwyLCJqX3tVLCAqfSIsMl0sWzAsMSwiaV97VSwgKn0iLDJdLFswLDMsImlfe1YsICp9Il1d
+\[\begin{tikzcd}
+	& {\pi_1(U, x_0)} \\
+	{\pi_1(U \cap V, x_0)} && {\pi_1(X, x_0)} \\
+	& {\pi_1(V, x_0)}
+	\arrow["{j_{U, *}}"', from=1-2, to=2-3]
+	\arrow["{i_{U, *}}"', from=2-1, to=1-2]
+	\arrow["{i_{V, *}}", from=2-1, to=3-2]
+	\arrow["{j_{V, *}}", from=3-2, to=2-3]
+\end{tikzcd}\]
+onde os mapas são induzidos pelas inclusões de subespaço.
+
+Iremos determinar o grupo $\pi_1(X, x_0)$ a partir dos outros grupos e dos mapas entre eles a partir de uma propriedade universal. Note que qualquer homomorfismo $h$ de $\pi_1(X, x_0)$ para $G$ determina um par de homomorfismos $h_U = h \circ j_{U, *}$ de $\pi_1(U, x_0)$ para G e $h_V = h \circ j_{V, *}$ de $\pi_1(V, x_0)$ para $G$. Os dois homomorfismos $h_U \circ i_{U, *}$ e $h_V \circ i_{V, *}$ de $\pi_1(U \cap V, x_0)$ para $G$ são o mesmo. O teorema de Seifert-Van Kampen diz que $\pi_1(X, x_0)$ é o grupo "universal" com essa propriedade.
+
+\begin{thm}[Seifert-Van Kampen] 
+	Para quaisquer homomorfismos $h_U:\pi_1(U, x_0) \longrightarrow G$ e $h_V:\pi_1(V, x_0) \longrightarrow G$ tais que $h_U \circ i_{U, *} = h_V \circ i_{V, *}$, existe um único homomorfismo: $$h:\pi_1(X, x_0) \longrightarrow G$$ tal que $h \circ j_{U, *} = h_U$ e $h \circ j_{V, *} = h_V$.
+\end{thm}
+
+% https://q.uiver.app/#q=WzAsNSxbMCwxLCJcXHBpXzEoVSBcXGNhcCBWLCB4XzApIl0sWzEsMCwiXFxwaV8xKFUsIHhfMCkiXSxbMiwxLCJcXHBpXzEoWCwgeF8wKSJdLFsxLDIsIlxccGlfMShWLCB4XzApIl0sWzUsMSwiRyJdLFszLDIsImpfe1YsICp9Il0sWzEsMiwial97VSwgKn0iLDJdLFswLDEsImlfe1UsICp9IiwyXSxbMCwzLCJpX3tWLCAqfSJdLFsyLDQsImgiXSxbMSw0LCJoX1UiXSxbMyw0LCJoX1YiLDJdXQ==
+\[\begin{tikzcd}
+	& {\pi_1(U, x_0)} \\
+	{\pi_1(U \cap V, x_0)} && {\pi_1(X, x_0)} &&& G \\
+	& {\pi_1(V, x_0)}
+	\arrow["{j_{U, *}}"', from=1-2, to=2-3]
+	\arrow["{h_U}", from=1-2, to=2-6]
+	\arrow["{i_{U, *}}"', from=2-1, to=1-2]
+	\arrow["{i_{V, *}}", from=2-1, to=3-2]
+	\arrow["h", from=2-3, to=2-6]
+	\arrow["{j_{V, *}}", from=3-2, to=2-3]
+	\arrow["{h_V}"', from=3-2, to=2-6]
+\end{tikzcd}\]
+
+\begin{dem}
+    Considere um grupo $G$ e um par de homomorfismos $h_U$ e $h_V$ como nas hipóteses do teorema. Pelo resultado em \hyperref[homomorfismos-e-g-recobrimentos-prop]{"G-recobrimentos e homomorfismos do grupo fundamental em G"}, podemos associar aos homomorfismos $h_U$ e $h_V$ $G$-recobrimentos regulares $q_U:(E_U,e_{U, 0}) \longrightarrow (U, x_0)$ e $q_V:(E_V,e_{V, 0}) \longrightarrow (V, x_0)$. Para $k = U, V$, seja $Y_k = q_k^{-1}(U \cap V)$, de forma que $(Y_k, y_{k, 0}) \longrightarrow (U \cap V, x_0)$ é um $G$-recobrimento regular representando o homomorfismo: $$h_k \circ i_{k, *}:  \pi_1(U \cap V, x_0) \longrightarrow \pi_1(k, x_0) \longrightarrow G$$
+
+    Como os homomorfismos $h_U \circ i_{U, *}$ e $h_V \circ i_{V, *}$ são iguais, temos que $(Y_U, y_{U, 0}) \longrightarrow (U \cap V, x_0)$ e $(Y_V, y_{V, 0}) \longrightarrow (U \cap V, x_0)$ são $G$-recobrimentos regulares isomorfos, logo existe um único homeomorfismo $\varphi: (Y_U, y_{U, 0}) \longrightarrow (Y_V, y_{V, 0})$. Pelo visto em \hyperref[colagem-de-recobrimentos-prop]{"Colagem de recobrimentos"}, podemos colar $q_U$ e $q_V$ de forma a obter um G-recobrimento regular $q:(E, e_0) \longrightarrow (X, x_0)$. Usando novamente o resultado de \hyperref[homomorfismos-e-g-recobrimentos-prop]{"G-recobrimentos e homomorfismos do grupo fundamental em G"} vemos que esse recobrimento representa o homomorfismo $h$ desejado. A unicidade de $h$ decorre da unicidade de todos os passos realizados.
+\end{dem}
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[n-esfera-1-conexa-ex]{A n-esfera é 1-conexa para $n \geq 2$};
+\end{titlemize}
