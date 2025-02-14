@@ -25,18 +25,18 @@ Iremos determinar o grupo $\pi_1(X, x_0)$ a partir dos outros grupos e dos mapas
 	Para quaisquer homomorfismos $h_U:\pi_1(U, x_0) \longrightarrow G$ e $h_V:\pi_1(V, x_0) \longrightarrow G$ tais que $h_U \circ i_{U, *} = h_V \circ i_{V, *}$, existe um único homomorfismo: $$h:\pi_1(X, x_0) \longrightarrow G$$ tal que $h \circ j_{U, *} = h_U$ e $h \circ j_{V, *} = h_V$.
 \end{thm}
 
-% https://q.uiver.app/#q=WzAsNSxbMCwxLCJOIl0sWzEsMCwiXFx7ZVxcfSJdLFsxLDIsIlxce2VcXH0iXSxbMiwxLCJHIl0sWzQsMSwiSCJdLFsxLDMsImpfMSIsMl0sWzIsMywial8yIl0sWzAsMSwiaV8xIiwyXSxbMCwyLCJpXzIiXSxbMyw0LCJoIiwwLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzEsNCwiaF8xIl0sWzIsNCwiaF8yIl1d
+% https://q.uiver.app/#q=WzAsNSxbMCwxLCJcXHBpXzEoVSBcXGNhcCBWLCB4XzApIl0sWzEsMCwiXFxwaV8xKFUsIHhfMCkiXSxbMiwxLCJcXHBpXzEoWCwgeF8wKSJdLFsxLDIsIlxccGlfMShWLCB4XzApIl0sWzUsMSwiRyJdLFszLDIsImpfe1YsICp9Il0sWzEsMiwial97VSwgKn0iLDJdLFswLDEsImlfe1UsICp9IiwyXSxbMCwzLCJpX3tWLCAqfSJdLFsyLDQsImgiXSxbMSw0LCJoX1UiXSxbMyw0LCJoX1YiLDJdXQ==
 \[\begin{tikzcd}
-	& {\{e\}} \\
-	N && G && H \\
-	& {\{e\}}
-	\arrow["{j_1}"', from=1-2, to=2-3]
-	\arrow["{h_1}", from=1-2, to=2-5]
-	\arrow["{i_1}"', from=2-1, to=1-2]
-	\arrow["{i_2}", from=2-1, to=3-2]
-	\arrow["h", dashed, from=2-3, to=2-5]
-	\arrow["{j_2}", from=3-2, to=2-3]
-	\arrow["{h_2}", from=3-2, to=2-5]
+	& {\pi_1(U, x_0)} \\
+	{\pi_1(U \cap V, x_0)} && {\pi_1(X, x_0)} &&& G \\
+	& {\pi_1(V, x_0)}
+	\arrow["{j_{U, *}}"', from=1-2, to=2-3]
+	\arrow["{h_U}", from=1-2, to=2-6]
+	\arrow["{i_{U, *}}"', from=2-1, to=1-2]
+	\arrow["{i_{V, *}}", from=2-1, to=3-2]
+	\arrow["h", from=2-3, to=2-6]
+	\arrow["{j_{V, *}}", from=3-2, to=2-3]
+	\arrow["{h_V}"', from=3-2, to=2-6]
 \end{tikzcd}\]
 
 \begin{dem}
