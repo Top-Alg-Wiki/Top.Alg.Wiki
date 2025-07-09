@@ -1,9 +1,11 @@
 \subsection{Complexo de cadeias}
 \label{complexo-de-cadeias-def}
+
 %\begin{titlemize}{Lista de dependências}
 	%\item %\hyperref[homologia-simplicial-def]{Homologia Simplicial};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
 % quantas dependências forem necessárias.
 %\end{titlemize}
+
 \begin{defi}[Complexo de cadeias]
 	Um \textbf{Complexo de cadeias} é uma sequência $C_{-1}=0,C_0,C_1, C_2,...$ de grupos abelianos acompanhada de homomorfismos $d_n:C_n\rightarrow C_{n-1}$ para cada $n\ge 0$, tais que $d_{n}\circ d_{n+1}=0$. Denotamos esse complexo de cadeias por $C_{\bullet}$, e os homomorfismos $d_n$ são chamados de \textbf{diferenciais} de $C_\bullet$. A n-ésima \textbf{homologia} de $C_\bullet$ é definida por
     \[H_n(C_\bullet):=\frac{\text{Ker}(d_n)}{\text{Im}(d_{n+1})}\]

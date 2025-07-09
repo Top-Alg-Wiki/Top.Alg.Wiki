@@ -1,0 +1,87 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Levantamento de funções} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{levantamento-de-funções-prop}
+\begin{titlemize}{Lista de dependências}
+        \item \hyperref[levantamento-de-caminhos-prop]{Levantamento de Caminhos};\\
+	\item \hyperref[levantamento-de-homotopia-prop]{Levantamento de Homotopia};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+% quantas dependências forem necessárias.
+        \item \hyperref[localmente-conexo-por-caminhos-def]{Espaços localmente conexos por caminhos}
+\end{titlemize}
+Agora, iremos tratar sobre existência e unicidade de levantamentos de funções quaisquer, isto é, dada função $f: X \rightarrow B$ e recobrimento $p: E \rightarrow B$, gostaríamos de estabelecer um critério para que haja (um único) levantamento $\Tilde{f}: X \rightarrow E$ que faça o diagrama comutar. \\
+
+%https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQBREAX1PU1z5CKMsWp0mrdgCEefEBmx4CRcqTE0GLNohAANHuJhQA5vCKgAZgCcIAWyRkQOCEgCMNRvQBGMRgAUBZWEQaywTAAscEE1JHRBLOStbB0Q1Z1dEDxAvXwCgoXZGGEto2O12NCSElMcaFyR0xiwweKh6OAjjGJAu+igkMGZGRnr6LEZ2SFae3L9ApULdYtKerSldAB1NmAAPLDgcOAACAEJj7YAVCdhgS25DbiA
+
+\[ 
+\begin{tikzcd}
+                                                               &  & E \arrow[dd, "p"] \\
+                                                               &  &                   \\
+X \arrow[rr, "f"'] \arrow[rruu, "\exists ! \Tilde{f}", dashed] &  & B                
+    \end{tikzcd}
+\]
+
+Comecemos pela unicidade.
+\begin{prop}[Unicidade do levantamento de funções]% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
+    Seja $X$ conexo e $\Tilde{f_1}$, $\Tilde{f_2}$ dois levantamentos de $f$. Se $\Tilde{f_1}(x_{0}) = \Tilde{f_2}(x_{0})$ para algum $x_{0} \in X$, então $\Tilde{f_1} = \Tilde{f_2}$.
+\end{prop}
+
+\begin{dem}
+    Seja $A = \left\{x \in X : \Tilde{f_1}(x) = \Tilde{f_2}(x) \right\}$. Note que, como $p$ é recobrimento, $\forall x \in X$, existem $U \subseteq B$ vizinhança aberta de f(x) e $\Lambda \neq \emptyset$ tal que $p^{-1}(U) = \coprod_{\lambda \in \Lambda}{} V_{\lambda}$ é união disjunta, com $V_\lambda \subseteq E$ abertos, e $p|_{V_\lambda} : V_\lambda \rightarrow U$ é homeomorfismo, $\forall \lambda$. Denote por $V_1$ e $V_2$ os abertos que contém $\Tilde{f_1}(x)$ e $\Tilde{f_2}(x)$, respectivamente. Desse modo,
+    \begin{enumerate}
+        \item $x_0 \in A \Rightarrow A \neq \emptyset$;
+        \item Se $x \in A$, i.e., $\Tilde{f_1}(x) = \Tilde{f_2}(x) = e \in E$, então $V_1 = V_2$, pois $e \in V_1 \cap V_2$. Assim,
+            \begin{equation}
+            \Tilde{f_1}|_{f^{-1}(U)} = {p|_{V_1}}^{-1} \circ f = {p|_{V_2}}^{-1} \circ f = \Tilde{f_2}|_{f^{-1}(U)} \Rightarrow f^{-1}(U) \subseteq A
+            \end{equation}
+        Logo, como $f$ é contínua, $f^{-1}(U)$ é aberta e, portanto, $A$ é aberto.
+        \item Se $x \notin A$, i.e., $\Tilde{f_1}(x) \neq \Tilde{f_2}(x)$, então $V_1 \neq V_2$, e logo $V_1$ e $V_2$ são disjuntos. Portanto, $\Tilde{f_1} \neq \Tilde{f_2}$ em $f^{-1}(U)$ e segue que $A$ é fechado.
+    \end{enumerate}
+    Como $X$ é conexo e $A$ é não vazio, aberto e fechado, temos que $A = X$ e, portanto, $\Tilde{f_1} = \Tilde{f_2}$, como queríamos.
+\end{dem}
+
+Agora, passemos para o Teorema que garante uma condição necessária e suficiente para que exista levantamento único da função original $f : X \rightarrow B$.
+
+\begin{thm}
+    Seja $X$ conexo por caminhos e localmente conexo por caminhos, $p : X \rightarrow B$ recobrimento e $f : X \rightarrow B$ função. Então, dado $e_0 \in p^{-1}(f(x_0))$, existe um único $\Tilde{f} : X \rightarrow E$ levantamento com $\Tilde{f}(x_0) = e_0$ se, e somente se, 
+    \begin{equation}
+        f_{*}(\pi_{1}(X, x_0) \text{ }\subseteq \text{ } p_{*}(\pi_{1}(E, e_0).
+    \end{equation}
+
+    % https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZAJgBoAGAXVJADcBDAGwFcYkQAKAUVIAIYA+uQCUIAL6l0mXPkIoyxanSat2HAEJ8AZhwAeQ4aIlTseAkXKlFNBizaJOADT76R4pTCgBzeEVBaAJwgAWyQyEBwIJABGGkZ6ACMYRgAFaTM5EACsLwALHBAbFXsQLUKQOFysLQLESxAksCgkcmNSoNC6mkiYuMTktNNZdkYYGvLbVQc0cUl2kLDuqK6QRiwwEqh6Ss9y3Jh6ZsQwZkZGbvosRnZIDfL4pNT04YdR8aK7dgAdL5hdLDgODgvAAhLwfgAVK6wYBaMTuMRAA
+    \[\begin{tikzcd}
+                                                                            &  & {(E, e_0)}     \arrow[dd, "p"] \\
+                                                                            &  &                               \\
+    {(X, x_0)} \arrow[rr, "f"'] \arrow[rruu, "\exists ! \Tilde{f}", dashed] &  & {(B, f(x_0))}             
+    \end{tikzcd}\]
+\end{thm}
+
+\begin{dem}
+    $(\implies)$ Como $f_{*} = p_{*} \circ \Tilde{f}_{*}$, então 
+    $$ f_{*}(\pi_{1}(X, x_0)) = p_{*} \circ \Tilde{f}_{*}(\pi_{1}(X, x_0)) \text{, mas   } p_{*} \circ \Tilde{f}_{*}(\pi_{1}(X, x_0)) \subseteq p_{*}(\pi_{1}(E, e_0)).$$
+
+    $(\Longleftarrow)$ Vamos usar levantamento de caminhos para construir o levantamento de f. Para cada $x \in X$, seja $\gamma^{x} : I \rightarrow X$ com $\gamma^{x} (0) = x_0$, $\gamma^{x}(1) = x$. Note que $\gamma^{x_0}(t) = x_0 = C_{x_0}$, $\forall t$. Defina $\Tilde{f}(x) = \widetilde{(f \circ \gamma^{x})}_{e_0} (1)$. Note que 
+    
+
+
+    \begin{enumerate}
+        \item $\Tilde{f}(x_0) = \widetilde{(f \circ \gamma^{x_0})}_{e_0}(1) = e_0$;
+        \item $(p \circ \Tilde{f})(x) = (f \circ \gamma^{x})(1) = f(\gamma^{x}(1)) = f(x)$.
+    \end{enumerate}
+
+    Mostremos que $\Tilde{f}$ está bem definido. Dado $\alpha$ outro caminho de $x_0$ a $x$, temos que $h_0 = \gamma^{x} \ast \overline{\alpha} \in \Omega(X, x_0)$ é laço em $x_0$ com $f_{*}[ \gamma^{x} \ast \overline{\alpha}] \in f_{*}(\pi_{1}(X, x_0)) \subseteq p_{*}(\pi_{1}(E, e_0))$. Desse modo,
+    \begin{align*}
+        &\implies \exists \beta \in \Omega(E, e_0) \text{ tal que } p \circ \beta \sim f \circ (\gamma^{x} \ast \overline{\alpha}) \text{ rel } \partial I \\
+        &\implies \widetilde{(p \circ \beta)}_{e_0} \sim \widetilde{(f \circ (\gamma^{x} \ast \overline{\alpha}))}_{e_0} \text{ rel } \partial I \\
+        &\implies \beta \sim \widetilde{(f \circ (\gamma^{x} \ast \overline{\alpha}))} \text{ rel } \partial I \\
+        &\implies \beta(1) = e_0 = \widetilde{(f\circ\gamma^{x}) \ast (f \circ \overline{\alpha})}_{e_0}(1) = \widetilde{(f\circ\gamma^{x})}_{e_0} \ast \widetilde{(f \circ \overline{\alpha})}_{\Tilde{f}(x)} (1) = \widetilde{(f \circ \overline{\alpha})}_{\Tilde{f}(x)} (1) \\
+        &\implies \widetilde{(f \circ \overline{\alpha})}_{e_0}(1) = \Tilde{f}(x) = \widetilde{(f \circ \gamma^{x})}_{e_0} (1) \text{ , por unicidade do levantamento.}
+    \end{align*}
+
+    Agora, resta ver que $\Tilde{f}$ é contínua. Seja $U \subseteq B$ vizinhança aberta de $f(x)$ com levantamento $\Tilde{U} \subseteq E$ contendo $\Tilde{f}(x)$ tal que $p: \Tilde{U} \rightarrow U$ é homeomorfismo. Tome $V$ vizinhança aberta e conexa por caminhos de x tal que $f(V) \subseteq U$ ($X$ é localmente conexo por caminhos). Assim, para caminhos de $x_0$ a $x' \in V$, tomamos um caminho fixo $\gamma$ de $x_0$ a $x \in V$ seguido de caminhos $\eta_{x'}$ de $x$ a $x'$. Logo, $(f \circ \gamma) \ast (f \circ \eta_{x'})$ caminho em $X$ é levantado para $\widetilde{(f \circ \gamma)} \ast \widetilde{(f \circ \eta_{x'})}$ em $E$, em que $\widetilde{(f \circ \eta_{x'})} = p^{-1} \circ f \circ  \eta_{x'}$. Portanto, $\Tilde{f}(V) = \widetilde{(f \circ \gamma^{x})}_{e_0} (V) \subseteq \Tilde{U}$, $\Tilde{f}|_V = p^{-1} \circ f$ e então $\Tilde{f}$ é contínua em x.
+     
+\end{dem}
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[teorema-borsuk-ulam]{Teorema de Borsuk-Ulam};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	%\item \hyperref[]{}
+\end{titlemize}
+
+%[Bianca]: Um arquivo tex pode ter mais de uma afirmação (ou definição, ou exemplo), mas nesse caso cada afirmação deve ter seu próprio label. Dar preferência para agrupar afirmações que dependam entre sí de maneira próxima (um teorema e seu corolário, por exemplo)

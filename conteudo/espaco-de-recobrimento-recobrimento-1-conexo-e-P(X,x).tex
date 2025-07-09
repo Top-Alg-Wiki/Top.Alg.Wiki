@@ -1,0 +1,68 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Recobrimento 1-conexo em bijeção com $P(X,x_0)$} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{recobrimento-1-conexo-em-bijecao-com-P(X,x)}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[espaço-1-conexo-def]{Espaço 1-conexo};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+    \item \hyperref[levantamento-de-caminhos-prop]{Levantamento de caminhos}\\
+	\item \hyperref[levantamento-de-homotopia-prop]{Levantamento de homotopia};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+%Comentário sobre os objetos envolvidos na afirmação.
+Seja $P(X,x_0)=\{[\gamma]|~\gamma:I\rightarrow X \text{ e }\gamma(0)=x_0\}$ o conjunto das classes de homotopia relativas a $\partial I$.
+
+\begin{prop}%[Nome da Afirmação]% ou af(afirmação)/prop(proposição)/corol(corolário)/lemma(lema)/outros ambientes devem ser definidos no preambulo de Alg.Top-Wiki.tex 
+	Se $E\rightarrow X$ é um recobrimento 1-conexo, então $E$ está em bijeção com $P(X,x_0)$
+\end{prop}
+\begin{dem}
+    Defina $\phi: P(X, x_0)\rightarrow E$ por
+
+    $$\phi([\gamma])=\tilde{\gamma}_{e_0}(1)\text{ para todo }[\gamma]\in P(X,x_0)$$
+
+    onde $\tilde{\gamma}_{e_0}$ é o único levantamento de $\gamma$ começando em $e_0\in p^{-1}(x_0)$ fixado.
+
+    Verifiquemos as seguintes afirmações:
+
+    \begin{itemize}
+        \item O mapa $\phi$ está bem definido.\newline
+            Se $\gamma\sim \eta (\text{rel }\partial I)$, então, por corolário presente em \ref{levantamento-de-homotopia-prop}, temos que os levantamentos que se iniciam em $e_0$ também são homotópicos. Isto é, $\tilde{\gamma}_{e_0}\sim\tilde{\eta}_{e_0}(\text{rel }\partial I)$ e, portanto, $\tilde{\gamma}_{e_0}(1)=\tilde{\eta}_{e_0}(1)$.\newline
+        
+        \item O mapa $\phi$ é injetor.\newline
+            Se $\tilde{\gamma}_{e_0}(1)=\tilde{\eta}_{e_0}(1)$ então, como $E$ é 1-conexo, segundo outro corolário de \ref{levantamento-de-homotopia-prop}, temos que $\gamma\sim \eta (\text{rel }\partial I)$, isto é, $[\gamma]=[\eta]$.\newline
+            
+        \item O mapa $\phi$ é sobrejetor.\newline
+            Dado $e\in E$, escolha um caminho $\alpha:I\rightarrow E$, $\alpha(0)=e_0$ e $\alpha(1)=e$. Esse caminho existe pois $E$ é conexo por caminhos. Considere $\gamma=p\circ \alpha$. Assim, $$\phi([\gamma])=\tilde{\gamma}_{e_0}(1)=\widetilde{p\circ \alpha}_{e_0}(1)=\alpha(1),$$ onde a última igualdade segue da unicidade de levantamento.
+    \end{itemize}
+\end{dem}
+
+Utilizamos $\phi$ para definir uma ação do grupo fundamental $\pi_1(X,x_0)$ em $E$. Esta ação é um mapa $\alpha: \pi_1(X,x_0)\times E\rightarrow E$ definido por
+
+$$\alpha([\gamma], e)=[\gamma]\cdot e=\phi([\gamma*\phi^{-1}(e)])$$
+
+Se tomarmos um caminho $ \beta: I\rightarrow E$ tal que $\beta(0)=e_0$ e $\beta(1)=e$, pode-se utilizar a definição de $\phi$ para dizer que a ação acima também pode ser escrita como
+
+$$\alpha([\gamma], e)=[\gamma]\cdot e = \widetilde{(\gamma*(p\circ \beta))}(1)$$
+
+Uma vez que $\phi^{-1}(e)=[p\circ \beta]$, fato que pode ser notado pois $\phi$ é bijeção e $ \phi([p\circ \beta])=\beta(1)=e$.\newline
+
+De fato, esta é uma ação pois:
+
+\begin{itemize}
+    \item $\alpha([c_{x_0}], x)=x$ para todo $x\in E.$\newline
+    Isto pode ser verificado pois $\phi([c_{x_0}*\phi^{-1}(x)])$ é tal que, se $\gamma:I\rightarrow E$ liga $e_0$ a $x$, então $\phi^{-1}(x)$ é $[p\circ \gamma]$, fato já observado anteriormente. Assim, $$\phi([c_{x_0}*\phi^{-1}(x)])=\phi([c_{x_0}*(p\circ\gamma)])=\phi([p\circ \gamma])=\widetilde{p\circ \gamma}_{e_0}(1)=\gamma(1)=x,$$ e a conclusão $\widetilde{p\circ \gamma}_{e_0}(1)=\gamma(1)$ segue da unicidade do levantamento.\newline
+
+    \item $\alpha(\gamma_1, \alpha(\gamma_2,x))=\alpha(\gamma_1*\gamma_2,x)$
+
+    De fato, temos$$\phi([\gamma_1 * \phi^{-1}(\alpha(\gamma_2,x))])=\phi([\gamma_1*\phi^{-1}(\phi([\gamma_2*\phi^{-1}(x)]))])=$$ $$=\phi([\gamma_1*(\gamma_2*\phi^{-1}(x))])=\phi([(\gamma_1*\gamma_2)*\phi^{-1}(x)])=$$$$=[\gamma_1*\gamma_2]\cdot x=\alpha(\gamma_1*\gamma_2,x)$$
+\end{itemize}
+
+
+
+
+
+%\begin{titlemize}{Lista de consequências}
+%	\item \hyperref[consequencia1]{Consequência 1};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+%	\item \hyperref[]{}
+%\end{titlemize}
+
+%[Bianca]: Um arquivo tex pode ter mais de uma afirmação (ou definição, ou exemplo), mas nesse caso cada afirmação deve ter seu próprio label. Dar preferência para agrupar afirmações que dependam entre sí de maneira próxima (um teorema e seu corolário, por exemplo)
