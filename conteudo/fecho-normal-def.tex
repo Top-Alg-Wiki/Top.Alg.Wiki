@@ -1,0 +1,14 @@
+\subsection{Fecho normal} %afirmação aqui significa teorema/proposição/colorário/lema
+\label{fecho-normal-def}
+
+\begin{prop}
+    Seja $G$ um grupo, e $K$ um subconjunto de $G$. Então, a interseção 
+    \[\overline{K}:=\bigcap_{\substack{N\triangleleft G\\K\subseteq N}}N\]
+    de todos os subgrupos normais de $G$ que contém $K$ é um subgrupo normal de $G$. Além disso, se $N$ é um subgrupo normal de $G$ contendo $K$, então $\overline{K}\subseteq N$.
+\end{prop}
+
+\begin{dem}
+    Seja $k\in \overline{K}$, $g\in G$. Pela definição de $\overline{K}$, $k$ pertence a todos os subgrupos normais que contêm $K$. Pela definição de subgrupo normal, $gkg^{-1}$ também pertence a todos os subgrupos normais que contêm $K$, ou seja $gkg^{-1}\in \overline{K}$. Como $k$ e $g$ são arbitrários, concluímos que $\overline{K}$ é um subgrupo normal de $G$. Além disso, pela definição de $\overline{K}$, se $N$ é um subgrupo normal de $G$ contendo $K$, então $\overline{K}\subseteq N$.
+\end{dem}
+
+Por essa razão o grupo $\overline{K}$ é chamado \textbf{fecho normal de} $K$ ou \textbf{subgrupo normal gerado por} $K$.

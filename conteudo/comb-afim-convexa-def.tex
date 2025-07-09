@@ -1,0 +1,32 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Combinações afins e convexas}
+\label{comb-afim-convexa-def}
+% \begin{titlemize}{Lista de dependências}
+% 	\item \hyperref[dependecia1]{Dependência 1};\\ %'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+% 	\item \hyperref[]{};\\
+% % quantas dependências forem necessárias.
+% \end{titlemize}
+\begin{defi}[Combinações lineares, afins e convexas]
+	Seja $V$ um espaço vetorial sobre $\mathbb{R}$ e seja $S \subset V$ um subconjunto. Recordamos que uma \textbf{combinação linear} de elementos de $S$ é um vetor da forma $y = \sum_{j=0}^n \lambda_j x_j$, onde $\lambda_j \in \mathbb{R}$ e $x_j \in S$ para todo $0 \leq j \leq n$. Se $\sum_{j=0}^n \lambda_j = 1$, dizemos que $y$ é \textbf{combinação afim} de elementos de $S$. Por fim, se $\sum_{j=0}^n \lambda_j = 1$ e $\lambda_j \geq 0$ para todo $0 \leq j \leq n$, dizemos que $y$ é \textbf{combinação convexa} de elementos de $S$.
+
+    O conjunto de combinações lineares de elementos de $S$ é o \textbf{espaço gerado} por $S$ e é denotado como $\text{span}(S)$. Do mesmo modo, o conjunto de combinações afins de elementos de $S$ é chamado de \textbf{espaço afim gerado} por $S$, e denotado por $\text{aff}(S)$. Por fim, $\text{conv}(S)$ é o conjunto de combinações convexas de $S$ e é chamado de \textbf{envoltória convexa} de $S$.
+\end{defi}
+
+É simples provar que se $x_0 \in S$, então $\text{aff}(S) = \text{span}(S-x_0) + x_0$. De fato, suponha que $y = \sum_{j=0}^n \lambda_j x_j$, onde $\sum_{j=0}^n \lambda_j = 1$ e $x_j \in S$ para todo $1 \leq j \leq n$ (podemos supor que $x_0$ é usado na representação de $y$, tomando $\lambda_0 = 0$ se necessário). Então
+\begin{align*}
+    y &= \sum_{j=0}^n \lambda_j x_j - x_0 + x_0
+    = \sum_{j=0}^n \lambda_j x_j - \sum_{j=0}^n \lambda_j x_0 + x_0\\
+    &= \sum_{j=1}^n \lambda_j(x_j - x_0) + x_0
+    \in \text{span}(S-x_0) + x_0
+\end{align*}
+
+\begin{defi}[Independência afim]
+    Dizemos que um subconjunto $S \neq \varnothing$ de um espaço vetorial $V$ é \textbf{``affine independent'' (a.i.)} se $S - x_0$ é linearmente independente, onde $x_0 \in S$. Ou seja, se não existe $S' \subsetneq S$ tal que $\text{aff}(S') = \text{aff}(S)$.
+\end{defi}
+
+A equivalência das duas definições segue do raciocínio anterior, pois caso exista $S' \subsetneq S$ tal que $\text{aff}(S') = \text{aff}(S)$ e $x_0 \in S$, então $\text{span}(S'-x_0) = \text{span}(S-x_0)$. Assim, $S - x_0$ não é linearmente independente. E reciprocamente, caso $S - x_0$ não seja linearmente independente, então existe $S' \subsetneq S$ tal que $\text{span}(S' - x_0) = \text{span}(S - x_0)$, logo $\text{aff}(S') = \text{aff}(S)$.
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[simplexo-def]{Simplexos};\\ %'consequencia1' é o label onde o conceito Consequência 1 aparece
+	%\item \hyperref[]{}
+\end{titlemize}

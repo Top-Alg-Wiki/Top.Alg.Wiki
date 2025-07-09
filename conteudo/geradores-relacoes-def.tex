@@ -1,0 +1,57 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Geradores e Relações}
+\label{geradores-relacoes-def}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[fecho-normal-def]{Fecho normal}.%'dependencia1' é o label onde o conceito Dependência 1 aparece (--à arrumar um padrão para referencias e labels--) 
+	%\item \hyperref[]{};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+\newcommand{\Ast}{\mathop{\scalebox{1.5}{\raisebox{-0.2ex}{$\ast$}}}}
+
+\begin{defi}[Produto Direto]
+    Dada uma coleção de grupos $\{G_j~|~j\in J\}$ qualquer, o \textbf{produto direto de $\{G_j~|~j\in J\}$} é o grupo $\prod_{j\in J} G_j$, onde o conjunto de elementos é o produto cartesiano e a operação é dada coordenada a coordenada:
+    \[(g_j)_{j\in J} * (h_j)_{j\in J} = (g_j h_j)_{j\in J}\]
+
+    O elemento neutro é $(e_j)_{j\in J}$, onde $e_j$ é o elemento neutro de $G_j$ para cada $j\in J$, e o elemento inverso de cada $(g_j)_{j\in J} \in \prod_{j\in J} G_j$ é $(g_j^{-1})_{j\in J}$.
+\end{defi}
+
+\begin{defi}[Produto Livre]
+	Seja $\{G_j~|~j\in J\}$ uma coleção de grupos qualquer, e seja $e_j$ o elemento neutro de $G_j$ para cada $j\in J$. Considere o conjunto $S$ de sequências finitas
+    $(a_1, \ldots, a_m)$, onde $m\geq 0$ e $a_1,\ldots, a_m \in \bigsqcup_{j\in J} G_j$, e defina $\sim$ como a menor relação de equivalência tal que 
+    \[(a_1,\ldots, a_i, a_{i+1},\ldots, a_m) \sim 
+    (a_1,\ldots, a_i *_j a_{i+1},\ldots, a_m),\] se $j\in J$ e $a_i, a_{i+1} \in G_j$, e também
+    \[(a_1,\ldots, a_i, e_j, a_{i+2},\ldots, a_m) \sim (a_1,\ldots, a_i, a_{i+2},\ldots, a_m)\]
+    para todo $j\in J$. Definimos o \textbf{produto livre de $\{G_j~|~j\in J\}$} como $\Ast_{j\in J} G_j = S/\sim$, em que a classe de equivalência de uma sequência $(a_1,\ldots, a_m)$ é denotada por $a_1 \ldots a_m$. A operação $*$ em $\Ast_{j\in J} G_j$ é dada pela concatenação:
+    \[a_1 \ldots a_m * b_1 \ldots b_n = a_1 \ldots a_m \, b_1 \ldots b_n.\]
+    O elemento neutro é dado pela classe de equivalência da sequência nula, que denotamos por $e$. Esta coincide com a classe de equivalência de cada $e_j$. O elemento inverso pode ser calculado como
+    \[(a_1 \ldots a_m)^{-1} = a_m^{-1} \ldots a_1^{-1}.\]
+    
+    É simples ver que $\Ast_{j\in J} G_j$ é um grupo. Em algumas situações, usamos a notação $(a_1)...(a_m)$ para denotar os elementos $a_1...a_m\in \Ast_{j\in J} G_j $.
+    %e que as inclusões naturais de cada $G_j$ em $\Ast_{j\in J} G_j$ são homomorfismos
+    % eu provei isso na parte de pushout, então eu vou tirar nisso.
+\end{defi}
+
+\begin{defi}
+    Seja $\mathcal{G}$ um conjunto não vazio. Definimos o \textbf{grupo livre gerado (ou grupo cíclico infinito gerado) por $a \in \mathcal{G}$} como $F(a) = \langle a\rangle = \{a^n~|~n \in \mathbb{Z}\}$, onde a operação é dada somando-se os expoentes:
+    \[a^m * a^n = a^{m+n},\quad \forall m,n \in \mathbb{Z}.\]
+    É claro que $\langle a\rangle$ é isomorfo a $\mathbb{Z}$.
+    
+    O \textbf{grupo livre gerado por $\mathcal{G}$} é definido como $\Ast_{a\in \mathcal{G}} \langle a\rangle$, enquanto o \textbf{grupo abeliano livre gerado por $\mathcal{G}$} é definido como $\prod_{a\in \mathcal{G}} \langle a\rangle$. Estes são denotados, respectivamente, como $F(\mathcal{G}) = \langle \mathcal{G}\rangle$ e $\mathbb{Z}(\mathcal{G})$, respectivamente. No caso em que $\mathcal{G}$ é finito, digamos, 
+    $\mathcal{G} = \{a_1,\ldots, a_m\}$, escrevemos $F(\mathcal{G}) = F(a_1,\ldots, a_m)$ e $\mathbb{Z}(\mathcal{G}) = \mathbb{Z}(a_1, \ldots, a_m)$.
+    
+    Seja agora $R$ um conjunto de elementos de $\langle\mathcal{G}\rangle$. Definimos o grupo $\langle \mathcal{G}~|~R\rangle$ como o quociente de $\langle\mathcal{G}\rangle$ pelo subgrupo normal gerado por $R$. Nesse caso, dizemos que cada elemento $a \in \mathcal{G}$ é um \textbf{gerador}, cada igualdade da forma $a_1 \ldots a_m = b_1 \ldots b_n$, onde $(a_1 \ldots a_m) * (b_1 \ldots b_n)^{-1} \in R$, é uma \textbf{relação}, e o grupo quociente é \textbf{dado por geradores e relações}. Caso $R$ seja finito, também escrevemos cada relação explicitamente. Por exemplo, o subgrupo de $\mathbb{C}^{\times}$ gerado por $i$ é isomorfo a $\langle i ~|~ i^4 = 1\rangle$.
+\end{defi}
+
+\begin{ex}
+    Note que
+    \begin{align*}
+        D_4 &\cong \langle a,b ~|~a^4 = b^2 = e, ab = ba^{-1} \rangle\\
+        &\cong  \langle r,s~|~ r^2 = s^2 = e, (rs)^4=e \rangle,
+    \end{align*}
+    em especial, a apresentação do grupo por meio de geradores e relações não é única.
+\end{ex} 
+
+Todo grupo pode ser apresentado em termos de geradores e relações 
+\[F(G)/\langle R\rangle\cong G\]
+onde $R=\{(e),(g)(g)^{-1},(g)(h)(gh)^{-1}\}.$

@@ -1,0 +1,183 @@
+%---------------------------------------------------------------------------------------------------------------------!Draft!-----------------------------------------------------------------------------------------------------------------
+\subsection{Teorema de Forma Normal}
+\label{forma-normal-thm}
+\begin{titlemize}{Lista de dependências}
+	\item \hyperref[regiao-poligonal-def]{Regiões Poligonais};\\
+	\item \hyperref[construcoes-regiao-poligonal-prop]{Construções com Regiões Poligonais};\\
+% quantas dependências forem necessárias.
+\end{titlemize}
+
+\begin{lemma} %Exercício 1.9
+    Suponha que $w$ é um esquema de etiquetagem próprio de comprimento $4$. Então $w$ é equivalente a um dos seguintes esquemas de etiquetagem:
+    \[aabb,\quad abab,\quad aa^{-1}bb^{-1},\quad aba^{-1}b^{-1}.\]
+
+    \begin{dem}
+        Como $w$ é próprio e possui comprimento $4$, são utilizadas exatamente duas etiquetas, digamos, $a$ e $b$. Suponha primeiramente que, a menos de realizar uma permutação cíclica e trocar as etiquetas, o início da sequência seja da forma $aa$ ou $aa^{-1}$. Como $w$ é próprio, a etiqueta $a$ não é mais utilizada. Assim, a menos de troca de orientação, o final da sequência é da forma $bb$ ou $bb^{-1}$, e concluímos que $w$ é equivalente a $aabb$, $aa^{-1}bb$, $aabb^{-1}$ ou $aa^{-1}bb^{-1}$. Note que, trocando as etiquetas de $aa^{-1}bb$, obtemos $bb^{-1}aa$, o que é equivalente a $aabb^{-1}$ por permutação cíclica. Denotando por $\sim$ a equivalência de esquemas de etiquetagem,
+        \begin{alignat*}{2}
+            aabb^{-1} &\sim b^{-1}aab &\text{(permutação cíclica)}\\
+            &\sim b^{-1}ac^{-1}, cab &\text{(recorte)}\\
+            &\sim bca^{-1}, abc &\text{(inversão formal e permutação cíclica)}\\
+            &\sim bcbc &\text{(colagem)}\\
+            &\sim abab. &\text{(troca de etiquetas)}
+        \end{alignat*}
+        
+        Suponha agora que, para nenhuma permutação cíclica e troca de etiquetas, o início de $w$ seja da forma $aa$ ou $aa^{-1}$. Isso é o mesmo que dizer que as ocorrências de $a$ e de $b$ são intercaladas. Isto é, $w$ é da forma $a^{\varepsilon_1}b^{\varepsilon_2}a^{\varepsilon_3}b^{\varepsilon_4}$, a menos de permutação cíclica. Por troca de orientação, podemos supor que $w$ é equivalente a $abab$, $aba^{-1}b$, $abab^{-1}$ ou $aba^{-1}b^{-1}$. Note que, realizando troca de etiquetas em $aba^{-1}b$, obtemos $bab^{-1}a$, o que é equivalente a $abab^{-1}$ por permutação cíclica. Por fim,
+        \begin{alignat*}{2}
+            abab^{-1} &\sim abc, c^{-1}ab^{-1} &\text{(recorte)}\\
+            &\sim bca, a^{-1}cb &\text{(permutação cíclica e inversão formal)}\\
+            &\sim bccb &\text{(colagem)}\\
+            &\sim aabb &\text{(permutação cíclica e troca de etiquetas)}
+        \end{alignat*}
+        e então concluímos.
+    \end{dem}
+\end{lemma}
+
+\begin{lemma}\label{etiquetagem-lemma} %Lema 1.32
+    Seja $w$ um esquema de etiquetagem própria da forma $w = [y_0]a[y_1]a[y_2]$, onde cada sequência $y_i$ pode ser vazia. Então, $w$ é equivalente a
+    \[w\sim aa[y_0 y_1^{-1} y_2].\]
+
+    \begin{dem}
+        Suponhamos primeiramente que $y_0$ seja vazia. Caso $y_1$ também seja vazia, nada resta a provar. Já se $y_2$ for vazia,
+        \begin{alignat*}{2}
+            w &= a[y_1]a&~\\
+            &\sim a^{-1}[y_1^{-1}]a^{-1} &\text{(inversão formal)}\\
+            &\sim aa[y_1^{-1}]. &\text{(permutação cíclica e troca de orientação)}
+        \end{alignat*}
+
+        Se $y_0$ é vazia e $y_1$ e $y_2$ não são,
+        \begin{alignat*}{2}
+            w &= a[y_1]a[y_2]&~\\
+            &\sim a[y_1]b,\ b^{-1}a[y_2] &\text{(recorte)}\\
+            &\sim [y_1]ba,\ a^{-1} b[y_2^{-1}] &\text{(permutação cíclica e inversão formal)}\\
+            &\sim [y_1]bb[y_2^{-1}] &\text{(colagem)}\\
+            &\sim [y_2^{-1}]b^{-1}b^{-1}[y_1] &\text{(inversão formal)}\\
+            &\sim [y_2^{-1}]aa[y_1] &\text{(troca de etiqueta e orientação)}\\
+            &\sim aa[y_1 y_2^{-1}]. &\text{(permutação cíclica)}
+        \end{alignat*}
+
+        Agora, suponha que $y_0$ não é vazia. Caso $y_1$ e $y_2$ sejam vazias, nada a provar. Caso contrário,
+        \begin{alignat*}{2}
+            w &= [y_0]a[y_1]a[y_2]&~\\
+            &\sim [y_0]ab,\ b^{-1}[y_1]a[y_2] &\text{(recorte)}\\
+            &\sim [y_0^{-1}]b^{-1}a^{-1},\ a[y_2]b^{-1}[y_1] &\text{(inversão formal e permutação)}\\
+            &\sim [y_0^{-1}]b^{-1}[y_2]b^{-1}[y_1] &\text{(colagem)}\\
+            &\sim b^{-1}[y_2]b^{-1}[y_1 y_0^{-1}] &\text{(permutação)}\\
+            &\sim b^{-1}b^{-1}[y_2^{-1} y_1 y_0^{-1}] &\text{(caso 1)}\\
+            &\sim [y_0 y_2]bb &\text{(inversão formal)}\\
+            &\sim aa[y_0 y_2]. &\text{(permutação e troca de etiqueta)}\tag*{\qedhere}
+        \end{alignat*}
+    \end{dem}
+\end{lemma}
+
+Em vista desse lema, obtemos a seguinte proposição.
+\begin{prop} %Proposição 1.31
+    Seja $w$ um esquema de etiquetas do tipo projetivo. Então $w$ é equivalente a
+    \[w\sim (a_1 a_1)\ldots (a_k a_k) [w_1],\]
+    onde $k \geq 0$ e $w_1$ é do tipo toro.
+
+    \begin{dem}
+        Aplicando indutivamente o lema anterior, no $j$-ésimo passo, obtemos um esquema de etiquetas equivalente a $w$ da forma $(a_1 a_1)\ldots (a_j a_j) [z_j]$, com mesmo comprimento que $w$. Assim, ou $z_j$ é do tipo toro, ou existe uma etiqueta cujas 2 ocorrências em $z_j$ possuem a mesma orientação, e aplicamos o lema anterior. Como o comprimento de $z_j$ diminui a cada passo, o processo termina para algum $j$ finito.
+    \end{dem}
+\end{prop}
+
+\begin{corol} %Observação 1.33
+    Todo esquema de etiquetagem próprio $w$ é do tipo toro, da forma
+    \[(a_1 a_1)(a_2 a_2)\ldots (a_k a_k) [w_1]\]
+    para $w_1$ do tipo toro, ou então da forma
+    \[(a_1 a_1)(a_2 a_2)\ldots (a_k a_k).\]
+\end{corol}
+
+\begin{lemma} %Lema 1.34
+    Suponha que um esquema de etiquetagem seja da forma $w = [w_0 w_1]$, onde $w_1$ é um esquema irredutível do tipo toro. Então $w$ é equivalente a um esquema da forma $[w_0 w_2]$, para $w_2$ com mesmo comprimento que $w_1$ e da forma
+    \[w_2 = aba^{-1}b^{-1}[w_3],\]
+    onde $w_3$ é vazio ou de tipo toro.
+    \begin{dem}
+        \noindent \textbf{(Passo 1)} Podemos assumir que $w$ é da forma
+        \[w = [w_0 y_1] a [y_2] b [y_3] a^{-1} [y_4] b^{-1} [y_5],\]
+        onde algumas sequências $y_i$ podem ser vazias.
+
+        Seja $a$ uma das etiquetas cujas ocorrências sejam as mais próximas possíveis (existam menos símbolos entre elas) na expressão de $w_1$. Trocando a orientação se necessário, podemos supor que a primeira ocorrência da etiqueta $a$ possui orientação $+1$ (a outra possui orientação $-1$, já que $w_1$ é do tipo toro). Como $w_1$ é irredutível, há a ocorrência de uma etiqueta $b$ entre as ocorrências de $a$. Novamente, podemos supor que a primeira ocorrência de $b$ possui orientação $+1$, trocando a orientação se necessário. Pela escolha da etiqueta $a$, as ocorrências de $b$ e $b^{-1}$ não são ambas entre $a$ e $a^{-1}$. Assim, concluímos (trocando as etiquetas, caso a primeira ocorrência de $b$ seja antes da primeira ocorrência de $a$).\\
+
+        \noindent \textbf{(Passo 2)} $w$ é equivalente a
+        \[w \sim 
+        [w_0] a [y_2] b [y_3] a^{-1} [y_1 y_4] b^{-1} [y_5].\]
+
+        Podemos supor que $y_1$ não é vazia (ou então nada temos a provar). Então,
+        \begin{alignat*}{2}
+            w &= [w_0 y_1] a [y_2] b [y_3] a^{-1} [y_4] b^{-1} [y_5] &\text{(passo 1)}\\
+            &\sim [y_2] b [y_3] a^{-1} [y_4] b^{-1} [y_5] [w_0 y_1] a &\text{(permutação cíclica)}\\
+            &\sim [y_2] b [y_3] a^{-1} [y_4] b^{-1} [y_5] [w_0] c,\ c^{-1} [y_1] a &\text{(recorte)}\\
+            &\sim [y_4] b^{-1} [y_5] [w_0] c [y_2] b [y_3] a^{-1},\ a c^{-1} [y_1] &\text{(permutação cíclica)}\\
+            &\sim [y_4] b^{-1} [y_5] [w_0] a [y_2] b [y_3] a^{-1} [y_1] &\text{(colagem e troca de etiquetas)}\\
+            &\sim [w_0] a [y_2] b [y_3] a^{-1} [y_1] [y_4] b^{-1} [y_5]. &\text{(permutação cíclica)}
+        \end{alignat*}\\
+
+        \noindent \textbf{(Passo 3)} $w$ é equivalente a
+        \[w\sim [w_0] a [y_1 y_4 y_3] b a^{-1} b^{-1} [y_2 y_5].\]
+
+        Se $w_0$, $y_1$, $y_4$ e $y_5$ são vazios, então \[w \sim a [y_2] b [y_3] a^{-1} b^{-1} \sim a [y_3] b a^{-1} b^{-1} [y_2] = [w_0] a [y_1 y_4 y_3] b a^{-1} b^{-1} [y_2 y_5],\] por troca de etiquetas e permutação cíclica.
+
+        Caso contrário, podemos realizar as seguintes operações:
+        \begin{alignat*}{2}
+            w &\sim [w_0] a [y_2] b [y_3] a^{-1} [y_1 y_4] b^{-1} [y_5] &\text{(passo 2)}\\
+            &\sim a [y_2] b [y_3] a^{-1} c,\ c^{-1} [y_1 y_4] b^{-1} [y_5 w_0] &\text{(permutação cíclica e recorte)}\\
+            &\sim [y_3] a^{-1} c a [y_2] b,\ b^{-1} [y_5 w_0] c^{-1} [y_1 y_4] &\text{(permutação cíclica)}\\
+            &\sim [y_3] a^{-1} c a [y_2 y_5 w_0] c^{-1} [y_1 y_4] &\text{(colagem e troca de etiquetas)}\\
+            &\sim [w_0] c^{-1} [y_1 y_4 y_3] a^{-1} c a [y_2 y_5] &\text{(permutação cíclica)}\\
+            &\sim [w_0] a [y_1 y_4 y_3] b a^{-1} b^{-1} [y_2 y_5] &\text{(troca de etiquetas e orientação)}.
+        \end{alignat*}\\
+
+        \noindent \textbf{(Passo 4)} $w$ é equivalente a
+        \[w \sim [w_0] aba^{-1}b^{-1} [y_1 y_4 y_3 y_2 y_5].\]
+
+        Para isso, aplicamos as seguintes operações:
+        \begin{alignat*}{2}
+            w&\sim [w_0] a [y_1 y_4 y_3] b a^{-1} b^{-1} [y_2 y_5] &\text{(passo 3)}\\
+            &\sim [y_1 y_4 y_3] b a^{-1} c,\ c^{-1} b^{-1} [y_2 y_5 w_0] a &\text{(permutação cíclica e recorte)}\\
+            &\sim a^{-1} c [y_1 y_4 y_3] b,\ b^{-1} [y_2 y_5 w_0] a c^{-1} &\text{(permutação cíclica)}\\
+            &\sim a^{-1} c [y_1 y_4 y_3 y_2 y_5 w_0] a c^{-1} &\text{(colagem)}\\
+            &\sim [w_0] a c^{-1} a^{-1} c [y_1 y_4 y_3 y_2 y_5 w_0] &\text{(permutação cíclica)}\\
+            &\sim [w_0] a b a^{-1} b^{-1} [y_1 y_4 y_3 y_2 y_5]. &\text{(troca de etiquetas e orientação)}
+        \end{alignat*}
+    \end{dem}
+\end{lemma}
+
+Resta analisar o que podemos dizer sobre esquemas de etiquetagem da forma $(a_1 a_1)\ldots (a_k a_k) (b_1 c_1 b_1^{-1} c_1^{-1})\ldots (b_l c_l b_l^{-1} c_l^{-1})$. Este é o conteúdo do próximo lema.
+
+\begin{lemma}
+    Se $w = [w_0] aa bcb^{-1}c^{-1} [w_1]$ é um esquema próprio, então
+    \[w \sim [w_0] aa bb cc [w_1].\]
+
+    \begin{dem}
+        Aplicando o Lema \ref{etiquetagem-lemma} repetidamente, o resultado segue da sequência de operações:
+        \begin{alignat*}{2}
+            w &= [w_0] aa bcb^{-1}c^{-1} [w_1]
+            &~\\
+            &\sim aa [bc][cb]^{-1} [w_1 w_0]
+            &\text{(permutação cíclica)}\\
+            &\sim [bc] a[cb] a [w_1 w_0]
+            &\text{(Lema \ref{etiquetagem-lemma})}\\
+            &= [b]c[a]c[ba w_1 w_0]&~\\
+            &\sim cc[b][a]^{-1}[ba w_1 w_0]&\text{(Lema \ref{etiquetagem-lemma})}\\
+            &= [cc]b[a]^{-1}b[a w_1 w_0]&~\\
+            &\sim bb[cc][a][a w_1 w_0]&\text{(Lema \ref{etiquetagem-lemma})}\\
+            &\sim aabbcc [w_1 w_0].&\text{(troca de variáveis)}
+        \end{alignat*}
+    \end{dem}
+\end{lemma}
+
+Com todos estes lemas, concluímos o teorema:
+
+\begin{thm}[Teorema da Forma Normal para Esquemas de Etiquetagem]
+    Todo esquema de etiquetagem próprio com comprimento 4 ou maior é equivalente a um dos seguintes esquemas (as chamadas formas normais):
+    \begin{enumerate}
+        \item $aa^{-1}bb^{-1}$
+        \item $abab$
+        \item $(a_1 b_1 a_1^{-1} b_1^{-1})\ldots (a_k b_k a_k^{-1} b_k^{-1})$
+        \item $(a_1 a_1)\ldots (a_k a_k)$
+    \end{enumerate}
+\end{thm}
+
+\begin{titlemize}{Lista de consequências}
+	\item \hyperref[classificacao-superficies-thm]{Teorema de Classificação de Superfícies}
+\end{titlemize}
